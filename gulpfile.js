@@ -1,5 +1,6 @@
 import gulp from 'gulp';
 import browserSync from 'browser-sync';
+import cssImport from 'gulp-cssimport';
 
 // tasks
 
@@ -9,6 +10,9 @@ export const html = () => gulp
 
 export const css = () => gulp
     .src('src/css/**/*.css')
+    .pipe(cssImport({
+        extensions: ['css'],
+    }))
     .pipe(gulp.dest('dist/css'))
     .pipe(browserSync.stream());
 
@@ -22,21 +26,16 @@ export const json = () => gulp
     .pipe(gulp.dest('dist'))
     .pipe(browserSync.stream());
 
-// export const img = () => gulp
-//     .src('src/img/**/*.*')
-//     .pipe(gulp.dest('dist/img'))
-//     .pipe(browserSync.stream());
-
 export const server = () => {
     browserSync.init({
         ui: false,
         notify: false,
-        tunnel: true,
+        // tunnel: true,
         server: {
             baseDir: 'dist'
         }
     });
-    1
+    
     gulp.watch('./src/**/*.html', html);
     gulp.watch('./src/css/**/*.css', css);
     gulp.watch('./src/js/**/*.js', js);
