@@ -28,7 +28,7 @@ export const json = () => gulp
 
 export const copy = () => gulp
     .src([
-        'src/fonts/**/*',
+        'src/font/**/*',
         'src/img/**/*'
     ], {
         base: 'src'
@@ -51,12 +51,16 @@ export const server = () => {
     gulp.watch('./src/**/*.html', html);
     gulp.watch('./src/css/**/*.css', css);
     gulp.watch('./src/js/**/*.js', js);
+    gulp.watch([
+        './src/img/**/*',
+        './src/font/**/*'
+    ], copy);
 };
 
 // launch
 
 // export default gulp.parallel(html, css, js, json, img);
 export default gulp.series(
-    gulp.parallel(html, css, js, json),
+    gulp.parallel(html, css, js, json, copy),
     server
 );
