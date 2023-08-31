@@ -9,19 +9,23 @@ export const html = () => gulp
 
 export const css = () => gulp
     .src('src/css/**/*.css')
-    .pipe(gulp.dest('dist/css'));
+    .pipe(gulp.dest('dist/css'))
+    .pipe(browserSync.stream());
 
 export const js = () => gulp
     .src('src/js/**/*.js')
-    .pipe(gulp.dest('dist/js'));
+    .pipe(gulp.dest('dist/js'))
+    .pipe(browserSync.stream());
 
 export const json = () => gulp
     .src('src/*.json')
-    .pipe(gulp.dest('dist'));
+    .pipe(gulp.dest('dist'))
+    .pipe(browserSync.stream());
 
-export const img = () => gulp
-    .src('src/img/**/*.*')
-    .pipe(gulp.dest('dist/img'));
+// export const img = () => gulp
+//     .src('src/img/**/*.*')
+//     .pipe(gulp.dest('dist/img'))
+//     .pipe(browserSync.stream());
 
 export const server = () => {
     browserSync.init({
@@ -32,8 +36,16 @@ export const server = () => {
             baseDir: 'dist'
         }
     });
+    1
+    gulp.watch('./src/**/*.html', html);
+    gulp.watch('./src/css/**/*.css', css);
+    gulp.watch('./src/js/**/*.js', js);
 };
 
-// start
+// launch
 
-export default gulp.parallel(html, css, js, json, img);
+// export default gulp.parallel(html, css, js, json, img);
+export default gulp.series(
+    gulp.parallel(html, css, js, json),
+    server
+);
