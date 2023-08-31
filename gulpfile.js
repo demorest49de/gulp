@@ -1,6 +1,7 @@
 import gulp from 'gulp';
 import browserSync from 'browser-sync';
 import cssImport from 'gulp-cssimport';
+import {deleteAsync} from 'del';
 
 // tasks
 
@@ -57,10 +58,12 @@ export const server = () => {
     ], copy);
 };
 
+export const clear = () => deleteAsync('dist/**/*', {force: true,});
+
 // launch
 
-// export default gulp.parallel(html, css, js, json, img);
-export default gulp.series(
-    gulp.parallel(html, css, js, json, copy),
-    server
-);
+export const base = gulp.parallel(html, css, js, json, copy);
+
+export const build = gulp.series(clear, base);
+
+export default gulp.series(base, server);
