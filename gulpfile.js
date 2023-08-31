@@ -26,6 +26,18 @@ export const json = () => gulp
     .pipe(gulp.dest('dist'))
     .pipe(browserSync.stream());
 
+export const copy = () => gulp
+    .src([
+        'src/fonts/**/*',
+        'src/img/**/*'
+    ], {
+        base: 'src'
+    })
+    .pipe(gulp.dest('dist'))
+    .pipe(browserSync.stream({
+        once: true
+    }));
+
 export const server = () => {
     browserSync.init({
         ui: false,
