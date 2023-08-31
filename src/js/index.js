@@ -3,7 +3,7 @@ import {addElements} from './module/shopOnline/createElement.js';
 import {elemTypes as types} from './module/constants.js';
 
 {
-    const init = () => {
+    const init = (selector) => {
             const elems = [
                     {
                         type: types.section,
@@ -19,11 +19,10 @@ import {elemTypes as types} from './module/constants.js';
                     },
                 ]
             ;
-            
             addElements(elems);
             handleTimer();
         }
     ;
     
-    init();
+    window.indexInit = init;
 }

@@ -3,6 +3,7 @@ import {loadItemsHandler} from './module/article/loadArticle.js'
 
 {
     const articleInit = (selectorApp) => {
+        console.log(selectorApp);
         const vars = createMarkup();
         loadItemsHandler(vars);
     };
