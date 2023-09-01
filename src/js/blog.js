@@ -10,14 +10,15 @@ const handleBlogLink = ($) => {
         window.document.head.querySelector("title").textContent = 'Блог';
     });
 };
-
-export const blogInit = ($) => {
-    const blog = renderBlog();
-    $.blog = blog;
-    paginationClickHandler($);
-    paginationHandler($);
-    loadItemsHandler($);
-    
-    handleBlogLink($);
-};
-    
+{
+    const blogInit = ($) => {
+        const blog = renderBlog();
+        // $.blog = blog;
+        // paginationClickHandler($);
+        // paginationHandler($);
+        // loadItemsHandler($);
+        
+        handleBlogLink($);
+    };
+    window.blogInit = blogInit
+}

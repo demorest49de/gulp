@@ -1,7 +1,5 @@
 import {renderElements} from './module/shopOnline/createElement.js';
 import {$} from '../js/module/constants.js';
-import {blogInit} from "./blog.js";
-import {articleInit} from "./article.js";
 import {handlers} from "./module/shopOnline/handlers.js";
 
 {
@@ -17,8 +15,6 @@ import {handlers} from "./module/shopOnline/handlers.js";
     const init = (selector) => {
             constsInit(selector);
             indexInit($);
-            blogInit($);
-            // articleInit();
         }
     ;
     
