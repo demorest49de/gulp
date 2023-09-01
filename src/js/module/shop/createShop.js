@@ -133,18 +133,19 @@ const renderShop = ($) => {
 };
 
 export const renderElement = ($, page) => {
-    if (page === 'blog') {
-        renderBlog($);
-        return;
-    }
     
     if (page === 'shop') {
         renderShop($);
     }
     
-    if (page === 'article') {
-        renderShop($);
+    if (page === 'blog') {
+        renderBlog($);
+        return;
     }
+    
+    // if (page === 'article') {
+    //     renderArticle($);
+    // }
 };
 
 export const renderCards = async () => {

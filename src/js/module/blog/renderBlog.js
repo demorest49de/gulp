@@ -9,20 +9,10 @@ export const renderBlog = ($) => {
                 return;
             }
         
-            // if (type === $.types.main) {
-            //     createMain(name, $);
-            //     return;
-            // }
-            //
-            // if (type === $.types.main) {
-            //     createMain(name, $);
-            //     return;
-            // }
-        
-            // if (type === $.types.section) {
-            //     createSection(name, $);
-            //     return;
-            // }
+            if (type === $.types.blog) {
+                createBlog(name, $);
+                return;
+            }
             
             if (type === $.types.footer) {
                 createFooter(name, $);

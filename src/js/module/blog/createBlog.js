@@ -45,7 +45,7 @@ const addPagination = (pagination) => {
     return pageElems;
 };
 
-export const createBlog = () => {
+export const createBlog = ($) => {
     const main = document.createElement('main');
     const section = document.createElement('section');
     section.classList.add('blog');
@@ -67,5 +67,5 @@ export const createBlog = () => {
     paginationClickHandler($);
     paginationHandler($);
     loadItemsHandler($);
-    return {main, blogList, blogPagination: pagination, pageElems};
+    // return {main, blogList, blogPagination: pagination, pageElems};
 };

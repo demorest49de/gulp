@@ -3,6 +3,8 @@ const types = {
     section: 'section',
     header: 'header',
     main: 'main',
+    blog: 'blog',
+    article: 'article'
 };
 
 const shop = [
@@ -35,11 +37,7 @@ const blog = [
             name: 'header'
         },
         {
-            type: types.main,
-            name: 'main'
-        },
-        {
-            type: types.section,
+            type: types.blog,
             name: 'blog'
         },
         {
@@ -55,11 +53,7 @@ const article = [
             name: 'header'
         },
         {
-            type: types.main,
-            name: 'main'
-        },
-        {
-            type: types.section,
+            type: types.article,
             name: 'article'
         },
         {
