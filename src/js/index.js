@@ -1,6 +1,6 @@
-import {renderElements} from './module/shopOnline/createElement.js';
+import {renderElement} from './module/shop/createShop.js';
 import {$} from '../js/module/constants.js';
-import {handlers} from "./module/shopOnline/handlers.js";
+import {handlers} from "./module/shop/handlers.js";
 
 {
     const constsInit = (selector) => {
@@ -8,15 +8,12 @@ import {handlers} from "./module/shopOnline/handlers.js";
         $.app = app;
         $.selector = selector;
     };
-    const indexInit = ($) => {
-        renderElements($);
+    
+    const init = (selector, page) => {
+        constsInit(selector);
+        renderElement($, page);
         handlers();
     };
-    const init = (selector) => {
-            constsInit(selector);
-            indexInit($);
-        }
-    ;
     
     window.init = init;
 }

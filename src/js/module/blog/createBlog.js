@@ -1,3 +1,5 @@
+import {loadItemsHandler, paginationClickHandler, paginationHandler} from "./handleLoadBlog.js";
+
 const createPageLink = (pagination) => {
     
     const pages = document.createElement('nav');
@@ -43,7 +45,7 @@ const addPagination = (pagination) => {
     return pageElems;
 };
 
-export const createMain = () => {
+export const createBlog = () => {
     const main = document.createElement('main');
     const section = document.createElement('section');
     section.classList.add('blog');
@@ -62,5 +64,8 @@ export const createMain = () => {
     pagination.classList.add('blog__pagination', `pagination`);
     const pageElems = addPagination(pagination);
     container.append(blogList, pagination);
+    paginationClickHandler($);
+    paginationHandler($);
+    loadItemsHandler($);
     return {main, blogList, blogPagination: pagination, pageElems};
 };

@@ -43,7 +43,6 @@ export const loadItemsHandler = ($) => {
     const id = loadArticle(searchObject, updateArticle);
 
     id.then(id => {
-
         getUser(id, updateUser);
     });
 

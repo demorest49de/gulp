@@ -5,7 +5,7 @@ const types = {
     main: 'main',
 };
 
-const elems = [
+const shop = [
         {
             type: types.header,
             name: 'header'
@@ -29,5 +29,45 @@ const elems = [
     ]
 ;
 
+const blog = [
+        {
+            type: types.header,
+            name: 'header'
+        },
+        {
+            type: types.main,
+            name: 'main'
+        },
+        {
+            type: types.section,
+            name: 'blog'
+        },
+        {
+            type: types.footer,
+            name: 'footer'
+        },
+    ]
+;
 
-export const $ = {elems, types};
+const article = [
+        {
+            type: types.header,
+            name: 'header'
+        },
+        {
+            type: types.main,
+            name: 'main'
+        },
+        {
+            type: types.section,
+            name: 'article'
+        },
+        {
+            type: types.footer,
+            name: 'footer'
+        },
+    ]
+;
+
+
+export const $ = {shop, blog, article, types};
