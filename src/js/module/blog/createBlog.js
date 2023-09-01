@@ -45,10 +45,10 @@ const addPagination = (pagination) => {
     return pageElems;
 };
 
-export const createBlog = ($) => {
+export const createBlog = (name, $) => {
     const main = document.createElement('main');
     const section = document.createElement('section');
-    section.classList.add('blog');
+    section.classList.add(name);
     section.ariaLabel = `блог`;
     main.append(section);
     const h1 = document.createElement('h1');
@@ -64,8 +64,9 @@ export const createBlog = ($) => {
     pagination.classList.add('blog__pagination', `pagination`);
     const pageElems = addPagination(pagination);
     container.append(blogList, pagination);
+    const blogItems = {main, blogList, blogPagination: pagination, pageElems};
+    $.blogItems = blogItems;
     paginationClickHandler($);
     paginationHandler($);
     loadItemsHandler($);
-    // return {main, blogList, blogPagination: pagination, pageElems};
 };

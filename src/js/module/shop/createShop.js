@@ -1,5 +1,6 @@
 import {renderBlog} from "../blog/renderBlog.js";
 import {createHeader, createFooter} from '../base/baseElems.js';
+import {handlers} from "./handlers.js";
 
 const createMain = (name, $) => {
     
@@ -136,6 +137,7 @@ export const renderElement = ($, page) => {
     
     if (page === 'shop') {
         renderShop($);
+        handlers();
     }
     
     if (page === 'blog') {
