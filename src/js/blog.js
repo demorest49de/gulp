@@ -7,6 +7,7 @@ const handleBlogLink = ($) => {
         e.preventDefault();
         $.app.querySelector("main").remove();
         $.app.querySelector('.header').after($.blog.main);
+        window.document.head.querySelector("title").textContent = 'Блог';
     });
 };
 
