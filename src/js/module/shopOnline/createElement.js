@@ -1,9 +1,122 @@
-const main = document.querySelector('main');
-import {elemTypes as types} from '/js/module/constants.js';
 
-const createSection = (name) => {
+
+const createHeader = (name, $) => {
+    
+    if (name === 'header') {
+        $.app.insertAdjacentHTML('beforeend', `
+            <header class="header">
+                <div class="container header__container">
+                    <div class="header__logo-block">
+                        <img
+                                class="header__logo"
+                                src="img/header/logo.svg"
+                                alt="Логотип магазина ShopOnline" tabindex="1">
+                    </div>
+                    <button class="header__button-menu" aria-label="Открыть меню">Меню</button>
+        
+                    <form class="header__form-search form-search" method="post" name="header__form-search"
+                    aria-label="поиск товара">
+                        <input type="search"
+                               class="form-search__input"
+                               name="form-search__input"
+                               placeholder="Я ищу...">
+                        <button class="form-search__button" type="submit" aria-label="Поиск">
+                            <svg
+                                    class="form-search__button-img"
+                                    width="27"
+                                    height="27"
+                                    viewBox="0 0 27 27"
+                                    fill="white"
+                                    xmlns="http://www.w3.org/2000/svg"
+                            >
+                                <path
+                                        d="M19.25 17H18.065L17.645 16.595C19.115 14.885 20 12.665 20 10.25C20 4.865 15.635 0.5 10.25 0.5C4.865 0.5 0.5 4.865 0.5 10.25C0.5 15.635 4.865 20 10.25 20C12.665 20 14.885 19.115 16.595 17.645L17 18.065V19.25L24.5 26.735L26.735 24.5L19.25 17ZM10.25 17C6.515 17 3.5 13.985 3.5 10.25C3.5 6.515 6.515 3.5 10.25 3.5C13.985 3.5 17 6.515 17 10.25C17 13.985 13.985 17 10.25 17Z"
+                                        fill="white"
+                                />
+                            </svg>
+                        </button>
+                    </form>
+        
+                    <nav class="header__navigation navigation">
+                        <ul class="navigation__list">
+                            <li class="navigation__item">
+                                <a href="#" class="navigation__link" aria-label="Профиль" tabindex="2">
+                                    <svg
+                                            class="navigation__link-img"
+                                            width="24"
+                                            height="24"
+                                            viewBox="0 0 24 24"
+                                            fill="#2D2D2D"
+                                            xmlns="http://www.w3.org/2000/svg"
+                                    >
+                                        <path
+                                                d="M12 12C15.315 12 18 9.315 18 6C18 2.685 15.315 0 12 0C8.685 0 6 2.685 6 6C6 9.315 8.685 12 12 12ZM12 15C7.995 15 0 17.01 0 21V24H24V21C24 17.01 16.005 15 12 15Z"
+                                                fill="#2D2D2D"
+                                        />
+                                    </svg>
+                                    Профиль
+                                </a>
+                            </li>
+                            <li class="navigation__item navigation__item-cart">
+                                <a href="#" class="navigation__link" aria-label="Корзина" tabindex="3">
+                                    <svg
+                                            class="navigation__link-img"
+                                            width="31"
+                                            height="30"
+                                            viewBox="0 0 31 30"
+                                            fill="#2D2D2D"
+                                            xmlns="http://www.w3.org/2000/svg"
+                                    >
+                                        <path
+                                                d="M9.5 24C7.85 24 6.515 25.35 6.515 27C6.515 28.65 7.85 30 9.5 30C11.15 30 12.5 28.65 12.5 27C12.5 25.35 11.15 24 9.5 24ZM0.5 0V3H3.5L8.9 14.385L6.875 18.06C6.635 18.48 6.5 18.975 6.5 19.5C6.5 21.15 7.85 22.5 9.5 22.5H27.5V19.5H10.13C9.92 19.5 9.755 19.335 9.755 19.125L9.8 18.945L11.15 16.5H22.325C23.45 16.5 24.44 15.885 24.95 14.955L30.32 5.22C30.44 5.01 30.5 4.755 30.5 4.5C30.5 3.675 29.825 3 29 3H6.815L5.405 0H0.5ZM24.5 24C22.85 24 21.515 25.35 21.515 27C21.515 28.65 22.85 30 24.5 30C26.15 30 27.5 28.65 27.5 27C27.5 25.35 26.15 24 24.5 24Z"
+                                                fill="#2D2D2D"
+                                        />
+                                    </svg>
+                                    Корзина
+                                </a>
+                                <p class="navigation__cart-count">2</p>
+                            </li>
+                            <li class="navigation__item">
+                                <a href="#" class="navigation__link" aria-label="Избранное" tabindex="4">
+                                    <svg
+                                            class="navigation__link-img"
+                                            width="30"
+                                            height="29"
+                                            viewBox="0 0 30 29"
+                                            fill="#2D2D2D"
+                                            xmlns="http://www.w3.org/2000/svg"
+                                    >
+                                        <path
+                                                d="M15 28.025L12.825 26.045C5.1 19.04 0 14.42 0 8.75C0 4.13 3.63 0.5 8.25 0.5C10.86 0.5 13.365 1.715 15 3.635C16.635 1.715 19.14 0.5 21.75 0.5C26.37 0.5 30 4.13 30 8.75C30 14.42 24.9 19.04 17.175 26.06L15 28.025Z"
+                                                fill="#2D2D2D"
+                                        />
+                                    </svg>
+                                    Избранное
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </header>
+        `);
+    }
+};
+const createMain = (name, $) => {
+    
+    if (name === 'main') {
+        $.app.insertAdjacentHTML('beforeend', `
+            <main class="main">
+                <h1 class="visually-hidden">Сайт онлайн магазина ShopOnline</h1>
+            </main>
+        `);
+        $.main = $.app.querySelector('main');
+        
+    }
+};
+
+const createSection = (name, $) => {
     if (name === 'item') {
-        main.insertAdjacentHTML('beforeend',
+        $.main.insertAdjacentHTML('beforeend',
             `
                 <section class="item" aria-label="Каталог товаров">
                     <h2 class="visually-hidden">товары и скидки</h2>
@@ -79,7 +192,7 @@ const createSection = (name) => {
         return;
     }
     if (name === 'wholesale') {
-        main.insertAdjacentHTML('beforeend',
+        $.main.insertAdjacentHTML('beforeend',
             `
             <section class="wholesale" aria-label="Распродажа">
             <h2 class="visually-hidden">Распродажа</h2>
@@ -90,14 +203,14 @@ const createSection = (name) => {
             </div>
         </section>
             `);
-        createCards();
+        renderCards();
         return;
     }
 };
 
 
-const createFooter = (name) => {
-    window.document.body.insertAdjacentHTML('beforeend',
+const createFooter = (name, $) => {
+    $.app.insertAdjacentHTML('beforeend',
         `
             <footer class="footer">
         <div class="container ">
@@ -130,7 +243,7 @@ const createFooter = (name) => {
                         <li class="footer__elem"><a href="#">Оплата заказа</a></li>
                         <li class="footer__elem"><a href="#">Условия доставки</a></li>
                         <li class="footer__elem"><a href="#">Условия возврата товара</a></li>
-                        <li class="footer__elem"><a href="">Блог</a></li>
+                        <li class="footer__elem"><a href="/blog">Блог</a></li>
                     </ul>
                 </div>
                 <div class="footer__contacts">
@@ -195,28 +308,38 @@ const createFooter = (name) => {
         `);
 };
 
-export const addElements = (elems) => {
-    elems.forEach(({type, name}) => {
-        
-        if (type === types.section) {
-            createSection(name);
+export const renderElements = ($) => {
+    
+    $.elems.forEach(({type, name}) => {
+        if (type === $.types.header) {
+            createHeader(name, $);
             return;
         }
-        if (type === types.footer) {
-            createFooter(name);
+        
+        if (type === $.types.main) {
+            createMain(name, $);
+            return;
+        }
+        
+        if (type === $.types.section) {
+            createSection(name, $);
+            return;
+        }
+        if (type === $.types.footer) {
+            createFooter(name, $);
             return;
         }
     });
 };
 
-export const createCards = async () => {
+export const renderCards = async () => {
     const cards = document.querySelector('.wholesale__cards');
     
-    const response = await fetch('/db.json');
+    const response = await fetch('db.json');
     if (response.ok) {
         const json = await response.json();
         
-        console.log(json);
+        
         json.forEach((card, index) => {
             const count = index + 1;
             cards.insertAdjacentHTML('beforeend',

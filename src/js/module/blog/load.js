@@ -101,11 +101,11 @@ export const loadItemsHandler = ($) => {
             return article;
         });
 
-        while ($.blogList.childElementCount > 0) {
-            $.blogList.childNodes[0].remove();
+        while ($.blog.blogList.childElementCount > 0) {
+            $.blog.blogList.childNodes[0].remove();
         }
-
-        $.blogList.append(...articlesHTML);
+    
+        $.blog.blogList.append(...articlesHTML);
     };
 
     loadArticles(renderArticles);
@@ -114,12 +114,12 @@ export const loadItemsHandler = ($) => {
 const setPage = ($) => {
     getPageFromStorage();
 
-    const nodeListOf = $.pageElems.pageList.querySelectorAll('.pagination__item');
+    const nodeListOf = $.blog.pageElems.pageList.querySelectorAll('.pagination__item');
     [...nodeListOf].forEach(element => {
         element.classList.remove('pagination__item-active');
     });
 
-    $.pageElems.links.forEach(elem => {
+    $.blog.pageElems.links.forEach(elem => {
         if (elem.getAttribute('data-pagenumber') === currentPage) {
             elem.parentElement.classList.add('pagination__item-active');
             return;
@@ -128,7 +128,7 @@ const setPage = ($) => {
 };
 
 const setArrows = ($) => {
-    const arrowNodes = $.blogPagination.querySelectorAll('svg');
+    const arrowNodes = $.blog.blogPagination.querySelectorAll('svg');
     const [leftArrow, rightArrow] = arrowNodes;
 
     if (+currentPage !== 1) {
@@ -149,16 +149,16 @@ const setArrows = ($) => {
 const setArrowLink = ($) => {
     endPage = localStorage.getItem('endPage');
     if (+currentPage > 1) {
-        $.pageElems.leftLink.href = `blog.html?page=${+currentPage - 1}`;
+        $.blog.pageElems.leftLink.href = `blog.html?page=${+currentPage - 1}`;
     }
     if (+currentPage < +endPage) {
-        $.pageElems.rightLink.href = `blog.html?page=${+currentPage + 1}`;
+        $.blog.pageElems.rightLink.href = `blog.html?page=${+currentPage + 1}`;
     }
 };
 
 export const paginationClickHandler = ($) => {
     const pageClick = () => {
-        $.pageElems.pageList.addEventListener('click', (ev) => {
+        $.blog.pageElems.pageList.addEventListener('click', (ev) => {
             ev.preventDefault();
             const target = ev.target;
             console.log(' : ',currentPage, endPage);
@@ -174,8 +174,8 @@ export const paginationClickHandler = ($) => {
     };
 
     const arrowsClick = () => {
-        const leftLink = $.pageElems.leftLink;
-        const rightLink = $.pageElems.rightLink;
+        const leftLink = $.blog.pageElems.leftLink;
+        const rightLink = $.blog.pageElems.rightLink;
 
         leftLink.addEventListener('click', (ev) => {
             ev.preventDefault();

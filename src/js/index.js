@@ -1,28 +1,26 @@
-import {handleTimer} from './module/shopOnline/timer.js';
-import {addElements} from './module/shopOnline/createElement.js';
-import {elemTypes as types} from './module/constants.js';
+import {renderElements} from './module/shopOnline/createElement.js';
+import {$} from '../js/module/constants.js';
+import {blogInit} from "./blog.js";
+import {articleInit} from "./article.js";
+import {handlers} from "./module/shopOnline/handlers.js";
 
 {
+    const constsInit = (selector) => {
+        const app = document.querySelector(selector);
+        $.app = app;
+        $.selector = selector;
+    };
+    const indexInit = ($) => {
+        renderElements($);
+        handlers();
+    };
     const init = (selector) => {
-            const elems = [
-                    {
-                        type: types.section,
-                        name: 'item'
-                    },
-                    {
-                        type: types.section,
-                        name: 'wholesale'
-                    },
-                    {
-                        type: types.footer,
-                        name: 'footer'
-                    },
-                ]
-            ;
-            addElements(elems);
-            handleTimer();
+            constsInit(selector);
+            indexInit($);
+            blogInit($);
+            // articleInit();
         }
     ;
     
-    window.indexInit = init;
+    window.init = init;
 }
