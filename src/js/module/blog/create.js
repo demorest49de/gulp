@@ -1,5 +1,5 @@
 const createPageLink = (pagination) => {
-
+    
     const pages = document.createElement('nav');
     pages.classList.add('pagination__navigation');
     pages.ariaLabel = `pagination`;
@@ -18,7 +18,7 @@ const createPageLink = (pagination) => {
 };
 
 const addPagination = (pagination) => {
-
+    
     pagination.insertAdjacentHTML('afterbegin',
         `
         <a class="pagination__link-left">
@@ -26,7 +26,7 @@ const addPagination = (pagination) => {
         </a>
         `
     );
-
+    
     const pageElems = createPageLink(pagination);
     const leftLink = pagination.querySelector('.pagination__link-left');
     pageElems.leftLink = leftLink;
@@ -37,7 +37,7 @@ const addPagination = (pagination) => {
         </a>
         `
     );
-
+    
     const rightLink = pagination.querySelector('.pagination__link-right');
     pageElems.rightLink = rightLink;
     return pageElems;
@@ -51,6 +51,7 @@ export const createMain = () => {
     main.append(section);
     const h1 = document.createElement('h1');
     h1.classList.add(`blog__title`, `visually-hidden`);
+    h1.textContent = 'блог об всем по-немногу!';
     section.append(h1);
     const container = document.createElement('div');
     container.classList.add('container', 'blog__container');

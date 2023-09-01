@@ -1,8 +1,13 @@
 import {loadItemsHandler, paginationClickHandler, paginationHandler} from "./module/blog/load.js";
 import {renderBlog} from './module/blog/render.js';
 
-const handleBlog = () => {
-
+const handleBlogLink = ($) => {
+    const link = document.querySelector('.footer__elem a[href="/blog"]');
+    link.addEventListener('click', (e) => {
+        e.preventDefault();
+        $.app.querySelector("main").remove();
+        $.app.querySelector('.header').after($.blog.main);
+    });
 };
 
 export const blogInit = ($) => {
@@ -11,5 +16,7 @@ export const blogInit = ($) => {
     paginationClickHandler($);
     paginationHandler($);
     loadItemsHandler($);
+    
+    handleBlogLink($);
 };
     
