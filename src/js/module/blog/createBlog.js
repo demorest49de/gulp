@@ -69,4 +69,5 @@ export const createBlog = (name, $) => {
     paginationClickHandler($);
     paginationHandler($);
     loadItemsHandler($);
+    $.app.querySelector('header').after(main);
 };
