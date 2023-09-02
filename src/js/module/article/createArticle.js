@@ -1,16 +1,18 @@
-const createArticleHeader = () => {
-    const header = document.createElement('header');
-    header.classList.add('ba__header');
-    header.insertAdjacentHTML('beforeend', `
+import {loadItemsHandler} from './handleLoadArticle.js';
+
+export const createBreadCrumbs = () => {
+    const breadCrumbs = document.createElement('div');
+    breadCrumbs.classList.add('ba__header');
+    breadCrumbs.insertAdjacentHTML('beforeend', `
         <div class="ba__container">
             <nav class="ba__navigation">
                 <ul class="ba__bread-crumbs">
-                    <li class="ba__item"><a class="ba__link" href="/main">Главная</a>
+                    <li class="ba__item"><a class="ba__link" href="/src">Главная</a>
                         <svg class="ba__nav-arrow">
                             <use href="./img/article/nav-arrow.svg#nav-arrow"></use>
                         </svg>
                     </li>
-                    <li class="ba__item"><a class="ba__link" href="/main/blog">Блог</a>
+                    <li class="ba__item"><a class="ba__link" href="/src/blog.html">Блог</a>
                         <svg class="ba__nav-arrow">
                             <use href="./img/article/nav-arrow.svg#nav-arrow"></use>
                         </svg>
@@ -21,7 +23,7 @@ const createArticleHeader = () => {
             </nav>
         </div>
     `);
-    return header;
+    return breadCrumbs;
 };
 
 const createArticleMain = () => {
@@ -100,11 +102,11 @@ const createArticleMain = () => {
 
 export const createMarkup = (selectorApp) => {
     const app = document.querySelector('#app');
-    const header = createArticleHeader();
+    const breadCrumbs = createBreadCrumbs();
     const main = createArticleMain();
-
-    app.append(header, main);
-    const breadCrumbsTitle = header.querySelector('.ba__item:nth-child(3)');
+    
+    app.append(breadCrumbs, main);
+    const breadCrumbsTitle = breadCrumbs.querySelector('.ba__item:nth-child(3)');
     const title = main.querySelector('.ba__title');
     const text = main.querySelector('.ba__text');
     const author = main.querySelector('.ba__author');
@@ -119,4 +121,9 @@ export const createMarkup = (selectorApp) => {
         articleTime
     };
     return vars;
+};
+
+export const createArticle = (name, $) => {
+    const vars = createMarkup();
+    loadItemsHandler(vars);
 };

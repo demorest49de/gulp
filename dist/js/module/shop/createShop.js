@@ -1,6 +1,7 @@
 import {renderBlog} from "../blog/renderBlog.js";
 import {createHeader, createFooter} from '../base/baseElems.js';
 import {handlers} from "./handlers.js";
+import {renderArticle} from '../article/renderArticle.js'
 
 const createMain = (name, $) => {
     
@@ -138,6 +139,9 @@ export const renderElement = ($, page) => {
     if (page === 'shop') {
         renderShop($);
         handlers();
+        setTimeout(() => {
+            window.scrollTo({top: (document.documentElement.scrollHeight), behavior: 'smooth'});
+        }, 1000);
     }
     
     if (page === 'blog') {
@@ -145,9 +149,9 @@ export const renderElement = ($, page) => {
         return;
     }
     
-    // if (page === 'article') {
-    //     renderArticle($);
-    // }
+    if (page === 'article') {
+        renderArticle($);
+    }
 };
 
 export const renderCards = async () => {

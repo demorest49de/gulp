@@ -135,7 +135,7 @@ export const createFooter = (name, $) => {
                         <li class="footer__elem"><a href="#">Оплата заказа</a></li>
                         <li class="footer__elem"><a href="#">Условия доставки</a></li>
                         <li class="footer__elem"><a href="#">Условия возврата товара</a></li>
-                        <li class="footer__elem"><a href="/blog.html">Блог</a></li>
+                        <li class="footer__elem"><a href="/src/blog.html">Блог</a></li>
                     </ul>
                 </div>
                 <div class="footer__contacts">

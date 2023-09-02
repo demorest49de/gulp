@@ -45,6 +45,4 @@ export const loadItemsHandler = ($) => {
     id.then(id => {
         getUser(id, updateUser);
     });
-
-
 };

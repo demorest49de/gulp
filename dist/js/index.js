@@ -12,10 +12,6 @@ import {handlers} from "./module/shop/handlers.js";
     const init = (selector, page) => {
         constsInit(selector);
         renderElement($, page);
-        
-        setTimeout(() => {
-            window.scrollTo({top: (document.documentElement.scrollHeight), behavior: 'smooth'});
-        }, 1000);
     };
     
     window.init = init;

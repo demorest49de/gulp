@@ -1,4 +1,5 @@
 import {loadItemsHandler, paginationClickHandler, paginationHandler} from "./handleLoadBlog.js";
+import {createBreadCrumbs} from '../article/createArticle.js';
 
 const createPageLink = (pagination) => {
     
@@ -50,6 +51,8 @@ export const createBlog = (name, $) => {
     const section = document.createElement('section');
     section.classList.add(name);
     section.ariaLabel = `блог`;
+    const breadCrumbs = createBreadCrumbs();
+    main.append(breadCrumbs);
     main.append(section);
     const h1 = document.createElement('h1');
     h1.classList.add(`blog__title`, `visually-hidden`);
