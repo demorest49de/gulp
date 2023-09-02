@@ -51,7 +51,7 @@ export const createBlog = (name, $) => {
     const section = document.createElement('section');
     section.classList.add(name);
     section.ariaLabel = `блог`;
-    const breadCrumbs = createBreadCrumbs();
+    const breadCrumbs = createBreadCrumbs($.breadCrumbs.blogInfo);
     main.append(breadCrumbs);
     main.append(section);
     const h1 = document.createElement('h1');

@@ -1,33 +1,37 @@
 import {loadItemsHandler} from './handleLoadArticle.js';
 
-export const createBreadCrumbs = ($) => {
+export const createBreadCrumbs = (bc) => {
     const breadCrumbs = document.createElement('div');
     breadCrumbs.classList.add('breadcrumbs', 'bc');
+    
     breadCrumbs.insertAdjacentHTML('beforeend', `
         <div class="bc__container">
             <nav class="bc__navigation">
                 <ul class="bc__bread-crumbs">
-                    <li class="bc__item"><a class="bc__link" href="/src">Главная</a>
-                        <svg class="bc__nav-arrow">
-                            <use href="./img/article/nav-arrow.svg#nav-arrow"></use>
-                        </svg>
-                    </li>
-                    <li class="bc__item"><a class="bc__link" href="/src/blog.html">Блог</a>
-                        <svg class="bc__nav-arrow">
-                            <use href="./img/article/nav-arrow.svg#nav-arrow"></use>
-                        </svg>
-                    </li>
-                    <li class="bc__item">здесь название статьи
-                    </li>
                 </ul>
             </nav>
         </div>
     `);
+    const ul = breadCrumbs.querySelector('.bc__bread-crumbs');
+    
+    for (const {url, name} of bc) {
+        ul.insertAdjacentHTML('beforeend',
+            `
+            <li class="bc__item"><a class="bc__link" href="${url}">${name}</a>
+                <svg class="bc__nav-arrow">
+                    <use href="./img/article/nav-arrow.svg#nav-arrow"></use>
+                </svg>
+            </li>
+        `);
+    }
+    
     return breadCrumbs;
 };
 
-const createArticleMain = () => {
+const createArticleMain = (breadCrumbs) => {
     const main = document.createElement('main');
+    main.className = 'main';
+    main.append(breadCrumbs);
     main.insertAdjacentHTML('beforeend', `
         <section class="bc__section">
             <div class="bc__container">
@@ -102,10 +106,9 @@ const createArticleMain = () => {
 
 export const createMarkup = ($) => {
     const app = document.querySelector($.selector);
-    const breadCrumbs = createBreadCrumbs($);
-    const main = createArticleMain();
-    
-    app.append(breadCrumbs, main);
+    const breadCrumbs = createBreadCrumbs($.breadCrumbs.articleInfo);
+    const main = createArticleMain(breadCrumbs);
+    app.append(main);
     const breadCrumbsTitle = breadCrumbs.querySelector('.bc__item:nth-child(3)');
     const title = main.querySelector('.bc__title');
     const text = main.querySelector('.bc__text');

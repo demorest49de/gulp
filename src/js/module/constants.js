@@ -63,9 +63,58 @@ const article = [
     ]
 ;
 
+// const breadCrumbs = {
+//     blogInfo: [
+//         {
+//             url: '/src',
+//             name: 'Главная'
+//         },
+//         {
+//             url: '/src/blog.html',
+//             name: 'Блог'
+//         },
+//     ],
+//     articleInfo: [
+//         {
+//             url: '/src',
+//             name: 'Главная'
+//         },
+//         {
+//             url: '/src/blog.html',
+//             name: 'Блог'
+//         },
+//         {
+//             url: '/src/article.html',
+//             name: 'имя статьи',
+//         },
+//     ],
+// };
+
 const breadCrumbs = {
-    blog: [1, 2],
-    article: [1, 2, 3]
+    blogInfo: [
+        {
+            url: '/',
+            name: 'Главная'
+        },
+        {
+            url: '/blog.html',
+            name: 'Блог'
+        },
+    ],
+    articleInfo: [
+        {
+            url: '/',
+            name: 'Главная'
+        },
+        {
+            url: '/blog.html',
+            name: 'Блог'
+        },
+        {
+            url: '/article.html',
+            name: 'имя статьи',
+        },
+    ],
 };
 
 
