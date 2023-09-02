@@ -11,7 +11,7 @@ export const renderArticle = ($) => {
         }
         
         if (type === $.types.blog) {
-            createArticle(name, $);
+            createArticle($);
             return;
         }
         

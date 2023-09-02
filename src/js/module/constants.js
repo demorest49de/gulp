@@ -63,33 +63,6 @@ const article = [
     ]
 ;
 
-// const breadCrumbs = {
-//     blogInfo: [
-//         {
-//             url: '/src',
-//             name: 'Главная'
-//         },
-//         {
-//             url: '/src/blog.html',
-//             name: 'Блог'
-//         },
-//     ],
-//     articleInfo: [
-//         {
-//             url: '/src',
-//             name: 'Главная'
-//         },
-//         {
-//             url: '/src/blog.html',
-//             name: 'Блог'
-//         },
-//         {
-//             url: '/src/article.html',
-//             name: 'имя статьи',
-//         },
-//     ],
-// };
-
 const breadCrumbs = {
     blogInfo: [
         {
@@ -116,6 +89,5 @@ const breadCrumbs = {
         },
     ],
 };
-
 
 export const $ = {shop, blog, article, types, breadCrumbs};

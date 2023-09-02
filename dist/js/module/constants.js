@@ -63,5 +63,31 @@ const article = [
     ]
 ;
 
+const breadCrumbs = {
+    blogInfo: [
+        {
+            url: '/',
+            name: 'Главная'
+        },
+        {
+            url: '/blog.html',
+            name: 'Блог'
+        },
+    ],
+    articleInfo: [
+        {
+            url: '/',
+            name: 'Главная'
+        },
+        {
+            url: '/blog.html',
+            name: 'Блог'
+        },
+        {
+            url: '/article.html',
+            name: 'имя статьи',
+        },
+    ],
+};
 
-export const $ = {shop, blog, article, types};
+export const $ = {shop, blog, article, types, breadCrumbs};
