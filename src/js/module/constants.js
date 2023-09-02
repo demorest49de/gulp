@@ -63,5 +63,10 @@ const article = [
     ]
 ;
 
+const breadCrumbs = {
+    blog: [1, 2],
+    article: [1, 2, 3]
+};
 
-export const $ = {shop, blog, article, types};
+
+export const $ = {shop, blog, article, types, breadCrumbs};
