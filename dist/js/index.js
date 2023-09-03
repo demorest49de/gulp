@@ -1,6 +1,5 @@
 import {renderElement} from './module/shop/createShop.js';
 import {$} from '../js/module/constants.js';
-import {handlers} from "./module/shop/handlers.js";
 
 {
     const constsInit = (selector) => {
