@@ -17,7 +17,6 @@ const createMain = (name, $) => {
 
 const createSection = async (name, $) => {
     if (name === 'item') {
-        const promiseArray = [];
         $.main.insertAdjacentHTML('beforeend',
             `
                 <section class="item" aria-label="Каталог товаров">
@@ -91,16 +90,7 @@ const createSection = async (name, $) => {
                     </div>
                 </section>
             `);
-        const images = $.main.querySelectorAll('img');
-        images.forEach(img => {
-            promiseArray.push(new Promise((resolve) => {
-                img.addEventListener('load', () => {
-                    resolve();
-                });
-            }));
-        });
         
-        await Promise.all(promiseArray);
         return;
     }
     
