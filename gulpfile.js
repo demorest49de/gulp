@@ -1,9 +1,13 @@
 import gulp from 'gulp';
 import browserSync from 'browser-sync';
+import sassPkg from 'sass';
+import gulpSass from 'gulp-sass';
 import cssImport from 'gulp-cssimport';
 import {deleteAsync} from 'del';
 
 // tasks
+
+const sass = gulpSass(sassPkg);
 
 export const html = () => gulp
     .src('src/*.html')
@@ -16,6 +20,13 @@ export const css = () => gulp
     }))
     .pipe(gulp.dest('dist/css'))
     .pipe(browserSync.stream());
+
+export const style = () => gulp
+    .src('src/scss/**/*.scss')
+    .pipe(sass().on('error', sass.logError))
+    .pipe(gulp.dest('dist/css'))
+    .pipe(browserSync.stream());
+;
 
 export const js = () => gulp
     .src('src/js/**/*.js')
@@ -51,6 +62,7 @@ export const server = () => {
     
     gulp.watch('./src/**/*.html', html);
     gulp.watch('./src/css/**/*.css', css);
+    gulp.watch('./src/scss/**/*.scss', style);
     gulp.watch('./src/js/**/*.js', js);
     gulp.watch([
         './src/img/**/*',
@@ -62,7 +74,7 @@ export const clear = () => deleteAsync('dist/**/*', {force: true,});
 
 // launch
 
-export const base = gulp.parallel(html, css, js, json, copy);
+export const base = gulp.parallel(html, style, js, json, copy);
 
 export const build = gulp.series(clear, base);
 

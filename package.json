@@ -1,7 +1,7 @@
 {
-  "name": "gulp",
+  "name": "gulp-with-scss",
   "version": "1.0.0",
-  "description": "start gulp",
+  "description": "gulp, scss",
   "main": "index.js",
   "type": "module",
   "scripts": {
@@ -13,6 +13,8 @@
     "browser-sync": "^2.29.3",
     "del": "^7.1.0",
     "gulp": "^4.0.2",
-    "gulp-cssimport": "^7.0.0"
+    "gulp-cssimport": "^7.0.0",
+    "gulp-sass": "^5.1.0",
+    "sass": "^1.66.1"
   }
 }
