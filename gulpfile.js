@@ -5,28 +5,33 @@ import gulpSass from 'gulp-sass';
 import cssImport from 'gulp-cssimport';
 import {deleteAsync} from 'del';
 
-// tasks
+const prepros = true;
 
 const sass = gulpSass(sassPkg);
+
+// tasks
 
 export const html = () => gulp
     .src('src/*.html')
     .pipe(gulp.dest('dist'));
 
-export const css = () => gulp
-    .src('src/css/**/*.css')
-    .pipe(cssImport({
-        extensions: ['css'],
-    }))
-    .pipe(gulp.dest('dist/css'))
-    .pipe(browserSync.stream());
-
-export const style = () => gulp
-    .src('src/scss/**/*.scss')
-    .pipe(sass().on('error', sass.logError))
-    .pipe(gulp.dest('dist/css'))
-    .pipe(browserSync.stream());
-;
+export const style = () => {
+    if (prepros) {
+        return gulp
+            .src('src/scss/**/*.scss')
+            .pipe(sass().on('error', sass.logError))
+            .pipe(gulp.dest('dist/css'))
+            .pipe(browserSync.stream());
+    }
+    
+    return gulp
+        .src('src/css/**/*.css')
+        .pipe(cssImport({
+            extensions: ['css'],
+        }))
+        .pipe(gulp.dest('dist/css'))
+        .pipe(browserSync.stream());
+};
 
 export const js = () => gulp
     .src('src/js/**/*.js')
@@ -61,8 +66,7 @@ export const server = () => {
     });
     
     gulp.watch('./src/**/*.html', html);
-    gulp.watch('./src/css/**/*.css', css);
-    gulp.watch('./src/scss/**/*.scss', style);
+    gulp.watch(prepros ? './src/scss/**/*.scss' : './src/css/**/*.css', style);
     gulp.watch('./src/js/**/*.js', js);
     gulp.watch([
         './src/img/**/*',
