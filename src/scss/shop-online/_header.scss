@@ -174,7 +174,7 @@
     border-radius: 30px;
     background-color: $grey-color;
     color: $lightgrey-color;
-    padding-left: 40px;
+    text-indent: 40px;
     @media (max-width: 768px) {
       font-size: 12px;
       line-height: 15.6px;
@@ -190,6 +190,7 @@
   &__button {
     position: absolute;
     right: 0;
+    top: 0;
     width: 101px;
     height: 100%;
     border: none;
