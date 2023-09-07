@@ -33,8 +33,13 @@
       column-gap: 29px;
     }
     @media (max-width: 764px) {
-    }
-    @media (max-width: 320px) {
+      grid-template-areas:
+      "shop"
+      "catalog"
+      "buyer"
+      "contacts";
+      row-gap: 30px;
+      grid-auto-columns: 210px;
     }
 
     &:nth-child(2) {
@@ -57,6 +62,11 @@
         column-gap: 29px;
       }
       @media (max-width: 764px) {
+        grid-template-areas:
+        "copyright author";
+        column-gap: 60px;
+        justify-content: space-between;
+        grid-auto-columns: 107px;
       }
     }
   }
@@ -69,6 +79,10 @@
     min-width: 190px;
     padding-top: 7px;
     grid-area: shop;
+    @media (max-width: 764px) {
+      min-width: unset;
+      max-width: 127px;
+    }
   }
 
   &__catalog {
@@ -100,6 +114,9 @@
       font-size: 26px;
       margin-bottom: 20px;
     }
+    @media (max-width: 764px) {
+      font-size: 20px;
+    }
   }
 
   &__list {
@@ -121,8 +138,17 @@
       font-size: 16px;
       min-width: unset;
     }
+    @media (max-width: 764px) {
+      font-size: 12px;
+      font-weight: 400;
+      line-height: 120%;
+    }
+
     &:not(:nth-last-child(1)) {
       padding-bottom: 15px;
+      @media (max-width: 764px) {
+        padding-bottom: 8px;
+      }
     }
   }
 
@@ -134,11 +160,15 @@
     font-size: 16px;
     font-weight: 700;
     line-height: 130%;
+    @media (max-width: 764px) {
+      font-size: 10px;
+    }
   }
 
   &__list-social {
     display: flex;
     gap: 20px;
+    width: fit-content;
   }
 
   &__author-info {
@@ -157,6 +187,9 @@
     font-weight: 700;
     line-height: 130%;
     max-width: fit-content;
+    @media (max-width: 764px) {
+      font-size: 10px;
+    }
   }
 
   &__copyright {
