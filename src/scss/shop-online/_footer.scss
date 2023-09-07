@@ -1,7 +1,16 @@
 .footer {
-  padding: 80px 0;
+  padding: 80px 0 81px 0;
   сolor: $white-color;
   background-color: #2D2D2D;
+  @media (max-width: 1024px) {
+    padding: 60px 0 44px 0;
+  }
+  @media (max-width: 768px) {
+    padding: 40px 0 37px 0;
+  }
+  @media (max-width: 320px) {
+    padding: 30px 0 20px 0;
+  }
 
   &__block {
     display: flex;
@@ -9,6 +18,37 @@
     justify-content: space-between;
     align-items: start;
     gap: 60px;
+    @media (max-width: 1840px) {
+      display: grid;
+      row-gap: 60px;
+      column-gap: 49px;
+      grid-auto-columns: 275px;
+      justify-content: start;
+      grid-template-areas:
+      "shop . ."
+      "catalog buyer contacts";
+    }
+    @media (max-width: 768px) {
+    }
+    @media (max-width: 320px) {
+    }
+
+    &:nth-child(2) {
+      display: grid;
+      row-gap: 0;
+      column-gap: 60px;
+      grid-auto-columns: max-content minmax(195px, 480px);
+      justify-content: space-between;
+      grid-template-areas:
+      "copyright author";
+      @media (max-width: 1840px) {
+        grid-auto-columns: 275px;
+        column-gap: 49px;
+        justify-content: start;
+        grid-template-areas:
+        "copyright copyright author";
+      }
+    }
   }
 
   &__container {
@@ -18,14 +58,27 @@
   &__logo-block {
     min-width: 190px;
     padding-top: 7px;
+    grid-area: shop;
   }
 
   &__catalog {
     min-width: 510px;
+    grid-area: catalog;
+    @media (max-width: 1840px) {
+      min-width: unset;
+    }
   }
 
   &__contacts {
     min-width: 480px;
+    grid-area: contacts;
+    @media (max-width: 1840px) {
+      min-width: unset;
+    }
+  }
+
+  &__buyers-info {
+    grid-area: buyer;
   }
 
   &__subtitle {
@@ -40,6 +93,9 @@
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
+    @media (max-width: 1840px) {
+      max-height: unset;
+    }
   }
 
   &__elem {
@@ -53,11 +109,9 @@
     }
   }
 
-
   &__contacts &__list {
     margin-bottom: 36px;
   }
-
 
   &__contacts &__elem {
     font-size: 16px;
@@ -74,7 +128,6 @@
     display: flex;
     justify-content: start;
     flex-direction: column;
-    min-width: 475px;
   }
 
   &__block:nth-child(1) {
@@ -86,5 +139,13 @@
     font-size: 16px;
     font-weight: 700;
     line-height: 130%;
+  }
+
+  &__copyright {
+    grid-area: copyright;
+  }
+
+  &__author-info {
+    grid-area: author;
   }
 }
