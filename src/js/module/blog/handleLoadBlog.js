@@ -65,7 +65,6 @@ export const loadItemsHandler = ($) => {
             const article = document.createElement('article');
             article.classList.add('blog__article', 'article');
             article.innerHTML = `
-             <article class="blog__article article">
                 <a class="article__link" href="article.html?id=${item.id}">
                     <figure class="article__image">
                         <img src="./img/blog/${index}.png" alt="${item.title}">
@@ -95,7 +94,6 @@ export const loadItemsHandler = ($) => {
                         </div>
                     </div>
                 </a>
-             </article>
         `;
 
             return article;
