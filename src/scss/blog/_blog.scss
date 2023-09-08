@@ -87,7 +87,8 @@
 
   &__link {
     display: grid;
-    grid-auto-flow: column;
+    grid-template-columns: max-content 1fr;
+    //grid-auto-flow: column;
     color: #8F8F8F;
     column-gap: 30px;
     @media (max-width: 1024px) {
