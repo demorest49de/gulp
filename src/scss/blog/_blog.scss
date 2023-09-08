@@ -18,7 +18,7 @@
   }
 
   &__container {
-    padding: 0 200px;
+    padding: 0 190px;
     @media (max-width: 1131px) {
       padding: 0 120px;
     }
@@ -40,11 +40,11 @@
     column-gap: 143px;
     row-gap: 50px;
     margin-bottom: 100px;
-
     grid-auto-flow: column;
     @media (max-width: 1756px) {
-      grid-template-rows: repeat(12, 195px);
+      grid-template-rows: repeat(6, 140px);
       justify-content: center;
+      column-gap: 81px;
     }
     @media (max-width: 768px) {
       grid-template-rows: repeat(12, 100px);
@@ -69,6 +69,10 @@
   &__image {
     width: 195px;
     height: 195px;
+    @media (max-width: 1756px) {
+      width:  140px;
+      height: 140px;
+    }
     @media (max-width: 768px) {
       width: 100px;
       height: 100px;
@@ -85,8 +89,11 @@
     grid-template-columns: minmax(150px, 420px);
     grid-template-rows: min-content;
     margin-left: 30px;
-    @media (max-width: 460px) {
+    @media (max-width: 1756px) {
       margin-left: 10px;
+    }
+    @media (max-width: 460px) {
+
     }
     @media (max-width: 410px) {
       min-width: 190px;
@@ -102,6 +109,10 @@
     max-height: 125px;
     overflow: hidden;
     margin-bottom: 13px;
+    @media (max-width: 1756px) {
+      font-size: 18px;
+      margin-bottom: 0;
+    }
     @media (max-width: 768px) {
       font-size: 12px;
       max-width: 280px;
@@ -121,6 +132,11 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    @media (max-width: 1756px) {
+      align-items: start;
+      justify-content: end;
+      row-gap: 5px;
+    }
   }
 
   &__views-comments {
@@ -150,6 +166,9 @@
     font-weight: 700;
     font-size: 16px;
     line-height: 130%;
+    @media (max-width: 1756px) {
+      font-size: 10px;
+    }
     @media (max-width: 768px) {
       font-size: 12px;
     }
