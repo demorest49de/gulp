@@ -71,7 +71,9 @@ export const loadItemsHandler = ($) => {
                     </figure>
                     <div class="article__block">
                         <h2 class="article__subtitle">
-                            ${item.title}
+                            <span class="article__text">
+                                ${item.title}
+                            </span>
                         </h2>
                         <div class="article__subblock">
                             <div class="article__datetime">

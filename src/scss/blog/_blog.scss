@@ -1,19 +1,15 @@
 .blog {
   padding-bottom: 150px;
   @media (max-width: 1131px) {
-    padding-top: 72px;
     padding-bottom: 47px;
   }
   @media (max-width: 886px) {
-    padding-top: 35px;
     padding-bottom: 25px;
   }
   @media (max-width: 768px) {
-    padding-top: 35px;
     padding-bottom: 25px;
   }
   @media (max-width: 460px) {
-    padding-top: 10px;
     padding-bottom: 10px;
   }
 
@@ -50,6 +46,8 @@
       grid-template-columns: repeat(auto-fill, minmax(220px, 400px));
       grid-template-rows: repeat(6, 90px);
       justify-content: start;
+      row-gap: 30px;
+      column-gap: 75px;
     }
     @media (max-width: 768px) {
     }
@@ -103,28 +101,22 @@
     display: grid;
     grid-template-columns: minmax(150px, 420px);
     grid-template-rows: min-content;
-    //@media (max-width: 410px) {
-    //  min-width: 190px;
-    //}
   }
 
   &__subtitle {
-    max-width: 420px;
+    font-size: 38px;
     font-weight: 700;
-    font-size: 32px;
     line-height: 130%;
     color: #2D2D2D;
-    max-height: 125px;
+    //max-height: 125px;
+    height: 100%;
     overflow: hidden;
-    margin-bottom: 13px;
     @media (max-width: 1756px) {
       font-size: 18px;
-      margin-bottom: 0;
     }
     @media (max-width: 768px) {
       font-size: 12px;
       max-width: 280px;
-      margin-bottom: 7px;
     }
     @media (max-width: 460px) {
       font-size: 12px;
@@ -136,17 +128,14 @@
   }
 
   &__subblock {
+    display: none;
     height: 100%;
-    display: flex;
     flex-direction: column;
     justify-content: space-between;
     @media (max-width: 1756px) {
       align-items: start;
       justify-content: end;
       row-gap: 5px;
-    }
-    @media (max-width: 1290px) {
-      display: none;
     }
   }
 
