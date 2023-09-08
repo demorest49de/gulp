@@ -124,13 +124,6 @@
     height: 100%
   }
 
-  &__block {
-    display: grid;
-    grid-template-columns: minmax(150px, 420px);
-    grid-template-rows: min-content;
-
-  }
-
   &__subtitle {
     font-size: 38px;
     font-weight: 700;
