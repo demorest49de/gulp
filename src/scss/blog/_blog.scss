@@ -54,9 +54,10 @@
       grid-template-rows: repeat(12, 140px);
       margin-bottom: 55px;;
     }
-    @media (max-width: 410px) {
+    @media (max-width: 657px) {
       row-gap: 15px;
-      grid-template-rows: repeat(6, 60px);
+      grid-template-rows: repeat(12, 90px);
+      grid-template-columns: repeat(auto-fill, minmax(180px, 320px));
     }
   }
 }
@@ -90,6 +91,10 @@
     @media (max-width: 1756px) {
       width:  140px;
       height: 140px;
+    }
+    @media (max-width: 657px) {
+      width:  90px;
+      height: 90px;
     }
   }
 
