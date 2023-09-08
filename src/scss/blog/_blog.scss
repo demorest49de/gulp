@@ -31,7 +31,8 @@
 
   &__list {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(320px, 645px));
+    //grid-template-columns: repeat(auto-fill, minmax(320px, 645px));
+    grid-template-columns: minmax(320px, 645px);
     grid-template-rows: repeat(6, 195px);
     column-gap: 143px;
     row-gap: 50px;
@@ -43,7 +44,7 @@
       column-gap: 81px;
     }
     @media (max-width: 1024px) {
-      grid-template-columns: repeat(auto-fill, minmax(220px, 400px));
+      grid-template-columns: minmax(220px, 400px);
       justify-content: start;
       row-gap: 30px;
       column-gap: 75px;
@@ -52,29 +53,30 @@
     @media (max-width: 980px) {
       grid-template-columns: max-content;
       grid-template-rows: repeat(12, 140px);
-      margin-bottom: 55px;;
+      margin-bottom: 55px;
     }
     @media (max-width: 657px) {
       row-gap: 15px;
       grid-template-rows: repeat(12, 90px);
-      grid-template-columns: repeat(auto-fill, minmax(180px, 320px));
+      grid-template-columns: minmax(180px, 320px);
     }
     @media (max-width: 360px) {
       row-gap: 15px;
       grid-template-rows: repeat(12, 60px);
-      grid-template-columns: repeat(auto-fill, minmax(130px, 220px));
+      grid-template-columns: minmax(130px, 250px);
     }
   }
 }
 
 .article {
-  &__subtitle{
+  &__subtitle {
     padding-top: 20px;
     @media (max-width: 360px) {
       padding-top: 0;
     }
   }
-  &__text{
+
+  &__text {
     overflow: hidden;
     display: -webkit-box;
     -webkit-line-clamp: 3;
@@ -83,6 +85,7 @@
       -webkit-line-clamp: 2;
     }
   }
+
   &__link {
     display: grid;
     grid-auto-flow: column;
@@ -103,15 +106,15 @@
     width: 195px;
     height: 195px;
     @media (max-width: 1756px) {
-      width:  140px;
+      width: 140px;
       height: 140px;
     }
     @media (max-width: 657px) {
-      width:  90px;
+      width: 90px;
       height: 90px;
     }
     @media (max-width: 360px) {
-      width:  60px;
+      width: 60px;
       height: 60px;
     }
   }
@@ -125,6 +128,7 @@
     display: grid;
     grid-template-columns: minmax(150px, 420px);
     grid-template-rows: min-content;
+
   }
 
   &__subtitle {
