@@ -79,6 +79,9 @@
     display: -webkit-box;
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
+    @media (max-width: 360px) {
+      -webkit-line-clamp: 2;
+    }
   }
   &__link {
     display: grid;
