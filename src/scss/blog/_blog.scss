@@ -22,8 +22,8 @@
     @media (max-width: 1131px) {
       padding: 0 120px;
     }
-    @media (max-width: 886px) {
-      padding: 0 60px;
+    @media (max-width: 1024px) {
+      padding: 0 42px;
     }
     @media (max-width: 768px) {
       padding: 0 30px;
@@ -46,8 +46,11 @@
       justify-content: center;
       column-gap: 81px;
     }
+    @media (max-width: 1024px) {
+      grid-template-rows: repeat(12, 90px);
+      justify-content: start;
+    }
     @media (max-width: 768px) {
-      grid-template-rows: repeat(12, 100px);
     }
     @media (max-width: 410px) {
       grid-template-columns: repeat(auto-fill, minmax(280px, 645px));
@@ -72,6 +75,10 @@
     @media (max-width: 1756px) {
       width:  140px;
       height: 140px;
+    }
+    @media (max-width: 1024px) {
+      width:  90px;
+      height: 90px;
     }
     @media (max-width: 768px) {
       width: 100px;
