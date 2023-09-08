@@ -59,6 +59,12 @@
 }
 
 .article {
+  &__text{
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+  }
   &__link {
     display: grid;
     grid-auto-flow: column;
