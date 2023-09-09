@@ -4,7 +4,6 @@ import sassPkg from 'sass';
 import gulpSass from 'gulp-sass';
 import cssImport from 'gulp-cssimport';
 import {deleteAsync} from 'del';
-import deploy from 'gulp-gh-pages';
 
 const prepros = true;
 
@@ -73,14 +72,6 @@ export const server = () => {
         './src/img/**/*',
         './src/font/**/*'
     ], copy);
-    
-    gulp.task('deploy', function () {
-        return gulp.src('./**/*')
-            .pipe(deploy({
-                remoteUrl: "https://github.com/demorest49de/demorest49de.github.io.git",
-                branch: 'master'
-            }));
-    });
 };
 
 export const clear = () => deleteAsync('dist/**/*', {force: true,});
