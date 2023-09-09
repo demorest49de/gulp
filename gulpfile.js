@@ -73,14 +73,6 @@ export const server = () => {
         './src/img/**/*',
         './src/font/**/*'
     ], copy);
-    
-    gulp.task('deploy', function () {
-        return gulp.src('./dist/**/*')
-            .pipe(deploy({
-                remoteUrl: "https://github.com/demorest49de/demorest49de.github.io.git",
-                branch: 'master'
-            }));
-    });
 };
 
 export const clear = () => deleteAsync('dist/**/*', {force: true,});
