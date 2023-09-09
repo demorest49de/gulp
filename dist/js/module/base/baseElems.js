@@ -105,7 +105,7 @@ export const createFooter = (name, $) => {
     $.app.insertAdjacentHTML('beforeend',
         `
             <footer class="footer">
-        <div class="container ">
+        <div class="container footer__container">
             <div class="footer__block">
                 <div class="footer__logo-block">
                     <img

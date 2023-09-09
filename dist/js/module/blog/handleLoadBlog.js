@@ -65,14 +65,15 @@ export const loadItemsHandler = ($) => {
             const article = document.createElement('article');
             article.classList.add('blog__article', 'article');
             article.innerHTML = `
-             <article class="blog__article article">
                 <a class="article__link" href="article.html?id=${item.id}">
                     <figure class="article__image">
                         <img src="./img/blog/${index}.png" alt="${item.title}">
                     </figure>
                     <div class="article__block">
                         <h2 class="article__subtitle">
-                            ${item.title}
+                            <span class="article__text">
+                                ${item.title}
+                            </span>
                         </h2>
                         <div class="article__subblock">
                             <div class="article__datetime">
@@ -95,7 +96,6 @@ export const loadItemsHandler = ($) => {
                         </div>
                     </div>
                 </a>
-             </article>
         `;
 
             return article;
