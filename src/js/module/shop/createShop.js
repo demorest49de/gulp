@@ -2,6 +2,7 @@ import {renderBlog} from "../blog/renderBlog.js";
 import {createHeader, createFooter} from '../base/baseElems.js';
 import {handlers} from "./handlers.js";
 import {renderArticle} from '../article/renderArticle.js'
+import {setCustomPaddings} from "../base/customPaddings.js";
 
 const createMain = (name, $) => {
     
@@ -118,38 +119,39 @@ const renderShop = ($) => {
             return;
         }
         
-        // if (type === $.types.main) {
-        //     createMain(name, $);
-        //     return;
-        // }
-        //
-        // if (type === $.types.section) {
-        //     createSection(name, $);
-        //     return;
-        // }
-        // if (type === $.types.footer) {
-        //     createFooter(name, $);
-        //     return;
-        // }
+        if (type === $.types.main) {
+            createMain(name, $);
+            return;
+        }
+
+        if (type === $.types.section) {
+            createSection(name, $);
+            return;
+        }
+        
+        if (type === $.types.footer) {
+            createFooter(name, $);
+            return;
+        }
     });
 };
 
-export const renderElement = ($, page) => {
+export const renderElement = ($) => {
     
-    if (page === 'shop') {
+    if ($.page === 'shop') {
         renderShop($);
-        handlers();
+        handlers($);
         // setTimeout(() => {
         //     window.scrollTo({top: (document.documentElement.scrollHeight), behavior: 'smooth'});
         // }, 1000);
     }
     
-    if (page === 'blog') {
+    if ($.page === 'blog') {
         renderBlog($);
         return;
     }
     
-    if (page === 'article') {
+    if ($.page === 'article') {
         renderArticle($);
     }
 };

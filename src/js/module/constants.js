@@ -1,4 +1,4 @@
-const types = {
+export const types = {
     footer: 'footer',
     section: 'section',
     header: 'header',

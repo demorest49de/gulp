@@ -1,10 +1,10 @@
 .header {
-  padding-top: 34px;
-  padding-bottom: 30px;
+  padding-top: 27px;
+  padding-bottom: 45px;
 
   @media (max-width: 1340px) {
-    padding-top: 35px;
-    padding-bottom: 25px;
+    padding-top: 34px;
+    padding-bottom: 30px;
   }
   @media (max-width: 768px) {
     padding-top: 25px;
@@ -12,7 +12,7 @@
   }
   @media (max-width: 520px) {
     padding-top: 20px;
-    padding-bottom: 21px;
+    padding-bottom: 20px;
   }
 
   &__container {
