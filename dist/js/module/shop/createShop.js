@@ -118,19 +118,19 @@ const renderShop = ($) => {
             return;
         }
         
-        if (type === $.types.main) {
-            createMain(name, $);
-            return;
-        }
-        
-        if (type === $.types.section) {
-            createSection(name, $);
-            return;
-        }
-        if (type === $.types.footer) {
-            createFooter(name, $);
-            return;
-        }
+        // if (type === $.types.main) {
+        //     createMain(name, $);
+        //     return;
+        // }
+        //
+        // if (type === $.types.section) {
+        //     createSection(name, $);
+        //     return;
+        // }
+        // if (type === $.types.footer) {
+        //     createFooter(name, $);
+        //     return;
+        // }
     });
 };
 
