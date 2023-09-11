@@ -28,7 +28,7 @@ const createSection = (name, $) => {
                         <a href="#" class="item__gallery item__gallery-notebook" aria-label="Распродажа ноутбуков">
                             <p class="item__text-notebook">
                                 -50% на все ноутбуки</p>
-                            <div class="item__timer timer" data-timer-deadline="09/26/23 22:41">
+                            <div class="item__timer timer" data-timer-deadline="09/26/22 22:41">
                             </div>
                         </a>
         

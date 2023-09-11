@@ -32,6 +32,12 @@
     "ny     ny     ny     ny"
     "ny     ny     ny     ny";
     }
+    @media (max-width: 768px) {
+      grid-template-columns: 1fr 1fr 1.3fr 1.3fr;
+      grid-template-rows: repeat(2, 138px) 130px repeat(3, 126px) repeat(2, 157.5px);
+      column-gap: 20px;
+      row-gap: 22px;
+    }
   }
 
   &__gallery-notebook {
@@ -44,10 +50,24 @@
 
   &__gallery-time {
     grid-area: time;
+
+    &:after {
+      @media (max-width: 768px) {
+        bottom: 10px;
+        right: 10px;
+      }
+    }
   }
 
   &__gallery-shoes {
     grid-area: shoe;
+
+    &:after {
+      @media (max-width: 768px) {
+        top: 10px;
+        left: 10px;
+      }
+    }
   }
 
   &__gallery-second-pair {
@@ -60,18 +80,42 @@
 
   &__gallery-profitable-december {
     grid-area: december;
+
+    &:after {
+      @media (max-width: 768px) {
+        bottom: 10px;
+        right: 10px;
+      }
+    }
   }
 
   &__gallery-new-year {
     grid-area: ny;
+    @media (max-width: 768px) {
+      margin-top: 0;
+    }
   }
 
   &__gallery-dresses {
     grid-area: dress;
+
+    &:after {
+      @media (max-width: 768px) {
+        bottom: 10px;
+        right: 10px;
+      }
+    }
   }
 
   &__gallery-chemicals {
     grid-area: chemi;
+
+    &:after {
+      @media (max-width: 768px) {
+        top: 10px;
+        left: 10px;
+      }
+    }
   }
 
   &__gallery-ny-toys {
@@ -97,6 +141,18 @@
       font-weight: 700;
       font-size: 30px;
       line-height: 39px;
+      @media (max-width: 768px) {
+        display: inline-block;
+        text-align: center;
+        vertical-align: middle;
+        width: 50px;
+        height: 50px;
+        font-size: 16px;
+        line-height: 50px;
+        -moz-border-radius: 25px;
+        -webkit-border-radius: 25px;
+        border-radius: 25px;
+      }
     }
 
     &:before {
@@ -124,6 +180,10 @@
     font-size: 56px;
     font-weight: 700;
     line-height: 67.2px;
+    @media (max-width: 768px) {
+      font-size: 26px;
+      line-height: 28.6px;
+    }
   }
 
   &__gallery-notebook {
@@ -153,6 +213,11 @@
     max-width: fit-content;
     max-height: 130%;
     padding-left: 112px;
+    @media (max-width: 768px) {
+      padding-left: 80px;
+      font-size: 30px;
+      line-height: 39px;
+    }
   }
 
   &__text-notebook-changed {
@@ -161,6 +226,10 @@
     @media (max-width: 890px) {
       max-width: 400px;
       padding: 0;
+    }
+    @media (max-width: 768px) {
+      padding: 0;
+      text-align: center;
     }
   }
 
@@ -183,6 +252,10 @@
     margin: auto auto 32px 13px;
     display: flex;
     flex-wrap: wrap;
+    @media (max-width: 768px) {
+      font-size: 20px;
+      line-height: 22px;
+    }
   }
 
   &__gallery-discount-bottom-left:after {
@@ -219,6 +292,11 @@
     padding-left: 14px;
     @media (max-width: 1800px) {
       padding-top: 15px;
+    }
+    @media (max-width: 768px) {
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 20.8px;
     }
   }
 
@@ -262,6 +340,12 @@
     background-color: $lightblue-color;
     border-radius: 20px;
     margin: auto 20px 20px 20px;
+    @media (max-width: 768px) {
+      font-size: 16px;
+      line-height: 17.6px;
+      padding: 12px 15px 18px 15px;
+      border-radius: 12px;
+    }
   }
 
   &__gallery-gift-ideas:before {
@@ -284,6 +368,10 @@
     font-weight: 700;
     line-height: 52px;
     padding: 0 0 30px 30px;
+    @media (max-width: 768px) {
+      font-size: 16px;
+      line-height: 19.2px;
+    }
   }
 
   &__gallery-profitable-december:before {
@@ -303,12 +391,19 @@
   }
 
   &__text-profitable-december {
-    font-size: 40px;
     font-weight: 700;
-    line-height: 46px;
     padding: 0 0 40px 30px;
+
+    top: 119px;
+    left: 30px;
+    font-size: 30px;
+    line-height: 39px;
     @media (max-width: 1880px) {
       max-width: 300px;
+    }
+    @media (max-width: 768px) {
+      font-size: 16px;
+      line-height: 19.2px;
     }
     @media (max-width: 680px) {
       max-width: 120px;
@@ -337,6 +432,13 @@
     background-color: $white-color;
     border-radius: 20px;
     margin: auto auto 50px 50px;
+    @media (max-width: 768px) {
+      font-size: 20px;
+      line-height: 24px;
+      padding: 22px 34px;
+      border-radius: 12px;
+      margin: auto auto 26px 26px;
+    }
   }
 
   &__gallery-dresses:before {
@@ -386,175 +488,72 @@
     height: 100%;
     width: 100%;
   }
-}
 
-
-
-.item__timer {
-  padding-bottom: 30px;
-}
-
-.item__text-big {
-  font-size: 40px;
-  line-height: 48px;
-}
-
-.item__gallery-notebook {
-  gap: 63px;
-}
-
-.item__text-notebook {
-  font-size: 40px;
-  font-weight: 700;
-  line-height: 52px;
-}
-
-.item__text-book {
-  max-width: 120px;
-  font-size: 26px;
-  font-weight: 400;
-  line-height: 31.2px;
-  margin: auto auto 15px 10px;
-}
-
-.item__text-time {
-  font-size: 30px;
-  font-weight: 700;
-  line-height: 31.2px;
-}
-
-.item__text-second-pair {
-  max-width: 1440px;
-}
-
-.item__text-new-ideas {
-  font-size: 30px;
-  line-height: 39px;
-}
-
-.item__text-profitable-december {
-  top: 119px;
-  left: 30px;
-  font-size: 30px;
-  line-height: 39px;
-}
-
-.item__gallery-new-year {
-  margin-top: 32px;
-}
-
-.item__text-new-year {
-  top: 300px;
-  left: 30px;
-  font-size: 30px;
-  line-height: 36px;
-  padding: 24px 46px;
-  margin: auto auto 39px 30px;
-}
-
-.item__text-chemicals {
-  font-size: 20px;
-  line-height: 22px;
-}
-
-@media (max-width: 768px) {
-  .item__container {
-    grid-template-columns: 1fr 1fr 1.3fr 1.3fr;
-    grid-template-rows: repeat(2, 138px) 130px repeat(3, 126px) repeat(2, 157.5px);
-    column-gap: 20px;
-    row-gap: 22px;
+  &__timer {
+    padding-bottom: 30px;
   }
 
-  .item__text-big {
+  &__text-big {
+    font-size: 40px;
+    line-height: 48px;
+  }
+
+  &__gallery-notebook {
+    gap: 63px;
+  }
+
+  &__text-notebook {
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 52px;
+  }
+
+  &__text-book {
+    max-width: 120px;
     font-size: 26px;
-    line-height: 28.6px;
+    font-weight: 400;
+    line-height: 31.2px;
+    margin: auto auto 15px 10px;
   }
 
-  .item__gallery:after {
-    display: inline-block;
-    text-align: center;
-    vertical-align: middle;
-    width: 50px;
-    height: 50px;
-    font-size: 16px;
-    line-height: 50px;
-    -moz-border-radius: 25px;
-    -webkit-border-radius: 25px;
-    border-radius: 25px;
+  &__text-time {
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 31.2px;
   }
 
-  .item__gallery-time:after {
-    bottom: 10px;
-    right: 10px;
+  &__text-second-pair {
+    max-width: 1440px;
   }
 
-  .item__gallery-shoes:after {
-    top: 10px;
-    left: 10px;
-  }
-
-  .item__gallery-profitable-december:after {
-    bottom: 10px;
-    right: 10px;
-  }
-
-  .item__gallery-dresses:after {
-    bottom: 10px;
-    right: 10px;
-  }
-
-  .item__gallery-chemicals:after {
-    top: 10px;
-    left: 10px;
-  }
-
-  .item__text-notebook {
-    padding-left: 80px;
-  }
-
-  .item__text-notebook-changed {
-    padding: 0;
-    text-align: center;
-  }
-
-
-  .item__text-notebook {
+  &__text-new-ideas {
     font-size: 30px;
     line-height: 39px;
   }
 
-  .item__text-book {
+  &__text-profitable-december {
+  }
+
+  &__gallery-new-year {
+    margin-top: 32px;
+  }
+
+  &__text-new-year {
+    top: 300px;
+    left: 30px;
+    font-size: 30px;
+    line-height: 36px;
+    padding: 24px 46px;
+    margin: auto auto 39px 30px;
+  }
+
+  &__text-chemicals {
     font-size: 20px;
     line-height: 22px;
   }
+}
 
-  .item__text-time {
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 20.8px;
-  }
-
-  .item__text-second-pair {
-    font-size: 16px;
-    line-height: 17.6px;
-    padding: 12px 15px 18px 15px;
-    border-radius: 12px;
-  }
-
-  .item__text-new-ideas {
-    font-size: 16px;
-    line-height: 19.2px;
-  }
-
-  .item__text-profitable-december {
-    font-size: 16px;
-    line-height: 19.2px;
-  }
-
-  .item__gallery-new-year {
-    margin-top: 0;
-  }
-
+@media (max-width: 768px) {
   .item__text-new-year {
     font-size: 20px;
     line-height: 24px;
