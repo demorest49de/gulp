@@ -1,5 +1,14 @@
 .item {
   padding-bottom: 50px;
+  @media (max-width: 1024px) {
+    padding-bottom: 45px;
+  }
+  @media (max-width: 768px) {
+    padding-bottom: 30px;
+  }
+  @media (max-width: 520px) {
+    padding-bottom: 35px;
+  }
   color: $white-color;
 
   &__container {
