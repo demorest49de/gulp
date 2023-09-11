@@ -1,10 +1,13 @@
 .bc {
   padding-bottom: 40px;
-  @media (max-width: 890px) {
-    padding-bottom: 50px;
+  @media (max-width: 1024px) {
+    padding-bottom: 30px;
   }
   @media (max-width: 770px) {
-    padding-bottom: 5px;
+    padding-bottom: 25px;
+  }
+  @media (max-width: 520px) {
+    padding-bottom: 15px;
   }
 
   &__section {
