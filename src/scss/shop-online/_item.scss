@@ -182,6 +182,7 @@
     &:before {
       background: linear-gradient(180deg, rgba(0, 0, 0, 0) 12.28%, rgba(0, 0, 0, 0.2) 100%)
     }
+
     &:after {
       content: "-15%";
       @media (max-width: 768px) {
@@ -352,6 +353,12 @@
   &__text-notebook-changed {
     padding-left: 0;
     padding-bottom: 30px;
+    @media (max-width: 1510px) {
+      font-size: 55px;
+    }
+    @media (max-width: 1200px) {
+      font-size: 40px;
+    }
     @media (max-width: 890px) {
       max-width: 400px;
       padding: 0;
@@ -359,6 +366,9 @@
     @media (max-width: 768px) {
       padding: 0;
       text-align: center;
+    }
+    @media (max-width: 710px) {
+      font-size: 20px;
     }
   }
 
