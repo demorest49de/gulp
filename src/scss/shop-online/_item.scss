@@ -66,6 +66,9 @@
       align-items: center;
       gap: 168px;
     }
+    @media (max-width: 540px) {
+      gap: 163px;
+    }
   }
 
   &__gallery-book {
@@ -397,6 +400,9 @@
       padding: 7px 25px 11px 25px;
       margin: auto 10px 10px 10px;
     }
+    @media (max-width: 323px) {
+      padding: 7px 20px 11px 20px;
+    }
   }
 
   &__gallery-gift-ideas:before {
@@ -622,17 +628,5 @@
   &__text-chemicals {
     font-size: 20px;
     line-height: 22px;
-  }
-}
-
-@media (max-width: 540px) {
-  .item__gallery-notebook {
-    gap: 163px;
-  }
-}
-
-@media (max-width: 323px) {
-  .item__text-second-pair {
-    padding: 7px 20px 11px 20px;
   }
 }
