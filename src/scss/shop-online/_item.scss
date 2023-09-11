@@ -186,6 +186,17 @@
 
   &__gallery-new-year {
     grid-area: ny;
+    background-image: url("../../img/item/7.jpg");
+    background-size: cover;
+    display: flex;
+    align-items: end;
+    justify-content: flex-start;
+    margin-top: 32px;
+
+    &:before {
+      background: linear-gradient(180deg, rgba(0, 0, 0, 0) 12.28%, rgba(0, 0, 0, 0.2) 100%);
+    }
+
     @media (max-width: 768px) {
       margin-top: 0;
     }
@@ -193,8 +204,15 @@
 
   &__gallery-dresses {
     grid-area: dress;
+    background-image: url("../../img/item/8.jpg");
+    background-size: cover;
+
+    &:before {
+      background: linear-gradient(179.81deg, rgba(7, 7, 7, 0) 30.77%, rgba(0, 0, 0, 0.2) 99.83%);
+    }
 
     &:after {
+      content: "-55%";
       @media (max-width: 768px) {
         bottom: 10px;
         right: 10px;
@@ -204,8 +222,18 @@
 
   &__gallery-chemicals {
     grid-area: chemi;
+    background-image: url("../../img/item/9.jpg");
+    background-size: cover;
+    display: flex;
+    align-items: end;
+    justify-content: flex-start;
+
+    &:before {
+      background: linear-gradient(179.81deg, rgba(7, 7, 7, 0) 30.77%, rgba(0, 0, 0, 0.2) 99.83%);
+    }
 
     &:after {
+      content: "-25%";
       @media (max-width: 768px) {
         top: 10px;
         left: 10px;
@@ -215,6 +243,10 @@
 
   &__gallery-ny-toys {
     grid-area: toys;
+
+    &:before {
+      background: linear-gradient(179.81deg, rgba(7, 7, 7, 0) 30.77%, rgba(0, 0, 0, 0.2) 99.83%);
+    }
   }
 
   &__gallery {
@@ -264,7 +296,7 @@
     flex-direction: column;
     justify-content: end;
     margin: 0 auto;
-    padding-bottom: 36px;
+    padding-bottom: 30px;
   }
 
   &__text-bold {
@@ -272,9 +304,9 @@
   }
 
   &__text-big {
-    font-size: 56px;
     font-weight: 700;
-    line-height: 67.2px;
+    font-size: 40px;
+    line-height: 48px;
     @media (max-width: 768px) {
       font-size: 26px;
       line-height: 28.6px;
@@ -291,12 +323,12 @@
   }
 
   &__text-notebook {
-    font-weight: 700;
-    font-size: 70px;
-    line-height: 130%;
     max-width: fit-content;
     max-height: 130%;
     padding-left: 112px;
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 52px;
     @media (max-width: 768px) {
       padding-left: 80px;
       font-size: 30px;
@@ -324,14 +356,14 @@
   }
 
   &__text-book {
-    max-width: 232px;
     max-height: 100px;
-    font-size: 30px;
-    font-weight: 400;
-    line-height: 39px;
-    margin: auto auto 32px 13px;
     display: flex;
     flex-wrap: wrap;
+    max-width: 120px;
+    font-size: 26px;
+    font-weight: 400;
+    line-height: 31.2px;
+    margin: auto auto 15px 10px;
     @media (max-width: 768px) {
       font-size: 20px;
       line-height: 22px;
@@ -451,18 +483,6 @@
     }
   }
 
-  &__gallery-new-year:before {
-    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 12.28%, rgba(0, 0, 0, 0.2) 100%);
-  }
-
-  &__gallery-new-year {
-    background-image: url("../../img/item/7.jpg");
-    background-size: cover;
-    display: flex;
-    align-items: end;
-    justify-content: flex-start;
-  }
-
   &__text-new-year {
     text-transform: uppercase;
     font-weight: 700;
@@ -490,35 +510,6 @@
     }
   }
 
-  &__gallery-dresses:before {
-    background: linear-gradient(179.81deg, rgba(7, 7, 7, 0) 30.77%, rgba(0, 0, 0, 0.2) 99.83%);
-  }
-
-  &__gallery-dresses:after {
-    content: "-55%";
-  }
-
-  &__gallery-dresses {
-    background-image: url("../../img/item/8.jpg");
-    background-size: cover;
-  }
-
-  &__gallery-chemicals:before {
-    background: linear-gradient(179.81deg, rgba(7, 7, 7, 0) 30.77%, rgba(0, 0, 0, 0.2) 99.83%);
-  }
-
-  &__gallery-chemicals:after {
-    content: "-25%";
-  }
-
-  &__gallery-chemicals {
-    background-image: url("../../img/item/9.jpg");
-    background-size: cover;
-    display: flex;
-    align-items: end;
-    justify-content: flex-start;
-  }
-
   &__text-chemicals {
     font-size: 30px;
     font-weight: 700;
@@ -536,39 +527,12 @@
     }
   }
 
-  &__gallery-ny-toys:before {
-    background: linear-gradient(179.81deg, rgba(7, 7, 7, 0) 30.77%, rgba(0, 0, 0, 0.2) 99.83%);
-  }
-
   &__image-ny-toys {
     transform: matrix(-1, 0, 0, 1, 0, 0) scale(1.5);
     object-fit: cover;
     object-position: 21px -1px;
     height: 100%;
     width: 100%;
-  }
-
-  &__timer {
-    padding-bottom: 30px;
-  }
-
-  &__text-big {
-    font-size: 40px;
-    line-height: 48px;
-  }
-
-  &__text-notebook {
-    font-size: 40px;
-    font-weight: 700;
-    line-height: 52px;
-  }
-
-  &__text-book {
-    max-width: 120px;
-    font-size: 26px;
-    font-weight: 400;
-    line-height: 31.2px;
-    margin: auto auto 15px 10px;
   }
 
   &__text-time {
@@ -587,10 +551,6 @@
   }
 
   &__text-profitable-december {
-  }
-
-  &__gallery-new-year {
-    margin-top: 32px;
   }
 
   &__text-chemicals {
