@@ -1,19 +1,16 @@
 .bc {
-  padding-bottom: 40px;
+  padding-bottom: 80px;
+  //80 60 50 30
   @media (max-width: 1024px) {
-    padding-bottom: 30px;
+    padding-bottom: 60px;
   }
   @media (max-width: 770px) {
-    padding-bottom: 25px;
+    padding-bottom: 50px;
   }
   @media (max-width: 520px) {
-    padding-bottom: 15px;
+    padding-bottom: 30px;
   }
-
-  &__section {
-    padding-bottom: 80px;
-  }
-
+  //150 100 80 50
   &__container {
     padding: 0 75px;
     color: #2D2D2D;
