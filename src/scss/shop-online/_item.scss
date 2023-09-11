@@ -96,6 +96,9 @@
 
   &__gallery-second-pair {
     grid-area: pair;
+    @media (max-width: 599px) {
+      text-align: center;
+    }
   }
 
   &__gallery-gift-ideas {
@@ -388,6 +391,12 @@
       padding: 12px 15px 18px 15px;
       border-radius: 12px;
     }
+    @media (max-width: 599px) {
+      font-size: 12px;
+      line-height: 13.2px;
+      padding: 7px 25px 11px 25px;
+      margin: auto 10px 10px 10px;
+    }
   }
 
   &__gallery-gift-ideas:before {
@@ -416,6 +425,10 @@
     }
     @media (max-width: 709px) {
       max-width: 240px;
+    }
+    @media (max-width: 599px) {
+      font-size: 12px;
+      line-height: 14.4px;
     }
   }
 
@@ -453,6 +466,11 @@
     @media (max-width: 680px) {
       max-width: 120px;
     }
+    @media (max-width: 599px) {
+      font-size: 12px;
+      line-height: 14.4px;
+      max-width: 150px;
+    }
   }
 
   &__gallery-new-year:before {
@@ -485,6 +503,12 @@
       padding: 22px 34px;
       border-radius: 12px;
       margin: auto auto 26px 26px;
+    }
+    @media (max-width: 599px) {
+      font-size: 12px;
+      line-height: 14.4px;
+      padding: 7px 41px;
+      margin: auto auto 10px 15px;
     }
   }
 
@@ -526,6 +550,11 @@
       font-size: 16px;
       line-height: 18px;
       max-width: 170px;
+    }
+    @media (max-width: 599px) {
+      font-size: 12px;
+      line-height: 14.4px;
+      padding: 0 10px 5px 9px;
     }
   }
 
@@ -593,48 +622,6 @@
   &__text-chemicals {
     font-size: 20px;
     line-height: 22px;
-  }
-}
-
-@media (max-width: 599px) {
-  .item__text-time {
-    font-size: 12px;
-    line-height: 15.6px;
-  }
-
-  .item__gallery-second-pair {
-    text-align: center;
-  }
-
-  .item__text-second-pair {
-    font-size: 12px;
-    line-height: 13.2px;
-    padding: 7px 25px 11px 25px;
-    margin: auto 10px 10px 10px;
-  }
-
-  .item__text-new-ideas {
-    font-size: 12px;
-    line-height: 14.4px;
-  }
-
-  .item__text-profitable-december {
-    font-size: 12px;
-    line-height: 14.4px;
-    max-width: 150px;
-  }
-
-  .item__text-new-year {
-    font-size: 12px;
-    line-height: 14.4px;
-    padding: 7px 41px;
-    margin: auto auto 10px 15px;
-  }
-
-  .item__text-chemicals {
-    font-size: 12px;
-    line-height: 14.4px;
-    padding: 0 10px 5px 9px;
   }
 }
 
