@@ -57,7 +57,6 @@
     "ny     ny";
 
     }
-
   }
 
   &__gallery-notebook {
@@ -174,7 +173,6 @@
     &:before {
       background: linear-gradient(180deg, rgba(0, 0, 0, 0) 12.28%, rgba(0, 0, 0, 0.2) 100%)
     }
-
     &:after {
       content: "-15%";
       @media (max-width: 768px) {
@@ -387,11 +385,12 @@
   }
 
   &__text-time {
-    font-size: 30px;
-    font-weight: 400;
-    line-height: 39px;
     padding-top: 67px;
     padding-left: 14px;
+
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 31.2px;
     @media (max-width: 1800px) {
       padding-top: 15px;
     }
@@ -413,7 +412,6 @@
   }
 
   &__text-second-pair {
-    max-width: 510px;
     max-height: 167px;
     font-size: 30px;
     font-weight: 400;
@@ -422,6 +420,7 @@
     background-color: $lightblue-color;
     border-radius: 20px;
     margin: auto 20px 20px 20px;
+    max-width: 1440px;
     @media (max-width: 768px) {
       font-size: 16px;
       line-height: 17.6px;
@@ -441,10 +440,11 @@
 
   &__text-new-ideas {
     max-width: 378px;
-    font-size: 40px;
     font-weight: 700;
-    line-height: 52px;
     padding: 0 0 30px 30px;
+
+    font-size: 30px;
+    line-height: 39px;
     @media (max-width: 768px) {
       font-size: 16px;
       line-height: 19.2px;
@@ -511,10 +511,10 @@
   }
 
   &__text-chemicals {
-    font-size: 30px;
     font-weight: 700;
-    line-height: 39px;
     padding: 0 0 12px 20px;
+    font-size: 20px;
+    line-height: 22px;
     @media (max-width: 768px) {
       font-size: 16px;
       line-height: 18px;
@@ -533,28 +533,5 @@
     object-position: 21px -1px;
     height: 100%;
     width: 100%;
-  }
-
-  &__text-time {
-    font-size: 30px;
-    font-weight: 700;
-    line-height: 31.2px;
-  }
-
-  &__text-second-pair {
-    max-width: 1440px;
-  }
-
-  &__text-new-ideas {
-    font-size: 30px;
-    line-height: 39px;
-  }
-
-  &__text-profitable-december {
-  }
-
-  &__text-chemicals {
-    font-size: 20px;
-    line-height: 22px;
   }
 }
