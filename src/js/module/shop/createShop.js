@@ -28,7 +28,7 @@ const createSection = (name, $) => {
                         <a href="#" class="item__gallery item__gallery-notebook" aria-label="Распродажа ноутбуков">
                             <p class="item__text-notebook">
                                 -50% на все ноутбуки</p>
-                            <div class="item__timer timer" data-timer-deadline="04/26/23 22:41">
+                            <div class="item__timer timer" data-timer-deadline="09/26/23 22:41">
                             </div>
                         </a>
         
@@ -141,9 +141,9 @@ export const renderElement = ($) => {
     if ($.page === 'shop') {
         renderShop($);
         handlers($);
-        setTimeout(() => {
-            window.scrollTo({top: (document.documentElement.scrollHeight), behavior: 'smooth'});
-        }, 1000);
+        // setTimeout(() => {
+        //     window.scrollTo({top: (document.documentElement.scrollHeight), behavior: 'smooth'});
+        // }, 1000);
     }
     
     if ($.page === 'blog') {
