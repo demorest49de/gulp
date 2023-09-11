@@ -215,6 +215,7 @@
     color: $darkgrey-color;
 
     @media (max-width: 768px) {
+      justify-content: end;
       gap: 30px;
     }
     @media (max-width: 520px) {
