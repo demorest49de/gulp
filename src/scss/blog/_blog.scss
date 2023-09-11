@@ -177,6 +177,12 @@
     fill: transparent;
   }
 
+  &__datetime {
+    @media (max-width: 890px) {
+      text-align: right;
+    }
+  }
+
   &__date,
   &__time,
   &__views-comments {
@@ -191,6 +197,9 @@
     }
     @media (max-width: 460px) {
       font-size: 8px;
+    }
+    @media (max-width: 390px) {
+      gap: 10px;
     }
   }
 }

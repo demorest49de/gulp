@@ -141,9 +141,9 @@ export const renderElement = ($) => {
     if ($.page === 'shop') {
         renderShop($);
         handlers($);
-        // setTimeout(() => {
-        //     window.scrollTo({top: (document.documentElement.scrollHeight), behavior: 'smooth'});
-        // }, 1000);
+        setTimeout(() => {
+            window.scrollTo({top: (document.documentElement.scrollHeight), behavior: 'smooth'});
+        }, 1000);
     }
     
     if ($.page === 'blog') {
