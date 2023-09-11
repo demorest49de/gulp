@@ -38,10 +38,34 @@
       column-gap: 20px;
       row-gap: 22px;
     }
+    @media (max-width: 599px) {
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: repeat(2, 160px) repeat(8, 130px) repeat(1, 123px);
+      gap: 20px;
+
+      grid-template-areas:
+    "banner banner "
+    "banner banner "
+    "book   time   "
+    "shoe   shoe   "
+    "pair   pair   "
+    "pair   pair   "
+    "gift   gift"
+    "december     december"
+    "dress     chemi"
+    "dress     toys"
+    "ny     ny";
+
+    }
+
   }
 
   &__gallery-notebook {
     grid-area: banner;
+    @media (max-width: 599px) {
+      align-items: center;
+      gap: 168px;
+    }
   }
 
   &__gallery-book {
@@ -184,6 +208,10 @@
       font-size: 26px;
       line-height: 28.6px;
     }
+    @media (max-width: 599px) {
+      font-size: 16px;
+      line-height: 17.6px;
+    }
   }
 
   &__gallery-notebook {
@@ -217,6 +245,12 @@
       padding-left: 80px;
       font-size: 30px;
       line-height: 39px;
+    }
+    @media (max-width: 599px) {
+      padding: 0;
+      font-size: 22px;
+      line-height: 28.6px;
+      max-width: 225px;
     }
   }
 
@@ -255,6 +289,10 @@
     @media (max-width: 768px) {
       font-size: 20px;
       line-height: 22px;
+    }
+    @media (max-width: 599px) {
+      font-size: 12px;
+      line-height: 13.2px;
     }
   }
 
@@ -297,6 +335,10 @@
       font-size: 16px;
       font-weight: 400;
       line-height: 20.8px;
+    }
+    @media (max-width: 599px) {
+      font-size: 12px;
+      line-height: 15.6px;
     }
   }
 
@@ -372,6 +414,9 @@
       font-size: 16px;
       line-height: 19.2px;
     }
+    @media (max-width: 709px) {
+      max-width: 240px;
+    }
   }
 
   &__gallery-profitable-december:before {
@@ -424,14 +469,16 @@
 
   &__text-new-year {
     text-transform: uppercase;
-    font-size: 40px;
     font-weight: 700;
-    line-height: 48px;
-    padding: 30px 40px;
     color: $red-color;
     background-color: $white-color;
     border-radius: 20px;
-    margin: auto auto 50px 50px;
+    top: 300px;
+    left: 30px;
+    font-size: 30px;
+    line-height: 36px;
+    padding: 24px 46px;
+    margin: auto auto 39px 30px;
     @media (max-width: 768px) {
       font-size: 20px;
       line-height: 24px;
@@ -475,6 +522,11 @@
     font-weight: 700;
     line-height: 39px;
     padding: 0 0 12px 20px;
+    @media (max-width: 768px) {
+      font-size: 16px;
+      line-height: 18px;
+      max-width: 170px;
+    }
   }
 
   &__gallery-ny-toys:before {
@@ -538,87 +590,13 @@
     margin-top: 32px;
   }
 
-  &__text-new-year {
-    top: 300px;
-    left: 30px;
-    font-size: 30px;
-    line-height: 36px;
-    padding: 24px 46px;
-    margin: auto auto 39px 30px;
-  }
-
   &__text-chemicals {
     font-size: 20px;
     line-height: 22px;
   }
 }
 
-@media (max-width: 768px) {
-  .item__text-new-year {
-    font-size: 20px;
-    line-height: 24px;
-    padding: 22px 34px;
-    border-radius: 12px;
-    margin: auto auto 26px 26px;
-  }
-
-  .item__text-chemicals {
-    font-size: 16px;
-    line-height: 18px;
-    max-width: 170px;
-  }
-}
-
-@media (max-width: 709px) {
-
-  .item__text-new-ideas {
-    max-width: 240px;
-  }
-}
-
 @media (max-width: 599px) {
-  .item__container {
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: repeat(2, 160px) repeat(8, 130px) repeat(1, 123px);
-    gap: 20px;
-
-    grid-template-areas:
-    "banner banner "
-    "banner banner "
-    "book   time   "
-    "shoe   shoe   "
-    "pair   pair   "
-    "pair   pair   "
-    "gift   gift"
-    "december     december"
-    "dress     chemi"
-    "dress     toys"
-    "ny     ny";
-  }
-
-  .item__text-big {
-    font-size: 16px;
-    line-height: 17.6px;
-  }
-
-  .item__gallery-notebook {
-    align-items: center;
-    gap: 168px;
-  }
-
-
-  .item__text-notebook {
-    padding: 0;
-    font-size: 22px;
-    line-height: 28.6px;
-    max-width: 225px;
-  }
-
-  .item__text-book {
-    font-size: 12px;
-    line-height: 13.2px;
-  }
-
   .item__text-time {
     font-size: 12px;
     line-height: 15.6px;
