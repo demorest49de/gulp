@@ -11,3 +11,11 @@ $yellow-color: #ffbd13;
 $lightblue-color: #38c0eb;
 $red-color: #f91155;
 
+@mixin font($name, $weight) {
+  font: {
+    family: $name;
+    weight: $weight;
+    display: swap;
+  }
+  src: url("../font/#{$name}-#{$weight}.ttf") format("truetype");
+}
