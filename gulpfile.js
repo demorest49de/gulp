@@ -8,6 +8,7 @@ import htmlMin from 'gulp-htmlmin';
 import cleanCSS from 'gulp-clean-css';
 import terser from 'gulp-terser';
 import gulpConcat from 'gulp-concat';
+import sourceMaps from 'gulp-sourcemaps';
 
 
 const prepros = true;
@@ -55,8 +56,10 @@ export const style = () => {
 
 export const js = () => gulp
     .src('src/js/**/*.js')
+    .pipe(sourceMaps.init())
     .pipe(terser())
     .pipe(gulpConcat('index.min.js'))
+    .pipe(sourceMaps.write('dist/maps'))
     .pipe(gulp.dest('dist/js'))
     .pipe(browserSync.stream());
 
