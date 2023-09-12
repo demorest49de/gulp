@@ -9,6 +9,7 @@ import cleanCSS from 'gulp-clean-css';
 import terser from 'gulp-terser';
 import gulpConcat from 'gulp-concat';
 import sourceMaps from 'gulp-sourcemaps';
+import gulpImage from "gulp-image";
 
 
 const prepros = true;
@@ -58,16 +59,19 @@ export const js = () => gulp
     .src('src/js/**/*.js')
     .pipe(sourceMaps.init())
     .pipe(terser())
-    .pipe(gulpConcat('index.min.js'))
+    // .pipe(gulpConcat('index.min.js'))
     .pipe(sourceMaps.write('dist/maps'))
     .pipe(gulp.dest('dist/js'))
     .pipe(browserSync.stream());
 
+
+export const img = () => gulp
+    .src('src/img/**/*.{jpg,jpeg,png,svg,gif}')
+    .pipe(gulpImage())
+    .pipe(gulp.dest('dist/img'))
+
 export const copy = () => gulp
-    .src([
-        'src/font/**/*',
-        'src/img/**/*'
-    ], {
+    .src('src/font/**/*', {
         base: 'src'
     })
     .pipe(gulp.dest('dist'))
@@ -93,17 +97,14 @@ export const server = () => {
     gulp.watch('src/**/*.html', html);
     gulp.watch(prepros ? 'src/scss/**/*.scss' : 'src/css/**/*.css', style);
     gulp.watch('src/js/**/*.js', js);
-    gulp.watch([
-        'src/img/**/*',
-        'src/font/**/*'
-    ], copy);
+    gulp.watch('src/font/**/*', copy);
 };
 
 export const clear = () => deleteAsync('dist/**/*', {force: true,});
 
 // launch
 
-export const base = gulp.parallel(html, style, js, json, copy);
+export const base = gulp.parallel(html, style, js, json, img, copy);
 
 export const build = gulp.series(clear, base);
 
