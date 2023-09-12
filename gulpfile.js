@@ -55,8 +55,8 @@ export const style = () => {
 
 export const js = () => gulp
     .src('src/js/**/*.js')
-    .pipe(gulpConcat('index.min.js'))
     .pipe(terser())
+    .pipe(gulpConcat('index.min.js'))
     .pipe(gulp.dest('dist/js'))
     .pipe(browserSync.stream());
 

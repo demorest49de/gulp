@@ -3,7 +3,7 @@ import {$} from '../js/module/constants.js';
 import {setCustomPaddings, customPaddingHandler} from "../js/module/base/customPaddings.js";
 
 {
-    const constsInit = (selector, page) => {
+    const constsInit = (selector, page, $) => {
         const app = document.querySelector(selector);
         $.app = app;
         $.selector = selector;
@@ -16,7 +16,7 @@ import {setCustomPaddings, customPaddingHandler} from "../js/module/base/customP
     };
     
     const init = (selector, page) => {
-        constsInit(selector, page);
+        constsInit(selector, page, $);
         renderElement($);
         handlersInit($);
     };
