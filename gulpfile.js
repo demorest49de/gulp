@@ -87,12 +87,12 @@ export const server = () => {
         }
     });
     
-    gulp.watch('./src/**/*.html', html);
-    gulp.watch(prepros ? './src/scss/**/*.scss' : './src/css/**/*.css', style);
-    gulp.watch('./src/js/**/*.js', js);
+    gulp.watch('src/**/*.html', html);
+    gulp.watch(prepros ? 'src/scss/**/*.scss' : 'src/css/**/*.css', style);
+    gulp.watch('src/js/**/*.js', js);
     gulp.watch([
-        './src/img/**/*',
-        './src/font/**/*'
+        'src/img/**/*',
+        'src/font/**/*'
     ], copy);
 };
 
