@@ -115,7 +115,7 @@ export const createMarkup = ($) => {
     const author = main.querySelector('.bc__author');
     const articleDate = main.querySelector('.article__date');
     const articleTime = main.querySelector('.article__time');
-    const vars = {
+    const bcVars = {
         breadCrumbsTitle,
         title,
         text,
@@ -123,7 +123,7 @@ export const createMarkup = ($) => {
         articleDate,
         articleTime
     };
-    return vars;
+    return bcVars;
 };
 
 export const createArticle = ($) => {

@@ -90,4 +90,4 @@ const breadCrumbs = {
     ],
 };
 
-export const $ = {shop, blog, article, types, breadCrumbs};
+export const vars = {shop, blog, article, types, breadCrumbs};

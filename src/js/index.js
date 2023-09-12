@@ -1,5 +1,5 @@
 import {renderElement} from './module/shop/createShop.js';
-import {$} from '../js/module/constants.js';
+import {vars} from '../js/module/constants.js';
 import {setCustomPaddings, customPaddingHandler} from "../js/module/base/customPaddings.js";
 
 {
@@ -16,9 +16,9 @@ import {setCustomPaddings, customPaddingHandler} from "../js/module/base/customP
     };
     
     const init = (selector, page) => {
-        constsInit(selector, page, $);
-        renderElement($);
-        handlersInit($);
+        constsInit(selector, page, vars);
+        renderElement(vars);
+        handlersInit(vars);
     };
     
     window.init = init;
