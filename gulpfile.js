@@ -5,6 +5,7 @@ import gulpSass from 'gulp-sass';
 import cssImport from 'gulp-cssimport';
 import {deleteAsync} from 'del';
 import htmlMin from 'gulp-htmlmin';
+import cleanCSS from 'gulp-clean-css';
 
 const prepros = true;
 
@@ -26,6 +27,11 @@ export const style = () => {
         return gulp
             .src('src/scss/**/*.scss')
             .pipe(sass().on('error', sass.logError))
+            .pipe(cleanCSS({
+                2: {
+                    specialComments: 0,
+                }
+            }))
             .pipe(gulp.dest('dist/css'))
             .pipe(browserSync.stream());
     }
@@ -34,6 +40,11 @@ export const style = () => {
         .src('src/css/**/*.css')
         .pipe(cssImport({
             extensions: ['css'],
+        }))
+        .pipe(cleanCSS({
+            2: {
+                specialComments: 0,
+            }
         }))
         .pipe(gulp.dest('dist/css'))
         .pipe(browserSync.stream());
