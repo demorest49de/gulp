@@ -6,6 +6,8 @@ import cssImport from 'gulp-cssimport';
 import {deleteAsync} from 'del';
 import htmlMin from 'gulp-htmlmin';
 import cleanCSS from 'gulp-clean-css';
+import terser from 'gulp-terser';
+
 
 const prepros = true;
 
@@ -52,12 +54,8 @@ export const style = () => {
 
 export const js = () => gulp
     .src('src/js/**/*.js')
+    .pipe(terser())
     .pipe(gulp.dest('dist/js'))
-    .pipe(browserSync.stream());
-
-export const json = () => gulp
-    .src('src/*.json')
-    .pipe(gulp.dest('dist'))
     .pipe(browserSync.stream());
 
 export const copy = () => gulp
@@ -71,6 +69,11 @@ export const copy = () => gulp
     .pipe(browserSync.stream({
         once: true
     }));
+
+export const json = () => gulp
+    .src('src/*.json')
+    .pipe(gulp.dest('dist'))
+    .pipe(browserSync.stream());
 
 export const server = () => {
     browserSync.init({
