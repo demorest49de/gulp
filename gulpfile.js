@@ -14,7 +14,10 @@ const sass = gulpSass(sassPkg);
 
 export const html = () => gulp
     .src('src/*.html')
-    .pipe(htmlMin({}))
+    .pipe(htmlMin({
+        removeComments: true,
+        collapseWhitespace: true,
+    }))
     .pipe(gulp.dest('dist'))
     .pipe(browserSync.stream());
 
