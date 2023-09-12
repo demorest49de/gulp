@@ -4,6 +4,7 @@ import sassPkg from 'sass';
 import gulpSass from 'gulp-sass';
 import cssImport from 'gulp-cssimport';
 import {deleteAsync} from 'del';
+import htmlMin from 'gulp-htmlmin';
 
 const prepros = true;
 
@@ -13,7 +14,9 @@ const sass = gulpSass(sassPkg);
 
 export const html = () => gulp
     .src('src/*.html')
-    .pipe(gulp.dest('dist'));
+    .pipe(htmlMin({}))
+    .pipe(gulp.dest('dist'))
+    .pipe(browserSync.stream());
 
 export const style = () => {
     if (prepros) {
