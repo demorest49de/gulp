@@ -170,9 +170,12 @@ export const renderCards = async () => {
                 `
                     <li class="card">
                         <a href="#" class="card__link " aria-label="${card.name}">
-                            <figure class="card__figure ${card.discountClass}">
+                            <picture class="card__figure ${card.discountClass}">
+                                <source srcset="img/wholesale/photo${count}.avif" type="image/avif">
+                                <source srcset="img/wholesale/photo${count}.webp" type="image/webp">
                                 <img class="card__image" src="img/wholesale/photo${count}.png"
-                                                              alt="${card.name}"></figure>
+                                                              alt="${card.name}">
+                            </picture>
                             <div class="card__price-block"><span class="card__new-price">${card.newPrice} ₽</span>
                                 <span class="card__old-price">${card.newPrice * 2} ₽</span>
                             </div>
