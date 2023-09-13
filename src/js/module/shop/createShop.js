@@ -46,7 +46,12 @@ const createSection = (name, $) => {
         
                         <a href="#" class="item__gallery item__gallery-discount-top-left item__gallery-shoes"
                         aria-label="вторая пара кросовок в подарок">
+                        <picture>
+                        
+                        <source srcset="img/item/3.avif" type="image/avif">
+                        <source srcset="img/item/3.webp" type="image/webp">
                             <img class="item__image-shoes" src="img/item/3.jpg" alt="Обувь">
+                        </picture>
                         </a>
         
                         <a href="#" class="item__gallery item__gallery-second-pair" aria-label="Кросовки">
@@ -87,7 +92,11 @@ const createSection = (name, $) => {
                         </a>
         
                         <a href="#" class="item__gallery item__gallery-ny-toys" aria-label="Елочные украшения">
+                        <picture>
+                            <source srcset="img/item/10.avif" type="image/avif">
+                            <source srcset="img/item/10.webp" type="image/webp">
                             <img class="item__image-ny-toys" src="img/item/10.jpg" alt="Елочные украшения">
+                        </picture>
                         </a>
                     </div>
                 </section>

@@ -74,7 +74,7 @@
     background-image: -webkit-image-set(
         url('../../img/item/timer.avif') 1x,
         url('../../img/item/timer.webp') 1x,
-        url('../../img/item/timer.jpg') 1x,
+        url('../../img/item/timer.jpg') 1x
     );
     background-size: cover;
     background-position: center;
@@ -100,6 +100,11 @@
   &__gallery-book {
     grid-area: book;
     background-image: url("../../img/item/1.jpg");
+    background-image: -webkit-image-set(
+                    url('../../img/item/1.avif') 1x,
+                    url('../../img/item/1.webp') 1x,
+                    url('../../img/item/1.jpg') 1x
+    );
     display: flex;
     align-items: end;
 
@@ -111,6 +116,11 @@
   &__gallery-time {
     grid-area: time;
     background-image: url("../../img/item/2.jpg");
+    background-image: -webkit-image-set(
+                    url('../../img/item/2.avif') 1x,
+                    url('../../img/item/2.webp') 1x,
+                    url('../../img/item/2.jpg') 1x
+    );
     background-repeat: no-repeat;
     display: flex;
 
@@ -147,6 +157,11 @@
   &__gallery-second-pair {
     grid-area: pair;
     background-image: url("../../img/item/4.jpg");
+    background-image: -webkit-image-set(
+                    url('../../img/item/4.avif') 1x,
+                    url('../../img/item/4.webp') 1x,
+                    url('../../img/item/4.jpg') 1x
+    );
     background-repeat: no-repeat;
     display: grid;
     grid-template-columns: 1fr;
@@ -164,6 +179,11 @@
   &__gallery-gift-ideas {
     grid-area: gift;
     background-image: url("../../img/item/5.jpg");
+    background-image: -webkit-image-set(
+                    url('../../img/item/5.avif') 1x,
+                    url('../../img/item/5.webp') 1x,
+                    url('../../img/item/5.jpg') 1x
+    );
     background-size: cover;
     background-repeat: no-repeat;
     display: flex;
@@ -179,6 +199,11 @@
   &__gallery-profitable-december {
     grid-area: december;
     background-image: url("../../img/item/6.jpg");
+    background-image: -webkit-image-set(
+                    url('../../img/item/6.avif') 1x,
+                    url('../../img/item/6.webp') 1x,
+                    url('../../img/item/6.jpg') 1x
+    );
     background-size: cover;
     display: flex;
     align-items: end;
@@ -200,6 +225,11 @@
   &__gallery-new-year {
     grid-area: ny;
     background-image: url("../../img/item/7.jpg");
+    background-image: -webkit-image-set(
+                    url('../../img/item/7.avif') 1x,
+                    url('../../img/item/7.webp') 1x,
+                    url('../../img/item/7.jpg') 1x
+    );
     background-size: cover;
     display: flex;
     align-items: end;
