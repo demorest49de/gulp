@@ -50,7 +50,7 @@ const createSection = (name, $) => {
                         
                         <source srcset="img/item/3.avif" type="image/avif">
                         <source srcset="img/item/3.webp" type="image/webp">
-                            <img class="item__image-shoes" src="img/item/3.jpg" alt="Обувь">
+                            <img class="item__image-shoes" src="img/item/3.jpg" alt="Обувь" width="420" height="200">
                         </picture>
                         </a>
         
@@ -95,7 +95,8 @@ const createSection = (name, $) => {
                         <picture>
                             <source srcset="img/item/10.avif" type="image/avif">
                             <source srcset="img/item/10.webp" type="image/webp">
-                            <img class="item__image-ny-toys" src="img/item/10.jpg" alt="Елочные украшения">
+                            <img class="item__image-ny-toys" src="img/item/10.jpg" alt="Елочные украшения"
+                            width="200" height="200">
                         </picture>
                         </a>
                     </div>

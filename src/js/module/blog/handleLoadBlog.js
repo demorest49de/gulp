@@ -69,7 +69,7 @@ export const loadItemsHandler = ($) => {
                     <picture class="article__image">
                         <source srcset="./img/blog/${index}.avif" type="image/avif">
                         <source srcset="./img/blog/${index}.webp" type="image/webp">
-                        <img src="./img/blog/${index}.png" alt="${item.title}">
+                        <img src="./img/blog/${index}.png" alt="${item.title}" width="140" height="140">
                     </picture>
                     <div class="article__block">
                         <h2 class="article__subtitle">
