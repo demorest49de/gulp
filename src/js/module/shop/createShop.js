@@ -50,7 +50,7 @@ const createSection = (name, $) => {
                         
                         <source srcset="img/item/3.avif" type="image/avif">
                         <source srcset="img/item/3.webp" type="image/webp">
-                            <img class="item__image-shoes" src="img/item/3.jpg" alt="Обувь" width="420" height="200">
+                            <img loading="lazy" class="item__image-shoes" src="img/item/3.jpg" alt="Обувь" width="420" height="200">
                         </picture>
                         </a>
         
@@ -95,7 +95,7 @@ const createSection = (name, $) => {
                         <picture>
                             <source srcset="img/item/10.avif" type="image/avif">
                             <source srcset="img/item/10.webp" type="image/webp">
-                            <img class="item__image-ny-toys" src="img/item/10.jpg" alt="Елочные украшения"
+                            <img loading="lazy" class="item__image-ny-toys" src="img/item/10.jpg" alt="Елочные украшения"
                             width="200" height="200">
                         </picture>
                         </a>
@@ -183,7 +183,7 @@ export const renderCards = async () => {
                             <picture class="card__figure ${card.discountClass}">
                                 <source srcset="img/wholesale/photo${count}.avif" type="image/avif">
                                 <source srcset="img/wholesale/photo${count}.webp" type="image/webp">
-                                <img class="card__image" src="img/wholesale/photo${count}.png"
+                                <img loading="lazy" class="card__image" src="img/wholesale/photo${count}.png"
                                       alt="${card.name}" width="300" height="400">
                             </picture>
                             <div class="card__price-block"><span class="card__new-price">${card.newPrice} ₽</span>
