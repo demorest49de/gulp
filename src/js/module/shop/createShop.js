@@ -184,7 +184,7 @@ export const renderCards = async () => {
                                 <source srcset="img/wholesale/photo${count}.avif" type="image/avif">
                                 <source srcset="img/wholesale/photo${count}.webp" type="image/webp">
                                 <img class="card__image" src="img/wholesale/photo${count}.png"
-                                                              alt="${card.name}">
+                                      alt="${card.name}" width="300" height="400">
                             </picture>
                             <div class="card__price-block"><span class="card__new-price">${card.newPrice} ₽</span>
                                 <span class="card__old-price">${card.newPrice * 2} ₽</span>
