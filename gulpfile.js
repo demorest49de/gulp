@@ -7,12 +7,12 @@ import {deleteAsync} from 'del';
 import htmlMin from 'gulp-htmlmin';
 import cleanCSS from 'gulp-clean-css';
 import terser from 'gulp-terser';
-import gulpConcat from 'gulp-concat';
+// import gulpConcat from 'gulp-concat';
 import sourceMaps from 'gulp-sourcemaps';
 import gulpImage from "gulp-image";
 import gulpwebp from 'gulp-webp';
 import gulpavif from 'gulp-avif';
-
+import {stream as critical} from 'critical';
 
 const prepros = true;
 
@@ -89,7 +89,19 @@ export const avif = () => gulp
     .pipe(gulp.dest('dist/img'))
     .pipe(browserSync.stream());
 
-export const copy = () => gulp
+export const critCSS = () => gulp
+    .src('dist/*.html')
+    .pipe(critical({
+        base:   'dist/',
+        inline: true,
+        css: ['dist/css/index.css']
+    }))
+    .on('error', err => {
+        console.error(err.message);
+    })
+    .pipe(gulp.dest('dist'));
+
+const copy = () => gulp
     .src('src/font/**/*', {
         base: 'src'
     })
@@ -131,6 +143,6 @@ export const base = gulp.parallel(html, style, js, json,
     img, avif, webp,
     copy);
 
-export const build = gulp.series(clear, base);
+export const build = gulp.series(clear, critCSS, base);
 
-export default gulp.series(base, server);
+export default gulp.series(base, critCSS, server);

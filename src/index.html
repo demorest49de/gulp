@@ -13,7 +13,17 @@
     <link rel="preload" href="font/Lato-400.ttf" as="font" type="font/ttf" crossorigin>
     <link rel="preload" href="font/Lato-700.ttf" as="font" type="font/ttf" crossorigin>
 
-    <link rel="stylesheet" href="css/index.css">
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const createLink = url => {
+                const link = document.createElement('link');
+                link.rel = 'stylesheet';
+                link.href = url;
+                document.head.append(link);
+            };
+            createLink("css/index.css");
+        });
+    </script>
     <script type="module" src="js/index.js"></script>
     <script>
         document.addEventListener("DOMContentLoaded", () => {
