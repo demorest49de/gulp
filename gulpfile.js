@@ -92,7 +92,7 @@ export const avif = () => gulp
 export const critCSS = () => gulp
     .src('dist/*.html')
     .pipe(critical({
-        base:   'dist/',
+        base: 'dist/',
         inline: true,
         css: ['dist/css/index.css']
     }))
@@ -143,6 +143,8 @@ export const base = gulp.parallel(html, style, js, json,
     img, avif, webp,
     copy);
 
-export const build = gulp.series(clear, critCSS, base);
+export const build = gulp.series(clear, base, critCSS);
 
-export default gulp.series(base, critCSS, server);
+export const start = gulp.series(server);
+
+export default gulp.series(base, server);
