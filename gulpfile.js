@@ -10,6 +10,8 @@ import terser from 'gulp-terser';
 import gulpConcat from 'gulp-concat';
 import sourceMaps from 'gulp-sourcemaps';
 import gulpImage from "gulp-image";
+import gulpwebp from 'gulp-webp';
+import gulpavif from 'gulp-avif';
 
 
 const prepros = true;
@@ -67,8 +69,25 @@ export const js = () => gulp
 
 export const img = () => gulp
     .src('src/img/**/*.{jpg,jpeg,png,svg,gif}')
-    .pipe(gulpImage())
+    .pipe(gulpImage({}))
     .pipe(gulp.dest('dist/img'))
+    .pipe(browserSync.stream());
+
+export const webp = () => gulp
+    .src('src/img/**/*.{jpg,jpeg,png}')
+    .pipe(gulpwebp({
+        quality: 65,
+    }))
+    .pipe(gulp.dest('dist/img'))
+    .pipe(browserSync.stream());
+
+export const avif = () => gulp
+    .src('src/img/**/*.{jpg,jpeg,png}')
+    .pipe(gulpavif({
+        quality: 55,
+    }))
+    .pipe(gulp.dest('dist/img'))
+    .pipe(browserSync.stream());
 
 export const copy = () => gulp
     .src('src/font/**/*', {
@@ -96,8 +115,12 @@ export const server = () => {
     
     gulp.watch('src/**/*.html', html);
     gulp.watch(prepros ? 'src/scss/**/*.scss' : 'src/css/**/*.css', style);
+    gulp.watch('src/img/**/*.{jpg,jpeg,png,svg,gif}', img);
+    gulp.watch('src/img/**/*.{jpg,jpeg,png,svg,gif}', img);
     gulp.watch('src/js/**/*.js', js);
     gulp.watch('src/font/**/*', copy);
+    gulp.watch('src/img/**/*.{jpg,jpeg,png}', webp);
+    gulp.watch('src/img/**/*.{jpg,jpeg,png}', avif);
 };
 
 export const clear = () => deleteAsync('dist/**/*', {force: true,});
