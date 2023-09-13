@@ -128,7 +128,7 @@ export const clear = () => deleteAsync('dist/**/*', {force: true,});
 // launch
 
 export const base = gulp.parallel(html, style, js, json,
-    // img,
+    img, avif, webp,
     copy);
 
 export const build = gulp.series(clear, base);
