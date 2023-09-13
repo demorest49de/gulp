@@ -13,8 +13,11 @@ import gulpImage from "gulp-image";
 import gulpwebp from 'gulp-webp';
 import gulpavif from 'gulp-avif';
 import {stream as critical} from 'critical';
+import gulpif from 'gulp-if';
 
 const prepros = true;
+
+let dev = false;
 
 const sass = gulpSass(sassPkg);
 
@@ -33,18 +36,23 @@ export const style = () => {
     if (prepros) {
         return gulp
             .src('src/scss/**/*.scss')
+            // .pipe(gulpif(dev, sourceMaps.init()))
+            .pipe(sourceMaps.init())
             .pipe(sass().on('error', sass.logError))
             .pipe(cleanCSS({
                 2: {
                     specialComments: 0,
                 }
             }))
+            // .pipe(gulpif(sourceMaps.write('../maps')))
+            .pipe(sourceMaps.write('../maps'))
             .pipe(gulp.dest('dist/css'))
             .pipe(browserSync.stream());
     }
     
     return gulp
         .src('src/css/**/*.css')
+        .pipe(gulpif(dev, sourceMaps.init()))
         .pipe(cssImport({
             extensions: ['css'],
         }))
@@ -53,23 +61,32 @@ export const style = () => {
                 specialComments: 0,
             }
         }))
+        .pipe(gulpif(dev, sourceMaps.write('../maps')))
         .pipe(gulp.dest('dist/css'))
         .pipe(browserSync.stream());
 };
 
 export const js = () => gulp
     .src('src/js/**/*.js')
-    .pipe(sourceMaps.init())
+    .pipe(gulpif(dev, sourceMaps.init()))
     .pipe(terser())
     // .pipe(gulpConcat('index.min.js'))
-    .pipe(sourceMaps.write('dist/maps'))
+    .pipe(gulpif(dev, sourceMaps.write('dist/maps')))
     .pipe(gulp.dest('dist/js'))
     .pipe(browserSync.stream());
 
 
 export const img = () => gulp
     .src('src/img/**/*.{jpg,jpeg,png,svg,gif}')
-    .pipe(gulpImage({}))
+    .pipe(gulpif(!dev, gulpImage({
+        optipng: ['-i 1', '-strip all', '-fix', '-o7', '-force'],
+        pngquant: ['--speed=1', '--force', 256],
+        zopflipng: ['-y', '--lossy_8bit', '--lossy_transparent'],
+        jpegRecompress: ['--strip', '--quality', 'medium', '--min', 40, '--max', 80],
+        mozjpeg: ['-optimize', '-progressive'],
+        gifsicle: ['--optimize'],
+        svgo: ['--enable', 'cleanupIDs', '--disable', 'convertColors']
+    })))
     .pipe(gulp.dest('dist/img'))
     .pipe(browserSync.stream());
 
@@ -139,6 +156,10 @@ export const clear = () => deleteAsync('dist/**/*', {force: true,});
 
 // launch
 
+export const develop = async () => {
+    dev = true;
+};
+
 export const base = gulp.parallel(html, style, js, json,
     img, avif, webp,
     copy);
@@ -147,4 +168,4 @@ export const build = gulp.series(clear, base, critCSS);
 
 export const start = gulp.series(server);
 
-export default gulp.series(base, server);
+export default gulp.series(develop, base, server);
