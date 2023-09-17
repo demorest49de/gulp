@@ -36,16 +36,14 @@ export const style = () => {
     if (prepros) {
         return gulp
             .src('src/scss/**/*.scss')
-            // .pipe(gulpif(dev, sourceMaps.init()))
-            .pipe(sourceMaps.init())
+            .pipe(gulpif(dev, sourceMaps.init()))
             .pipe(sass().on('error', sass.logError))
             .pipe(cleanCSS({
                 2: {
                     specialComments: 0,
                 }
             }))
-            // .pipe(gulpif(sourceMaps.write('../maps')))
-            .pipe(sourceMaps.write('../maps'))
+            .pipe(gulpif(dev, sourceMaps.write('../maps')))
             .pipe(gulp.dest('dist/css'))
             .pipe(browserSync.stream());
     }
@@ -71,7 +69,7 @@ export const js = () => gulp
     .pipe(gulpif(dev, sourceMaps.init()))
     .pipe(terser())
     // .pipe(gulpConcat('index.min.js'))
-    .pipe(gulpif(dev, sourceMaps.write('dist/maps')))
+    .pipe(gulpif(dev, sourceMaps.write('../maps')))
     .pipe(gulp.dest('dist/js'))
     .pipe(browserSync.stream());
 
