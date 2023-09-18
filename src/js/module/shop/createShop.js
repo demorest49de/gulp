@@ -2,7 +2,6 @@ import {renderBlog} from "../blog/renderBlog.js";
 import {createHeader, createFooter} from '../base/baseElems.js';
 import {handlers} from "./handlers.js";
 import {renderArticle} from '../article/renderArticle.js'
-import {setCustomPaddings} from "../base/customPaddings.js";
 
 const createMain = (name, $) => {
     
@@ -120,7 +119,6 @@ const createSection = (name, $) => {
         return;
     }
 };
-
 
 const renderShop = ($) => {
     $.shop.forEach(({type, name}) => {
