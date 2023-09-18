@@ -74,7 +74,10 @@
     background-image: -webkit-image-set(
         url('../../img/item/timer.avif') 1x,
         url('../../img/item/timer.webp') 1x,
-        url('../../img/item/timer.jpg') 1x
+        url('../../img/item/timer.jpg') 1x,
+        url('../img/item/timer.avif') 1x,
+        url('../img/item/timer.webp') 1x,
+        url('../img/item/timer.jpg') 1x
     );
     background-size: cover;
     background-position: center;
