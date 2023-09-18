@@ -1,0 +1,1 @@
+{"version":3,"file":"../../../js/module/shop/handlers.js","names":["handleTimer","handlers","$"],"sources":["module/shop/handlers.js"],"mappings":"OAAQA,gBAAkB,oBAEnB,MAAMC,SAAYC,IACrBF,aAAa","sourcesContent":["import {handleTimer} from \"./timer.js\";\r\n\r\nexport const handlers = ($) => {\r\n    handleTimer();\r\n};"]}

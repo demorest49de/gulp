@@ -1,0 +1,2 @@
+import{renderElement}from"./module/shop/createShop.js";import{global}from"../js/module/constants.js";import{setCustomPaddings,customPaddingHandler}from"../js/module/base/customPaddings.js";{const o=(o,e,s)=>{const t=document.querySelector(o);s.app=t,s.selector=o,s.page=e},e=o=>{setCustomPaddings(o),customPaddingHandler(o)},s=(s,t)=>{o(s,t,global),renderElement(global),e(global)};window.init=s}
+//# sourceMappingURL=../maps/index.js.map
