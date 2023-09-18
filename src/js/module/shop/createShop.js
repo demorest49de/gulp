@@ -25,7 +25,6 @@ const createSection = (name, $) => {
                     <div class="container item__container">
         
                         <a href="#" class="item__gallery item__gallery-notebook" aria-label="Распродажа ноутбуков"
-<!--                         tabindex="${$.tabIndex = $.tabIndex + 1}"-->
                          >
                             <p class="item__text-notebook">
                                 -50% на все ноутбуки</p>
@@ -45,14 +44,12 @@ const createSection = (name, $) => {
                         </a>
         
                         <a href="#" class="item__gallery item__gallery-book" aria-label="Книга"
-<!--                        tabindex="${$.tabIndex = $.tabIndex + 1}"-->
                         >
                             <p class="item__text-book">
                                 <span class="item__text-bold">Книга –</span> лучший подарок</p>
                         </a>
         
                         <a href="#" class="item__gallery item__gallery-discount-bottom-left item__gallery-time"
-<!--                         tabindex="${$.tabIndex = $.tabIndex + 1}"-->
                            aria-label="Скидки">
                             <p class="item__text-time">
                                 Время скидок!
@@ -60,7 +57,6 @@ const createSection = (name, $) => {
                         </a>
         
                         <a href="#" class="item__gallery item__gallery-discount-top-left item__gallery-shoes"
-<!--                         tabindex="${$.tabIndex = $.tabIndex + 1}"-->
                         aria-label="вторая пара кросовок в подарок">
                         <picture>
                         
@@ -72,7 +68,6 @@ const createSection = (name, $) => {
                         </a>
         
                         <a href="#" class="item__gallery item__gallery-second-pair" aria-label="Кросовки"
-<!--                         tabindex="${$.tabIndex = $.tabIndex + 1}"-->
                          >
                             <p class=" item__text-second-pair">
                                 Вторая пара кроссовок
@@ -81,7 +76,6 @@ const createSection = (name, $) => {
                         </a>
         
                         <a href="#" class="item__gallery item__gallery-gift-ideas" aria-label="Подарки"
-<!--                         tabindex="${$.tabIndex = $.tabIndex + 1}"-->
                          >
                             <p class=" item__text-new-ideas">
                                 Идеи новогодних подарков
@@ -90,7 +84,6 @@ const createSection = (name, $) => {
         
                         <a href="#" class="item__gallery item__gallery-discount-bottom-left
                         item__gallery-profitable-december"
-<!--                        tabindex="${$.tabIndex = $.tabIndex + 1}"-->
                            aria-label="Техника">
                             <p class=" item__text-profitable-december">
                                 Выгодно в декабре!
@@ -99,7 +92,6 @@ const createSection = (name, $) => {
         
                         <a href="#" class="item__gallery item__gallery-new-year"
                         aria-label="Украшения на новый год"
-<!--                         tabindex="${$.tabIndex = $.tabIndex + 1}"-->
                          >
                             <p class="item__text-new-year">
                                 Новогодние украшения
@@ -108,13 +100,11 @@ const createSection = (name, $) => {
         
                         <a href="#" class="item__gallery item__gallery-discount-bottom-left item__gallery-dresses"
                            aria-label="Одежда"
-<!--                            tabindex="${$.tabIndex = $.tabIndex + 1}"-->
                            >
                         </a>
         
                         <a href="#" class="item__gallery item__gallery-discount-top-left item__gallery-chemicals"
                            aria-label="Бытовая химия"
-<!--                           tabindex="${$.tabIndex = $.tabIndex + 1}"-->
                            >
                             <p class="item__text-chemicals">
                                 На бытовую химию
@@ -123,7 +113,6 @@ const createSection = (name, $) => {
         
                         <a href="#" class="item__gallery item__gallery-ny-toys"
                          aria-label="Елочные украшения"
-<!--                          tabindex="${$.tabIndex = $.tabIndex + 1}"-->
                           >
                         <picture>
                             <source srcset="img/item/10.avif" type="image/avif">
@@ -211,9 +200,7 @@ export const renderCards = async ($) => {
             cards.insertAdjacentHTML('beforeend',
                 `
                     <li class="card">
-                        <a href="#" class="card__link " aria-label="${card.name}"
-<!--                        tabindex="${$.tabIndex = $.tabIndex + 1}"-->
-                            >
+                        <a href="#" class="card__link " aria-label="${card.name}">
                             <picture class="card__figure ${card.discountClass}">
                                 <source srcset="img/wholesale/photo${count}.avif" type="image/avif">
                                 <source srcset="img/wholesale/photo${count}.webp" type="image/webp">
