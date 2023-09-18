@@ -1,7 +1,7 @@
 import {renderBlog} from "../blog/renderBlog.js";
 import {createHeader, createFooter} from '../base/baseElems.js';
 import {handlers} from "./handlers.js";
-import {renderArticle} from '../article/renderArticle.js'
+import {renderArticle} from '../article/renderArticle.js';
 
 const createMain = (name, $) => {
     
@@ -24,7 +24,8 @@ const createSection = (name, $) => {
                     <h2 class="visually-hidden">товары и скидки</h2>
                     <div class="container item__container">
         
-                        <a href="#" class="item__gallery item__gallery-notebook" aria-label="Распродажа ноутбуков">
+                        <a href="#" class="item__gallery item__gallery-notebook" aria-label="Распродажа ноутбуков"
+                         tabindex="${$.tabIndex = $.tabIndex + 1}">
                             <p class="item__text-notebook">
                                 -50% на все ноутбуки</p>
                             <div class="item__timer timer"
@@ -33,21 +34,23 @@ const createSection = (name, $) => {
                             </div>
 <!--                            //added picture with source and img for google page speed rating and testing. maybe-->
 <!--                            //deleted in the nearest future-->
-                        <picture>
-                        
-                        <source srcset="img/item/timer.avif" type="image/avif">
-                        <source srcset="img/item/timer.webp" type="image/webp">
-                            <img class="item__image-notebook" src="img/item/timer.jpg"
-                             alt="Распродажа ноутбуков" width="4100" height="2900">
-                        </picture>
+                                <picture>
+                                
+                                <source srcset="img/item/timer.avif" type="image/avif">
+                                <source srcset="img/item/timer.webp" type="image/webp">
+                                    <img class="item__image-notebook" src="img/item/timer.jpg"
+                                     alt="Распродажа ноутбуков" width="4100" height="2900">
+                                </picture>
                         </a>
         
-                        <a href="#" class="item__gallery item__gallery-book" aria-label="Книга">
+                        <a href="#" class="item__gallery item__gallery-book" aria-label="Книга"
+                        tabindex="${$.tabIndex = $.tabIndex + 1}">
                             <p class="item__text-book">
                                 <span class="item__text-bold">Книга –</span> лучший подарок</p>
                         </a>
         
                         <a href="#" class="item__gallery item__gallery-discount-bottom-left item__gallery-time"
+                         tabindex="${$.tabIndex = $.tabIndex + 1}"
                            aria-label="Скидки">
                             <p class="item__text-time">
                                 Время скидок!
@@ -55,57 +58,65 @@ const createSection = (name, $) => {
                         </a>
         
                         <a href="#" class="item__gallery item__gallery-discount-top-left item__gallery-shoes"
+                         tabindex="${$.tabIndex = $.tabIndex + 1}"
                         aria-label="вторая пара кросовок в подарок">
                         <picture>
                         
                         <source srcset="img/item/3.avif" type="image/avif">
                         <source srcset="img/item/3.webp" type="image/webp">
-                            <img loading="lazy" class="item__image-shoes" src="img/item/3.jpg" alt="Обувь" width="420" height="200">
+                            <img class="item__image-shoes" src="img/item/3.jpg" alt="Обувь" width="420"
+                            height="200">
                         </picture>
                         </a>
         
-                        <a href="#" class="item__gallery item__gallery-second-pair" aria-label="Кросовки">
+                        <a href="#" class="item__gallery item__gallery-second-pair" aria-label="Кросовки"
+                         tabindex="${$.tabIndex = $.tabIndex + 1}">
                             <p class=" item__text-second-pair">
                                 Вторая пара кроссовок
                                 <span class="item__text-big">в&nbsp;подарок!</span>
                             </p>
                         </a>
         
-                        <a href="#" class="item__gallery item__gallery-gift-ideas" aria-label="Подарки">
+                        <a href="#" class="item__gallery item__gallery-gift-ideas" aria-label="Подарки"
+                         tabindex="${$.tabIndex = $.tabIndex + 1}">
                             <p class=" item__text-new-ideas">
                                 Идеи новогодних подарков
                             </p>
                         </a>
         
-                        <a href="#" class="item__gallery item__gallery-discount-bottom-left item__gallery-profitable-december"
+                        <a href="#" class="item__gallery item__gallery-discount-bottom-left
+                        item__gallery-profitable-december" tabindex="${$.tabIndex = $.tabIndex + 1}"
                            aria-label="Техника">
                             <p class=" item__text-profitable-december">
                                 Выгодно в декабре!
                             </p>
                         </a>
         
-                        <a href="#" class="item__gallery item__gallery-new-year" aria-label="Украшения на новый год">
+                        <a href="#" class="item__gallery item__gallery-new-year"
+                        aria-label="Украшения на новый год" tabindex="${$.tabIndex = $.tabIndex + 1}">
                             <p class="item__text-new-year">
                                 Новогодние украшения
                             </p>
                         </a>
         
                         <a href="#" class="item__gallery item__gallery-discount-bottom-left item__gallery-dresses"
-                           aria-label="Одежда">
+                           aria-label="Одежда" tabindex="${$.tabIndex = $.tabIndex + 1}">
                         </a>
         
                         <a href="#" class="item__gallery item__gallery-discount-top-left item__gallery-chemicals"
-                           aria-label="Бытовая химия">
+                           aria-label="Бытовая химия" tabindex="${$.tabIndex = $.tabIndex + 1}">
                             <p class="item__text-chemicals">
                                 На бытовую химию
                             </p>
                         </a>
         
-                        <a href="#" class="item__gallery item__gallery-ny-toys" aria-label="Елочные украшения">
+                        <a href="#" class="item__gallery item__gallery-ny-toys"
+                         aria-label="Елочные украшения" tabindex="${$.tabIndex = $.tabIndex + 1}">
                         <picture>
                             <source srcset="img/item/10.avif" type="image/avif">
                             <source srcset="img/item/10.webp" type="image/webp">
-                            <img loading="lazy" class="item__image-ny-toys" src="img/item/10.jpg" alt="Елочные украшения"
+                            <img class="item__image-ny-toys" src="img/item/10.jpg"
+                            alt="Елочные украшения"
                             width="200" height="200">
                         </picture>
                         </a>
@@ -126,7 +137,7 @@ const createSection = (name, $) => {
             </div>
         </section>
             `);
-        renderCards();
+        renderCards($);
         return;
     }
 };
@@ -142,7 +153,7 @@ const renderShop = ($) => {
             createMain(name, $);
             return;
         }
-
+        
         if (type === $.types.section) {
             createSection(name, $);
             return;
@@ -175,20 +186,20 @@ export const renderElement = ($) => {
     }
 };
 
-export const renderCards = async () => {
+export const renderCards = async ($) => {
     const cards = document.querySelector('.wholesale__cards');
     
     const response = await fetch('db.json');
     if (response.ok) {
         const json = await response.json();
         
-        
         json.forEach((card, index) => {
             const count = index + 1;
             cards.insertAdjacentHTML('beforeend',
                 `
                     <li class="card">
-                        <a href="#" class="card__link " aria-label="${card.name}">
+                        <a href="#" class="card__link " aria-label="${card.name}"
+                        tabindex="${$.tabIndex = $.tabIndex + 1}">
                             <picture class="card__figure ${card.discountClass}">
                                 <source srcset="img/wholesale/photo${count}.avif" type="image/avif">
                                 <source srcset="img/wholesale/photo${count}.webp" type="image/webp">

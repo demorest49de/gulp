@@ -14,10 +14,10 @@ export const createBreadCrumbs = (bc) => {
     `);
     const ul = breadCrumbs.querySelector('.bc__bread-crumbs');
     
-    for (const {url, name} of bc) {
+    for (const {url, name, ariaLabel} of bc) {
         ul.insertAdjacentHTML('beforeend',
             `
-            <li class="bc__item"><a class="bc__link" href="${url}">${name}</a>
+            <li class="bc__item"><a class="bc__link" href="${url}" aria-label="${ariaLabel}">${name}</a>
                 <svg class="bc__nav-arrow">
                     <use href="./img/article/nav-arrow.svg#nav-arrow"></use>
                 </svg>

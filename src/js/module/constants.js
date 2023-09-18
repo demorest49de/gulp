@@ -67,27 +67,34 @@ const breadCrumbs = {
     blogInfo: [
         {
             url: '/',
-            name: 'Главная'
+            name: 'Главная',
+            ariaLabel: 'Главная',
         },
         {
             url: '/blog.html',
-            name: 'Блог'
+            name: 'Блог',
+            ariaLabel: 'Блог',
         },
     ],
     articleInfo: [
         {
             url: '/',
-            name: 'Главная'
+            name: 'Главная',
+            ariaLabel: 'Главная',
         },
         {
             url: '/blog.html',
-            name: 'Блог'
+            name: 'Блог',
+            ariaLabel: 'Блог',
         },
         {
             url: '/article.html',
             name: 'имя статьи',
+            ariaLabel: 'имя статьи',
         },
     ],
 };
 
-export const global = {shop, blog, article, types, breadCrumbs};
+let tabIndex = 0;
+
+export const global = {shop, blog, article, types, breadCrumbs, tabIndex};

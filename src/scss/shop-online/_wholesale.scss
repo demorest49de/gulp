@@ -25,7 +25,7 @@
     grid-auto-rows: 394px;
     row-gap: 50px;
     column-gap: 24px;
-    justify-content: space-around;
+    justify-content: space-between;
     @media (max-width: 1024px) {
       column-gap: 20px;
       grid-template-columns: repeat(auto-fit, 294px);
@@ -69,6 +69,7 @@
     border-radius: 14px;
     margin-bottom: 20px;
     position: relative;
+    display: flex;
     @media (max-width: 1024px) {
       height: 300px;
     }
@@ -114,6 +115,7 @@
   }
 
   &__image {
+    width: 100%;
     @media (max-width: 1024px) {
       height: 100%;
     }
