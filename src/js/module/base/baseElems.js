@@ -8,7 +8,7 @@ export const createHeader = (name, $) => {
                         <img
                                 class="header__logo"
                                 src="img/header/logo.svg"
-                                alt="Логотип магазина ShopOnline" tabindex="1">
+                                alt="Логотип магазина ShopOnline" tabindex="1" width="235" height="39">
                     </a>
                     <button class="header__button-menu" aria-label="Открыть меню">Меню</button>
         
@@ -111,7 +111,7 @@ export const createFooter = (name, $) => {
                     <img
                             class="footer__logo"
                             src="img/footer/logo.svg"
-                            alt="Логотип магазина ShopOnline">
+                            alt="Логотип магазина ShopOnline" width="235" height="39">
                 </div>
                 <div class="footer__catalog">
                     <h2 class="footer__subtitle">Каталог</h2>

@@ -37,7 +37,8 @@ const createSection = (name, $) => {
                         
                         <source srcset="img/item/timer.avif" type="image/avif">
                         <source srcset="img/item/timer.webp" type="image/webp">
-                            <img loading="lazy" class="item__image-notebook" src="img/item/timer.jpg" alt="Распродажа ноутбуков" width="420" height="200">
+                            <img class="item__image-notebook" src="img/item/timer.jpg"
+                             alt="Распродажа ноутбуков" width="4100" height="2900">
                         </picture>
                         </a>
         
