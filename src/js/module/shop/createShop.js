@@ -25,7 +25,8 @@ const createSection = (name, $) => {
                     <div class="container item__container">
         
                         <a href="#" class="item__gallery item__gallery-notebook" aria-label="Распродажа ноутбуков"
-                         tabindex="${$.tabIndex = $.tabIndex + 1}">
+<!--                         tabindex="${$.tabIndex = $.tabIndex + 1}"-->
+                         >
                             <p class="item__text-notebook">
                                 -50% на все ноутбуки</p>
                             <div class="item__timer timer"
@@ -44,13 +45,14 @@ const createSection = (name, $) => {
                         </a>
         
                         <a href="#" class="item__gallery item__gallery-book" aria-label="Книга"
-                        tabindex="${$.tabIndex = $.tabIndex + 1}">
+<!--                        tabindex="${$.tabIndex = $.tabIndex + 1}"-->
+                        >
                             <p class="item__text-book">
                                 <span class="item__text-bold">Книга –</span> лучший подарок</p>
                         </a>
         
                         <a href="#" class="item__gallery item__gallery-discount-bottom-left item__gallery-time"
-                         tabindex="${$.tabIndex = $.tabIndex + 1}"
+<!--                         tabindex="${$.tabIndex = $.tabIndex + 1}"-->
                            aria-label="Скидки">
                             <p class="item__text-time">
                                 Время скидок!
@@ -58,7 +60,7 @@ const createSection = (name, $) => {
                         </a>
         
                         <a href="#" class="item__gallery item__gallery-discount-top-left item__gallery-shoes"
-                         tabindex="${$.tabIndex = $.tabIndex + 1}"
+<!--                         tabindex="${$.tabIndex = $.tabIndex + 1}"-->
                         aria-label="вторая пара кросовок в подарок">
                         <picture>
                         
@@ -70,7 +72,8 @@ const createSection = (name, $) => {
                         </a>
         
                         <a href="#" class="item__gallery item__gallery-second-pair" aria-label="Кросовки"
-                         tabindex="${$.tabIndex = $.tabIndex + 1}">
+<!--                         tabindex="${$.tabIndex = $.tabIndex + 1}"-->
+                         >
                             <p class=" item__text-second-pair">
                                 Вторая пара кроссовок
                                 <span class="item__text-big">в&nbsp;подарок!</span>
@@ -78,14 +81,16 @@ const createSection = (name, $) => {
                         </a>
         
                         <a href="#" class="item__gallery item__gallery-gift-ideas" aria-label="Подарки"
-                         tabindex="${$.tabIndex = $.tabIndex + 1}">
+<!--                         tabindex="${$.tabIndex = $.tabIndex + 1}"-->
+                         >
                             <p class=" item__text-new-ideas">
                                 Идеи новогодних подарков
                             </p>
                         </a>
         
                         <a href="#" class="item__gallery item__gallery-discount-bottom-left
-                        item__gallery-profitable-december" tabindex="${$.tabIndex = $.tabIndex + 1}"
+                        item__gallery-profitable-december"
+<!--                        tabindex="${$.tabIndex = $.tabIndex + 1}"-->
                            aria-label="Техника">
                             <p class=" item__text-profitable-december">
                                 Выгодно в декабре!
@@ -93,25 +98,33 @@ const createSection = (name, $) => {
                         </a>
         
                         <a href="#" class="item__gallery item__gallery-new-year"
-                        aria-label="Украшения на новый год" tabindex="${$.tabIndex = $.tabIndex + 1}">
+                        aria-label="Украшения на новый год"
+<!--                         tabindex="${$.tabIndex = $.tabIndex + 1}"-->
+                         >
                             <p class="item__text-new-year">
                                 Новогодние украшения
                             </p>
                         </a>
         
                         <a href="#" class="item__gallery item__gallery-discount-bottom-left item__gallery-dresses"
-                           aria-label="Одежда" tabindex="${$.tabIndex = $.tabIndex + 1}">
+                           aria-label="Одежда"
+<!--                            tabindex="${$.tabIndex = $.tabIndex + 1}"-->
+                           >
                         </a>
         
                         <a href="#" class="item__gallery item__gallery-discount-top-left item__gallery-chemicals"
-                           aria-label="Бытовая химия" tabindex="${$.tabIndex = $.tabIndex + 1}">
+                           aria-label="Бытовая химия"
+<!--                           tabindex="${$.tabIndex = $.tabIndex + 1}"-->
+                           >
                             <p class="item__text-chemicals">
                                 На бытовую химию
                             </p>
                         </a>
         
                         <a href="#" class="item__gallery item__gallery-ny-toys"
-                         aria-label="Елочные украшения" tabindex="${$.tabIndex = $.tabIndex + 1}">
+                         aria-label="Елочные украшения"
+<!--                          tabindex="${$.tabIndex = $.tabIndex + 1}"-->
+                          >
                         <picture>
                             <source srcset="img/item/10.avif" type="image/avif">
                             <source srcset="img/item/10.webp" type="image/webp">
@@ -199,7 +212,8 @@ export const renderCards = async ($) => {
                 `
                     <li class="card">
                         <a href="#" class="card__link " aria-label="${card.name}"
-                        tabindex="${$.tabIndex = $.tabIndex + 1}">
+<!--                        tabindex="${$.tabIndex = $.tabIndex + 1}"-->
+                            >
                             <picture class="card__figure ${card.discountClass}">
                                 <source srcset="img/wholesale/photo${count}.avif" type="image/avif">
                                 <source srcset="img/wholesale/photo${count}.webp" type="image/webp">

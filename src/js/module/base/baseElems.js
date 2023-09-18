@@ -4,23 +4,29 @@ export const createHeader = (name, $) => {
         $.app.insertAdjacentHTML('beforeend', `
             <header class="header">
                 <div class="container header__container">
-                    <a href="/" class="header__logo-block" tabindex="${$.tabIndex = $.tabIndex + 1}">
+                    <a href="/" class="header__logo-block"
+<!--                     tabindex="${$.tabIndex = $.tabIndex + 1}"-->
+                    >
                         <img
                                 class="header__logo"
                                 src="img/header/logo.svg"
                                 alt="Логотип магазина ShopOnline" width="235" height="39">
                     </a>
                     <button class="header__button-menu" aria-label="Открыть меню"
-                    tabindex="${$.tabIndex = $.tabIndex + 1}">Меню</button>
+<!--                    tabindex="${$.tabIndex = $.tabIndex + 1}"-->
+                    >Меню</button>
         
                     <form class="header__form-search form-search" method="post" name="header__form-search"
                     aria-label="поиск товара">
                         <input type="search"
                                class="form-search__input"
                                name="form-search__input"
-                               placeholder="Я ищу..." tabindex="${$.tabIndex = $.tabIndex + 1}">
+                               placeholder="Я ищу..."
+<!--                               tabindex="${$.tabIndex = $.tabIndex + 1}"-->
+                               >
                         <button class="form-search__button" type="submit" aria-label="Поиск"
-                        tabindex="${$.tabIndex = $.tabIndex + 1}">
+<!--                        tabindex="${$.tabIndex = $.tabIndex + 1}"-->
+                        >
                             <svg
                                     class="form-search__button-img"
                                     width="27"
@@ -41,7 +47,8 @@ export const createHeader = (name, $) => {
                         <ul class="navigation__list">
                             <li class="navigation__item">
                                 <a href="#" class="navigation__link" aria-label="Профиль"
-                                 tabindex="${$.tabIndex = $.tabIndex + 1}">
+<!--                                 tabindex="${$.tabIndex = $.tabIndex + 1}"-->
+                                 >
                                     <svg
                                             class="navigation__link-img"
                                             width="24"
@@ -60,7 +67,8 @@ export const createHeader = (name, $) => {
                             </li>
                             <li class="navigation__item navigation__item-cart">
                                 <a href="#" class="navigation__link" aria-label="Корзина"
-                                 tabindex="${$.tabIndex = $.tabIndex + 1}">
+<!--                                 tabindex="${$.tabIndex = $.tabIndex + 1}"-->
+                                 >
                                     <svg
                                             class="navigation__link-img"
                                             width="31"
@@ -80,7 +88,8 @@ export const createHeader = (name, $) => {
                             </li>
                             <li class="navigation__item">
                                 <a href="#" class="navigation__link" aria-label="Избранное"
-                                 tabindex="${$.tabIndex = $.tabIndex + 1}">
+<!--                                 tabindex="${$.tabIndex = $.tabIndex + 1}"-->
+                                 >
                                     <svg
                                             class="navigation__link-img"
                                             width="30"
@@ -117,7 +126,8 @@ export const createFooter = (name, $) => {
                             class="footer__logo"
                             src="img/footer/logo.svg"
                             alt="Логотип магазина ShopOnline" width="235" height="39"
-                            tabindex="27">
+                            
+                            >
                 </div>
                 <div class="footer__catalog">
                     <h2 class="footer__subtitle">Каталог</h2>

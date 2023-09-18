@@ -6,23 +6,23 @@ export const createBurger = () => {
         <nav class="burger__nav">
           <ul class="burger__list">
             <li class="burger__item">
-              <a class="burger__link" href="#rooms" tabindex="3">Залы</a>
+              <a class="burger__link" href="#rooms" >Залы</a>
             </li>
             <li class="burger__item">
-              <a class="burger__link" href="#about" tabindex="4">О нас</a>
+              <a class="burger__link" href="#about" >О нас</a>
             </li>
             <li class="burger__item">
-              <a class="burger__link" href="#booking" tabindex="5">Бронь</a>
+              <a class="burger__link" href="#booking" >Бронь</a>
             </li>
             <li class="burger__item">
-              <a class="burger__link" href="#reviews" tabindex="6">Отзывы</a>
+              <a class="burger__link" href="#reviews" >Отзывы</a>
             </li>
             <li class="burger__item">
-              <a class="burger__link" href="#contacts" tabindex="7">Контакты</a>
+              <a class="burger__link" href="#contacts" >Контакты</a>
             </li>
           </ul>
         </nav>
-        <button class="burger__call-button" tabindex="8">Заказать звонок</button>
+        <button class="burger__call-button">Заказать звонок</button>
       </div>
   `);
     return burger;
