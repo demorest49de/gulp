@@ -27,8 +27,18 @@ const createSection = (name, $) => {
                         <a href="#" class="item__gallery item__gallery-notebook" aria-label="Распродажа ноутбуков">
                             <p class="item__text-notebook">
                                 -50% на все ноутбуки</p>
-                            <div class="item__timer timer" data-timer-deadline="09/26/22 22:41">
+                            <div class="item__timer timer"
+                            data-timer-deadline="09/26/22 22:41"
+                            >
                             </div>
+<!--                            //added picture with source and img for google page speed rating and testing. maybe-->
+<!--                            //deleted in the nearest future-->
+                        <picture>
+                        
+                        <source srcset="img/item/timer.avif" type="image/avif">
+                        <source srcset="img/item/timer.webp" type="image/webp">
+                            <img loading="lazy" class="item__image-notebook" src="img/item/timer.jpg" alt="Распродажа ноутбуков" width="420" height="200">
+                        </picture>
                         </a>
         
                         <a href="#" class="item__gallery item__gallery-book" aria-label="Книга">
