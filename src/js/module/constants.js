@@ -97,9 +97,17 @@ const breadCrumbs = {
 
 let tabIndex = 0;//temporary not usable
 
-const burger = {
+const burgerMenu = {
     visibility: false,
-    clear: ''
+    menu: './img/header/menu.svg#menu',
+    clear: './img/header/menu.svg#clear'
 }
 
-export const global = {shop, blog, article, types, breadCrumbs, tabIndex};
+export const global = {shop,
+    blog,
+    article,
+    types,
+    breadCrumbs,
+    tabIndex,
+    burgerMenu
+};

@@ -14,7 +14,7 @@ import {burgerHandler} from "./module/shop/burger/burgerHandler.js";
     const handlersInit = ($) => {
         setCustomPaddings($);
         customPaddingHandler($);
-        burgerHandler();
+        burgerHandler($);
     };
     
     const init = (selector, page) => {

@@ -1,2 +1,2 @@
-export const burgerHandler=()=>{document.querySelector(".header__button-menu").addEventListener("click",(({target:e})=>{console.log(" : ",e)}))};
+export const burgerHandler=e=>{const r=document.querySelector(".header__button-menu"),t=document.querySelector(".header__button-menu-svg use");r.addEventListener("click",(r=>{r.stopPropagation(),e.burgerMenu.visibility=!e.burgerMenu.visibility,console.log(" : ",e.burgerMenu.visibility),e.burgerMenu.visibility?t.setAttribute("href",e.burgerMenu.menu):t.setAttribute("href",e.burgerMenu.clear)}))};
 //# sourceMappingURL=../../../../maps/module/shop/burger/burgerHandler.js.map
