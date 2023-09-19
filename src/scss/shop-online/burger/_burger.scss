@@ -61,7 +61,8 @@
     grid-template-areas:
         "catalog buyer contacts";
     @media (max-width: 1840px) {
-      grid-auto-columns: fit-content(100%);
+      justify-content: space-between;
+      grid-auto-columns: max-content;
     }
     @media (max-width: 1200px) {
       justify-content: space-between;
@@ -87,7 +88,7 @@
     @media (max-width: 1840px) {
       max-height: 528px;
     }
-    @media (max-width: 1024px) {
+    @media (max-width: 1025px) {
       width: fit-content;
       row-gap: 10px;
     }
@@ -133,7 +134,7 @@
     min-width: 580px;
     @media (max-width: 1840px) {
       min-width: unset;
-      max-width: 260px;
+      width: fit-content;
     }
   }
 

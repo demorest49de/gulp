@@ -29,7 +29,7 @@
       "catalog buyer contacts";
     }
     @media (max-width: 1023px) {
-      grid-auto-columns: 207px;
+      grid-auto-columns: max-content;
       column-gap: 29px;
     }
     @media (max-width: 764px) {
