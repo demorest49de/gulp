@@ -9,14 +9,14 @@ export const burgerHandler = ($) => {
         console.log(' : ',$.burgerMenu.visibility);
         if($.burgerMenu.visibility){
             menuSvg.setAttribute('href', $.burgerMenu.menu);
-            document.body.style.overflow = 'hidden';
-            burgerMenu.style.opacity = '0';
             document.body.style.overflow = 'visible';
+            burgerMenu.style.visibility = 'hidden';
+            burgerMenu.style.opacity = '0';
         }else{
             menuSvg.setAttribute('href', $.burgerMenu.clear);
+            document.body.style.overflow = 'hidden';
             burgerMenu.style.visibility = 'visible';
             burgerMenu.style.opacity = '1';
-            document.body.style.overflow = 'hidden';
         }
     });
 };

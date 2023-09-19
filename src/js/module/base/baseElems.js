@@ -111,6 +111,10 @@ export const createHeader = (name, $) => {
             </header>
         `);
     }
+    
+    const header = $.app.querySelector('.header');
+    const burger = createBurger($);
+    header.append(burger);
 };
 
 
@@ -219,7 +223,4 @@ export const createFooter = (name, $) => {
         </div>
     </footer>
         `);
-    const main = $.app.querySelector('.main');
-    const burger = createBurger($);
-    main.prepend(burger);
 };
