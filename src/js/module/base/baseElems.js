@@ -13,7 +13,12 @@ export const createHeader = (name, $) => {
                                 alt="Логотип магазина ShopOnline" width="235" height="39">
                     </a>
                     <button class="header__button-menu" aria-label="Открыть меню"
-                    >Меню</button>
+                    >
+                    <svg class="header__button-menu-svg"  xmlns="http://www.w3.org/2000/svg">
+                        <use href="./img/header/menu.svg#menu">
+                    </svg>
+
+                    Меню</button>
         
                     <form class="header__form-search form-search" method="post" name="header__form-search"
                     aria-label="поиск товара">

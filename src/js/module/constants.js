@@ -95,6 +95,11 @@ const breadCrumbs = {
     ],
 };
 
-let tabIndex = 0;
+let tabIndex = 0;//temporary not usable
+
+const burger = {
+    visibility: false,
+    clear: ''
+}
 
 export const global = {shop, blog, article, types, breadCrumbs, tabIndex};

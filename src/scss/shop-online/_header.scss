@@ -30,8 +30,7 @@
       gap: 50px;
       grid-template-areas:
       "logo . . nav"
-      "menu search search search"
-    ;
+      "menu search search search";
     }
     @media (max-width: 768px) {
       grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -46,8 +45,7 @@
       column-gap: 0;
       grid-template-areas:
       "logo nav"
-      "menu search"
-    ;
+      "menu search";
     }
   }
 
@@ -65,10 +63,18 @@
     }
   }
 
+  &__button-menu-svg {
+    width: 24px;
+    height: 24px;
+    fill: $white-color;
+  }
+
   &__button-menu {
     position: relative;
     display: flex;
     align-items: center;
+    justify-content: center;
+    column-gap: 5px;
     font-size: 22px;
     font-weight: 400;
     line-height: 33px;
@@ -77,21 +83,19 @@
     color: $white-color;
     border: none;
     border-radius: 10px;
-    padding-left: 61px;
-    margin-left: 2px;
     grid-area: menu;
 
     &:before {
-      content: "";
-      position: absolute;
-      height: 12px;
-      width: 18px;
-      left: 33px;
-      background-image: url("../../img/header/menu.svg");
-      background-size: contain;
+      //content: "";
+      //position: absolute;
+      //height: 12px;
+      //width: 18px;
+      //left: 33px;
+      //background-image: url("../../img/header/menu.svg");
+      //background-size: contain;
     }
 
-    @media (max-width: 1340px){
+    @media (max-width: 1340px) {
     }
     @media (max-width: 768px) {
       width: 115px;

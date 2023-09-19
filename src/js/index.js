@@ -1,6 +1,7 @@
 import {renderElement} from './module/shop/createShop.js';
 import {global} from '../js/module/constants.js';
 import {setCustomPaddings, customPaddingHandler} from "../js/module/base/customPaddings.js";
+import {burgerHandler} from "./module/shop/burger/burgerHandler.js";
 
 {
     const constsInit = (selector, page, $) => {
@@ -13,6 +14,7 @@ import {setCustomPaddings, customPaddingHandler} from "../js/module/base/customP
     const handlersInit = ($) => {
         setCustomPaddings($);
         customPaddingHandler($);
+        burgerHandler();
     };
     
     const init = (selector, page) => {
