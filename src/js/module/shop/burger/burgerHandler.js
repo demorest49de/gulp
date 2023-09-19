@@ -11,7 +11,7 @@ export const burgerHandler = ($) => {
             menuSvg.setAttribute('href', $.burgerMenu.menu);
             document.body.style.overflow = 'hidden';
             burgerMenu.style.opacity = '0';
-            document.body.style.overflow = 'hidden';
+            document.body.style.overflow = 'visible';
         }else{
             menuSvg.setAttribute('href', $.burgerMenu.clear);
             burgerMenu.style.visibility = 'visible';
