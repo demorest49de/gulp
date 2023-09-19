@@ -98,7 +98,7 @@ const breadCrumbs = {
 let tabIndex = 0;//temporary not usable
 
 const burgerMenu = {
-    visibility: true,
+    visibility: false,
     menu: './img/header/menu.svg#menu',
     clear: './img/header/menu.svg#clear'
 }

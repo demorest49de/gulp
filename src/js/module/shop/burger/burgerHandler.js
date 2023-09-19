@@ -9,22 +9,29 @@ export const burgerHandler = ($) => {
         burgerMenu.style.visibility = 'hidden';
         burgerMenu.style.opacity = '0';
     };
+    
+    const openMenu = () => {
+        menuSvg.setAttribute('href', $.burgerMenu.clear);
+        document.body.style.overflow = 'hidden';
+        burgerMenu.style.visibility = 'visible';
+        burgerMenu.style.opacity = '1';
+    };
+    
     burgerBtn.addEventListener('click', (ev) => {
-        $.burgerMenu.visibility = !$.burgerMenu.visibility;
         
         if ($.burgerMenu.visibility) {
             closeMenu();
         } else {
-            menuSvg.setAttribute('href', $.burgerMenu.clear);
-            document.body.style.overflow = 'hidden';
-            burgerMenu.style.visibility = 'visible';
-            burgerMenu.style.opacity = '1';
+            openMenu();
         }
+        $.burgerMenu.visibility = !$.burgerMenu.visibility;
     });
     
     
-    burgerMenu.addEventListener('click', () => {
-        closeMenu();
-        $.burgerMenu.visibility = !$.burgerMenu.visibility;
+    burgerMenu.addEventListener('click', ({target}) => {
+        if (target === burgerMenu) {
+            closeMenu();
+            $.burgerMenu.visibility = !$.burgerMenu.visibility;
+        }
     });
 };
