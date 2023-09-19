@@ -6,7 +6,7 @@ export const createBurger = () => {
         <div class="burger__menu navbase">
               <div class="container navbase__container">
                     <div class="burger__block navbase__block">
-                        <div class="burget__catalog navbase__catalog">
+                        <div class="burger__catalog navbase__catalog">
                             <h2 class="burger__subtitle navbase__subtitle">Каталог</h2>
                             <nav class="burger__nav navbase__nav">
                                 <ul class="burger__list navbase__list">
@@ -27,10 +27,10 @@ export const createBurger = () => {
                             <h2 class="burger__subtitle navbase__subtitle">Покупателям</h2>
                             <nav class="navbase__nav">
                                 <ul class="burger__list navbase__list">
-                                    <li class="navbase__elem"><a href="#">Оплата заказа</a></li>
-                                    <li class="navbase__elem"><a href="#">Условия доставки</a></li>
-                                    <li class="navbase__elem"><a href="#">Условия возврата товара</a></li>
-                                    <li class="navbase__elem"><a href="/blog.html">Блог</a></li>
+                                    <li class="burger__elem navbase__elem"><a href="#">Оплата заказа</a></li>
+                                    <li class="burger__elem navbase__elem"><a href="#">Условия доставки</a></li>
+                                    <li class="burger__elem navbase__elem"><a href="#">Условия возврата товара</a></li>
+                                    <li class="burger__elem navbase__elem"><a href="/blog.html">Блог</a></li>
                                 </ul>
                             </nav>
                         </div>
