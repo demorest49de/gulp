@@ -8,6 +8,7 @@
 
   visibility: hidden;
   opacity: 0;
+  transition: opacity .3s ease-in-out;
   
   @media (max-width: 1340px) {
     top: 265px;
