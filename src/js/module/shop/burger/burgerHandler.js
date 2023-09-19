@@ -2,21 +2,18 @@ export const burgerHandler = ($) => {
     const burgerBtn = document.querySelector('.header__button-menu');
     const menuSvg = document.querySelector('.header__button-menu-svg use');
     const burgerMenu = document.querySelector('.burger');
-    const closeMenu = () =>{
+    
+    const closeMenu = () => {
         menuSvg.setAttribute('href', $.burgerMenu.menu);
         document.body.style.overflow = 'visible';
         burgerMenu.style.visibility = 'hidden';
         burgerMenu.style.opacity = '0';
-        $.burgerMenu.visibility = !$.burgerMenu.visibility;
-    }
+    };
     burgerBtn.addEventListener('click', (ev) => {
         $.burgerMenu.visibility = !$.burgerMenu.visibility;
         
         if ($.burgerMenu.visibility) {
-            menuSvg.setAttribute('href', $.burgerMenu.menu);
-            document.body.style.overflow = 'visible';
-            burgerMenu.style.visibility = 'hidden';
-            burgerMenu.style.opacity = '0';
+            closeMenu();
         } else {
             menuSvg.setAttribute('href', $.burgerMenu.clear);
             document.body.style.overflow = 'hidden';
@@ -28,5 +25,6 @@ export const burgerHandler = ($) => {
     
     burgerMenu.addEventListener('click', () => {
         closeMenu();
+        $.burgerMenu.visibility = !$.burgerMenu.visibility;
     });
 };
