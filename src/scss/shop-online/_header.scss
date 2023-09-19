@@ -212,7 +212,7 @@
     display: flex;
     height: 100%;
     gap: 60px;
-    color: $darkgrey-color;
+    color: $closedark-color;
 
     @media (max-width: 768px) {
       justify-content: end;
