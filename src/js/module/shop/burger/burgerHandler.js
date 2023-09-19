@@ -17,8 +17,7 @@ export const burgerHandler = ($) => {
         burgerMenu.style.opacity = '1';
     };
     
-    burgerBtn.addEventListener('click', (ev) => {
-        
+    burgerBtn.addEventListener('click', () => {
         if ($.burgerMenu.visibility) {
             closeMenu();
         } else {
@@ -26,7 +25,6 @@ export const burgerHandler = ($) => {
         }
         $.burgerMenu.visibility = !$.burgerMenu.visibility;
     });
-    
     
     burgerMenu.addEventListener('click', ({target}) => {
         if (target === burgerMenu) {
