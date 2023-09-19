@@ -14,13 +14,53 @@
     background-color: $white-color;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.20);
     padding: 0 0 92px 0;
+    height: 500px;
+  }
+
+  .burger__subtitle {
+    font-family: Inter, Lato, Arial, sans-serif;
+    font-size: 38px;
+    font-weight: 700;
+    line-height: 130%;
+    margin-bottom: 33px;
   }
 
   .burger__block:nth-child(1) {
     margin-bottom: 0;
   }
+
   .burger__block {
     grid-template-areas:
         "catalog buyer contacts";
+  }
+
+  .burger__list {
+    max-height: 297px;
+    font-size: 22px;
+    font-weight: 400;
+    line-height: 150%;
+    row-gap: 20px;
+    column-gap: 83px;
+  }
+
+  .burger__elem:not(:nth-last-child(1)) {
+    padding: 0;
+  }
+
+  .burget__catalog {
+    min-width: 580px;
+  }
+
+  .burger__contacts {
+    min-width: 622px;
+    grid-area: contacts;
+  }
+
+  .burger__contacts .burger__elem {
+    font-size: 22px;
+    font-weight: 400;
+    line-height: 150%;
+    row-gap: 20px;
+    column-gap: 83px;
   }
 }
