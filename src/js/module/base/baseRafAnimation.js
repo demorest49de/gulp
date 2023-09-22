@@ -4,7 +4,7 @@ export const rafAnimation = (duration, direction, height, callback) => {
     
     requestId = window.requestAnimationFrame(function step(timestamp) {
         startAnimation ||= timestamp;
-        let progress = (((timestamp - startAnimation) / duration)*100).toFixed(2);
+        let progress = (((timestamp - startAnimation) / duration)*280).toFixed(2);
         if (direction > 0) {
             callback(progress);
             if (progress < +height) {

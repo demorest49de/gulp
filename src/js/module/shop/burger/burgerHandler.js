@@ -8,28 +8,24 @@ export const burgerHandler = ($) => {
     
     let blockHeight = NaN;
     
-    // const updateBurgerHeight = () => {
-    //     const height = getComputedStyle(burgerMenu).height;
-    //
-    //     console.log(' : ', height);
-    // };
-    
-    const checkWindowsWidth = () => {
-        if (screen.width <= 440) {
-            // burgerMenu.style.paddingBottom = '45px';
-        }
+    const changeBlockHeight = () => {
+        // const height = getComputedStyle(burgerMenu).height;
+        updateBlockHeight();
+        burgerMenu.style.height = `${blockHeight}px`;
+        console.log(' : ',blockHeight);
     };
     
-    const burgerMenuWidth = () => {
+    
+    const updateBlockHeight = () => {
         switch (true) {
             case screen.width > 1200 && screen.width <= 1840:
                 blockHeight = 680;
                 return;
             case screen.width > 1024 && screen.width <= 1200:
-                blockHeight = 680;
+                blockHeight = 670;
                 return;
             case screen.width > 768 && screen.width <= 1024:
-                blockHeight = 460;
+                blockHeight = 450;
                 return;
             case screen.width > 440 && screen.width <= 768:
                 blockHeight = 440;
@@ -47,8 +43,6 @@ export const burgerHandler = ($) => {
     const closeMenu = () => {
         menuSvg.setAttribute('href', $.burgerMenu.menu);
         document.body.style.overflow = 'visible';
-        // burger.style.visibility = 'hidden';
-        // burger.style.opacity = '0';
         
         burgerMenu.style.paddingBottom = '0px';
     };
@@ -57,15 +51,12 @@ export const burgerHandler = ($) => {
         menuSvg.setAttribute('href', $.burgerMenu.clear);
         document.body.style.overflow = 'hidden';
         
-        // burger.style.visibility = 'visible';
-        // burger.style.opacity = '1';
         
-        burgerMenuWidth();
+        updateBlockHeight();
         rafAnimation(300, 1, blockHeight, (progress) => {
             burgerMenu.style.height = `${progress}px`;
         });
         
-        // burgerMenu.style.paddingBottom = '92px';
     };
     
     burgerBtn.addEventListener('click', () => {
@@ -85,10 +76,9 @@ export const burgerHandler = ($) => {
     });
 
     document.addEventListener('DOMContentLoaded', () => {
-        checkWindowsWidth();
     });
     
     window.addEventListener('resize', () => {
-        checkWindowsWidth();
+        changeBlockHeight();
     });
 };
