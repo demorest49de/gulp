@@ -38,11 +38,11 @@ export const style = () => {
             .src('src/scss/**/*.scss')
             .pipe(gulpif(dev, sourceMaps.init()))
             .pipe(sass().on('error', sass.logError))
-            .pipe(cleanCSS({
-                2: {
-                    specialComments: 0,
-                }
-            }))
+            // .pipe(cleanCSS({
+            //     2: {
+            //         specialComments: 0,
+            //     }
+            // }))
             .pipe(gulpif(dev, sourceMaps.write('../maps')))
             .pipe(gulp.dest('dist/css'))
             .pipe(browserSync.stream());
@@ -67,7 +67,7 @@ export const style = () => {
 export const js = () => gulp
     .src('src/js/**/*.js')
     .pipe(gulpif(dev, sourceMaps.init()))
-    .pipe(terser())
+    // .pipe(terser())
     // .pipe(gulpConcat('index.min.js'))
     .pipe(gulpif(dev, sourceMaps.write('../maps')))
     .pipe(gulp.dest('dist/js'))

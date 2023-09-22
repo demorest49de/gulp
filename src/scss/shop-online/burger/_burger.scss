@@ -13,20 +13,17 @@
   @media (max-width: 1340px) {
     top: 265px;
   }
-
   @media (max-width: 1200px) {
     top: 250px;
   }
-
   @media (max-width: 768px) {
     top: 185px;
   }
-
   @media (max-width: 520px) {
     top: 135px;
   }
 
-  .burger__menu {
+  &__menu {
     color: $closedark-color;
     background-color: $white-color;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.20);
@@ -37,7 +34,7 @@
     }
   }
 
-  .burger__subtitle {
+  &__subtitle {
     font-family: $inter;
     font-size: 38px;
     font-weight: 700;
@@ -54,11 +51,7 @@
     }
   }
 
-  .burger__block:nth-child(1) {
-    margin-bottom: 0;
-  }
-
-  .burger__block {
+  &__block {
     grid-template-areas:
         "catalog buyer contacts";
     @media (max-width: 1840px) {
@@ -80,9 +73,13 @@
         "contacts";
       justify-content: center;
     }
+
+    &:nth-child(1) {
+      margin-bottom: 0;
+    }
   }
 
-  .burger__list {
+  &__list {
     max-height: 297px;
     row-gap: 20px;
     column-gap: 83px;
@@ -93,15 +90,12 @@
       width: fit-content;
       row-gap: 10px;
     }
-  }
-
-  .burger__contacts .burger__list {
     @media (max-width: 440px) {
       margin-bottom: 0;
     }
   }
 
-  .burger__elem {
+  &__elem {
     font-size: 22px;
     font-weight: 400;
     line-height: 150%;
@@ -114,7 +108,7 @@
     }
   }
 
-  .burger__contacts .burger__elem {
+  &__elem {
     font-size: 22px;
     font-weight: 400;
     line-height: 150%;
@@ -125,13 +119,12 @@
       row-gap: 10px;
       column-gap: 53px;
     }
+    &:not(:nth-last-child(1)) {
+      padding: 0;
+    }
   }
 
-  .burger__elem:not(:nth-last-child(1)) {
-    padding: 0;
-  }
-
-  .burger__catalog {
+  &__catalog {
     min-width: 580px;
     @media (max-width: 1840px) {
       min-width: unset;
@@ -139,7 +132,7 @@
     }
   }
 
-  .burger__contacts {
+  &__contacts {
     min-width: 622px;
     grid-area: contacts;
     @media (max-width: 1840px) {

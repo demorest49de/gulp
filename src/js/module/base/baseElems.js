@@ -112,9 +112,9 @@ export const createHeader = (name, $) => {
         `);
     }
     
-    // const header = $.app.querySelector('.header');
-    // const burger = createBurger($);
-    // header.append(burger);
+    const header = $.app.querySelector('.header');
+    const burger = createBurger($);
+    header.append(burger);
 };
 
 
