@@ -1,17 +1,45 @@
+import {rafAnimation} from "../../base/baseRafAnimation.js";
+
 export const burgerHandler = ($) => {
     const burgerBtn = document.querySelector('.header__button-menu');
     const menuSvg = document.querySelector('.header__button-menu-svg use');
     const burger = document.querySelector('.burger');
     const burgerMenu = document.querySelector('.burger__menu');
     
+    let blockHeight = NaN;
+    
     // const updateBurgerHeight = () => {
     //     const height = getComputedStyle(burgerMenu).height;
+    //
     //     console.log(' : ', height);
     // };
     
     const checkWindowsWidth = () => {
         if (screen.width <= 440) {
-            burgerMenu.style.paddingBottom = '45px';
+            // burgerMenu.style.paddingBottom = '45px';
+        }
+    };
+    
+    const burgerMenuWidth = () => {
+        switch (true) {
+            case screen.width > 1200 && screen.width <= 1840:
+                blockHeight = 680;
+                return;
+            case screen.width > 1024 && screen.width <= 1200:
+                blockHeight = 680;
+                return;
+            case screen.width > 768 && screen.width <= 1024:
+                blockHeight = 460;
+                return;
+            case screen.width > 440 && screen.width <= 768:
+                blockHeight = 440;
+                return;
+            case screen.width <= 440:
+                blockHeight = 680;
+                return;
+            default:
+                blockHeight = 450;
+                return;
         }
     };
     
@@ -32,7 +60,12 @@ export const burgerHandler = ($) => {
         // burger.style.visibility = 'visible';
         // burger.style.opacity = '1';
         
-        burgerMenu.style.paddingBottom = '92px';
+        burgerMenuWidth();
+        rafAnimation(300, 1, blockHeight, (progress) => {
+            burgerMenu.style.height = `${progress}px`;
+        });
+        
+        // burgerMenu.style.paddingBottom = '92px';
     };
     
     burgerBtn.addEventListener('click', () => {
@@ -50,35 +83,7 @@ export const burgerHandler = ($) => {
             $.burgerMenu.visibility = !$.burgerMenu.visibility;
         }
     });
-    
-    const burgerMenuWidth = () => {
-        switch (true) {
-            case screen.width <= 1840:
-                burgerMenu.style.height = '700';
-                return;
-            case screen.width <= 1024:
-                burgerMenu.style.height = '460px';
-                return;
-            case screen.width <= 440:
-                burgerMenu.style.height = '680';
-                return;
-            default:
-                burgerMenu.style.height = '500px';
-                return;
-        }
-    };
 
-
-// @media (max-width: 1840px) {
-//         height: 700px;
-//     }
-// @media (max-width: 1024px) {
-//         height: 460px;
-//     }
-// @media (max-width: 440px) {
-//         height: 680px;
-//     }
-    
     document.addEventListener('DOMContentLoaded', () => {
         checkWindowsWidth();
     });

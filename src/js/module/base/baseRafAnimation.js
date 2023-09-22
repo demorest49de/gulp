@@ -1,13 +1,13 @@
-export const rafAnimation = (duration, direction, callback) => {
+export const rafAnimation = (duration, direction, height, callback) => {
     let requestId = NaN;
     let startAnimation = NaN;
     
     requestId = window.requestAnimationFrame(function step(timestamp) {
         startAnimation ||= timestamp;
-        let progress = ((timestamp - startAnimation) / duration).toFixed(2);
+        let progress = (((timestamp - startAnimation) / duration)*100).toFixed(2);
         if (direction > 0) {
             callback(progress);
-            if (progress < 1) {
+            if (progress < +height) {
                 requestId = requestAnimationFrame(step);
             } else {
                 cancelAnimationFrame(requestId);
@@ -15,7 +15,7 @@ export const rafAnimation = (duration, direction, callback) => {
         } else {
             progress = (1 - progress).toFixed(2);
             callback(progress);
-            if (progress > 0) {
+            if (progress > +height) {
                 requestId = requestAnimationFrame(step);
             } else {
                 cancelAnimationFrame(requestId);
