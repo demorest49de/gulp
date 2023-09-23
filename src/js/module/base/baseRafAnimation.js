@@ -1,7 +1,7 @@
 export const rafAnimationMenu = (duration, direction, height, callback) => {
     let requestId = NaN;
     let startAnimation = NaN;
-    
+    let progressExternal = '';
     requestId = window.requestAnimationFrame(function step(timestamp) {
         startAnimation ||= timestamp;
         let progress = (((timestamp - startAnimation) / duration) * 300).toFixed(2);
@@ -18,11 +18,14 @@ export const rafAnimationMenu = (duration, direction, height, callback) => {
             if (+progress >= 0) {
                 requestId = requestAnimationFrame(step);
             } else {
-                callback("0");
+                progress = '0';
+                callback(progress);
                 cancelAnimationFrame(requestId);
+                progressExternal = progress;
             }
         }
     });
+    return progressExternal;
 };
 
 export const rafAnimationIcon = (duration, direction, callback) => {

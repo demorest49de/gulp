@@ -28,19 +28,29 @@ export const burgerHandler = ($) => {
         });
     };
     
-    const closeMenu = () => {
+    const closeMenu = async () => {
         menuSvg.setAttribute('href', $.burgerMenu.menu);
         document.body.style.overflow = 'visible';
         animationIconHandler();
         updateBlockHeight();
-        rafAnimationMenu(300, -1, burgerMenu.scrollHeight, (progress) => {
-            burgerMenu.style.height = `${progress}px`;
+        
+        
+        const callbackwrapper = (callback) => {
+            const progress = rafAnimationMenu(300, -1, burgerMenu.scrollHeight, (progress) => {
+                burgerMenu.style.height = `${progress}px`;
+            });
+            console.log(' : ', progress);
+        };
+        callbackwrapper(() => {
+            burger.style.visibility = 'hidden';
         });
+        
     };
     
     const openMenu = () => {
         menuSvg.setAttribute('href', $.burgerMenu.clear);
         document.body.style.overflow = 'hidden';
+        burger.style.visibility = 'visible';
         animationIconHandler();
         updateBlockHeight();
         rafAnimationMenu(300, 1, blockHeight, (progress) => {

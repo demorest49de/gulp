@@ -75,7 +75,7 @@ export const js = () => gulp
     //     presets: ['@babel/preset-env'],
     //     ignore: ['src/js/**/*.min.js']
     // }))
-    .pipe(terser())
+    // .pipe(terser())
     // .pipe(gulpConcat('index.min.js'))
     .pipe(gulpif(dev, sourceMaps.write('../maps')))
     .pipe(gulp.dest('dist/js'))
