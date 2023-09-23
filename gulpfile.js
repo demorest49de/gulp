@@ -14,6 +14,7 @@ import gulpwebp from 'gulp-webp';
 import gulpavif from 'gulp-avif';
 import {stream as critical} from 'critical';
 import gulpif from 'gulp-if';
+import autoprefixer from 'gulp-autoprefixer';
 
 const prepros = true;
 
@@ -38,6 +39,7 @@ export const style = () => {
             .src('src/scss/**/*.scss')
             .pipe(gulpif(dev, sourceMaps.init()))
             .pipe(sass().on('error', sass.logError))
+            .pipe(autoprefixer())
              .pipe(cleanCSS({
                  2: {
                      specialComments: 0,
@@ -54,6 +56,7 @@ export const style = () => {
         .pipe(cssImport({
             extensions: ['css'],
         }))
+        .pipe(autoprefixer())
         .pipe(cleanCSS({
             2: {
                 specialComments: 0,
