@@ -75,8 +75,10 @@ export const js = () => gulp
 
 
 export const img = () => gulp
-    .src('src/img/**/*.{jpg,jpeg,png,svg,gif}')
-    .pipe(gulpif(!dev, gulpImage({
+    // .src('src/img/**/*.{jpg,jpeg,png,svg,gif}')
+    .src('src/img/**/*.{jpg,jpeg,png,gif}')
+    .pipe(gulpif(!dev, gulpImage(
+        {
         optipng: ['-i 1', '-strip all', '-fix', '-o7', '-force'],
         pngquant: ['--speed=1', '--force', 256],
         zopflipng: ['-y', '--lossy_8bit', '--lossy_transparent'],
@@ -84,7 +86,8 @@ export const img = () => gulp
         mozjpeg: ['-optimize', '-progressive'],
         gifsicle: ['--optimize'],
         svgo: ['--enable', 'cleanupIDs', '--disable', 'convertColors']
-    })))
+    }
+    )))
     .pipe(gulp.dest('dist/img'))
     .pipe(browserSync.stream());
 
@@ -116,8 +119,11 @@ export const critCSS = () => gulp
     })
     .pipe(gulp.dest('dist'));
 
-const copy = () => gulp
-    .src('src/font/**/*', {
+export const copy = () => gulp
+    .src([
+        'src/font/**/*',
+        'src/img/**/*.svg'
+    ], {
         base: 'src'
     })
     .pipe(gulp.dest('dist'))

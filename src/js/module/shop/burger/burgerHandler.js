@@ -56,7 +56,7 @@ export const burgerHandler = ($) => {
             $.burgerMenu.visibility = !$.burgerMenu.visibility;
         }
     });
-    menuSvg.setAttribute('href', $.burgerMenu.menu);
+    
     window.addEventListener('resize', () => {
         updateBlockHeight();
     });
