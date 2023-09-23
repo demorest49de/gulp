@@ -1,7 +1,7 @@
-import {renderElement} from './module/shop/createShop.js';
+import {renderElement} from '../js/module/shop/createShop.js';
 import {global} from '../js/module/constants.js';
 import {setCustomPaddings, customPaddingHandler} from "../js/module/base/customPaddings.js";
-import {burgerHandler} from "./module/shop/burger/burgerHandler.js";
+import {burgerHandler} from "../js/module/shop/burger/burgerHandler.js";
 
 {
     const constsInit = (selector, page, $) => {
