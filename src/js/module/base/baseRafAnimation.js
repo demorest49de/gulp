@@ -4,20 +4,21 @@ export const rafAnimation = (duration, direction, height, callback) => {
     
     requestId = window.requestAnimationFrame(function step(timestamp) {
         startAnimation ||= timestamp;
-        let progress = (((timestamp - startAnimation) / duration)*280).toFixed(2);
+        let progress = (((timestamp - startAnimation) / duration)*300).toFixed(2);
         if (direction > 0) {
             callback(progress);
-            if (progress < +height) {
+            if (+progress <= height) {
                 requestId = requestAnimationFrame(step);
             } else {
                 cancelAnimationFrame(requestId);
             }
         } else {
-            progress = (1 - progress).toFixed(2);
+            progress = (height - +(progress)).toFixed(2);
             callback(progress);
-            if (progress > +height) {
+            if (+progress >= 0) {
                 requestId = requestAnimationFrame(step);
             } else {
+                callback("0");
                 cancelAnimationFrame(requestId);
             }
         }

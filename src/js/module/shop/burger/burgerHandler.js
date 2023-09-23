@@ -5,58 +5,36 @@ export const burgerHandler = ($) => {
     const menuSvg = document.querySelector('.header__button-menu-svg use');
     const burger = document.querySelector('.burger');
     const burgerMenu = document.querySelector('.burger__menu');
+    const burgerBlock = document.querySelector('.burger__block');
     
     let blockHeight = NaN;
     
-    const changeBlockHeight = () => {
-        // const height = getComputedStyle(burgerMenu).height;
-        updateBlockHeight();
-        burgerMenu.style.height = `${blockHeight}px`;
-        console.log(' : ',blockHeight);
-    };
-    
-    
     const updateBlockHeight = () => {
-        switch (true) {
-            case screen.width > 1200 && screen.width <= 1840:
-                blockHeight = 680;
-                return;
-            case screen.width > 1024 && screen.width <= 1200:
-                blockHeight = 670;
-                return;
-            case screen.width > 768 && screen.width <= 1024:
-                blockHeight = 450;
-                return;
-            case screen.width > 440 && screen.width <= 768:
-                blockHeight = 440;
-                return;
-            case screen.width <= 440:
-                blockHeight = 680;
-                return;
-            default:
-                blockHeight = 450;
-                return;
-        }
+        const height = +(burgerBlock.scrollHeight);
+        const paddingBottom = 92;
+        blockHeight = height + paddingBottom;
+        burgerMenu.style.height = `${blockHeight}px`;
     };
-    
     
     const closeMenu = () => {
         menuSvg.setAttribute('href', $.burgerMenu.menu);
         document.body.style.overflow = 'visible';
         
-        burgerMenu.style.paddingBottom = '0px';
+        updateBlockHeight();
+        rafAnimation(300, -1, burgerMenu.scrollHeight, (progress) => {
+            console.log(progress);
+            burgerMenu.style.height = `${progress}px`;
+        });
     };
     
     const openMenu = () => {
         menuSvg.setAttribute('href', $.burgerMenu.clear);
         document.body.style.overflow = 'hidden';
         
-        
         updateBlockHeight();
         rafAnimation(300, 1, blockHeight, (progress) => {
             burgerMenu.style.height = `${progress}px`;
         });
-        
     };
     
     burgerBtn.addEventListener('click', () => {
@@ -74,11 +52,9 @@ export const burgerHandler = ($) => {
             $.burgerMenu.visibility = !$.burgerMenu.visibility;
         }
     });
-
-    document.addEventListener('DOMContentLoaded', () => {
-    });
     
     window.addEventListener('resize', () => {
-        changeBlockHeight();
+        updateBlockHeight();
     });
+    
 };
