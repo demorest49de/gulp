@@ -11,7 +11,10 @@ export const burgerHandler = ($) => {
     
     const updateBlockHeight = () => {
         const height = +(burgerBlock.scrollHeight);
-        const paddingBottom = 92;
+        let paddingBottom = 92;
+        if(screen.width <= 440){
+           paddingBottom = 45;
+        }
         blockHeight = height + paddingBottom;
         burgerMenu.style.height = `${blockHeight}px`;
     };
@@ -22,7 +25,6 @@ export const burgerHandler = ($) => {
         
         updateBlockHeight();
         rafAnimation(300, -1, burgerMenu.scrollHeight, (progress) => {
-            console.log(progress);
             burgerMenu.style.height = `${progress}px`;
         });
     };
