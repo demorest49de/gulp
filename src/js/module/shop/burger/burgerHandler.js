@@ -35,16 +35,25 @@ export const burgerHandler = ($) => {
         updateBlockHeight();
         
         
-        const callbackwrapper = (callback) => {
-            const progress = rafAnimationMenu(300, -1, burgerMenu.scrollHeight, (progress) => {
-                burgerMenu.style.height = `${progress}px`;
-            });
-            console.log(' : ', progress);
-        };
-        callbackwrapper(() => {
-            burger.style.visibility = 'hidden';
-        });
+        // const callbackwrapper = (callback) => {
+        //     const progress = rafAnimationMenu(300, -1, burgerMenu.scrollHeight, (progress) => {
+        //         burgerMenu.style.height = `${progress}px`;
+        //     });
+        //     console.log(' : ', progress);
+        // };
+        // callbackwrapper(() => {
+        //     burger.style.visibility = 'hidden';
+        // });
         
+        
+        const rafPromise = rafAnimationMenu(300, -1, burgerMenu.scrollHeight, (progress) => {
+            burgerMenu.style.height = `${progress}px`;
+        });
+        rafPromise.then((data) => {
+            if(data === 0){
+                burger.style.visibility = 'hidden';
+            }
+        });
     };
     
     const openMenu = () => {

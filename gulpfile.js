@@ -176,6 +176,8 @@ export const base = gulp.parallel(html, style, js, json,
     img, avif, webp,
     copy);
 
+export const noimg = gulp.parallel(html, style, js, json, copy);
+
 export const build = gulp.series(clear, base, critCSS);
 
 export const start = gulp.series(server);

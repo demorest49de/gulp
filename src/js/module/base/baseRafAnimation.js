@@ -2,30 +2,36 @@ export const rafAnimationMenu = (duration, direction, height, callback) => {
     let requestId = NaN;
     let startAnimation = NaN;
     let progressExternal = '';
-    requestId = window.requestAnimationFrame(function step(timestamp) {
-        startAnimation ||= timestamp;
-        let progress = (((timestamp - startAnimation) / duration) * 300).toFixed(2);
-        if (direction > 0) {
-            callback(progress);
-            if (+progress <= height) {
-                requestId = requestAnimationFrame(step);
-            } else {
-                cancelAnimationFrame(requestId);
-            }
-        } else {
-            progress = (height - +(progress)).toFixed(2);
-            callback(progress);
-            if (+progress >= 0) {
-                requestId = requestAnimationFrame(step);
-            } else {
-                progress = '0';
+    
+    const rafPromise = new Promise(resolve => {
+        requestId = window.requestAnimationFrame(function step(timestamp) {
+            startAnimation ||= timestamp;
+            let progress = (((timestamp - startAnimation) / duration) * 300).toFixed(2);
+            if (direction > 0) {
                 callback(progress);
-                cancelAnimationFrame(requestId);
-                progressExternal = progress;
+                if (+progress <= height) {
+                    requestId = requestAnimationFrame(step);
+                } else {
+                    cancelAnimationFrame(requestId);
+                }
+            } else {
+                progress = (height - +(progress)).toFixed(2);
+                callback(progress);
+                if (+progress >= 0) {
+                    requestId = requestAnimationFrame(step);
+                } else {
+                    progress = '0';
+                    callback(progress);
+                    cancelAnimationFrame(requestId);
+                    progressExternal = progress;
+                    console.log(' : ', progressExternal);
+                    resolve(+progressExternal)
+                }
             }
-        }
+        });
     });
-    return progressExternal;
+    
+    return rafPromise;
 };
 
 export const rafAnimationIcon = (duration, direction, callback) => {
