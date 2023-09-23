@@ -67,9 +67,9 @@
     width: 24px;
     height: 24px;
     fill: $white-color;
-    transition: opacity .3s ease-in-out;
-    visibility: visible;
-    opacity: 1;
+    //transition: opacity .3s ease-in-out;
+    //visibility: visible;
+    //opacity: 1;
 
     @media (max-width: 520px) {
       width: 18px;

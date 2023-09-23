@@ -1,10 +1,10 @@
-export const rafAnimation = (duration, direction, height, callback) => {
+export const rafAnimationMenu = (duration, direction, height, callback) => {
     let requestId = NaN;
     let startAnimation = NaN;
     
     requestId = window.requestAnimationFrame(function step(timestamp) {
         startAnimation ||= timestamp;
-        let progress = (((timestamp - startAnimation) / duration)*300).toFixed(2);
+        let progress = (((timestamp - startAnimation) / duration) * 300).toFixed(2);
         if (direction > 0) {
             callback(progress);
             if (+progress <= height) {
@@ -22,5 +22,35 @@ export const rafAnimation = (duration, direction, height, callback) => {
                 cancelAnimationFrame(requestId);
             }
         }
+    });
+};
+
+export const rafAnimationIcon = (duration, direction, callback) => {
+    let requestId = NaN;
+    let startAnimation = NaN;
+    
+    requestId = window.requestAnimationFrame(function step(timestamp) {
+        startAnimation ||= timestamp;
+        let progress = ((timestamp - startAnimation) / duration).toFixed(2);
+        callback(progress);
+        if (+progress <= 1) {
+            requestId = requestAnimationFrame(step);
+        } else {
+            callback("1");
+            cancelAnimationFrame(requestId);
+        }
+        if (direction > 0) {
+        
+        }
+        // else {
+        //     progress = (height - +(progress)).toFixed(2);
+        //     callback(progress);
+        //     if (+progress >= 0) {
+        //         requestId = requestAnimationFrame(step);
+        //     } else {
+        //         callback("0");
+        //         cancelAnimationFrame(requestId);
+        //     }
+        // }
     });
 };

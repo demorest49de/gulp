@@ -1,4 +1,4 @@
-import {rafAnimation} from "../../base/baseRafAnimation.js";
+import {rafAnimationIcon, rafAnimationMenu} from "../../base/baseRafAnimation.js";
 
 export const burgerHandler = ($) => {
     const burgerBtn = document.querySelector('.header__button-menu');
@@ -21,12 +21,19 @@ export const burgerHandler = ($) => {
         }
     };
     
+    const animationIconHandler = () => {
+        menuSvg.style.opacity = '0';
+        rafAnimationIcon(500, 1, (progress) => {
+            menuSvg.style.opacity = `${progress}`;
+        });
+    };
+    
     const closeMenu = () => {
         menuSvg.setAttribute('href', $.burgerMenu.menu);
         document.body.style.overflow = 'visible';
-        
+        animationIconHandler();
         updateBlockHeight();
-        rafAnimation(300, -1, burgerMenu.scrollHeight, (progress) => {
+        rafAnimationMenu(300, -1, burgerMenu.scrollHeight, (progress) => {
             burgerMenu.style.height = `${progress}px`;
         });
     };
@@ -34,9 +41,9 @@ export const burgerHandler = ($) => {
     const openMenu = () => {
         menuSvg.setAttribute('href', $.burgerMenu.clear);
         document.body.style.overflow = 'hidden';
-        
+        animationIconHandler();
         updateBlockHeight();
-        rafAnimation(300, 1, blockHeight, (progress) => {
+        rafAnimationMenu(300, 1, blockHeight, (progress) => {
             burgerMenu.style.height = `${progress}px`;
         });
     };
