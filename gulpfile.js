@@ -15,6 +15,7 @@ import gulpavif from 'gulp-avif';
 import {stream as critical} from 'critical';
 import gulpif from 'gulp-if';
 import autoprefixer from 'gulp-autoprefixer';
+import babel from 'gulp-babel';
 
 const prepros = true;
 
@@ -40,11 +41,11 @@ export const style = () => {
             .pipe(gulpif(dev, sourceMaps.init()))
             .pipe(sass().on('error', sass.logError))
             .pipe(autoprefixer())
-             .pipe(cleanCSS({
-                 2: {
-                     specialComments: 0,
-                 }
-             }))
+            .pipe(cleanCSS({
+                2: {
+                    specialComments: 0,
+                }
+            }))
             .pipe(gulpif(dev, sourceMaps.write('../maps')))
             .pipe(gulp.dest('dist/css'))
             .pipe(browserSync.stream());
@@ -70,7 +71,11 @@ export const style = () => {
 export const js = () => gulp
     .src('src/js/**/*.js')
     .pipe(gulpif(dev, sourceMaps.init()))
-     .pipe(terser())
+    .pipe(babel({
+        presets: ['@babel/preset-env'],
+        ignore: ['src/js/**/*.min.js']
+    }))
+    .pipe(terser())
     // .pipe(gulpConcat('index.min.js'))
     .pipe(gulpif(dev, sourceMaps.write('../maps')))
     .pipe(gulp.dest('dist/js'))
@@ -82,14 +87,14 @@ export const img = () => gulp
     .src('src/img/**/*.{jpg,jpeg,png,gif}')
     .pipe(gulpif(!dev, gulpImage(
         {
-        optipng: ['-i 1', '-strip all', '-fix', '-o7', '-force'],
-        pngquant: ['--speed=1', '--force', 256],
-        zopflipng: ['-y', '--lossy_8bit', '--lossy_transparent'],
-        jpegRecompress: ['--strip', '--quality', 'medium', '--min', 40, '--max', 80],
-        mozjpeg: ['-optimize', '-progressive'],
-        gifsicle: ['--optimize'],
-        svgo: ['--enable', 'cleanupIDs', '--disable', 'convertColors']
-    }
+            optipng: ['-i 1', '-strip all', '-fix', '-o7', '-force'],
+            pngquant: ['--speed=1', '--force', 256],
+            zopflipng: ['-y', '--lossy_8bit', '--lossy_transparent'],
+            jpegRecompress: ['--strip', '--quality', 'medium', '--min', 40, '--max', 80],
+            mozjpeg: ['-optimize', '-progressive'],
+            gifsicle: ['--optimize'],
+            svgo: ['--enable', 'cleanupIDs', '--disable', 'convertColors']
+        }
     )))
     .pipe(gulp.dest('dist/img'))
     .pipe(browserSync.stream());
