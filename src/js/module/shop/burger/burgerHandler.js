@@ -12,11 +12,13 @@ export const burgerHandler = ($) => {
     const updateBlockHeight = () => {
         const height = +(burgerBlock.scrollHeight);
         let paddingBottom = 92;
-        if(screen.width <= 440){
-           paddingBottom = 45;
+        if (screen.width <= 650) {
+            paddingBottom = 45;
         }
         blockHeight = height + paddingBottom;
-        burgerMenu.style.height = `${blockHeight}px`;
+        if ($.burgerMenu.visibility) {
+            burgerMenu.style.height = `${blockHeight}px`;
+        }
     };
     
     const closeMenu = () => {
@@ -54,7 +56,7 @@ export const burgerHandler = ($) => {
             $.burgerMenu.visibility = !$.burgerMenu.visibility;
         }
     });
-    
+    menuSvg.setAttribute('href', $.burgerMenu.menu);
     window.addEventListener('resize', () => {
         updateBlockHeight();
     });
