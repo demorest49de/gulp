@@ -36,7 +36,7 @@ const createSection = (name, $) => {
                                 
                                 <source srcset="img/item/timer.avif" type="image/avif">
                                 <source srcset="img/item/timer.webp" type="image/webp">
-                                    <img class="item__image-notebook" src="img/item/timer.jpg"
+                                    <img class="item__image-items" src="img/item/timer.jpg"
                                      alt="Распродажа ноутбуков" width="4100" height="2900">
                                 </picture>
                         </a>
@@ -45,6 +45,13 @@ const createSection = (name, $) => {
                         >
                             <p class="item__text-book">
                                 <span class="item__text-bold">Книга –</span> лучший подарок</p>
+                                 <picture>
+                                
+                                <source srcset="img/item/1.avif" type="image/avif">
+                                <source srcset="img/item/1.webp" type="image/webp">
+                                    <img class="item__image-items" src="img/item/1.jpg"
+                                     alt="Книга" width="500" height="400">
+                                </picture>
                         </a>
         
                         <a href="#" class="item__gallery item__gallery-discount-bottom-left item__gallery-time"
@@ -52,6 +59,13 @@ const createSection = (name, $) => {
                             <p class="item__text-time">
                                 Время скидок!
                             </p>
+                                <picture>
+                                
+                                <source srcset="img/item/2.avif" type="image/avif">
+                                <source srcset="img/item/2.webp" type="image/webp">
+                                    <img class="item__image-items" src="img/item/2.jpg"
+                                     alt="Скидки" width="500" height="400">
+                                </picture>
                         </a>
         
                         <a href="#" class="item__gallery item__gallery-discount-top-left item__gallery-shoes"
@@ -71,6 +85,13 @@ const createSection = (name, $) => {
                                 Вторая пара кроссовок
                                 <span class="item__text-big">в&nbsp;подарок!</span>
                             </p>
+                                <picture>
+                                
+                                <source srcset="img/item/4.avif" type="image/avif">
+                                <source srcset="img/item/4.webp" type="image/webp">
+                                    <img class="item__image-items" src="img/item/4.jpg"
+                                     alt="Кросовки" width="500" height="400">
+                                </picture>
                         </a>
         
                         <a href="#" class="item__gallery item__gallery-gift-ideas" aria-label="Подарки"
@@ -78,14 +99,28 @@ const createSection = (name, $) => {
                             <p class=" item__text-new-ideas">
                                 Идеи новогодних подарков
                             </p>
+                                <picture>
+                                
+                                <source srcset="img/item/5.avif" type="image/avif">
+                                <source srcset="img/item/5.webp" type="image/webp">
+                                    <img class="item__image-items" src="img/item/5.jpg"
+                                     alt="Подарки" width="500" height="400">
+                                </picture>
                         </a>
         
                         <a href="#" class="item__gallery item__gallery-discount-bottom-left
                         item__gallery-profitable-december"
                            aria-label="Техника">
-                            <p class=" item__text-profitable-december">
+                            <p class="item__text-profitable-december">
                                 Выгодно в декабре!
                             </p>
+                                <picture>
+                                
+                                <source srcset="img/item/6.avif" type="image/avif">
+                                <source srcset="img/item/6.webp" type="image/webp">
+                                    <img class="item__image-items" src="img/item/6.jpg"
+                                     alt="Техника" width="500" height="400">
+                                </picture>
                         </a>
         
                         <a href="#" class="item__gallery item__gallery-new-year"
@@ -94,11 +129,25 @@ const createSection = (name, $) => {
                             <p class="item__text-new-year">
                                 Новогодние украшения
                             </p>
+                                <picture>
+                                
+                                <source srcset="img/item/7.avif" type="image/avif">
+                                <source srcset="img/item/7.webp" type="image/webp">
+                                    <img class="item__image-items" src="img/item/7.jpg"
+                                     alt="Украшения на новый год" width="1100" height="810">
+                                </picture>
                         </a>
         
                         <a href="#" class="item__gallery item__gallery-discount-bottom-left item__gallery-dresses"
-                           aria-label="Одежда"
+                           aria-label="Женская одежда"
                            >
+                                <picture>
+                                
+                                <source srcset="img/item/8.avif" type="image/avif">
+                                <source srcset="img/item/8.webp" type="image/webp">
+                                    <img class="item__image-items" src="img/item/8.jpg"
+                                     alt="Женская одежда" width="1100" height="810">
+                                </picture>
                         </a>
         
                         <a href="#" class="item__gallery item__gallery-discount-top-left item__gallery-chemicals"
@@ -107,6 +156,13 @@ const createSection = (name, $) => {
                             <p class="item__text-chemicals">
                                 На бытовую химию
                             </p>
+                                <picture>
+                                
+                                <source srcset="img/item/9.avif" type="image/avif">
+                                <source srcset="img/item/9.webp" type="image/webp">
+                                    <img class="item__image-items" src="img/item/9.jpg"
+                                     alt="Бытовая химия" width="500" height="400">
+                                </picture>
                         </a>
         
                         <a href="#" class="item__gallery item__gallery-ny-toys"
