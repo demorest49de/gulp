@@ -20,11 +20,11 @@ const createSection = async (name, $) => {
     if (name === 'item') {
         $.main.insertAdjacentHTML('beforeend',
             `
-                <section class="item" aria-label="Каталог товаров">
+                <section class="item" aria-label="Items catalog">
                     <h2 class="visually-hidden">товары и скидки</h2>
                     <div class="container item__container">
         
-                        <a href="#" class="item__gallery item__gallery-notebook" aria-label="Распродажа ноутбуков"
+                        <a href="#" class="item__gallery item__gallery-notebook" aria-label="Laptops wholesale"
                          >
                             <p class="item__text-notebook">
                                 -50% на все ноутбуки</p>
@@ -41,7 +41,7 @@ const createSection = async (name, $) => {
                                 </picture>
                         </a>
         
-                        <a href="#" class="item__gallery item__gallery-book" aria-label="Книга"
+                        <a href="#" class="item__gallery item__gallery-book" aria-label="Book"
                         >
                             <p class="item__text-book">
                                 <span class="item__text-bold">Книга –</span> лучший подарок</p>
@@ -55,7 +55,7 @@ const createSection = async (name, $) => {
                         </a>
         
                         <a href="#" class="item__gallery item__gallery-discount-bottom-left item__gallery-time"
-                           aria-label="Скидки">
+                           aria-label="Discounts">
                             <p class="item__text-time">
                                 Время скидок!
                             </p>
@@ -69,7 +69,7 @@ const createSection = async (name, $) => {
                         </a>
         
                         <a href="#" class="item__gallery item__gallery-discount-top-left item__gallery-shoes"
-                        aria-label="вторая пара кросовок в подарок">
+                        aria-label="second pair of shoes as a gift">
                         <picture>
                         
                         <source srcset="img/item/3.avif" type="image/avif">
@@ -79,7 +79,7 @@ const createSection = async (name, $) => {
                         </picture>
                         </a>
         
-                        <a href="#" class="item__gallery item__gallery-second-pair" aria-label="Кросовки"
+                        <a href="#" class="item__gallery item__gallery-second-pair" aria-label="sneakers"
                          >
                             <p class=" item__text-second-pair">
                                 Вторая пара кроссовок
@@ -94,7 +94,7 @@ const createSection = async (name, $) => {
                                 </picture>
                         </a>
         
-                        <a href="#" class="item__gallery item__gallery-gift-ideas" aria-label="Подарки"
+                        <a href="#" class="item__gallery item__gallery-gift-ideas" aria-label="gifts"
                          >
                             <p class=" item__text-new-ideas">
                                 Идеи новогодних подарков
@@ -110,7 +110,7 @@ const createSection = async (name, $) => {
         
                         <a href="#" class="item__gallery item__gallery-discount-bottom-left
                         item__gallery-profitable-december"
-                           aria-label="Техника">
+                           aria-label="gadgets">
                             <p class="item__text-profitable-december">
                                 Выгодно в декабре!
                             </p>
@@ -124,7 +124,7 @@ const createSection = async (name, $) => {
                         </a>
         
                         <a href="#" class="item__gallery item__gallery-new-year"
-                        aria-label="Украшения на новый год"
+                        aria-label="new year's toys"
                          >
                             <p class="item__text-new-year">
                                 Новогодние украшения
@@ -139,7 +139,7 @@ const createSection = async (name, $) => {
                         </a>
         
                         <a href="#" class="item__gallery item__gallery-discount-bottom-left item__gallery-dresses"
-                           aria-label="Женская одежда"
+                           aria-label="woman wear"
                            >
                                 <picture>
                                 
@@ -151,7 +151,7 @@ const createSection = async (name, $) => {
                         </a>
         
                         <a href="#" class="item__gallery item__gallery-discount-top-left item__gallery-chemicals"
-                           aria-label="Бытовая химия"
+                           aria-label="household chemistry"
                            >
                             <p class="item__text-chemicals">
                                 На бытовую химию
@@ -166,7 +166,7 @@ const createSection = async (name, $) => {
                         </a>
         
                         <a href="#" class="item__gallery item__gallery-ny-toys"
-                         aria-label="Елочные украшения"
+                         aria-label="Christmas decorations"
                           >
                         <picture>
                             <source srcset="img/item/10.avif" type="image/avif">
@@ -184,7 +184,7 @@ const createSection = async (name, $) => {
     if (name === 'wholesale') {
         $.main.insertAdjacentHTML('beforeend',
             `
-            <section class="wholesale" aria-label="Распродажа">
+            <section class="wholesale" aria-label="wholesale">
             <h2 class="visually-hidden">Распродажа</h2>
             <div class="container">
                 <h3 class="wholesale__title">Это выгодно!</h3>
