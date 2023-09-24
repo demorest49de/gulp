@@ -121,55 +121,55 @@ export const createHeader = (name, $) => {
 export const createFooter = (name, $) => {
     $.app.insertAdjacentHTML('beforeend',
         `
-            <footer class="navbase footer">
-        <div class="container navbase__container">
-            <div class="navbase__block">
-                <div class="navbase__logo-block">
+            <footer class="footer">
+        <div class="container footer__container">
+            <div class="footer__block">
+                <div class="footer__logo-block">
                     <img
-                            class="navbase__logo"
+                            class="footer__logo"
                             src="img/footer/logo.svg"
                             alt="Логотип магазина ShopOnline" width="235" height="39"
                             >
                 </div>
-                <div class="navbase__catalog">
-                    <h2 class="navbase__subtitle">Каталог</h2>
-                    <nav class="navbase__nav">
-                        <ul class="navbase__list">
-                            <li class="navbase__elem"><a href="#">Смартфоны</a></li>
-                            <li class="navbase__elem"><a href="#">Ноутбуки</a></li>
-                            <li class="navbase__elem"><a href="#">Ювелирные изделия</a></li>
-                            <li class="navbase__elem"><a href="#">Одежда</a></li>
-                            <li class="navbase__elem"><a href="#">Бытовая техника</a></li>
-                            <li class="navbase__elem"><a href="#">Бытовая химия</a></li>
-                            <li class="navbase__elem"><a href="#">Книги и журналы</a></li>
-                            <li class="navbase__elem"><a href="#">Домашний текстиль</a></li>
-                            <li class="navbase__elem"><a href="#">Электроника</a></li>
-                            <li class="navbase__elem"><a href="#">Косметика</a></li>
+                <div class="footer__catalog">
+                    <h2 class="footer__subtitle">Каталог</h2>
+                    <nav class="footer__nav">
+                        <ul class="footer__list">
+                            <li class="footer__elem"><a href="#">Смартфоны</a></li>
+                            <li class="footer__elem"><a href="#">Ноутбуки</a></li>
+                            <li class="footer__elem"><a href="#">Ювелирные изделия</a></li>
+                            <li class="footer__elem"><a href="#">Одежда</a></li>
+                            <li class="footer__elem"><a href="#">Бытовая техника</a></li>
+                            <li class="footer__elem"><a href="#">Бытовая химия</a></li>
+                            <li class="footer__elem"><a href="#">Книги и журналы</a></li>
+                            <li class="footer__elem"><a href="#">Домашний текстиль</a></li>
+                            <li class="footer__elem"><a href="#">Электроника</a></li>
+                            <li class="footer__elem"><a href="#">Косметика</a></li>
                         </ul>
                     </nav>
                 </div>
-                <div class="navbase__buyers-info">
-                    <h2 class="navbase__subtitle">Покупателям</h2>
-                    <nav class="navbase__nav">
-                        <ul class="navbase__list">
-                            <li class="navbase__elem"><a href="#">Оплата заказа</a></li>
-                            <li class="navbase__elem"><a href="#">Условия доставки</a></li>
-                            <li class="navbase__elem"><a href="#">Условия возврата товара</a></li>
-                            <li class="navbase__elem"><a href="/blog.html">Блог</a></li>
+                <div class="footer__buyers-info">
+                    <h2 class="footer__subtitle">Покупателям</h2>
+                    <nav class="footer__nav">
+                        <ul class="footer__list">
+                            <li class="footer__elem"><a href="#">Оплата заказа</a></li>
+                            <li class="footer__elem"><a href="#">Условия доставки</a></li>
+                            <li class="footer__elem"><a href="#">Условия возврата товара</a></li>
+                            <li class="footer__elem"><a href="/blog.html">Блог</a></li>
                         </ul>
                     </nav>
                 </div>
-                <div class="navbase__contacts">
-                    <h2 class="navbase__subtitle">Контакты</h2>
-                    <address class="navbase__nav navbase__contacts-info">
-                        <ul class="navbase__list">
-                            <li class="navbase__elem">Тел: <a href="tel:+79378392361">+7 937 839 23-61</a></li>
-                            <li class="navbase__elem">Email: <a href="mailto:OnlineShop@gmail.com">OnlineShop@gmail.com</a>
+                <div class="footer__contacts">
+                    <h2 class="footer__subtitle">Контакты</h2>
+                    <address class="footer__nav footer__contacts-info">
+                        <ul class="footer__list">
+                            <li class="footer__elem">Тел: <a href="tel:+79378392361">+7 937 839 23-61</a></li>
+                            <li class="footer__elem">Email: <a href="mailto:OnlineShop@gmail.com">OnlineShop@gmail.com</a>
                             </li>
                         </ul>
                     </address>
-                    <nav class="navbase__nav">
-                        <ul class="navbase__list-social">
+                    <nav class="footer__nav">
+                        <ul class="footer__list-social">
                             <li><a href="https://web.whatsapp.com" aria-label="whatsapp.com" title="whatsapp">
                                 <svg width="26" height="26" viewBox="0 0 26 26" fill="none"
                                      xmlns="http://www.w3.org/2000/svg">
@@ -211,9 +211,9 @@ export const createFooter = (name, $) => {
                     </nav>
                 </div>
             </div>
-            <div class="navbase__block">
-                <p class="navbase__copyright">© OnlineShop, 2021</p>
-                <div class="navbase__author-info">
+            <div class="footer__block">
+                <p class="footer__copyright">© OnlineShop, 2021</p>
+                <div class="footer__author-info">
                     <p>Design by Anastasia Ilina</p>
                     <p>Tg: <a href="https://www.telegram.org">
                         @Mrshmallowww

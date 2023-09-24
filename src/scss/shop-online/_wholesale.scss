@@ -17,6 +17,9 @@
     font-weight: 700;
     line-height: 130%;
     margin-bottom: 20px;
+    @media (max-width: 425px) {
+      font-size: 20px;
+    }
   }
 
   &__cards {
@@ -25,7 +28,7 @@
     grid-auto-rows: 394px;
     row-gap: 50px;
     column-gap: 24px;
-    justify-content: space-between;
+    justify-content: space-around;
     @media (max-width: 1024px) {
       column-gap: 20px;
       grid-template-columns: repeat(auto-fit, 294px);
