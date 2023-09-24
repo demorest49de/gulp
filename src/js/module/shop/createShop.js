@@ -36,7 +36,7 @@ const createSection = async (name, $) => {
                                 
                                 <source srcset="img/item/timer.avif" type="image/avif">
                                 <source srcset="img/item/timer.webp" type="image/webp">
-                                    <img class="item__image-items" src="img/item/timer.jpg"
+                                    <img loading="lazy"  class="item__image-items" src="img/item/timer.jpg"
                                      alt="Распродажа ноутбуков" width="4096" height="2900">
                                 </picture>
                         </a>
@@ -49,7 +49,7 @@ const createSection = async (name, $) => {
                                 
                                 <source srcset="img/item/1.avif" type="image/avif">
                                 <source srcset="img/item/1.webp" type="image/webp">
-                                    <img class="item__image-items" src="img/item/1.jpg"
+                                    <img loading="lazy"  class="item__image-items" src="img/item/1.jpg"
                                      alt="Книга" width="500" height="400">
                                 </picture>
                         </a>
@@ -63,7 +63,7 @@ const createSection = async (name, $) => {
                                 
                                 <source srcset="img/item/2.avif" type="image/avif">
                                 <source srcset="img/item/2.webp" type="image/webp">
-                                    <img class="item__image-items" src="img/item/2.jpg"
+                                    <img loading="lazy"  class="item__image-items" src="img/item/2.jpg"
                                      alt="Скидки" width="500" height="400">
                                 </picture>
                         </a>
@@ -74,7 +74,7 @@ const createSection = async (name, $) => {
                         
                         <source srcset="img/item/3.avif" type="image/avif">
                         <source srcset="img/item/3.webp" type="image/webp">
-                            <img class="item__image-shoes" src="img/item/3.jpg" alt="Обувь" width="420"
+                            <img loading="lazy"  class="item__image-shoes" src="img/item/3.jpg" alt="Обувь" width="420"
                             height="200">
                         </picture>
                         </a>
@@ -89,7 +89,7 @@ const createSection = async (name, $) => {
                                 
                                 <source srcset="img/item/4.avif" type="image/avif">
                                 <source srcset="img/item/4.webp" type="image/webp">
-                                    <img class="item__image-items" src="img/item/4.jpg"
+                                    <img loading="lazy"  class="item__image-items" src="img/item/4.jpg"
                                      alt="Кросовки" width="500" height="400">
                                 </picture>
                         </a>
@@ -103,7 +103,7 @@ const createSection = async (name, $) => {
                                 
                                 <source srcset="img/item/5.avif" type="image/avif">
                                 <source srcset="img/item/5.webp" type="image/webp">
-                                    <img class="item__image-items" src="img/item/5.jpg"
+                                    <img loading="lazy"  class="item__image-items" src="img/item/5.jpg"
                                      alt="Подарки" width="500" height="400">
                                 </picture>
                         </a>
@@ -118,7 +118,7 @@ const createSection = async (name, $) => {
                                 
                                 <source srcset="img/item/6.avif" type="image/avif">
                                 <source srcset="img/item/6.webp" type="image/webp">
-                                    <img class="item__image-items" src="img/item/6.jpg"
+                                    <img loading="lazy"  class="item__image-items" src="img/item/6.jpg"
                                      alt="Техника" width="500" height="400">
                                 </picture>
                         </a>
@@ -133,7 +133,7 @@ const createSection = async (name, $) => {
                                 
                                 <source srcset="img/item/7.avif" type="image/avif">
                                 <source srcset="img/item/7.webp" type="image/webp">
-                                    <img class="item__image-items" src="img/item/7.jpg"
+                                    <img loading="lazy"  class="item__image-items" src="img/item/7.jpg"
                                      alt="Украшения на новый год" width="1074" height="806">
                                 </picture>
                         </a>
@@ -145,7 +145,7 @@ const createSection = async (name, $) => {
                                 
                                 <source srcset="img/item/8.avif" type="image/avif">
                                 <source srcset="img/item/8.webp" type="image/webp">
-                                    <img class="item__image-items" src="img/item/8.jpg"
+                                    <img loading="lazy"  class="item__image-items" src="img/item/8.jpg"
                                      alt="Женская одежда" width="1100" height="810">
                                 </picture>
                         </a>
@@ -160,7 +160,7 @@ const createSection = async (name, $) => {
                                 
                                 <source srcset="img/item/9.avif" type="image/avif">
                                 <source srcset="img/item/9.webp" type="image/webp">
-                                    <img class="item__image-items" src="img/item/9.jpg"
+                                    <img loading="lazy"  class="item__image-items" src="img/item/9.jpg"
                                      alt="Бытовая химия" width="500" height="400">
                                 </picture>
                         </a>
@@ -171,7 +171,7 @@ const createSection = async (name, $) => {
                         <picture>
                             <source srcset="img/item/10.avif" type="image/avif">
                             <source srcset="img/item/10.webp" type="image/webp">
-                            <img class="item__image-ny-toys" src="img/item/10.jpg"
+                            <img loading="lazy"  class="item__image-ny-toys" src="img/item/10.jpg"
                             alt="Елочные украшения"
                             width="500" height="333">
                         </picture>
