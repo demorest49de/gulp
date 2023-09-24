@@ -32,8 +32,6 @@ const createSection = (name, $) => {
                             data-timer-deadline="09/26/22 22:41"
                             >
                             </div>
-<!--                            //added picture with source and img for google page speed rating and testing. maybe-->
-<!--                            //deleted in the nearest future-->
                                 <picture>
                                 
                                 <source srcset="img/item/timer.avif" type="image/avif">
@@ -173,9 +171,6 @@ export const renderElement = ($) => {
     if ($.page === 'shop') {
         renderShop($);
         handlers($);
-        // setTimeout(() => {
-        //     window.scrollTo({top: (document.documentElement.scrollHeight), behavior: 'smooth'});
-        // }, 1000);
     }
     
     if ($.page === 'blog') {
