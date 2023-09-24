@@ -30,7 +30,7 @@ export const burgerHandler = ($) => {
     
     const closeMenu = async () => {
         menuSvg.setAttribute('href', $.burgerMenu.menu);
-        document.body.style.overflow = 'visible';
+        // document.body.style.overflow = 'visible';
         animationIconHandler();
         updateBlockHeight();
         
@@ -58,7 +58,7 @@ export const burgerHandler = ($) => {
     
     const openMenu = () => {
         menuSvg.setAttribute('href', $.burgerMenu.clear);
-        document.body.style.overflow = 'hidden';
+        // document.body.style.overflow = 'hidden';
         burger.style.visibility = 'visible';
         animationIconHandler();
         updateBlockHeight();
