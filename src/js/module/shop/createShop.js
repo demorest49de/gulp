@@ -172,8 +172,7 @@ const createSection = (name, $) => {
                             <source srcset="img/item/10.avif" type="image/avif">
                             <source srcset="img/item/10.webp" type="image/webp">
                             <img class="item__image-ny-toys" src="img/item/10.jpg"
-                            alt="Елочные украшения"
-                            width="200" height="200">
+                            alt="Елочные украшения">
                         </picture>
                         </a>
                     </div>
