@@ -48,18 +48,5 @@ export const rafAnimationIcon = (duration, direction, callback) => {
             callback("1");
             cancelAnimationFrame(requestId);
         }
-        if (direction > 0) {
-        
-        }
-        // else {
-        //     progress = (height - +(progress)).toFixed(2);
-        //     callback(progress);
-        //     if (+progress >= 0) {
-        //         requestId = requestAnimationFrame(step);
-        //     } else {
-        //         callback("0");
-        //         cancelAnimationFrame(requestId);
-        //     }
-        // }
     });
 };
