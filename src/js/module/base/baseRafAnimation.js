@@ -6,7 +6,7 @@ export const rafAnimationMenu = (duration, direction, height, callback) => {
     const rafPromise = new Promise(resolve => {
         requestId = window.requestAnimationFrame(function step(timestamp) {
             startAnimation ||= timestamp;
-            let progress = (((timestamp - startAnimation) / duration) * 300).toFixed(2);
+            let progress = (((timestamp - startAnimation) / duration) * 550).toFixed(2);
             if (direction > 0) {
                 callback(progress);
                 if (+progress <= height) {
