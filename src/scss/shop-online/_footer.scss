@@ -34,12 +34,21 @@
     }
     @media (max-width: 764px) {
       grid-template-areas:
+      "shop shop"
+      "catalog contacts"
+      "catalog buyer";
+      justify-content: space-between;
+      row-gap: 30px;
+      grid-auto-columns: 210px;
+    }
+    @media (max-width: 490px) {
+      grid-template-areas:
       "shop"
       "catalog"
       "buyer"
-      "contacts";
-      row-gap: 30px;
-      grid-auto-columns: 210px;
+      "contacts"
+    ;
+      justify-content: center;
     }
 
     &:nth-child(2) {
