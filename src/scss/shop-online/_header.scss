@@ -169,7 +169,7 @@
     border: none;
     border-radius: 30px;
     background-color: $grey-color;
-    color: $lightgrey-color;
+    color: $black-color;
     text-indent: 40px;
     @media (max-width: 768px) {
       font-size: 12px;
@@ -178,6 +178,9 @@
     @media (max-width: 520px) {
       font-size: 8px;
       line-height: 10.4px;
+    }
+    &::placeholder{
+      color: $black-color;
     }
   }
 
