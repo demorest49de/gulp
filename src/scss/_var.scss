@@ -17,5 +17,5 @@ $red-color: #f91155;
     weight: $weight;
     display: swap;
   }
-  src: url("../font/#{$name}-#{$weight}.ttf") format("truetype");
+  src: url("../font/#{$name}-#{$weight}.woff2") format("woff2");
 }
