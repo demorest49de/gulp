@@ -18,9 +18,8 @@ const createMain = (name, $) => {
 
 const createSection = async (name, $) => {
     if (name === 'item') {
-        await new Promise((resolve) => {
-            $.main.insertAdjacentHTML('beforeend',
-                `
+        $.main.insertAdjacentHTML('beforeend',
+            `
                 <section class="item" aria-label="Каталог товаров">
                     <h2 class="visually-hidden">товары и скидки</h2>
                     <div class="container item__container">
@@ -180,10 +179,6 @@ const createSection = async (name, $) => {
                     </div>
                 </section>
             `);
-            if($.main.querySelector('.item')){
-                resolve();
-            }
-        });
         return;
     }
     if (name === 'wholesale') {
