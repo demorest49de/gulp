@@ -34,7 +34,7 @@ export const burgerHandler = ($) => {
         animationIconHandler();
         updateBlockHeight();
         
-        
+        // решение через коллбэк которое меня не устроило
         // const callbackwrapper = (callback) => {
         //     const progress = rafAnimationMenu(300, -1, burgerMenu.scrollHeight, (progress) => {
         //         burgerMenu.style.height = `${progress}px`;
