@@ -37,7 +37,7 @@ const createSection = async (name, $) => {
                                 <source srcset="img/item/timer.avif" type="image/avif">
                                 <source srcset="img/item/timer.webp" type="image/webp">
                                     <img class="item__image-items" src="img/item/timer.jpg"
-                                     alt="Распродажа ноутбуков" width="4096" height="2900">
+                                     alt="Распродажа ноутбуков" width="2100" height="1487">
                                 </picture>
                         </a>
         
