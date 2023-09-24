@@ -49,7 +49,7 @@ export const burgerHandler = ($) => {
         const rafPromise = rafAnimationMenu(300, -1, burgerMenu.scrollHeight, (progress) => {
             burgerMenu.style.height = `${progress}px`;
         });
-        rafPromise.then((data) => {
+        await rafPromise.then((data) => {
             if(data === 0){
                 burger.style.visibility = 'hidden';
             }
