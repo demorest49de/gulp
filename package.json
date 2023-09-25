@@ -1,7 +1,7 @@
 {
   "name": "gulp-with-scss",
   "version": "1.0.0",
-  "description": "gulp, scss",
+  "description": "gulp final",
   "main": "index.js",
   "type": "module",
   "scripts": {
