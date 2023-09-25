@@ -43,7 +43,7 @@ const createSection = async (name, $) => {
                         </a>
         
                         <a href="#" class="item__gallery item__gallery-book"
-                        aria-label="Книга – лучший подарок"
+                        title="Книга – лучший подарок"
                         >
                             <p class="item__text-book">
                                 <span class="item__text-bold">Книга –</span> лучший подарок</p>
@@ -57,7 +57,7 @@ const createSection = async (name, $) => {
                         </a>
         
                         <a href="#" class="item__gallery item__gallery-discount-bottom-left item__gallery-time"
-                           aria-label="Время скидок!">
+                           title="Время скидок!">
                             <p class="item__text-time">
                                 Время скидок!
                             </p>
@@ -71,7 +71,7 @@ const createSection = async (name, $) => {
                         </a>
         
                         <a href="#" class="item__gallery item__gallery-discount-top-left item__gallery-shoes"
-                        aria-label="скидки на обувь!">
+                        title="скидки на обувь!">
                         <picture>
                         
                         <source srcset="img/item/3.avif" type="image/avif">
@@ -82,7 +82,7 @@ const createSection = async (name, $) => {
                         </a>
         
                         <a href="#" class="item__gallery item__gallery-second-pair"
-                        aria-label="Вторая пара кроссовок в подарок!">
+                        title="Вторая пара кроссовок в подарок!">
                             <p class=" item__text-second-pair">
                                 Вторая пара кроссовок
                                 <span class="item__text-big">в&nbsp;подарок!</span>
@@ -97,7 +97,7 @@ const createSection = async (name, $) => {
                         </a>
         
                         <a href="#" class="item__gallery item__gallery-gift-ideas"
-                         aria-label="Идеи новогодних подарков"
+                         title="Идеи новогодних подарков"
                          >
                             <p class=" item__text-new-ideas">
                                 Идеи новогодних подарков
@@ -113,7 +113,7 @@ const createSection = async (name, $) => {
         
                         <a href="#" class="item__gallery item__gallery-discount-bottom-left
                         item__gallery-profitable-december"
-                           aria-label="Выгодно в декабре!">
+                           title="Выгодно в декабре!">
                             <p class="item__text-profitable-december">
                                 Выгодно в декабре!
                             </p>
@@ -127,7 +127,7 @@ const createSection = async (name, $) => {
                         </a>
         
                         <a href="#" class="item__gallery item__gallery-new-year"
-                        aria-label="НОВОГОДНИЕ УКРАШЕНИЯ"
+                        title="НОВОГОДНИЕ УКРАШЕНИЯ"
                          >
                             <p class="item__text-new-year">
                                 Новогодние украшения
@@ -142,7 +142,7 @@ const createSection = async (name, $) => {
                         </a>
         
                         <a href="#" class="item__gallery item__gallery-discount-bottom-left item__gallery-dresses"
-                           aria-label="Женская одежда"
+                           title="Женская одежда"
                            >
                                 <picture>
                                 
@@ -154,7 +154,7 @@ const createSection = async (name, $) => {
                         </a>
         
                         <a href="#" class="item__gallery item__gallery-discount-top-left item__gallery-chemicals"
-                           aria-label="На бытовую химию"
+                           title="На бытовую химию"
                            >
                             <p class="item__text-chemicals">
                                 На бытовую химию
@@ -169,7 +169,7 @@ const createSection = async (name, $) => {
                         </a>
         
                         <a href="#" class="item__gallery item__gallery-ny-toys"
-                         aria-label="Елочные украшения"
+                         title="Елочные украшения"
                           >
                         <picture>
                             <source srcset="img/item/10.avif" type="image/avif">
@@ -255,12 +255,12 @@ export const renderCards = async ($) => {
                 `
                     <li class="card">
                         <a href="#" class="card__link "
-                        aria-label="${card.name}">
+                        title="${card.name}">
                             <picture class="card__figure ${card.discountClass}">
                                 <source srcset="img/wholesale/photo${count}.avif" type="image/avif">
                                 <source srcset="img/wholesale/photo${count}.webp" type="image/webp">
                                 <img loading="lazy" class="card__image" src="img/wholesale/photo${count}.png"
-                                      alt="${card.name}" width="130" height="130">
+                                      alt="${card.name}" width="420" height="295">
                             </picture>
                             <div class="card__price-block"><span class="card__new-price">${card.newPrice} ₽</span>
                                 <span class="card__old-price">${card.newPrice * 2} ₽</span>
