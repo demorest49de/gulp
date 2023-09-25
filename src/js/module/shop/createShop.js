@@ -254,7 +254,8 @@ export const renderCards = async ($) => {
             cards.insertAdjacentHTML('beforeend',
                 `
                     <li class="card">
-                        <a href="#" class="card__link " aria-label="${card.name}">
+                        <a href="#" class="card__link "
+                        aria-label="${card.newPrice} ₽ ${card.newPrice * 2} ₽ ${card.name}">
                             <picture class="card__figure ${card.discountClass}">
                                 <source srcset="img/wholesale/photo${count}.avif" type="image/avif">
                                 <source srcset="img/wholesale/photo${count}.webp" type="image/webp">
