@@ -255,7 +255,7 @@ export const renderCards = async ($) => {
                 `
                     <li class="card">
                         <a href="#" class="card__link "
-                        aria-label="${card.newPrice} ₽ ${card.newPrice * 2} ₽ ${card.name}">
+                        aria-label="${card.name}">
                             <picture class="card__figure ${card.discountClass}">
                                 <source srcset="img/wholesale/photo${count}.avif" type="image/avif">
                                 <source srcset="img/wholesale/photo${count}.webp" type="image/webp">
