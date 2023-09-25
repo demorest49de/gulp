@@ -6,14 +6,6 @@
   @include font($lato, 700)
 }
 
-@font-face {
-  @include font($inter, 400)
-}
-
-@font-face {
-  @include font($inter, 700)
-}
-
 .container {
   max-width: 1920px;
   margin: 0 auto;
