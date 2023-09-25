@@ -38,7 +38,7 @@ const createSection = async (name, $) => {
                                 <source srcset="img/item/timer.avif" type="image/avif">
                                 <source srcset="img/item/timer.webp" type="image/webp">
                                     <img class="item__image-items" src="img/item/timer.jpg"
-                                     alt="ноутбуки - всегда отличный подарок" width="4096" height="2900">
+                                     alt="Распродажа ноутбуков" width="4096" height="2900">
                                 </picture>
                         </a>
         
@@ -52,7 +52,7 @@ const createSection = async (name, $) => {
                                 <source srcset="img/item/1.avif" type="image/avif">
                                 <source srcset="img/item/1.webp" type="image/webp">
                                     <img class="item__image-items" src="img/item/1.jpg"
-                                     alt="Книга – лучший подарок" width="500" height="400">
+                                     alt="Книга" width="500" height="400">
                                 </picture>
                         </a>
         
@@ -66,7 +66,7 @@ const createSection = async (name, $) => {
                                 <source srcset="img/item/2.avif" type="image/avif">
                                 <source srcset="img/item/2.webp" type="image/webp">
                                     <img loading="lazy"  class="item__image-items" src="img/item/2.jpg"
-                                     alt="Время скидок!" width="500" height="400">
+                                     alt="Скидки" width="500" height="400">
                                 </picture>
                         </a>
         
@@ -76,8 +76,7 @@ const createSection = async (name, $) => {
                         
                         <source srcset="img/item/3.avif" type="image/avif">
                         <source srcset="img/item/3.webp" type="image/webp">
-                            <img loading="lazy"  class="item__image-shoes" src="img/item/3.jpg"
-                            alt="скидки на обувь!" width="420"
+                            <img loading="lazy"  class="item__image-shoes" src="img/item/3.jpg" alt="Обувь" width="420"
                             height="200">
                         </picture>
                         </a>
@@ -93,7 +92,7 @@ const createSection = async (name, $) => {
                                 <source srcset="img/item/4.avif" type="image/avif">
                                 <source srcset="img/item/4.webp" type="image/webp">
                                     <img loading="lazy"  class="item__image-items" src="img/item/4.jpg"
-                                     alt="Вторая пара кроссовок в подарок!" width="500" height="400">
+                                     alt="Кросовки" width="500" height="400">
                                 </picture>
                         </a>
         
@@ -108,7 +107,7 @@ const createSection = async (name, $) => {
                                 <source srcset="img/item/5.avif" type="image/avif">
                                 <source srcset="img/item/5.webp" type="image/webp">
                                     <img loading="lazy"  class="item__image-items" src="img/item/5.jpg"
-                                     alt="Идеи новогодних подарков" width="500" height="400">
+                                     alt="Подарки" width="500" height="400">
                                 </picture>
                         </a>
         
@@ -123,7 +122,7 @@ const createSection = async (name, $) => {
                                 <source srcset="img/item/6.avif" type="image/avif">
                                 <source srcset="img/item/6.webp" type="image/webp">
                                     <img loading="lazy"  class="item__image-items" src="img/item/6.jpg"
-                                     alt="Выгодно в декабре!" width="500" height="400">
+                                     alt="Техника" width="500" height="400">
                                 </picture>
                         </a>
         
@@ -138,7 +137,7 @@ const createSection = async (name, $) => {
                                 <source srcset="img/item/7.avif" type="image/avif">
                                 <source srcset="img/item/7.webp" type="image/webp">
                                     <img loading="lazy"  class="item__image-items" src="img/item/7.jpg"
-                                     alt="НОВОГОДНИЕ УКРАШЕНИЯ" width="1074" height="806">
+                                     alt="Украшения на новый год" width="1074" height="806">
                                 </picture>
                         </a>
         
@@ -165,7 +164,7 @@ const createSection = async (name, $) => {
                                 <source srcset="img/item/9.avif" type="image/avif">
                                 <source srcset="img/item/9.webp" type="image/webp">
                                     <img loading="lazy"  class="item__image-items" src="img/item/9.jpg"
-                                     alt="На бытовую химию" width="500" height="400">
+                                     alt="Бытовая химия" width="500" height="400">
                                 </picture>
                         </a>
         
@@ -261,7 +260,7 @@ export const renderCards = async ($) => {
                                 <source srcset="img/wholesale/photo${count}.avif" type="image/avif">
                                 <source srcset="img/wholesale/photo${count}.webp" type="image/webp">
                                 <img loading="lazy" class="card__image" src="img/wholesale/photo${count}.png"
-                                      alt="${card.name}" width="420" height="295">
+                                      alt="${card.name}" width="130" height="130">
                             </picture>
                             <div class="card__price-block"><span class="card__new-price">${card.newPrice} ₽</span>
                                 <span class="card__old-price">${card.newPrice * 2} ₽</span>
