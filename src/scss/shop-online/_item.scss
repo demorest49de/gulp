@@ -72,17 +72,6 @@
   &__gallery-notebook {
     grid-area: banner;
 
-    //position: relative;
-    //background-image: url("../../img/item/timer.jpg");
-    //background-image: -webkit-image-set(
-    //    url('../../img/item/timer.avif') 1x,
-    //    url('../../img/item/timer.webp') 1x,
-    //    url('../../img/item/timer.jpg') 1x
-    //);
-    //background-size: cover;
-    //background-position: center;
-    //background-repeat: no-repeat;
-
     display: flex;
     justify-content: end;
     flex-direction: column;
