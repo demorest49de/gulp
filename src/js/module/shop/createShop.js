@@ -26,7 +26,11 @@ const createSection = async (name, $) => {
         
                         <a href="#" class="item__gallery item__gallery-notebook"
                         aria-label="ноутбуки - всегда отличный подарок"
+                        aria-labelledby="item__label-text"
                          >
+                         <label id="item__label-text" class="item__label">
+                            ноутбуки - всегда отличный подарок
+                         </label>
                             <p class="item__text-notebook">
                                 -50% на все ноутбуки</p>
                             <div class="item__timer timer"
