@@ -130,7 +130,8 @@ export const critCSS = () => gulp
 export const copy = () => gulp
     .src([
         'src/font/**/*',
-        'src/img/**/*.svg'
+        'src/img/**/*.svg',
+        'src/.htaccess'
     ], {
         base: 'src'
     })
