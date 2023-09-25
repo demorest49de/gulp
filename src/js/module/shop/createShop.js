@@ -49,7 +49,7 @@ const createSection = async (name, $) => {
                                 
                                 <source srcset="img/item/1.avif" type="image/avif">
                                 <source srcset="img/item/1.webp" type="image/webp">
-                                    <img loading="lazy"  class="item__image-items" src="img/item/1.jpg"
+                                    <img class="item__image-items" src="img/item/1.jpg"
                                      alt="Книга" width="500" height="400">
                                 </picture>
                         </a>
