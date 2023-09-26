@@ -127,12 +127,38 @@ export const scss = () => {
         .pipe(browserSync.stream());
 };
 
+export const webpackConf = {
+    mode: dev ? 'development' : 'production',
+    devtool: dev ? 'eval-source-map' : false,
+    optimization: {
+        minimize: false
+    },
+    output: {
+        filename: 'index.js',
+    },
+    module: {
+        rules: []
+    }
+};
+
+if (!dev) {
+    webpackConf.module.rules.push({
+        test: /\.(js)$/,
+        exclude: /(node_modules)/,
+        loader: 'babel-loader'
+    });
+}
+
 export const js = () => gulp
-    .src('src/js/**/*.js')
-    .pipe(gulpif(dev, sourceMaps.init()))
-    .pipe(terser())
-    .pipe(gulpif(dev, sourceMaps.write('../maps')))
-    .pipe(gulp.dest('dist/js'))
+    .src(path.src.js)
+    .pipe(plumber())
+    .pipe(webpackStream(webpackConf, webpack))
+    .pipe(gulpif(!dev, gulp.dest(path.dist.js)))
+    .pipe(gulpif(!dev, terser()))
+    .pipe(rename({
+        suffix: '.min'
+    }))
+    .pipe(gulp.dest(path.dist.js))
     .pipe(browserSync.stream());
 
 
