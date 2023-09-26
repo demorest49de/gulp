@@ -38,6 +38,40 @@ import svgSprite from 'gulp-svg-sprite';
 
 let dev = false;
 
+const path = {
+    dist: {
+        base: 'dist/',
+        html: 'dist/',
+        js: 'dist/',
+        css: 'dist/',
+        cssIndex: 'dist/',
+        img: 'dist/',
+        font: 'dist/',
+    },
+    src: {
+        base: 'src/',
+        html: 'src/',
+        pug: 'src/',
+        scss: 'src/',
+        js: 'src/',
+        img: 'src/',
+        svg: 'src/',
+        imgF: 'src/',
+        asset: [''],
+    },
+    watch: {
+        html: 'src/',
+        js: 'src/',
+        pug: 'src/',
+        css: 'src/',
+        svg: 'src/',
+        img: 'src/',
+        imgF: 'src/',
+    },
+    clean: './dist',
+    cleanImg: './dist/images'
+};
+
 // tasks
 
 export const html = () => gulp
