@@ -1,27 +1,42 @@
 'use strict';
 
+//gulp
 import gulp from 'gulp';
+import gulpif from 'gulp-if';
 import browserSync from 'browser-sync';
+import rename from 'gulp-rename';
+import plumber from 'gulp-plumber';
+import {deleteAsync} from 'del';
+
+//html*pug
+import htmlMin from 'gulp-htmlmin';
+import gulppug from 'gulp-pug';
+
+//css
 import sassPkg from 'sass';
 import gulpSass from 'gulp-sass';
-import cssImport from 'gulp-cssimport';
-import {deleteAsync} from 'del';
-import htmlMin from 'gulp-htmlmin';
-import cleanCSS from 'gulp-clean-css';
-import terser from 'gulp-terser';
+
+const sass = gulpSass((sassPkg));
 import sourceMaps from 'gulp-sourcemaps';
+import autoprefixer from 'gulp-autoprefixer';
+import cleanCSS from 'gulp-clean-css';
+import gcmq from 'gulp-group-css-media-queries';
+import {stream as critical} from 'critical';
+
+//js
+import terser from 'gulp-terser';
+import webpackStream from 'webpack-stream';
+import webpack from 'webpack';
+
+//img
+
+import tinyPng from 'gulp-tinypng-compress';
 import gulpImage from "gulp-image";
 import gulpwebp from 'gulp-webp';
 import gulpavif from 'gulp-avif';
-import {stream as critical} from 'critical';
-import gulpif from 'gulp-if';
-import autoprefixer from 'gulp-autoprefixer';
-
-const prepros = true;
+import svgSprite from 'gulp-svg-sprite';
 
 let dev = false;
-
-const sass = gulpSass(sassPkg);
 
 // tasks
 
@@ -35,28 +50,10 @@ export const html = () => gulp
     .pipe(browserSync.stream());
 
 export const style = () => {
-    if (prepros) {
-        return gulp
-            .src('src/scss/**/*.scss')
-            .pipe(gulpif(dev, sourceMaps.init()))
-            .pipe(sass().on('error', sass.logError))
-            .pipe(autoprefixer())
-            .pipe(cleanCSS({
-                2: {
-                    specialComments: 0,
-                }
-            }))
-            .pipe(gulpif(dev, sourceMaps.write('../maps')))
-            .pipe(gulp.dest('dist/css'))
-            .pipe(browserSync.stream());
-    }
-    
     return gulp
-        .src('src/css/**/*.css')
+        .src('src/scss/**/*.scss')
         .pipe(gulpif(dev, sourceMaps.init()))
-        .pipe(cssImport({
-            extensions: ['css'],
-        }))
+        .pipe(sass().on('error', sass.logError))
         .pipe(autoprefixer())
         .pipe(cleanCSS({
             2: {
@@ -150,8 +147,7 @@ export const server = () => {
     });
     
     gulp.watch('src/**/*.html', html);
-    gulp.watch(prepros ? 'src/scss/**/*.scss' : 'src/css/**/*.css', style);
-    gulp.watch('src/img/**/*.{jpg,jpeg,png,svg,gif}', img);
+    gulp.watch('src/scss/**/*.scss', style);
     gulp.watch('src/img/**/*.{jpg,jpeg,png,svg,gif}', img);
     gulp.watch('src/js/**/*.js', js);
     gulp.watch('src/font/**/*', copy);
