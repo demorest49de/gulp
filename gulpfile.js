@@ -192,28 +192,32 @@ export const webp = () => gulp
     }));
 
 export const avif = () => gulp
-    .src('src/img/**/*.{jpg,jpeg,png}')
+    .src(path.src.imgF)
     .pipe(gulpavif({
-        quality: 55,
+        quality: dev ? 100 : 65,
     }))
-    .pipe(gulp.dest('dist/img'))
-    .pipe(browserSync.stream());
+    .pipe(gulp.dest(path.dist.img))
+    .pipe(browserSync.stream({
+        once: true
+    }));
 
 export const critCSS = () => gulp
-    .src('dist/*.html')
+    .src(path.src.html)
     .pipe(critical({
-        base: 'dist/', inline: true, css: ['dist/css/index.css']
+        base: path.dist.base,
+        inline: true,
+        css: [path.dist.cssIndex]
     }))
     .on('error', err => {
         console.error(err.message);
     })
-    .pipe(gulp.dest('dist'));
+    .pipe(gulp.dest(path.dist.base));
 
 export const copy = () => gulp
-    .src(['src/font/**/*', 'src/img/**/*.svg'], {
-        base: 'src'
+    .src([path.src.asset], {
+        base: path.src.base
     })
-    .pipe(gulp.dest('dist'))
+    .pipe(gulp.dest(path.dist.base))
     .pipe(browserSync.stream({
         once: true
     }));
