@@ -39,7 +39,6 @@ import svgSprite from 'gulp-svg-sprite';
 let dev = false;
 
 // tasks
-
 export const html = () => gulp
     .src('src/*.html')
     .pipe(htmlMin({
