@@ -26,7 +26,6 @@
     "gulp-autoprefixer": "^8.0.0",
     "gulp-avif": "^1.1.1",
     "gulp-clean-css": "^4.3.0",
-    "gulp-concat": "^2.6.1",
     "gulp-cssimport": "^7.0.0",
     "gulp-group-css-media-queries": "^1.2.2",
     "gulp-htmlmin": "^5.0.1",

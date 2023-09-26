@@ -1,3 +1,5 @@
+'use strict';
+
 import gulp from 'gulp';
 import browserSync from 'browser-sync';
 import sassPkg from 'sass';
@@ -7,7 +9,6 @@ import {deleteAsync} from 'del';
 import htmlMin from 'gulp-htmlmin';
 import cleanCSS from 'gulp-clean-css';
 import terser from 'gulp-terser';
-import gulpConcat from 'gulp-concat';
 import sourceMaps from 'gulp-sourcemaps';
 import gulpImage from "gulp-image";
 import gulpwebp from 'gulp-webp';
@@ -71,7 +72,6 @@ export const js = () => gulp
     .src('src/js/**/*.js')
     .pipe(gulpif(dev, sourceMaps.init()))
     .pipe(terser())
-    // .pipe(gulpConcat('index.min.js'))
     .pipe(gulpif(dev, sourceMaps.write('../maps')))
     .pipe(gulp.dest('dist/js'))
     .pipe(browserSync.stream());
