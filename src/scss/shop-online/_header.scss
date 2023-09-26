@@ -214,6 +214,7 @@
     height: 100%;
     gap: 60px;
     color: $closedark-color;
+    justify-content: center;
 
     @media (max-width: 768px) {
       justify-content: end;

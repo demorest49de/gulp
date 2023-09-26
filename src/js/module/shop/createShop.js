@@ -245,7 +245,7 @@ export const renderElement = ($) => {
 export const renderCards = async ($) => {
     const cards = document.querySelector('.wholesale__cards');
     
-    const response = await fetch('db.json');
+    const response = await fetch('./public/db.json');
     if (response.ok) {
         const json = await response.json();
         

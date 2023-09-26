@@ -46,6 +46,7 @@ const path = {
         css: 'dist/css/',
         cssIndex: 'dist/css/index.min.css',
         img: 'dist/img',
+        svg: 'dist/svg',
         font: 'dist/font',
     }, src: {
         base: 'src/',
@@ -93,8 +94,7 @@ export const pug = () => gulp
     .pipe(gulp.dest(path.dist.html))
     .pipe(browserSync.stream());
 
-
-export const scss = () => {
+export const scss = () =>
     gulp
         .src(path.src.scss)
         .pipe(gulpif(dev, sourceMaps.init()))
@@ -115,7 +115,6 @@ export const scss = () => {
         .pipe(gulpif(dev, sourceMaps.write('../maps')))
         .pipe(gulp.dest(path.dist.css))
         .pipe(browserSync.stream());
-};
 
 export const webpackConf = {
     mode: dev ? 'development' : 'production', devtool: dev ? 'eval-source-map' : false, optimization: {
@@ -129,7 +128,9 @@ export const webpackConf = {
 
 if (!dev) {
     webpackConf.module.rules.push({
-        test: /\.(js)$/, exclude: /(node_modules)/, loader: 'babel-loader'
+        test: /\.(js)$/,
+        exclude: /(node_modules)/,
+        loader: 'babel-loader'
     });
 }
 
@@ -169,14 +170,7 @@ export const img = () => gulp
 
 export const svg = () => gulp
     .src(path.src.svg)
-    .pipe(svgSprite({
-        mode: {
-            stack: {
-                sprite: "../sprite.svg"
-            }
-        }
-    }))
-    .pipe(gulp.dest(path.dist.img))
+    .pipe(gulp.dest(path.dist.svg))
     .pipe(browserSync.stream({
         once: true
     }));
@@ -214,50 +208,54 @@ export const critCSS = () => gulp
     .pipe(gulp.dest(path.dist.base));
 
 export const copy = () => gulp
-    .src([path.src.asset], {
-        base: path.src.base
+    .src(path.src.asset, {
+        base: path.src.base,
+        allowEmpty: true
     })
     .pipe(gulp.dest(path.dist.base))
     .pipe(browserSync.stream({
         once: true
     }));
 
-export const json = () => gulp
-    .src('src/*.json')
-    .pipe(gulp.dest('dist'))
-    .pipe(browserSync.stream());
-
 export const server = () => {
     browserSync.init({
-        ui: false, notify: false, // tunnel: true,
+        ui: false,
+        notify: false,
+        host: 'localhost',
+        port: 3000,
+        // tunnel: true,
         server: {
             baseDir: 'dist'
         }
     });
     
-    gulp.watch('src/**/*.html', html);
-    gulp.watch('src/scss/**/*.scss', scss);
-    gulp.watch('src/img/**/*.{jpg,jpeg,png,svg,gif}', img);
-    gulp.watch('src/js/**/*.js', js);
-    gulp.watch('src/font/**/*', copy);
-    gulp.watch('src/img/**/*.{jpg,jpeg,png}', webp);
-    gulp.watch('src/img/**/*.{jpg,jpeg,png}', avif);
+    gulp.watch(path.watch.html, html);
+    gulp.watch(path.watch.css, scss);
+    gulp.watch(path.watch.img, img);
+    gulp.watch(path.watch.js, js);
+    gulp.watch(path.watch.svg, svg);
+    gulp.watch(path.watch.img, img);
+    gulp.watch(path.watch.imgF, webp, avif);
 };
 
-export const clear = () => deleteAsync('dist/**/*', {force: true,});
+export const clear = () => deleteAsync(path.clean,
+    {
+        force: true
+    });
 
 // launch
 
-export const develop = async () => {
+const develop = (ready) => {
     dev = true;
+    ready();
 };
 
-export const base = gulp.parallel(html, scss, js, json, img, avif, webp, copy);
+export const base = gulp.parallel(html, scss, js, img, svg, avif, webp, copy);
 
-export const noimg = gulp.parallel(html, scss, js, json, copy);
+export const noimg = gulp.parallel(html, scss, js, copy);
 
 export const build = gulp.series(clear, base, critCSS);
 
-export const start = gulp.series(server);
+export const start = gulp.series(develop, server);
 
 export default gulp.series(develop, base, server);

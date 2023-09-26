@@ -1,5 +1,7 @@
 .footer {
   padding: 80px 0 81px 0;
+  color: $white-color;
+  background-color: #2D2D2D;
   @media (max-width: 1024px) {
     padding: 60px 0 44px 0;
   }
@@ -9,8 +11,6 @@
   @media (max-width: 320px) {
     padding: 30px 0 20px 0;
   }
-  сolor: $white-color;
-  background-color: #2D2D2D;
 
   &__block {
     display: flex;
