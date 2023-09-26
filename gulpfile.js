@@ -16,7 +16,7 @@ import gulppug from 'gulp-pug';
 import sassPkg from 'sass';
 import gulpSass from 'gulp-sass';
 
-const sass = gulpSass((sassPkg));
+const compSass = gulpSass((sassPkg));
 import sourceMaps from 'gulp-sourcemaps';
 import autoprefixer from 'gulp-autoprefixer';
 import cleanCSS from 'gulp-clean-css';
@@ -77,27 +77,53 @@ const path = {
 // tasks
 
 export const html = () => gulp
-    .src('src/*.html')
-    .pipe(htmlMin({
+    .src(path.src.html)
+    .pipe(gulpif(!dev, htmlMin({
         removeComments: true,
         collapseWhitespace: true,
-    }))
-    .pipe(gulp.dest('dist'))
+    })))
+    .pipe(gulp.dest(path.dist.html))
     .pipe(browserSync.stream());
 
-export const style = () => {
-    return gulp
-        .src('src/scss/**/*.scss')
+export const pug = () => gulp
+    .src(path.src.pug)
+    .pipe(gulppug({
+        pretty: true,
+    })
+        .on('error', function (err) {
+            console.log(err.toString());
+            this.emit('end');
+        }))
+    .pipe(gulpif(!dev, htmlMin({
+        removeComments: true,
+        collapseWhitespace: true,
+    })))
+    .pipe(gulp.dest(path.dist.html))
+    .pipe(browserSync.stream());
+
+
+export const scss = () => {
+    gulp
+        .src(path.src.scss)
         .pipe(gulpif(dev, sourceMaps.init()))
-        .pipe(sass().on('error', sass.logError))
-        .pipe(autoprefixer())
+        .pipe(compSass().on('error', compSass.logError))
+        .pipe(gulpif(!dev, autoprefixer({
+                cascade: false,
+                grid: false
+            }
+        )))
+        .pipe(gulpif(!dev, gcmq()))
+        .pipe(gulpif(!dev, gulp.dest(path.dist.css)))
         .pipe(cleanCSS({
             2: {
                 specialComments: 0,
             }
         }))
+        .pipe(rename({
+            suffix: '.min'
+        }))
         .pipe(gulpif(dev, sourceMaps.write('../maps')))
-        .pipe(gulp.dest('dist/css'))
+        .pipe(gulp.dest(path.dist.css))
         .pipe(browserSync.stream());
 };
 
@@ -183,7 +209,7 @@ export const server = () => {
     });
     
     gulp.watch('src/**/*.html', html);
-    gulp.watch('src/scss/**/*.scss', style);
+    gulp.watch('src/scss/**/*.scss', scss);
     gulp.watch('src/img/**/*.{jpg,jpeg,png,svg,gif}', img);
     gulp.watch('src/js/**/*.js', js);
     gulp.watch('src/font/**/*', copy);
@@ -199,11 +225,11 @@ export const develop = async () => {
     dev = true;
 };
 
-export const base = gulp.parallel(html, style, js, json,
+export const base = gulp.parallel(html, scss, js, json,
     img, avif, webp,
     copy);
 
-export const noimg = gulp.parallel(html, style, js, json, copy);
+export const noimg = gulp.parallel(html, scss, js, json, copy);
 
 export const build = gulp.series(clear, base, critCSS);
 
