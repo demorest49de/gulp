@@ -182,12 +182,14 @@ export const svg = () => gulp
     }));
 
 export const webp = () => gulp
-    .src('src/img/**/*.{jpg,jpeg,png}')
+    .src(path.src.imgF)
     .pipe(gulpwebp({
-        quality: 65,
+        quality: dev ? 100 : 65,
     }))
-    .pipe(gulp.dest('dist/img'))
-    .pipe(browserSync.stream());
+    .pipe(gulp.dest(path.dist.img))
+    .pipe(browserSync.stream({
+        once: true
+    }));
 
 export const avif = () => gulp
     .src('src/img/**/*.{jpg,jpeg,png}')
