@@ -9,13 +9,13 @@ export const createHeader = (name, $) => {
                     <a href="/" class="header__logo-block">
                         <img
                                 class="header__logo"
-                                src="img/header/logo.svg"
+                                src="svg/header/logo.svg"
                                 alt="Логотип магазина ShopOnline" width="235" height="39">
                     </a>
                     <button class="header__button-menu" aria-label="Открыть меню"
                     >
                     <svg class="header__button-menu-svg"  xmlns="http://www.w3.org/2000/svg">
-                        <use href="./img/header/menu.svg#menu">
+                        <use href="./svg/header/menu.svg#menu">
                     </svg>
 
                     Меню</button>
@@ -127,7 +127,7 @@ export const createFooter = (name, $) => {
                 <div class="footer__logo-block">
                     <img
                             class="footer__logo"
-                            src="img/footer/logo.svg"
+                            src="svg/footer/logo.svg"
                             alt="Логотип магазина ShopOnline" width="235" height="39"
                             >
                 </div>

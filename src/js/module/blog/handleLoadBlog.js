@@ -86,12 +86,12 @@ export const loadItemsHandler = ($) => {
                             <div class="article__views-comments">
                                 <span class="article__text-block">
                                 <svg class="article__icon" xmlns="http://www.w3.org/2000/svg">
-                                    <use href="./img/blog/views-chat.svg#views"></use>
+                                    <use href="./svg/blog/views-chat.svg#views"></use>
                                 </svg>
                                     ${getRandomIntInclusive(1, 3)}.${getRandomIntInclusive(0, 9)}K</span>
                                 <span class="article__text-block">
                                 <svg class="article__icon" xmlns="http://www.w3.org/2000/svg">
-                                    <use href="./img/blog/views-chat.svg#chat"></use>
+                                    <use href="./svg/blog/views-chat.svg#chat"></use>
                                 </svg>
                                     ${getRandomIntInclusive(13, 200)}</span>
                             </div>

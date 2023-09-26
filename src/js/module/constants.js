@@ -99,8 +99,8 @@ let tabIndex = 0;//temporary not usable
 
 const burgerMenu = {
     visibility: false,
-    menu: './img/header/menu.svg#menu',
-    clear: './img/header/menu.svg#clear'
+    menu: './svg/header/menu.svg#menu',
+    clear: './svg/header/menu.svg#clear'
 }
 
 export const global = {shop,

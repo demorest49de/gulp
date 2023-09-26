@@ -19,7 +19,7 @@ export const createBreadCrumbs = (bc) => {
             `
             <li class="bc__item"><a class="bc__link" href="${url}" aria-label="${ariaLabel}">${name}</a>
                 <svg class="bc__nav-arrow">
-                    <use href="./img/article/nav-arrow.svg#nav-arrow"></use>
+                    <use href="./svg/article/nav-arrow.svg#nav-arrow"></use>
                 </svg>
             </li>
         `);
@@ -49,7 +49,7 @@ const createArticleMain = (breadCrumbs) => {
                         <div class="bc__subblock">
                             <a class="bc__backlink" href="blog.html">
                                 <svg class="bc__left-arrow" xmlns="http://www.w3.org/2000/svg">
-                                    <use href="./img/blog/arrows.svg#left"></use>
+                                    <use href="./svg/blog/arrows.svg#left"></use>
                                 </svg>
                                 <span class="bc__link-text">К списку статей</span>
                             </a>
@@ -64,12 +64,12 @@ const createArticleMain = (breadCrumbs) => {
                                     <div class="article__views-comments">
                                 <span class="article__text-block">
                                 <svg class="article__icon" xmlns="http://www.w3.org/2000/svg">
-                                    <use href="./img/blog/views-chat.svg#views"></use>
+                                    <use href="./svg/blog/views-chat.svg#views"></use>
                                 </svg>
                                     1.1K</span>
                                         <span class="article__text-block">
                                 <svg class="article__icon" xmlns="http://www.w3.org/2000/svg">
-                                    <use href="./img/blog/views-chat.svg#chat"></use>
+                                    <use href="./svg/blog/views-chat.svg#chat"></use>
                                 </svg>
                                     150</span>
                                     </div>

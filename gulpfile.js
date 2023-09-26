@@ -46,9 +46,8 @@ const path = {
         css: 'dist/css/',
         cssIndex: 'dist/css/index.min.css',
         img: 'dist/img',
-        font: 'dist/fonts',
-    },
-    src: {
+        font: 'dist/font',
+    }, src: {
         base: 'src/',
         html: 'src/*.html',
         pug: 'src/pug/*.pug',
@@ -57,11 +56,8 @@ const path = {
         img: 'src/img/**/*.*',
         svg: 'src/svg/**/*.svg',
         imgF: 'src/img/**/*.{jpg,jpeg,png}',
-        asset: ['src/fonts/**/*.*', 'src/icons/**/*.*', 'src/video/**/*.*',
-            'src/public/**/*.*',
-            'src/robots.txt', 'src/site.webmanifest', 'src/sitemap.xml'],
-    },
-    watch: {
+        asset: ['src/font/**/*.*', 'src/icons/**/*.*', 'src/video/**/*.*', 'src/public/**/*.*', 'src/robots.txt', 'src/site.webmanifest', 'src/sitemap.xml'],
+    }, watch: {
         html: 'src/*.html',
         js: 'src/**/*.js',
         pug: 'src/**/*.pug',
@@ -69,9 +65,7 @@ const path = {
         svg: 'src/svg/**/*.svg',
         img: 'src/img/**/*.*',
         imgF: 'src/img/**/*.{jpg,jpeg,png}',
-    },
-    clean: './dist',
-    cleanImg: './dist/images'
+    }, clean: './dist', cleanImg: './dist/images'
 };
 
 // tasks
@@ -79,8 +73,7 @@ const path = {
 export const html = () => gulp
     .src(path.src.html)
     .pipe(gulpif(!dev, htmlMin({
-        removeComments: true,
-        collapseWhitespace: true,
+        removeComments: true, collapseWhitespace: true,
     })))
     .pipe(gulp.dest(path.dist.html))
     .pipe(browserSync.stream());
@@ -95,8 +88,7 @@ export const pug = () => gulp
             this.emit('end');
         }))
     .pipe(gulpif(!dev, htmlMin({
-        removeComments: true,
-        collapseWhitespace: true,
+        removeComments: true, collapseWhitespace: true,
     })))
     .pipe(gulp.dest(path.dist.html))
     .pipe(browserSync.stream());
@@ -108,10 +100,8 @@ export const scss = () => {
         .pipe(gulpif(dev, sourceMaps.init()))
         .pipe(compSass().on('error', compSass.logError))
         .pipe(gulpif(!dev, autoprefixer({
-                cascade: false,
-                grid: false
-            }
-        )))
+            cascade: false, grid: false
+        })))
         .pipe(gulpif(!dev, gcmq()))
         .pipe(gulpif(!dev, gulp.dest(path.dist.css)))
         .pipe(cleanCSS({
@@ -128,24 +118,18 @@ export const scss = () => {
 };
 
 export const webpackConf = {
-    mode: dev ? 'development' : 'production',
-    devtool: dev ? 'eval-source-map' : false,
-    optimization: {
+    mode: dev ? 'development' : 'production', devtool: dev ? 'eval-source-map' : false, optimization: {
         minimize: false
-    },
-    output: {
+    }, output: {
         filename: 'index.js',
-    },
-    module: {
+    }, module: {
         rules: []
     }
 };
 
 if (!dev) {
     webpackConf.module.rules.push({
-        test: /\.(js)$/,
-        exclude: /(node_modules)/,
-        loader: 'babel-loader'
+        test: /\.(js)$/, exclude: /(node_modules)/, loader: 'babel-loader'
     });
 }
 
@@ -163,21 +147,39 @@ export const js = () => gulp
 
 
 export const img = () => gulp
-    // .src('src/img/**/*.{jpg,jpeg,png,svg,gif}')
-    .src('src/img/**/*.{jpg,jpeg,png,gif}')
-    .pipe(gulpif(!dev, gulpImage(
-        {
-            optipng: ['-i 1', '-strip all', '-fix', '-o7', '-force'],
-            pngquant: ['--speed=1', '--force', 256],
-            zopflipng: ['-y', '--lossy_8bit', '--lossy_transparent'],
-            jpegRecompress: ['--strip', '--quality', 'medium', '--min', 40, '--max', 80],
-            mozjpeg: ['-optimize', '-progressive'],
-            gifsicle: ['--optimize'],
-            svgo: ['--enable', 'cleanupIDs', '--disable', 'convertColors']
+    .src(path.src.img)
+    // .pipe(gulpif(!dev, tinyPng({
+    //     key: 'API_KEY_HERE',
+    //     summarize: true,
+    //     log: true
+    // })))
+    .pipe(gulpif(!dev, gulpImage({
+        optipng: ['-i 1', '-strip all', '-fix', '-o7', '-force'],
+        pngquant: ['--speed=1', '--force', 256],
+        zopflipng: ['-y', '--lossy_8bit', '--lossy_transparent'],
+        jpegRecompress: ['--strip', '--quality', 'medium', '--min', 40, '--max', 80],
+        mozjpeg: ['-optimize', '-progressive'],
+        gifsicle: ['--optimize'],
+        svgo: ['--enable', 'cleanupIDs', '--disable', 'convertColors']
+    })))
+    .pipe(gulp.dest(path.dist.img))
+    .pipe(browserSync.stream({
+        once: true
+    }));
+
+export const svg = () => gulp
+    .src(path.src.svg)
+    .pipe(svgSprite({
+        mode: {
+            stack: {
+                sprite: "../sprite.svg"
+            }
         }
-    )))
-    .pipe(gulp.dest('dist/img'))
-    .pipe(browserSync.stream());
+    }))
+    .pipe(gulp.dest(path.dist.img))
+    .pipe(browserSync.stream({
+        once: true
+    }));
 
 export const webp = () => gulp
     .src('src/img/**/*.{jpg,jpeg,png}')
@@ -198,9 +200,7 @@ export const avif = () => gulp
 export const critCSS = () => gulp
     .src('dist/*.html')
     .pipe(critical({
-        base: 'dist/',
-        inline: true,
-        css: ['dist/css/index.css']
+        base: 'dist/', inline: true, css: ['dist/css/index.css']
     }))
     .on('error', err => {
         console.error(err.message);
@@ -208,10 +208,7 @@ export const critCSS = () => gulp
     .pipe(gulp.dest('dist'));
 
 export const copy = () => gulp
-    .src([
-        'src/font/**/*',
-        'src/img/**/*.svg'
-    ], {
+    .src(['src/font/**/*', 'src/img/**/*.svg'], {
         base: 'src'
     })
     .pipe(gulp.dest('dist'))
@@ -226,9 +223,7 @@ export const json = () => gulp
 
 export const server = () => {
     browserSync.init({
-        ui: false,
-        notify: false,
-        // tunnel: true,
+        ui: false, notify: false, // tunnel: true,
         server: {
             baseDir: 'dist'
         }
@@ -251,9 +246,7 @@ export const develop = async () => {
     dev = true;
 };
 
-export const base = gulp.parallel(html, scss, js, json,
-    img, avif, webp,
-    copy);
+export const base = gulp.parallel(html, scss, js, json, img, avif, webp, copy);
 
 export const noimg = gulp.parallel(html, scss, js, json, copy);
 

@@ -25,7 +25,7 @@ const addPagination = (pagination) => {
     pagination.insertAdjacentHTML('afterbegin',
         `
         <a class="pagination__link-left">
-            <svg class="pagination__left-arrow" xmlns="http://www.w3.org/2000/svg"><use href="./img/blog/arrows.svg#left"></use></svg>
+            <svg class="pagination__left-arrow" xmlns="http://www.w3.org/2000/svg"><use href="./svg/blog/arrows.svg#left"></use></svg>
         </a>
         `
     );
@@ -36,7 +36,7 @@ const addPagination = (pagination) => {
     pagination.insertAdjacentHTML('beforeend',
         `
         <a class="pagination__link-right" href="blog.html?page=2">
-            <svg class="pagination__right-arrow" xmlns="http://www.w3.org/2000/svg"><use href="./img/blog/arrows.svg#right"></use></svg>
+            <svg class="pagination__right-arrow" xmlns="http://www.w3.org/2000/svg"><use href="./svg/blog/arrows.svg#right"></use></svg>
         </a>
         `
     );
