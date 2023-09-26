@@ -15,7 +15,6 @@ import gulpavif from 'gulp-avif';
 import {stream as critical} from 'critical';
 import gulpif from 'gulp-if';
 import autoprefixer from 'gulp-autoprefixer';
-import babel from 'gulp-babel';
 
 const prepros = true;
 
@@ -71,10 +70,6 @@ export const style = () => {
 export const js = () => gulp
     .src('src/js/**/*.js')
     .pipe(gulpif(dev, sourceMaps.init()))
-    // .pipe(babel({
-    //     presets: ['@babel/preset-env'],
-    //     ignore: ['src/js/**/*.min.js']
-    // }))
     .pipe(terser())
     // .pipe(gulpConcat('index.min.js'))
     .pipe(gulpif(dev, sourceMaps.write('../maps')))
