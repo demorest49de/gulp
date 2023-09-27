@@ -240,6 +240,15 @@ export const renderElement = ($) => {
     if ($.page === 'article') {
         renderArticle($);
     }
+    
+    if ($.page === 'catalog') {
+    }
+    
+    if ($.page === 'card') {
+    }
+    
+    if ($.page === 'cart') {
+    }
 };
 
 export const renderCards = async ($) => {
