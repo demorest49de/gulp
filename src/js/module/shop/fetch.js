@@ -40,13 +40,12 @@ const fetchRequest = async ({
 };
 
 // get all
-export const getCategory = async ($) => {
+export const getGoods = async ($) => {
     await fetchRequest({
-        url: $.URL + $.api + $.category,
+        url: $.URL + $.api + $.goods,
         method: $.get,
         headers: {'Content-Type': 'application/json'},
         callback: cbRenderCatalog,
         vars: $,
     });
 };
-

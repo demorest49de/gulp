@@ -1,12 +1,12 @@
-export const get = 'GET';
+const get = 'GET';
 
-export const URL = 'https://muddy-substantial-gear.glitch.me/';
+const URL = 'https://muddy-substantial-gear.glitch.me/';
 
-export const api = '/api';
+const api = '/api';
 
-export const goods = '/goods';
+const goods = '/goods';
 
-export const category = '/category';
+const category = '/category';
 
 //api/goods/category/Ноутбуки
 
@@ -18,6 +18,19 @@ export const types = {
     blog: 'blog',
     article: 'article'
 };
+
+const categories = [
+    'смартфоны',
+    'ноутбуки',
+    'ювелирные изделия',
+    'одежда',
+    'бытовая техника',
+    'бытовая химия',
+    'книги и журналы',
+    'домашний текстиль',
+    'электроника',
+    'косметика',
+]
 
 const shop = [
         {
@@ -107,7 +120,6 @@ const breadCrumbs = {
     ],
 };
 
-let tabIndex = 0;//temporary not usable
 
 const burgerMenu = {
     visibility: false,
@@ -120,6 +132,10 @@ export const global = {shop,
     article,
     types,
     breadCrumbs,
-    tabIndex,
-    burgerMenu
+    burgerMenu,
+    get,
+    api,
+    category,
+    URL,
+    goods,
 };
