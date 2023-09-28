@@ -17,7 +17,7 @@ const createMain = (name, $) => {
     }
 };
 
-const createSection = async (name, $) => {
+const createSection = (name, $) => {
     if (name === 'item') {
         $.main.insertAdjacentHTML('beforeend',
             `
@@ -198,7 +198,9 @@ const createSection = async (name, $) => {
         </section>
             `);
         const data = getGoods($);
-        
+        console.log(' : ',data);
+        data.then(data => {
+            console.log(' : ',data);})
         renderCards($);
         return;
     }

@@ -6,7 +6,7 @@ export const cbRenderCatalog = (error, data, $) => {
         return;
     }
     
-    return data;
+    return {data};
 };
 
 
