@@ -7,11 +7,6 @@ export const cbRenderCatalog = (error, data, $) => {
     }
     
     return data;
-    // $.form.reset();
-    // $.overlay.classList.remove('is-visible');
-    
-    // renderItems(data, $);
-    // calculateTotal($);
 };
 
 

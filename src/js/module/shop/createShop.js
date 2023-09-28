@@ -198,7 +198,7 @@ const createSection = async (name, $) => {
         </section>
             `);
         const data = getGoods($);
-        $.goodsData = data;
+        
         renderCards($);
         return;
     }
@@ -256,11 +256,10 @@ export const renderElement = ($) => {
 
 export const renderCards = async ($) => {
     const cards = document.querySelector('.wholesale__cards');
-    console.log(' : ',$.goodsData);
     const response = await fetch('./public/db.json');
     if (response.ok) {
         const json = await response.json();
-        
+       
         json.forEach((card, index) => {
             const count = index + 1;
             cards.insertAdjacentHTML('beforeend',
