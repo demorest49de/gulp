@@ -1,3 +1,15 @@
+export const get = 'GET';
+
+export const URL = 'https://muddy-substantial-gear.glitch.me/';
+
+export const api = '/api';
+
+export const goods = '/goods';
+
+export const category = '/category';
+
+//api/goods/category/Ноутбуки
+
 export const types = {
     footer: 'footer',
     section: 'section',
