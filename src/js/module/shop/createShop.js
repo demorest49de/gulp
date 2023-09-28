@@ -197,10 +197,13 @@ const createSection = (name, $) => {
             </div>
         </section>
             `);
-        const data = getGoods($);
-        console.log(' : ',data);
-        data.then(data => {
-            console.log(' : ',data);})
+        // const data = getGoods($);
+        // $.goodsData.then(goodsData => {
+        //     goodsData.data.forEach((item, index) => {
+        //         console.log(item,' : ', index);
+        //     });
+        // });
+        // $.goodsData = data;
         renderCards($);
         return;
     }
@@ -261,7 +264,6 @@ export const renderCards = async ($) => {
     const response = await fetch('./public/db.json');
     if (response.ok) {
         const json = await response.json();
-       
         json.forEach((card, index) => {
             const count = index + 1;
             cards.insertAdjacentHTML('beforeend',
