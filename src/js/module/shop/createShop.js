@@ -197,7 +197,8 @@ const createSection = async (name, $) => {
             </div>
         </section>
             `);
-        getGoods($);
+        const data = getGoods($);
+        $.goodsData = data;
         renderCards($);
         return;
     }
@@ -255,7 +256,7 @@ export const renderElement = ($) => {
 
 export const renderCards = async ($) => {
     const cards = document.querySelector('.wholesale__cards');
-    
+    console.log(' : ',$.goodsData);
     const response = await fetch('./public/db.json');
     if (response.ok) {
         const json = await response.json();

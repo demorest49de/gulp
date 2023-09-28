@@ -1,6 +1,6 @@
 const get = 'GET';
 
-const URL = 'https://muddy-substantial-gear.glitch.me/';
+const URL = 'https://muddy-substantial-gear.glitch.me';
 
 const api = '/api';
 

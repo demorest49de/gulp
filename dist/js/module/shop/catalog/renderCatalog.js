@@ -5,7 +5,7 @@ export const cbRenderCatalog = (error, data, $) => {
         handleErrorMessage(error, data, $);
         return;
     }
-    
+    console.log(' : ',data);
     // $.form.reset();
     // $.overlay.classList.remove('is-visible');
     
