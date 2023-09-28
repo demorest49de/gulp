@@ -1,12 +1,15 @@
-const fetchRequest = async (url, {
-    method = 'get',
-    id = '',
-    callback,
-    headers,
-    vars = {},
-    body,
-    search = "",
-}) => {
+import {cbRenderCatalog} from "./catalog/renderCatalog.js";
+
+const fetchRequest = async ({
+                                url,
+                                method = 'get',
+                                id = '',
+                                callback,
+                                headers,
+                                vars = {},
+                                body,
+                                search = "",
+                            }) => {
     try {
         const options = {
             method,
@@ -38,10 +41,12 @@ const fetchRequest = async (url, {
 
 // get all
 export const getCategory = async ($) => {
-    await fetchRequest($.URL, {
-        method: $.verbs.get,
+    await fetchRequest({
+        url: $.URL + $.api + $.category,
+        method: $.get,
         headers: {'Content-Type': 'application/json'},
-        // callback: cbRenderItems,
+        callback: cbRenderCatalog,
         vars: $,
     });
 };
+

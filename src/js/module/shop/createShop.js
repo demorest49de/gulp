@@ -196,6 +196,7 @@ const createSection = async (name, $) => {
             </div>
         </section>
             `);
+        
         renderCards($);
         return;
     }
