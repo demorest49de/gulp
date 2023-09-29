@@ -5,7 +5,7 @@ export const createBreadCrumbs = (bc) => {
     breadCrumbs.classList.add('breadcrumbs', 'bc');
     
     breadCrumbs.insertAdjacentHTML('beforeend', `
-        <div class="bc__container">
+        <div class="container bc__container">
             <nav class="bc__navigation">
                 <ul class="bc__bread-crumbs">
                 </ul>
@@ -34,7 +34,7 @@ const createArticleMain = (breadCrumbs) => {
     main.append(breadCrumbs);
     main.insertAdjacentHTML('beforeend', `
         <section class="bc__section">
-            <div class="bc__container">
+            <div class="container bc__container">
                 <div class="bc__grid-container">
                     <div class="bc__hero">
                         <h1 class="bc__title">здесь название статьи</h1>
