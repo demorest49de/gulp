@@ -7,66 +7,74 @@ const createArticleContent = (breadCrumbs) => {
     main.className = 'main';
     main.append(breadCrumbs);
     main.insertAdjacentHTML('beforeend', `
-        <section class="bc__section">
-            <div class="container bc__container">
-                <div class="bc__grid-container">
-                    <div class="bc__hero">
-                        <h1 class="bc__title">здесь название статьи</h1>
-                        <p class="bc__text">Материала для обуви лучше натуральной кожи все ещё не придумали.
-                            Качественную кожу очень приятно носить, она идеально ложится по ноге,
-                            в нужных местах немного растягивается.
-                            В кожаной обуви, если она соответствует погоде, создаётся хороший микроклимат –
-                            ноги не мёрзнут, не потеют, и чувствуют себя очень комфортно. Неудивительно,
-                            что по статистике больше 60% покупателей выбирает обувь именно из гладкой
-                            натуральной кожи. Вдобавок кожа практична и не требует трудоёмкого ухода.
-                        </p>
-                        <aside class="bc__adv">
-                            <ul class="bc__adv-list">
-                                <li class="bc__adv-item">
-                                    <a class="bc__adv-link" href="#"
-                                    title="Горящие туры в Стамбул от 20 000 руб.">
-                                    <p class="bc__text-big">Горящие туры в Стамбул от 20 000 руб.</p>
-                                    <p class="bc__image-text-small">Окунись в настоящую восточную сказку</p>
-                                    </a>
-                                </li>
-                                <li class="bc__adv-item">
-                                    <a class="bc__adv-link" href="#"
-                                    title="Новый RENAULT DUSTER">
-                                        <figcaption class="bc__image-text-block">
-                                            <span class="bc__image-text-big">Новый RENAULT DUSTER</span>
-                                            <span class="bc__image-text-small">Легендарный внедорожник в новом дизайне</span>
-                                        </figcaption>
-                                    </a>
-                                </li>
-                            </ul>
-                        </aside>
-                        <div class="bc__subblock">
-                            <a class="bc__backlink" href="blog.html">
-                                <svg class="bc__left-arrow" xmlns="http://www.w3.org/2000/svg">
-                                    <use href="./svg/blog/arrows.svg#left"></use>
-                                </svg>
-                                <span class="bc__link-text">К списку статей</span>
-                            </a>
-                            <div class="bc__about-info">
-                                <span class="bc__author"></span>
-                                <div class="bc__reviews-subblock">
-                                    <div class="article__datetime">
-                                        <span class="article__date">22.04.2023,</span>
-                                        <span class="article__time">15:15</span>
-                                    </div>
+        <section class="article">
+            <div class="container article__container">
+                <div class="article__hero">
+                    <h1 class="article__title">здесь название статьи</h1>
+                    <p class="article__text">Материала для обуви лучше натуральной кожи все ещё не придумали.
+                        Качественную кожу очень приятно носить, она идеально ложится по ноге,
+                        в нужных местах немного растягивается.
+                        В кожаной обуви, если она соответствует погоде, создаётся хороший микроклимат –
+                        ноги не мёрзнут, не потеют, и чувствуют себя очень комфортно. Неудивительно,
+                        что по статистике больше 60% покупателей выбирает обувь именно из гладкой
+                        натуральной кожи. Вдобавок кожа практична и не требует трудоёмкого ухода.
+                    </p>
+                    <aside class="article__adv adv">
+                        <ul class="adv-list">
+                            <li class="adv-item">
+                                <a class="adv-link" href="#"
+                                title="Горящие туры в Стамбул от 20 000 руб.">
+                                    <p class="adv__text-big">Горящие туры в Стамбул от 20 000 руб.</p>
+                                    <p class="adv__text-small">Окунись в настоящую восточную сказку</p>
+                                    <picture>
+                                    <source srcset="img/article/banner/turkey.avif" type="image/avif">
+                                    <source srcset="img/article/banner/turkey.webp" type="image/webp">
+                                        <img class="adv__image"
+                                         src="img/article/banner/turkey.jpg" alt="Турция" width="500" height="400">
+                                    </picture>
+                                </a>
+                            </li>
+                            <li class="adv-item">
+                                <a class="adv-link" href="#"
+                                title="Новый RENAULT DUSTER">
+                                    <p class="adv__text-big">Новый RENAULT DUSTER</p>
+                                    <p class="adv__text-small">Легендарный внедорожник в новом дизайне</p>
+                                    <picture>
+                                    <source srcset="img/article/banner/reno.avif" type="image/avif">
+                                    <source srcset="img/article/banner/reno.webp" type="image/webp">
+                                        <img class="adv__image"
+                                         src="img/article/banner/reno.jpg" alt="Рено" width="500" height="400">
+                                    </picture>
+                                </a>
+                            </li>
+                        </ul>
+                    </aside>
+                    <div class="article__subblock">
+                        <a class="article__backlink" href="blog.html">
+                            <svg class="article__left-arrow" xmlns="http://www.w3.org/2000/svg">
+                                <use href="./svg/blog/arrows.svg#left"></use>
+                            </svg>
+                            <span class="article__link-text">К списку статей</span>
+                        </a>
+                        <div class="article__about-info">
+                            <span class="article__author"></span>
+                            <div class="article__reviews-subblock">
+                                <div class="article__datetime">
+                                    <span class="article__date">22.04.2023,</span>
+                                    <span class="article__time">15:15</span>
+                                </div>
 
-                                    <div class="article__views-comments">
-                                <span class="article__text-block">
-                                <svg class="article__icon" xmlns="http://www.w3.org/2000/svg">
-                                    <use href="./svg/blog/views-chat.svg#views"></use>
-                                </svg>
-                                    1.1K</span>
-                                        <span class="article__text-block">
-                                <svg class="article__icon" xmlns="http://www.w3.org/2000/svg">
-                                    <use href="./svg/blog/views-chat.svg#chat"></use>
-                                </svg>
-                                    150</span>
-                                    </div>
+                                <div class="article__views-comments">
+                            <span class="article__text-block">
+                            <svg class="article__icon" xmlns="http://www.w3.org/2000/svg">
+                                <use href="./svg/blog/views-chat.svg#views"></use>
+                            </svg>
+                                1.1K</span>
+                                    <span class="article__text-block">
+                            <svg class="article__icon" xmlns="http://www.w3.org/2000/svg">
+                                <use href="./svg/blog/views-chat.svg#chat"></use>
+                            </svg>
+                                150</span>
                                 </div>
                             </div>
                         </div>
@@ -83,13 +91,13 @@ export const articleHandler = ($) => {
     const breadCrumbs = createBreadCrumbs($.breadCrumbs.articleInfo);
     const main = createArticleContent(breadCrumbs);
     app.append(main);
-    const breadCrumbsTitle = breadCrumbs.querySelector('.bc__item:nth-child(3)');
-    const title = main.querySelector('.bc__title');
-    const text = main.querySelector('.bc__text');
-    const author = main.querySelector('.bc__author');
+    const breadCrumbsTitle = breadCrumbs.querySelector('.article__item:nth-child(3)');
+    const title = main.querySelector('.article__title');
+    const text = main.querySelector('.article__text');
+    const author = main.querySelector('.article__author');
     const articleDate = main.querySelector('.article__date');
     const articleTime = main.querySelector('.article__time');
-    const bcVars = {
+    const articleVars = {
         breadCrumbsTitle,
         title,
         text,
@@ -97,7 +105,7 @@ export const articleHandler = ($) => {
         articleDate,
         articleTime
     };
-    return bcVars;
+    return articleVars;
 };
 
 export const createArticle = ($) => {
