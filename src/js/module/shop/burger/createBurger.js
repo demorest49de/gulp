@@ -30,7 +30,9 @@ export const createBurger = () => {
                                     <li class="burger__elem"><a href="#">Оплата заказа</a></li>
                                     <li class="burger__elem"><a href="#">Условия доставки</a></li>
                                     <li class="burger__elem"><a href="#">Условия возврата товара</a></li>
-                                    <li class="burger__elem"><a href="/blog.html">Блог</a></li>
+<!--                                    // for debugger purposes-->
+<!--                                    <li class="burger__elem"><a href="/blog.html">Блог</a></li>-->
+                                    <li class="burger__elem"><a href="/gulp/src/blog.html">Блог</a></li>
                                 </ul>
                             </nav>
                         </div>

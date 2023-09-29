@@ -57,8 +57,6 @@ export const loadItemsHandler = ($) => {
         setStorage('endPage', endPage);
         const articlesHTML = data.data.map((item, index) => {
 
-            // console.log(' : ', item);
-
             const strDate = getFormattedDate();
             const strTime = getFormattedTime();
             //
