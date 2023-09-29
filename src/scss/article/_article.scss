@@ -58,85 +58,6 @@
     }
   }
 
-  &__adv {
-    grid-area: adv;
-  }
-
-  &__adv-list {
-    display: flex;
-    flex-direction: column;
-    row-gap: 50px;
-  }
-
-  &__adv-image-block {
-    height: 328px;
-    width: 532px;
-    object-fit: cover;
-    background-size: cover;
-    background-repeat: no-repeat;
-  }
-
-  //&__adv-item:nth-child(1)
-  //&__adv-image-block {
-  //  background-image: linear-gradient(180.72deg, rgba(0, 0, 0, 0) 37.06%,
-  //          rgba(0, 0, 0, 0.44) 75.75%, rgba(0, 0, 0, 0.64) 100%), url("../img/article/banner/banner-turkey.jpg");
-  //}
-  //
-  //&__adv-item:nth-child(2)
-  //&__adv-image-block {
-  //  background-image: linear-gradient(180.72deg, rgba(0, 0, 0, 0) 37.06%,
-  //          rgba(0, 0, 0, 0.44) 75.75%, rgba(0, 0, 0, 0.64) 100%), url("../img/article/banner/banner-reno.jpg");
-  //}
-
-  //&__adv-item:not(:nth-last-child(1)) {
-  //  margin-bottom: 50px;
-  //}
-
-  &__adv-image-block {
-    position: relative;
-  }
-
-  &__image-text-block * {
-    position: absolute;
-    color: white;
-    left: 30px;
-  }
-
-  &__image-text-big {
-    font-weight: 700;
-    font-size: 32px;
-    line-height: 130%;
-    max-width: 435px;
-  }
-
-  &__image-text-small {
-    font-weight: 700;
-    font-size: 16px;
-    line-height: 130%;
-    bottom: 34px;
-  }
-
-  &__adv-item:nth-child(1)
-  &__image-text-big {
-    bottom: 57px;
-  }
-
-  &__adv-item:nth-child(2)
-  &__image-text-big {
-    bottom: 72px;
-  }
-
-
-  &__adv-item:nth-child(1)
-  &__image-text-small {
-    bottom: 27px;
-  }
-
-  &__adv-item:nth-child(2)
-  &__image-text-small {
-    bottom: 38px;
-  }
-
   &__backlink {
     display: flex;
     justify-content: center;
@@ -194,5 +115,84 @@
     @media (max-width: 390px) {
       height: 49px;
     }
+  }
+}
+
+.adv {
+  grid-area: adv;
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    row-gap: 50px;
+  }
+
+  &__link {
+    height: 328px;
+    width: 532px;
+    object-fit: cover;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+  //&__adv-item:nth-child(1)
+  //&__adv-image-block {
+  //  background-image: linear-gradient(180.72deg, rgba(0, 0, 0, 0) 37.06%,
+  //          rgba(0, 0, 0, 0.44) 75.75%, rgba(0, 0, 0, 0.64) 100%), url("../img/article/banner/banner-turkey.jpg");
+  //}
+  //
+  //&__adv-item:nth-child(2)
+  //&__adv-image-block {
+  //  background-image: linear-gradient(180.72deg, rgba(0, 0, 0, 0) 37.06%,
+  //          rgba(0, 0, 0, 0.44) 75.75%, rgba(0, 0, 0, 0.64) 100%), url("../img/article/banner/banner-reno.jpg");
+  //}
+
+  //&__adv-item:not(:nth-last-child(1)) {
+  //  margin-bottom: 50px;
+  //}
+
+  &__image-block {
+    position: relative;
+  }
+
+  &__image-text-block * {
+    position: absolute;
+    color: white;
+    left: 30px;
+  }
+
+  &__text-big {
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 130%;
+    max-width: 435px;
+  }
+
+  &__text-small {
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 130%;
+    bottom: 34px;
+  }
+
+  &__item:nth-child(1)
+  &__text-big {
+    bottom: 57px;
+  }
+
+  &__item:nth-child(2)
+  &__text-big {
+    bottom: 72px;
+  }
+
+
+  &__item:nth-child(1)
+  &__text-small {
+    bottom: 27px;
+  }
+
+  &__item:nth-child(2)
+  &__text-small {
+    bottom: 38px;
   }
 }

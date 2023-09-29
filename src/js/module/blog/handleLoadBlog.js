@@ -62,34 +62,34 @@ export const loadItemsHandler = ($) => {
             const strTime = getFormattedTime();
             //
             const article = document.createElement('article');
-            article.classList.add('blog__article', 'article');
+            article.classList.add('blog__ba', 'ba');
             article.innerHTML = `
-                <a class="article__link" href="article.html?id=${item.id}">
-                    <picture class="article__image">
+                <a class="ba__link" href="article.html?id=${item.id}">
+                    <picture class="ba__image">
                         <source srcset="./img/blog/${index}.avif" type="image/avif">
                         <source srcset="./img/blog/${index}.webp" type="image/webp">
                         <img src="./img/blog/${index}.png" alt="${item.title}" width="140" height="140">
                     </picture>
-                    <div class="article__block">
-                        <h2 class="article__subtitle">
-                            <span class="article__text">
+                    <div class="ba__block">
+                        <h2 class="ba__subtitle">
+                            <span class="ba__text">
                                 ${item.title}
                             </span>
                         </h2>
-                        <div class="article__subblock">
-                            <div class="article__datetime">
-                                <span class="article__date">${strDate}</span>
-                                <span class="article__time">${strTime}</span>
+                        <div class="ba__subblock">
+                            <div class="ba__datetime">
+                                <span class="ba__date">${strDate}</span>
+                                <span class="ba__time">${strTime}</span>
                             </div>
                         
-                            <div class="article__views-comments">
-                                <span class="article__text-block">
-                                <svg class="article__icon" xmlns="http://www.w3.org/2000/svg">
+                            <div class="ba__views-comments">
+                                <span class="ba__text-block">
+                                <svg class="ba__icon" xmlns="http://www.w3.org/2000/svg">
                                     <use href="./svg/blog/views-chat.svg#views"></use>
                                 </svg>
                                     ${getRandomIntInclusive(1, 3)}.${getRandomIntInclusive(0, 9)}K</span>
-                                <span class="article__text-block">
-                                <svg class="article__icon" xmlns="http://www.w3.org/2000/svg">
+                                <span class="ba__text-block">
+                                <svg class="ba__icon" xmlns="http://www.w3.org/2000/svg">
                                     <use href="./svg/blog/views-chat.svg#chat"></use>
                                 </svg>
                                     ${getRandomIntInclusive(13, 200)}</span>
