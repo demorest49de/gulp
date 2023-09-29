@@ -19,39 +19,51 @@ export const types = {
     article: 'article'
 };
 
-const categories = [
-    'смартфоны',
-    'ноутбуки',
-    'ювелирные изделия',
-    'одежда',
-    'бытовая техника',
-    'бытовая химия',
-    'книги и журналы',
-    'домашний текстиль',
-    'электроника',
-    'косметика',
-]
+// const categories = [
+//     'смартфоны',
+//     'ноутбуки',
+//     'ювелирные изделия',
+//     'одежда',
+//     'бытовая техника',
+//     'бытовая химия',
+//     'книги и журналы',
+//     'домашний текстиль',
+//     'электроника',
+//     'косметика',
+// ]
+
+const _class = {
+    footer: 'footer',
+    section: 'section',
+    header: 'header',
+    main: 'main',
+    blog: 'blog',
+    article: 'article',
+    item: 'item',
+    wholesale: 'wholesale',
+    catalog: 'catalog',
+}
 
 const shop = [
         {
             type: types.header,
-            name: 'header'
+            name: _class.header
         },
         {
             type: types.main,
-            name: 'main'
+            name: _class.main
         },
         {
             type: types.section,
-            name: 'item'
+            name: _class.item
         },
         {
             type: types.section,
-            name: 'wholesale'
+            name: _class.wholesale
         },
         {
             type: types.footer,
-            name: 'footer'
+            name: _class.footer
         },
     ]
 ;
@@ -59,15 +71,15 @@ const shop = [
 const blog = [
         {
             type: types.header,
-            name: 'header'
+            name: _class.header
         },
         {
             type: types.blog,
-            name: 'blog'
+            name: _class.blog
         },
         {
             type: types.footer,
-            name: 'footer'
+            name: _class.footer
         },
     ]
 ;
@@ -75,15 +87,35 @@ const blog = [
 const article = [
         {
             type: types.header,
-            name: 'header'
+            name: _class.header
         },
         {
             type: types.article,
-            name: 'article'
+            name: _class.article
         },
         {
             type: types.footer,
-            name: 'footer'
+            name: _class.footer
+        },
+    ]
+;
+
+const catalog = [
+        {
+            type: types.header,
+            name: _class.header
+        },
+        {
+            type: types.main,
+            name: _class.main
+        },
+        {
+            type: types.section,
+            name: _class.catalog
+        },
+        {
+            type: types.footer,
+            name: _class.footer
         },
     ]
 ;
@@ -138,4 +170,5 @@ export const global = {shop,
     category,
     URL,
     goods,
+    catalog,
 };

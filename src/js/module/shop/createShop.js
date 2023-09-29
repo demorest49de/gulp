@@ -207,6 +207,28 @@ const createSection = (name, $) => {
         renderCards($);
         return;
     }
+    if (name === 'wholesale') {
+        $.main.insertAdjacentHTML('beforeend',
+            `
+            <section class="wholesale" aria-label="Распродажа">
+            <h2 class="visually-hidden">Распродажа</h2>
+            <div class="container">
+                <h3 class="wholesale__title">Это выгодно!</h3>
+                <ul class="wholesale__cards">
+                </ul>
+            </div>
+        </section>
+            `);
+        // const data = getGoods($);
+        // $.goodsData.then(goodsData => {
+        //     goodsData.data.forEach((item, index) => {
+        //         console.log(item,' : ', index);
+        //     });
+        // });
+        // $.goodsData = data;
+        renderCards($);
+        return;
+    }
 };
 
 const renderShop = ($) => {
@@ -250,6 +272,7 @@ export const renderElement = ($) => {
     }
     
     if ($.page === 'catalog') {
+        renderCatalog($);
     }
     
     if ($.page === 'card') {
