@@ -91,7 +91,7 @@ export const articleHandler = ($) => {
     const breadCrumbs = createBreadCrumbs($.breadCrumbs.articleInfo);
     const main = createArticleContent(breadCrumbs);
     app.append(main);
-    const breadCrumbsTitle = breadCrumbs.querySelector('.article__item:nth-child(3)');
+    const breadCrumbsTitle = breadCrumbs.querySelector('.bc__item:nth-child(3)');
     const title = main.querySelector('.article__title');
     const text = main.querySelector('.article__text');
     const author = main.querySelector('.article__author');
