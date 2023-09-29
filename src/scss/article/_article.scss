@@ -59,25 +59,6 @@
   &__grid-container {
   }
 
-  &__hero {
-    display: grid;
-    grid-auto-flow: column;
-    grid-template-areas:
-        "title title adv"
-        "text tex    adv"
-         "sub";
-    column-gap: 143px;
-    max-width: 1095px;
-    @media (max-width: 1465px) {
-      grid-template-areas:
-        "hero hero"
-        "adv adv";
-    }
-    @media (max-width: 1465px) {
-      margin: 0 auto;
-    }
-  }
-
   &__title {
     font-weight: 700;
     font-size: 50px;
@@ -88,6 +69,26 @@
     @media (max-width: 890px) {
       font-size: 25px;
     }
+  }
+
+  &__hero {
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-areas:
+        "title title adv"
+        "text text  adv"
+        "sub sub  adv";
+    justify-content: space-between;
+    column-gap: 143px;
+    //max-width: 1095px;
+    //@media (max-width: 1465px) {
+    //  grid-template-areas:
+    //    "hero hero"
+    //    "adv adv";
+    //}
+    //@media (max-width: 1465px) {
+    //  margin: 0 auto;
+    //}
   }
 
   &__text {
