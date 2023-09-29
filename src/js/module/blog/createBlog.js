@@ -1,5 +1,5 @@
 import {loadItemsHandler, paginationClickHandler, paginationHandler} from "./handleLoadBlog.js";
-import {createBreadCrumbs} from '../article/createArticle.js';
+import {createBreadCrumbs} from '../base/breadcrumbs.js';
 
 const createPageLink = (pagination) => {
     
