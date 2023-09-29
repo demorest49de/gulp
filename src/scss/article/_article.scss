@@ -56,42 +56,70 @@
     margin: 0 16px;
   }
 
+  &__grid-container {
+  }
+
+  &__hero {
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-areas:
+        "title title adv"
+        "text tex    adv"
+         "sub";
+    column-gap: 143px;
+    max-width: 1095px;
+    @media (max-width: 1465px) {
+      grid-template-areas:
+        "hero hero"
+        "adv adv";
+    }
+    @media (max-width: 1465px) {
+      margin: 0 auto;
+    }
+  }
+
   &__title {
     font-weight: 700;
     font-size: 50px;
     line-height: 130%;
     color: inherit;
     margin-bottom: 40px;
+    grid-area: title;
     @media (max-width: 890px) {
       font-size: 25px;
     }
   }
 
-  &__grid-container {
-    display: grid;
-    grid-auto-flow: column;
-    grid-template-areas:
-        "hero    adv"
-        "hero    adv";
-    column-gap: 143px;
-    @media (max-width: 1465px) {
-      display: block;
+  &__text {
+    grid-area: text;
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 150%;
+    margin-bottom: 100px;
+    @media (max-width: 890px) {
+      font-size: 12px;
+      margin-bottom: 40px;
+    }
+    @media (max-width: 390px) {
+      margin-bottom: 21px;
     }
   }
 
-  &__hero {
-    max-width: 1095px;
-    grid-area: hero;
-    @media (max-width: 1465px) {
-      margin: 0 auto;
+  &__subblock {
+    grid-area: sub;
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    @media (max-width: 390px) {
+      flex-direction: column;
+      align-items: start;
+      justify-content: space-between;
+      gap: 10px;
     }
   }
 
   &__adv {
     grid-area: adv;
-    @media (max-width: 1465px) {
-      display: none;
-    }
   }
 
   &__adv-image-block {
@@ -120,20 +148,6 @@
 
   &__adv-image-block {
     position: relative;
-  }
-
-  &__text {
-    font-weight: 400;
-    font-size: 22px;
-    line-height: 150%;
-    margin-bottom: 100px;
-    @media (max-width: 890px) {
-      font-size: 12px;
-      margin-bottom: 40px;
-    }
-    @media (max-width: 390px) {
-      margin-bottom: 21px;
-    }
   }
 
   &__image-text-block * {
@@ -175,18 +189,6 @@
   &__adv-item:nth-child(2)
   &__image-text-small {
     bottom: 38px;
-  }
-
-  &__subblock {
-    display: flex;
-    justify-content: space-between;
-    align-items: end;
-    @media (max-width: 390px) {
-      flex-direction: column;
-      align-items: start;
-      justify-content: space-between;
-      gap: 10px;
-    }
   }
 
   &__backlink {

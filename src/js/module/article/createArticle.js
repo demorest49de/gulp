@@ -46,6 +46,26 @@ const createArticleMain = (breadCrumbs) => {
                             что по статистике больше 60% покупателей выбирает обувь именно из гладкой
                             натуральной кожи. Вдобавок кожа практична и не требует трудоёмкого ухода.
                         </p>
+                        <aside class="bc__adv">
+                            <ul class="bc__adv-list">
+                                <li class="bc__adv-item">
+                                    <figure class="bc__adv-image-block">
+                                        <figcaption class="bc__image-text-block">
+                                            <span class="bc__image-text-big">Горящие туры в Стамбул от 20 000 руб.</span>
+                                            <span class="bc__image-text-small">Окунись в настоящую восточную сказку</span>
+                                        </figcaption>
+                                    </figure>
+                                </li>
+                                <li class="bc__adv-item">
+                                    <figure class="bc__adv-image-block">
+                                        <figcaption class="bc__image-text-block">
+                                            <span class="bc__image-text-big">Новый RENAULT DUSTER</span>
+                                            <span class="bc__image-text-small">Легендарный внедорожник в новом дизайне</span>
+                                        </figcaption>
+                                    </figure>
+                                </li>
+                            </ul>
+                        </aside>
                         <div class="bc__subblock">
                             <a class="bc__backlink" href="blog.html">
                                 <svg class="bc__left-arrow" xmlns="http://www.w3.org/2000/svg">
@@ -77,26 +97,6 @@ const createArticleMain = (breadCrumbs) => {
                             </div>
                         </div>
                     </div>
-                    <aside class="bc__adv">
-                        <ul class="bc__adv-list">
-                            <li class="bc__adv-item">
-                                <figure class="bc__adv-image-block">
-                                    <figcaption class="bc__image-text-block">
-                                        <span class="bc__image-text-big">Горящие туры в Стамбул от 20 000 руб.</span>
-                                        <span class="bc__image-text-small">Окунись в настоящую восточную сказку</span>
-                                    </figcaption>
-                                </figure>
-                            </li>
-                            <li class="bc__adv-item">
-                                <figure class="bc__adv-image-block">
-                                    <figcaption class="bc__image-text-block">
-                                        <span class="bc__image-text-big">Новый RENAULT DUSTER</span>
-                                        <span class="bc__image-text-small">Легендарный внедорожник в новом дизайне</span>
-                                    </figcaption>
-                                </figure>
-                            </li>
-                        </ul>
-                    </aside>
                 </div>
             </div>
         </section>
