@@ -20,9 +20,9 @@ const createArticleContent = (breadCrumbs) => {
                         натуральной кожи. Вдобавок кожа практична и не требует трудоёмкого ухода.
                     </p>
                     <aside class="article__adv adv">
-                        <ul class="adv-list">
-                            <li class="adv-item">
-                                <a class="adv-link" href="#"
+                        <ul class="adv__list">
+                            <li class="adv__item">
+                                <a class="adv__link" href="#"
                                 title="Горящие туры в Стамбул от 20 000 руб.">
                                     <p class="adv__text-big">Горящие туры в Стамбул от 20 000 руб.</p>
                                     <p class="adv__text-small">Окунись в настоящую восточную сказку</p>
@@ -34,8 +34,8 @@ const createArticleContent = (breadCrumbs) => {
                                     </picture>
                                 </a>
                             </li>
-                            <li class="adv-item">
-                                <a class="adv-link" href="#"
+                            <li class="adv__item">
+                                <a class="adv__link" href="#"
                                 title="Новый RENAULT DUSTER">
                                     <p class="adv__text-big">Новый RENAULT DUSTER</p>
                                     <p class="adv__text-small">Легендарный внедорожник в новом дизайне</p>
