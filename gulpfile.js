@@ -253,7 +253,7 @@ const develop = (ready) => {
 
 export const base = gulp.parallel(html, scss, js, img, svg, avif, webp, copy);
 
-export const noimg = gulp.parallel(html, scss, js, copy);
+export const noimg = gulp.parallel(html, scss, js, svg, copy);
 
 export const build = gulp.series(clear, base, critCSS);
 

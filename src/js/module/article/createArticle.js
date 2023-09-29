@@ -49,20 +49,20 @@ const createArticleMain = (breadCrumbs) => {
                         <aside class="bc__adv">
                             <ul class="bc__adv-list">
                                 <li class="bc__adv-item">
-                                    <figure class="bc__adv-image-block">
-                                        <figcaption class="bc__image-text-block">
-                                            <span class="bc__image-text-big">Горящие туры в Стамбул от 20 000 руб.</span>
-                                            <span class="bc__image-text-small">Окунись в настоящую восточную сказку</span>
-                                        </figcaption>
-                                    </figure>
+                                    <a class="bc__adv-link" href="#"
+                                    title="Горящие туры в Стамбул от 20 000 руб.">
+                                    <p class="bc__text-big">Горящие туры в Стамбул от 20 000 руб.</p>
+                                    <p class="bc__image-text-small">Окунись в настоящую восточную сказку</p>
+                                    </a>
                                 </li>
                                 <li class="bc__adv-item">
-                                    <figure class="bc__adv-image-block">
+                                    <a class="bc__adv-link" href="#"
+                                    title="Новый RENAULT DUSTER">
                                         <figcaption class="bc__image-text-block">
                                             <span class="bc__image-text-big">Новый RENAULT DUSTER</span>
                                             <span class="bc__image-text-small">Легендарный внедорожник в новом дизайне</span>
                                         </figcaption>
-                                    </figure>
+                                    </a>
                                 </li>
                             </ul>
                         </aside>

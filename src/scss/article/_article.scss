@@ -80,15 +80,13 @@
         "sub sub  adv";
     justify-content: space-between;
     column-gap: 143px;
-    //max-width: 1095px;
-    //@media (max-width: 1465px) {
-    //  grid-template-areas:
-    //    "hero hero"
-    //    "adv adv";
-    //}
-    //@media (max-width: 1465px) {
-    //  margin: 0 auto;
-    //}
+    @media (max-width: 768px) {
+      grid-template-areas:
+        "title title"
+        "text text"
+        "sub sub"
+        "adv adv";
+    }
   }
 
   &__text {
@@ -123,6 +121,12 @@
     grid-area: adv;
   }
 
+  &__adv-list {
+    display: flex;
+    flex-direction: column;
+    row-gap: 50px;
+  }
+
   &__adv-image-block {
     height: 328px;
     width: 532px;
@@ -131,21 +135,21 @@
     background-repeat: no-repeat;
   }
 
-  &__adv-item:nth-child(1)
-  &__adv-image-block {
-    background-image: linear-gradient(180.72deg, rgba(0, 0, 0, 0) 37.06%,
-            rgba(0, 0, 0, 0.44) 75.75%, rgba(0, 0, 0, 0.64) 100%), url("../img/article/banner/banner-turkey.jpg");
-  }
+  //&__adv-item:nth-child(1)
+  //&__adv-image-block {
+  //  background-image: linear-gradient(180.72deg, rgba(0, 0, 0, 0) 37.06%,
+  //          rgba(0, 0, 0, 0.44) 75.75%, rgba(0, 0, 0, 0.64) 100%), url("../img/article/banner/banner-turkey.jpg");
+  //}
+  //
+  //&__adv-item:nth-child(2)
+  //&__adv-image-block {
+  //  background-image: linear-gradient(180.72deg, rgba(0, 0, 0, 0) 37.06%,
+  //          rgba(0, 0, 0, 0.44) 75.75%, rgba(0, 0, 0, 0.64) 100%), url("../img/article/banner/banner-reno.jpg");
+  //}
 
-  &__adv-item:nth-child(2)
-  &__adv-image-block {
-    background-image: linear-gradient(180.72deg, rgba(0, 0, 0, 0) 37.06%,
-            rgba(0, 0, 0, 0.44) 75.75%, rgba(0, 0, 0, 0.64) 100%), url("../img/article/banner/banner-reno.jpg");
-  }
-
-  &__adv-item:not(:nth-last-child(1)) {
-    margin-bottom: 50px;
-  }
+  //&__adv-item:not(:nth-last-child(1)) {
+  //  margin-bottom: 50px;
+  //}
 
   &__adv-image-block {
     position: relative;
