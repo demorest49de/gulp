@@ -1,6 +1,6 @@
 .bc {
   padding-bottom: 80px;
-  //80 60 50 30
+
   @media (max-width: 1024px) {
     padding-bottom: 60px;
   }
@@ -10,7 +10,7 @@
   @media (max-width: 520px) {
     padding-bottom: 30px;
   }
-  //150 100 80 50
+
   &__container {
     padding: 0 75px;
     color: #2D2D2D;
@@ -105,13 +105,13 @@
   &__adv-item:nth-child(1)
   &__adv-image-block {
     background-image: linear-gradient(180.72deg, rgba(0, 0, 0, 0) 37.06%,
-            rgba(0, 0, 0, 0.44) 75.75%, rgba(0, 0, 0, 0.64) 100%), url("../../img/article/banner/banner-turkey.jpg");
+            rgba(0, 0, 0, 0.44) 75.75%, rgba(0, 0, 0, 0.64) 100%), url("../img/article/banner/banner-turkey.jpg");
   }
 
   &__adv-item:nth-child(2)
   &__adv-image-block {
     background-image: linear-gradient(180.72deg, rgba(0, 0, 0, 0) 37.06%,
-            rgba(0, 0, 0, 0.44) 75.75%, rgba(0, 0, 0, 0.64) 100%), url("../../img/article/banner/banner-reno.jpg");
+            rgba(0, 0, 0, 0.44) 75.75%, rgba(0, 0, 0, 0.64) 100%), url("../img/article/banner/banner-reno.jpg");
   }
 
   &__adv-item:not(:nth-last-child(1)) {
