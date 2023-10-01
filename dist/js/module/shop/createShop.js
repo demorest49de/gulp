@@ -286,14 +286,14 @@ export const renderCards = async ($, callback) => {
         // console.log(' : ', items);
         
         items.forEach((item, index) => {
-            console.log(' : ', item);
+            // console.log(' : ', item);
             cardAfterStyle.innerHTML +=
                 `.card:nth-child(${index + 1}) .card__figure:after {
                 content: '-${item.discount}%';
                 
             }`;
             document.body.append(cardAfterStyle);
-            console.log(cardAfterStyle);
+            // console.log(cardAfterStyle);
             console.log(item, ' : ', index);
             const li = document.createElement('li');
             li.className = 'card';
@@ -302,7 +302,7 @@ export const renderCards = async ($, callback) => {
             a.className = 'card__link';
             a.title = `${item.title}`;
             a.href = `card.html?id=${item.id}`;
-            
+            const oldPrice = Math.ceil(item.price - ((item.price * item.discount) / 100));
             a.insertAdjacentHTML('beforeend',
                 `
                     <picture class="card__figure">
@@ -310,13 +310,13 @@ export const renderCards = async ($, callback) => {
                               alt="${item.title}" width="420" height="295">
                     </picture>
                     <div class="card__price-block"><span class="card__new-price">${item.price} ₽</span>
-                        <span class="card__old-price">${item.price - ((item.price * item.discount) / 100)} ₽</span>
+                        <span class="card__old-price">${oldPrice} ₽</span>
                     </div>
                     <p class="card__item-text">${item.title}</p>
                 `);
             
             li.append(a);
-            console.log(a);
+            // console.log(a);
             cards.append(li);
         });
     });
