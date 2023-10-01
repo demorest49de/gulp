@@ -40,6 +40,17 @@ const fetchRequest = async ({
 };
 
 // get all
+export const getGoodsWithDiscount = async ($) => {
+    return await fetchRequest({
+        url: $.URL + $.api + $.goods + `/discount`,
+        method: $.get,
+        headers: {'Content-Type': 'application/json'},
+        callback: cbRenderCatalog,
+        vars: $,
+    });
+};
+
+// get all
 export const getGoodsByCategory = async ($, categoryName) => {
     return await fetchRequest({
         url: $.URL + $.api + $.goods + $.category + `/${categoryName}`,
