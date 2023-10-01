@@ -274,14 +274,19 @@ export const renderCards = async ($, callback) => {
     const cards = document.querySelector('.wholesale__cards');
     
     
-    const items = callback($);
+    const itemsPromise = callback($);
     const cardAfterStyle = document.createElement("style");
-    items.then(source => {
+    itemsPromise.then(source => {
+        // console.log($);
+        if (source.data && source.data.length === 0) {
+            $.app.querySelector('.wholesale').style.display = 'none';
+            return;
+        }
         const items = source.data.slice(0, 6);
-        console.log(' : ',items);
+        // console.log(' : ', items);
         
         items.forEach((item, index) => {
-            
+            console.log(' : ', item);
             cardAfterStyle.innerHTML +=
                 `.card:nth-child(${index + 1}) .card__figure:after {
                 content: '-${item.discount}%';
@@ -297,7 +302,7 @@ export const renderCards = async ($, callback) => {
             a.className = 'card__link';
             a.title = `${item.title}`;
             a.href = `card.html?id=${item.id}`;
-
+            
             a.insertAdjacentHTML('beforeend',
                 `
                     <picture class="card__figure">
