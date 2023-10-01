@@ -26,7 +26,7 @@ const createArticleContent = (breadCrumbs) => {
                                 title="Горящие туры в Стамбул от 20 000 руб.">
                                     <p class="adv__text-big">Горящие туры в Стамбул от 20 000 руб.</p>
                                     <p class="adv__text-small">Окунись в настоящую восточную сказку</p>
-                                    <picture>
+                                    <picture class="adv__picture">
                                     <source srcset="img/article/banner/turkey.avif" type="image/avif">
                                     <source srcset="img/article/banner/turkey.webp" type="image/webp">
                                         <img class="adv__image"
@@ -39,7 +39,7 @@ const createArticleContent = (breadCrumbs) => {
                                 title="Новый RENAULT DUSTER">
                                     <p class="adv__text-big">Новый RENAULT DUSTER</p>
                                     <p class="adv__text-small">Легендарный внедорожник в новом дизайне</p>
-                                    <picture>
+                                    <picture class="adv__picture">
                                     <source srcset="img/article/banner/reno.avif" type="image/avif">
                                     <source srcset="img/article/banner/reno.webp" type="image/webp">
                                         <img class="adv__image"

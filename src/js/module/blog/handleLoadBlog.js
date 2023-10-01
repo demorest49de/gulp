@@ -76,25 +76,6 @@ export const loadItemsHandler = ($) => {
                                 ${item.title}
                             </span>
                         </h2>
-                        <div class="ba__subblock">
-                            <div class="ba__datetime">
-                                <span class="ba__date">${strDate}</span>
-                                <span class="ba__time">${strTime}</span>
-                            </div>
-                        
-                            <div class="ba__views-comments">
-                                <span class="ba__text-block">
-                                <svg class="ba__icon" xmlns="http://www.w3.org/2000/svg">
-                                    <use href="./svg/blog/views-chat.svg#views"></use>
-                                </svg>
-                                    ${getRandomIntInclusive(1, 3)}.${getRandomIntInclusive(0, 9)}K</span>
-                                <span class="ba__text-block">
-                                <svg class="ba__icon" xmlns="http://www.w3.org/2000/svg">
-                                    <use href="./svg/blog/views-chat.svg#chat"></use>
-                                </svg>
-                                    ${getRandomIntInclusive(13, 200)}</span>
-                            </div>
-                        </div>
                     </div>
                 </a>
         `;
