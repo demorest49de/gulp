@@ -279,12 +279,25 @@ export const renderCards = async ($) => {
             console.log(item, ' : ', index);
             const li = document.createElement('li');
             li.className = 'card';
-    
+            
             const a = document.createElement('a');
             a.className = 'card__link';
             a.title = `${item.title}`;
             a.href = `card.html?id=${item.id}`;
             a.textContent = item.title;
+            const discount = (item.discount === 0) ? '' : 'card__discount-' + item.discount;
+            console.log(' : ', $.URL);
+            a.insertAdjacentHTML('beforeend',
+                `
+                    <picture class="card__figure ${discount}">
+                    <img loading="lazy" class="card__image" src="${$.URL}/${item.image}"
+                              alt="${item.title}" width="420" height="295">
+                    </picture>
+                    <div class="card__price-block"><span class="card__new-price">${item.price} ₽</span>
+                        <span class="card__old-price">${item.price - ((item.price * item.discount)/100)} ₽</span>
+                    </div>
+                    <p class="card__item-text">${item.title}</p>
+                `);
             li.append(a);
             console.log(a);
             // cards.append(li);

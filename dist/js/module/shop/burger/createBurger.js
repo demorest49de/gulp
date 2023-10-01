@@ -47,7 +47,7 @@ export const createBurger = ($, callback) => {
             const li = document.createElement('li');
             li.className = "burger__elem";
             const a = document.createElement('a');
-            a.href = `catalog?name=${elem}`;
+            a.href = `catalog.html?name=${elem}`;
             a.textContent = elem;
             li.append(a);
             
