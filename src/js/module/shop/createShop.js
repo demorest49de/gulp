@@ -273,7 +273,7 @@ export const renderElement = ($) => {
 export const renderCards = async ($) => {
     const cards = document.querySelector('.wholesale__cards');
     
-    const items = getGoodsByCategory($, 'Ноутбуки');
+    const items = getGoodsByCategory($, '');
     items.then(items => {
         items.data.forEach((item, index) => {
             console.log(item, ' : ', index);
@@ -284,7 +284,6 @@ export const renderCards = async ($) => {
             a.className = 'card__link';
             a.title = `${item.title}`;
             a.href = `card.html?id=${item.id}`;
-            a.textContent = item.title;
             const discount = (item.discount === 0) ? '' : 'card__discount-' + item.discount;
             console.log(' : ', $.URL);
             a.insertAdjacentHTML('beforeend',
@@ -300,33 +299,33 @@ export const renderCards = async ($) => {
                 `);
             li.append(a);
             console.log(a);
-            // cards.append(li);
+            cards.append(li);
         });
     });
     
-    const response = await fetch('./public/db.json');
-    if (response.ok) {
-        const json = await response.json();
-        json.forEach((card, index) => {
-            const count = index + 1;
-            cards.insertAdjacentHTML('beforeend',
-                `
-                    <li class="card">
-                        <a href="#" class="card__link "
-                        title="${card.name}">
-                            <picture class="card__figure ${card.discountClass}">
-                                <source srcset="img/wholesale/photo${count}.avif" type="image/avif">
-                                <source srcset="img/wholesale/photo${count}.webp" type="image/webp">
-                                <img loading="lazy" class="card__image" src="img/wholesale/photo${count}.png"
-                                      alt="${card.name}" width="420" height="295">
-                            </picture>
-                            <div class="card__price-block"><span class="card__new-price">${card.newPrice} ₽</span>
-                                <span class="card__old-price">${card.newPrice * 2} ₽</span>
-                            </div>
-                            <p class="card__item-text">${card.name}</p>
-                        </a>
-                    </li>
-                    `);
-        });
-    }
+    // const response = await fetch('./public/db.json');
+    // if (response.ok) {
+    //     const json = await response.json();
+    //     json.forEach((card, index) => {
+    //         const count = index + 1;
+    //         cards.insertAdjacentHTML('beforeend',
+    //             `
+    //                 <li class="card">
+    //                     <a href="#" class="card__link "
+    //                     title="${card.name}">
+    //                         <picture class="card__figure ${card.discountClass}">
+    //                             <source srcset="img/wholesale/photo${count}.avif" type="image/avif">
+    //                             <source srcset="img/wholesale/photo${count}.webp" type="image/webp">
+    //                             <img loading="lazy" class="card__image" src="img/wholesale/photo${count}.png"
+    //                                   alt="${card.name}" width="420" height="295">
+    //                         </picture>
+    //                         <div class="card__price-block"><span class="card__new-price">${card.newPrice} ₽</span>
+    //                             <span class="card__old-price">${card.newPrice * 2} ₽</span>
+    //                         </div>
+    //                         <p class="card__item-text">${card.name}</p>
+    //                     </a>
+    //                 </li>
+    //                 `);
+    //     });
+    // }
 };
