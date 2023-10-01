@@ -2,7 +2,9 @@ import {renderBlog} from "../blog/renderBlog.js";
 import {createHeader, createFooter} from '../base/baseElems.js';
 import {handlers} from "./handlers.js";
 import {renderArticle} from '../article/renderArticle.js';
-import {getGoods} from "./fetch.js";
+
+import {renderCatalog} from "./catalog/renderCatalog.js";
+import {getGoodsByCategory} from "./fetch.js";
 
 const createMain = (name, $) => {
     
@@ -197,13 +199,6 @@ const createSection = (name, $) => {
             </div>
         </section>
             `);
-        // const data = getGoods($);
-        // $.goodsData.then(goodsData => {
-        //     goodsData.data.forEach((item, index) => {
-        //         console.log(item,' : ', index);
-        //     });
-        // });
-        // $.goodsData = data;
         renderCards($);
         return;
     }
@@ -219,13 +214,7 @@ const createSection = (name, $) => {
             </div>
         </section>
             `);
-        // const data = getGoods($);
-        // $.goodsData.then(goodsData => {
-        //     goodsData.data.forEach((item, index) => {
-        //         console.log(item,' : ', index);
-        //     });
-        // });
-        // $.goodsData = data;
+        
         renderCards($);
         return;
     }
@@ -283,6 +272,25 @@ export const renderElement = ($) => {
 
 export const renderCards = async ($) => {
     const cards = document.querySelector('.wholesale__cards');
+    
+    const items = getGoodsByCategory($, 'Ноутбуки');
+    items.then(items => {
+        items.data.forEach((item, index) => {
+            console.log(item, ' : ', index);
+            const li = document.createElement('li');
+            li.className = 'card';
+    
+            const a = document.createElement('a');
+            a.className = 'card__link';
+            a.title = `${item.title}`;
+            a.href = `card.html?id=${item.id}`;
+            a.textContent = item.title;
+            li.append(a);
+            console.log(a);
+            // cards.append(li);
+        });
+    });
+    
     const response = await fetch('./public/db.json');
     if (response.ok) {
         const json = await response.json();

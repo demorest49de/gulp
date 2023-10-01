@@ -40,9 +40,9 @@ const fetchRequest = async ({
 };
 
 // get all
-export const getGoods = async ($) => {
+export const getGoodsByCategory = async ($, categoryName) => {
     return await fetchRequest({
-        url: $.URL + $.api + $.goods,
+        url: $.URL + $.api + $.goods + $.category + `/${categoryName}`,
         method: $.get,
         headers: {'Content-Type': 'application/json'},
         callback: cbRenderCatalog,

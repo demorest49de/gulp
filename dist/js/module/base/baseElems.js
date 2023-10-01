@@ -1,4 +1,5 @@
 import {createBurger} from "../shop/burger/createBurger.js";
+import {getCategory} from "../shop/fetch.js";
 
 export const createHeader = (name, $) => {
     
@@ -113,12 +114,13 @@ export const createHeader = (name, $) => {
     }
     
     const header = $.app.querySelector('.header');
-    const burger = createBurger($);
+    const burger = createBurger($, getCategory);
     header.append(burger);
 };
 
 
 export const createFooter = (name, $) => {
+    //<li class="footer__elem"><a href="#">Смартфоны</a></li>
     $.app.insertAdjacentHTML('beforeend',
         `
             <footer class="footer">
@@ -135,16 +137,7 @@ export const createFooter = (name, $) => {
                     <h2 class="footer__subtitle">Каталог</h2>
                     <nav class="footer__nav">
                         <ul class="footer__list">
-                            <li class="footer__elem"><a href="#">Смартфоны</a></li>
-                            <li class="footer__elem"><a href="#">Ноутбуки</a></li>
-                            <li class="footer__elem"><a href="#">Ювелирные изделия</a></li>
-                            <li class="footer__elem"><a href="#">Одежда</a></li>
-                            <li class="footer__elem"><a href="#">Бытовая техника</a></li>
-                            <li class="footer__elem"><a href="#">Бытовая химия</a></li>
-                            <li class="footer__elem"><a href="#">Книги и журналы</a></li>
-                            <li class="footer__elem"><a href="#">Домашний текстиль</a></li>
-                            <li class="footer__elem"><a href="#">Электроника</a></li>
-                            <li class="footer__elem"><a href="#">Косметика</a></li>
+                        
                         </ul>
                     </nav>
                 </div>
@@ -223,4 +216,22 @@ export const createFooter = (name, $) => {
         </div>
     </footer>
         `);
+    
+    const list = document.querySelector('.footer__list');
+    
+    const categories = getCategory($);
+    
+    categories.then((data) => {
+        
+        data.data.forEach((elem, index) => {
+            const li = document.createElement('li');
+            li.className = "footer__elem";
+            const a = document.createElement('a');
+            a.href = `catalog.html?name=${elem}`;
+            a.textContent = elem;
+            li.append(a);
+            
+            list.append(li);
+        });
+    });
 };
