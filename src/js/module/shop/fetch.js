@@ -42,6 +42,7 @@ const fetchRequest = async ({
 // get all
 export const getGoodsWithDiscount = async ($) => {
     return await fetchRequest({
+        // url: $.URL + $.api + $.goods,
         url: $.URL + $.api + $.goods + `/discount`,
         method: $.get,
         headers: {'Content-Type': 'application/json'},
