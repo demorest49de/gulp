@@ -49,3 +49,14 @@ export const getGoods = async ($) => {
         vars: $,
     });
 };
+
+// get all
+export const getCategory = async ($) => {
+    return await fetchRequest({
+        url: $.URL + $.api + $.category,
+        method: $.get,
+        headers: {'Content-Type': 'application/json'},
+        callback: cbRenderCatalog,
+        vars: $,
+    });
+};

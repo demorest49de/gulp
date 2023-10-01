@@ -1,4 +1,5 @@
-export const createBurger = () => {
+export const createBurger = ($, callback) => {
+    
     const burger = document.createElement('div');
     burger.classList.add('burger');
     burger.insertAdjacentHTML('beforeend', `
@@ -10,16 +11,7 @@ export const createBurger = () => {
                             <h2 class="burger__subtitle">Каталог</h2>
                             <nav class="burger__nav">
                                 <ul class="burger__list">
-                                    <li class="burger__elem"><a href="category?name=Смартфоны">Смартфоны</a></li>
-                                    <li class="burger__elem"><a href="category?name=Ноутбуки">Ноутбуки</a></li>
-                                    <li class="burger__elem"><a href="category?name=Ювелирные изделия">Ювелирные изделия</a></li>
-                                    <li class="burger__elem"><a href="category?name=Одежда">Одежда</a></li>
-                                    <li class="burger__elem"><a href="category?name=Бытовая техника">Бытовая техника</a></li>
-                                    <li class="burger__elem"><a href="category?name=Бытовая химия">Бытовая химия</a></li>
-                                    <li class="burger__elem"><a href="category?name=Книги и журналы">Книги и журналы</a></li>
-                                    <li class="burger__elem"><a href="category?name=Домашний текстиль">Домашний текстиль</a></li>
-                                    <li class="burger__elem"><a href="category?name=Электроника">Электроника</a></li>
-                                    <li class="burger__elem"><a href="category?name=Косметика">Косметика</a></li>
+                                
                                 </ul>
                             </nav>
                         </div>
@@ -46,5 +38,23 @@ export const createBurger = () => {
               </div>
         </div>
   `);
+    const list = burger.querySelector('.burger__list');
+    
+    const categories = callback($);
+    categories.then((data) => {
+        
+        data.data.forEach((elem, index) => {
+            const li = document.createElement('li');
+            li.className = "burger__elem";
+            const a = document.createElement('a');
+            a.href = `catalog?name=${elem}`;
+            a.textContent = elem;
+            li.append(a);
+            
+            list.append(li);
+        });
+    });
+    
+    
     return burger;
 };
