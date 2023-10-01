@@ -64,7 +64,8 @@
     grid-area: sub;
     display: flex;
     justify-content: space-between;
-    align-items: end;
+    align-items: center;
+    column-gap: 15px;
     @media (max-width: 1015px) {
       margin-bottom: 64px;
     }
@@ -86,9 +87,6 @@
     display: flex;
     flex-direction: column;
     align-items: end;
-    @media (max-width: 390px) {
-      align-self: end;
-    }
   }
 
   &__link-text {
