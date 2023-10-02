@@ -6,6 +6,17 @@ export const createSectionCard = (name, $, paramsObject) => {
     getItemById($, cardId).then((data) => {
         console.log(' : ', data.data);
         const item = data.data;
+        const newPrice = item.price.toString();
+        
+        let priceFirstPart;
+        let priceLastPart;
+        const depth = newPrice.length / 2;
+        console.log(' : ', newPrice.length);
+        if (depth > 0) {
+            // priceFirstPart =
+        }
+        
+        
         $.main.insertAdjacentHTML('beforeend',
             `
             <section class="details" aria-label="${item.title}">
@@ -40,10 +51,5 @@ export const createSectionCard = (name, $, paramsObject) => {
             }`;
             document.body.append(cardAfterStyle);
         }
-        
-        const cardBlock = $.main.querySelector('.card__block');
-        cardBlock.style.cssText = `
-                
-                `;
     });
 };

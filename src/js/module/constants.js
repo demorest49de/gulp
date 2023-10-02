@@ -30,7 +30,7 @@ const _class = {
     wholesale: 'wholesale',
     category: 'category',
     card: 'card',
-}
+};
 
 const shop = [
         {
@@ -128,34 +128,64 @@ const card = [
     ]
 ;
 
-const breadCrumbs = {
+const bc = {
+    url: '/',
+    main: 'Главная',
+    blog: 'Блог',
+    article: 'имя статьи',
+    category: 'имя каталога',
+    card: 'имя товара',
+    categoryURL: '/category.html',
+    cardURL: '/card.html',
+    
+};
+
+breadCrumbs = {
+    
     blogInfo: [
         {
-            url: '/',
-            name: 'Главная',
-            ariaLabel: 'Главная',
+            url: bc.url,
+            name: bc.main,
+            ariaLabel: bc.main,
         },
         {
             url: '/blog.html',
-            name: 'Блог',
-            ariaLabel: 'Блог',
+            name: bc.blog,
+            ariaLabel: bc.blog,
         },
     ],
     articleInfo: [
         {
-            url: '/',
-            name: 'Главная',
-            ariaLabel: 'Главная',
+            url: bc.url,
+            name: bc.main,
+            ariaLabel: bc.main,
         },
         {
             url: '/blog.html',
-            name: 'Блог',
-            ariaLabel: 'Блог',
+            name: bc.blog,
+            ariaLabel: bc.blog,
         },
         {
             url: '/article.html',
-            name: 'имя статьи',
-            ariaLabel: 'имя статьи',
+            name: bc.article,
+            ariaLabel: bc.article,
+        },
+    ],
+    cardInfo: [
+        {
+            url: bc.url,
+            name: bc.main,
+            ariaLabel: bc.main,
+        },
+        {
+            url: bc.categoryURL,
+            name: bc.category,
+            ariaLabel: bc.category,
+        },
+        {
+            url: bc.cardURL,
+            name: bc.article,
+            ariaLabel: bc.article,
         },
     ],
 };
@@ -165,7 +195,7 @@ const burgerMenu = {
     visibility: false,
     menu: './svg/header/menu.svg#menu',
     clear: './svg/header/menu.svg#clear'
-}
+};
 
 export const global = {
     shop,

@@ -1,6 +1,7 @@
 import {createFooter, createHeader, createMain} from "../../base/baseElems.js";
 import {getSearchParams} from "../../base/tools.js";
 import {getGoodsByCategory} from "../fetch.js";
+import {createBreadCrumbs} from "../../base/breadcrumbs.js";
 
 
 export const renderCategory = ($) => {
@@ -12,6 +13,8 @@ export const renderCategory = ($) => {
         
         if (type === $.types.main) {
             createMain(name, $);
+            const breadCrumbs = createBreadCrumbs($.breadCrumbs.articleInfo);
+            $.main.append(breadCrumbs);
             return;
         }
         

@@ -1,6 +1,7 @@
 import {createFooter, createHeader, createMain} from "../../base/baseElems.js";
 import {getSearchParams} from "../../base/tools.js";
 import {createSectionCard} from "./createCard.js";
+import {createBreadCrumbs} from "../../base/breadcrumbs.js";
 
 
 export const renderCard = ($) => {
