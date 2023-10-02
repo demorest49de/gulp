@@ -57,40 +57,38 @@ const renderCardsByCategory = ($, items) => {
     items.forEach((item, index) => {
         if (item.discount > 0) {
             cardAfterStyle.innerHTML +=
-                `.card:nth-child(${index + 1}) .card__figure:after {
+                `.card-category:nth-child(${index + 1}) .card-category__figure:after {
                 content: '-${item.discount}%';
 
             }`;
             document.body.append(cardAfterStyle);
         }
-        // console.log(cardAfterStyle);
-        // console.log(item, ' : ', index);
         
         const li = document.createElement('li');
-        li.className = 'card';
+        li.className = 'card-category';
         
         const a = document.createElement('a');
-        a.className = 'card__link';
+        a.className = 'card-category__link';
         a.title = `${item.title}`;
         a.href = `card.html?id=${item.id}`;
         const oldPrice = Math.ceil(item.price - ((item.price * item.discount) / 100));
         a.insertAdjacentHTML('beforeend',
             `
-                    <picture class="card__figure">
-                    <img loading="lazy" class="card__image" src="${$.URL}/${item.image}"
+                    <picture class="card-category__figure">
+                    <img loading="lazy" class="card-category__image" src="${$.URL}/${item.image}"
                               alt="${item.title}" width="420" height="295">
                     </picture>
-                    <div class="card__price-block">
-                    <span class="card__new-price">${item.price} ₽</span>
+                    <div class="card-category__price-block">
+                    <span class="card-category__new-price">${item.price} ₽</span>
                     
                     </div>
-                    <p class="card__item-text">${item.title}</p>
+                    <p class="card-category__item-text">${item.title}</p>
                 `);
         //
-        const cardPriceBlock = a.querySelector('.card__price-block');
+        const cardPriceBlock = a.querySelector('.card-category__price-block');
         if (item.discount > 0) {
             cardPriceBlock.insertAdjacentHTML('beforeend',
-                `<span class="card__old-price">${oldPrice} ₽</span>`
+                `<span class="card-category__old-price">${oldPrice} ₽</span>`
             );
         }
         li.append(a);
