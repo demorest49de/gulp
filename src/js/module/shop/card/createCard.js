@@ -6,15 +6,10 @@ const calculateDepth = (priceValue) => {
     let firstPart = NaN;
     let lastPart = NaN;
     const depth = Math.floor(priceValue.length - 3);
-    console.log(' : ', priceValue);
-    console.log(' : ', priceValue);
-    
     
     if (depth > 0) {
         firstPart = priceValue.slice(0, depth);
         lastPart = priceValue.slice(depth, priceValue.length);
-        console.log(' : ', firstPart, depth);
-        console.log(' : ', lastPart);
     } else {
         firstPart = priceValue;
         lastPart = '';
@@ -33,12 +28,14 @@ export const createSectionCard = (name, $, paramsObject) => {
         const newPrice = item.price.toString();
         let oldPrice = NaN;
         if (item.discount === 0) {
-            oldPrice = (Math.ceil(item.price - ((item.price * item.discount) / 100))).toString();
-        } else {
             oldPrice = (Math.ceil(item.price * 1.2)).toString();
+        } else {
+            oldPrice = (Math.ceil(item.price - ((item.price * item.discount) / 100))).toString();
+            
         }
-        
+        console.log(' : ', oldPrice);
         const {firstPart: firstNew, lastPart: lastNew} = calculateDepth(newPrice);
+        const {firstPart: firstOld, lastPart: lastOld} = calculateDepth(oldPrice);
         
         $.main.insertAdjacentHTML('beforeend',
             `
@@ -59,8 +56,8 @@ export const createSectionCard = (name, $, paramsObject) => {
                                 <span class="details__new-price">${lastNew} ₽</span>
                             </div>
                             <div class="details__price">
-                                <span class="details__old-price">${1} </span>
-                                <span class="details__old-price">${1} ₽</span>
+                                <span class="details__old-price">${firstOld} </span>
+                                <span class="details__old-price">${lastOld} ₽</span>
                             </div>
                         </div>
                     </div>
