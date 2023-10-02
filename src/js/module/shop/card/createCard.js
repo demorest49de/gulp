@@ -18,16 +18,18 @@ export const createSectionCard = (name, $, paramsObject) => {
                      src="${$.URL}/${item.image}"
                      alt="${item.title}" width="757" height="427">
                     </picture>
+                    <div class="card__cart-info">
+                    
+                    </div>
                 </div>
             </div>
         </section>
             `);
         const cardBlock = $.main.querySelector('.card__block');
-        cardBlock.style.width = '757px';
-        cardBlock.style.height = '427px';
         
         const cardFigure = $.main.querySelector('.card__figure');
-        cardFigure.style.height = '100%';
+        cardFigure.style.width = '757px';
+        cardFigure.style.height = '427px';
         
         const cardTitle = $.main.querySelector('.card__title');
         cardTitle.style.marginBottom = '69px';
