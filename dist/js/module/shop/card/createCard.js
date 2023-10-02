@@ -11,16 +11,16 @@ export const createSectionCard = (name, $, paramsObject) => {
             <section class="details" aria-label="${item.title}">
             <h2 class="visually-hidden">${item.title}</h2>
             <div class="container">
-                <h3 class="card__title">${item.title}</h3>
-                <div class="card__block">
-                    <picture class="card__figure">
-                    <img loading="lazy" class="card__image"
+                <h3 class="details__title">${item.title}</h3>
+                <div class="details__block">
+                    <picture class="details__figure">
+                    <img loading="lazy" class="details__image"
                      src="${$.URL}/${item.image}"
                      alt="${item.title}" width="757" height="427">
                     </picture>
-                    <div class="card__cart-info">
-                        <div class="card__price-block">
-                            span.card
+                    <div class="details__cart-info">
+                        <div class="details__price-block">
+                            <span class="details__new-price"></span>
                         </div>
                     </div>
                 </div>
@@ -28,30 +28,10 @@ export const createSectionCard = (name, $, paramsObject) => {
         </section>
             `);
         
-        const cardImage = $.main.querySelector('.card__image');
-        cardImage.style.borderRadius = '0px';
-        
-        const cardFigure = $.main.querySelector('.card__figure');
-        cardFigure.style.cssText = `
-            width: 757px;
-            height: 427px;
-            margin-bottom: 80px;
-        `;
-        
-        const cardTitle = $.main.querySelector('.card__title');
-        cardTitle.style.cssText =
-            `
-                font-family: Lato;
-                font-size: 50px;
-                font-style: normal;
-                font-weight: 700;
-                line-height: 130%;
-                margin-bottom: 69px;
-            `;
         const cardAfterStyle = document.createElement("style");
         if (item.discount > 0) {
             cardAfterStyle.innerHTML +=
-                `.card__figure:after {
+                `.details__figure:after {
                 content: '-${item.discount}%';
                 top: 20px;
                 right: 20px;
@@ -63,7 +43,7 @@ export const createSectionCard = (name, $, paramsObject) => {
         
         const cardBlock = $.main.querySelector('.card__block');
         cardBlock.style.cssText = `
-                    margin-bottom: 80px;
+                
                 `;
     });
 };
