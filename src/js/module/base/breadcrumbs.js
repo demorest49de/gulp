@@ -16,10 +16,13 @@ export const createBreadCrumbs = (bc) => {
     for (const {url, name, ariaLabel} of bc) {
         ul.insertAdjacentHTML('beforeend',
             `
-            <li class="bc__item"><a class="bc__link" href="${url}" aria-label="${ariaLabel}">${name}</a>
-                <svg class="bc__nav-arrow">
-                    <use href="./svg/article/nav-arrow.svg#nav-arrow"></use>
-                </svg>
+            <li class="bc__item">
+            <a class="bc__link" href="${url}" aria-label="${ariaLabel}">${name}</a>
+                <div class="bc__arrow-block">
+                    <svg class="bc__nav-arrow">
+                        <use href="./svg/article/nav-arrow.svg#nav-arrow"></use>
+                    </svg>
+                </div>
             </li>
         `);
     }

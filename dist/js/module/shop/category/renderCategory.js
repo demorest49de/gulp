@@ -5,6 +5,7 @@ import {createBreadCrumbs} from "../../base/breadcrumbs.js";
 
 
 export const renderCategory = ($) => {
+    const paramsObject = getSearchParams();
     $.categoryPage.forEach(({type, name}) => {
         if (type === $.types.header) {
             createHeader(name, $);
@@ -13,13 +14,13 @@ export const renderCategory = ($) => {
         
         if (type === $.types.main) {
             createMain(name, $);
-            const breadCrumbs = createBreadCrumbs($.breadCrumbs.articleInfo);
+            console.log(' : ',window.location.href);
+            const breadCrumbs = createBreadCrumbs($.breadCrumbs.categoryInfo);
             $.main.append(breadCrumbs);
             return;
         }
         
         if (type === $.types.section) {
-            const paramsObject = getSearchParams();
             createSection(name, $, paramsObject);
             return;
         }

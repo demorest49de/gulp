@@ -140,7 +140,7 @@ const bc = {
     
 };
 
-breadCrumbs = {
+const breadCrumbs = {
     
     blogInfo: [
         {
@@ -171,6 +171,18 @@ breadCrumbs = {
             ariaLabel: bc.article,
         },
     ],
+    categoryInfo: [
+        {
+            url: bc.url,
+            name: bc.main,
+            ariaLabel: bc.main,
+        },
+        {
+            url: bc.categoryURL,
+            name: bc.category,
+            ariaLabel: bc.category,
+        }
+    ],
     cardInfo: [
         {
             url: bc.url,
@@ -184,8 +196,8 @@ breadCrumbs = {
         },
         {
             url: bc.cardURL,
-            name: bc.article,
-            ariaLabel: bc.article,
+            name: bc.card,
+            ariaLabel: bc.card,
         },
     ],
 };
