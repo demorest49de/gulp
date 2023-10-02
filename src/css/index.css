@@ -981,8 +981,8 @@ main {
 }
 
 .card__image {
-  -o-object-fit: cover;
-  object-fit: cover;
+  -o-object-fit: fill;
+  object-fit: fill;
   width: 100%;
   border-radius: 14px;
 }
@@ -1099,8 +1099,8 @@ main {
 }
 
 .card__image {
-  -o-object-fit: contain;
-  object-fit: contain;
+  -o-object-fit: cover;
+  object-fit: cover;
   width: 100%;
   border-radius: 14px;
 }
@@ -1308,11 +1308,11 @@ main {
   line-height: 41.6px;
 }
 
-.card {
+.details {
   color: #2d2d2d;
 }
 
-.card__block {
+.details__block {
   display: -webkit-box;
   display: -webkit-flex;
   display: -moz-box;
@@ -1323,7 +1323,7 @@ main {
   justify-content: space-between;
 }
 
-.card__cart-info {
+.details__cart-info {
   width: 420px;
   height: 367px;
   border-radius: 16px;

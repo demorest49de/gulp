@@ -73,7 +73,7 @@ const renderCardsByCategory = ($, items) => {
         const a = document.createElement('a');
         a.className = 'card-category__link';
         a.title = `${item.title}`;
-        a.href = `card.html?category=${item.category}&id=${item.id}`;
+        a.href = `card.html?id=${item.id}`;
         const oldPrice = Math.ceil(item.price - ((item.price * item.discount) / 100));
         a.insertAdjacentHTML('beforeend',
             `

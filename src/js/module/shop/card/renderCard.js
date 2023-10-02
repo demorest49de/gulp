@@ -1,7 +1,6 @@
 import {createFooter, createHeader, createMain} from "../../base/baseElems.js";
 import {getSearchParams} from "../../base/tools.js";
-import {createSectionCard} from "./createCard.js";
-import {createBreadCrumbs} from "../../base/breadcrumbs.js";
+import {createBCCard, createSectionCard} from "./createCard.js";
 
 
 export const renderCard = ($) => {
@@ -12,7 +11,9 @@ export const renderCard = ($) => {
         }
         
         if (type === $.types.main) {
+            const bc = createBCCard($, $.breadCrumbs.cardInfo);
             createMain(name, $);
+            $.main.append(bc);
             return;
         }
         

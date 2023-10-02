@@ -183,23 +183,24 @@ const breadCrumbs = {
             ariaLabel: bc.category,
         }
     ],
-    cardInfo: [
-        {
+    
+    cardInfo: {
+        home: {
             url: bc.url,
             name: bc.main,
             ariaLabel: bc.main,
         },
-        {
+        category: {
             url: bc.categoryURL,
             name: bc.category,
             ariaLabel: bc.category,
         },
-        {
+        card: {
             url: bc.cardURL,
             name: bc.card,
             ariaLabel: bc.card,
         },
-    ],
+    },
 };
 
 
