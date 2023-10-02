@@ -13,8 +13,9 @@ export const createSectionCard = (name, $, paramsObject) => {
         let priceLastPart;
         const depth = newPrice.length / 2;
         console.log(' : ', newPrice.length);
+        
         if (depth > 0) {
-            // priceFirstPart =
+            
         }
         
         
@@ -32,7 +33,7 @@ export const createSectionCard = (name, $, paramsObject) => {
                     </picture>
                     <div class="details__cart-info">
                         <div class="details__price-block">
-                            <span class="details__new-price"></span>
+                            <span class="details__new-price">${item.price}</span>
                         </div>
                     </div>
                 </div>

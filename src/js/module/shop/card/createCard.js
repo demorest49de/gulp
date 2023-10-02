@@ -9,12 +9,16 @@ export const createSectionCard = (name, $, paramsObject) => {
         const item = data.data;
         const newPrice = item.price.toString();
         
-        let priceFirstPart;
-        let priceLastPart;
+        let priceFirstPart = NaN;
+        let priceLastPart = NaN;
         const depth = newPrice.length / 2;
         console.log(' : ', newPrice.length);
+        
         if (depth > 0) {
-            // priceFirstPart =
+            priceFirstPart = newPrice.slice(0, depth);
+            priceLastPart = newPrice.slice(depth + 1, newPrice.length - 1);
+            console.log(' : ',priceFirstPart);
+            console.log(' : ',priceLastPart);
         }
         
         
@@ -32,7 +36,7 @@ export const createSectionCard = (name, $, paramsObject) => {
                     </picture>
                     <div class="details__cart-info">
                         <div class="details__price-block">
-                            <span class="details__new-price"></span>
+                            <span class="details__new-price">${item.price}</span>
                         </div>
                     </div>
                 </div>
