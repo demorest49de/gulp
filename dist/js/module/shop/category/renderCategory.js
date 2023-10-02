@@ -1,11 +1,10 @@
 import {createFooter, createHeader, createMain} from "../../base/baseElems.js";
 import {getSearchParams} from "../../base/tools.js";
 import {getGoodsByCategory} from "../fetch.js";
-import {createBreadCrumbs} from "../../base/breadcrumbs.js";
+import {createBCCategory} from "./createCategory.js";
 
 
 export const renderCategory = ($) => {
-    const paramsObject = getSearchParams();
     $.categoryPage.forEach(({type, name}) => {
         if (type === $.types.header) {
             createHeader(name, $);
@@ -14,13 +13,13 @@ export const renderCategory = ($) => {
         
         if (type === $.types.main) {
             createMain(name, $);
-            console.log(' : ',window.location.href);
-            const breadCrumbs = createBreadCrumbs($.breadCrumbs.categoryInfo);
+            const breadCrumbs = createBCCategory($.breadCrumbs.categoryInfo);
             $.main.append(breadCrumbs);
             return;
         }
         
         if (type === $.types.section) {
+            const paramsObject = getSearchParams();
             createSection(name, $, paramsObject);
             return;
         }
@@ -74,7 +73,7 @@ const renderCardsByCategory = ($, items) => {
         const a = document.createElement('a');
         a.className = 'card-category__link';
         a.title = `${item.title}`;
-        a.href = `card.html?id=${item.id}`;
+        a.href = `card.html?category=${item.category}&id=${item.id}`;
         const oldPrice = Math.ceil(item.price - ((item.price * item.discount) / 100));
         a.insertAdjacentHTML('beforeend',
             `

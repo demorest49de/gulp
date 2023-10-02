@@ -1,5 +1,10 @@
+import {getSearchParams} from "../../base/tools.js";
 
-export const createBreadCrumbs = (bc) => {
+
+export const createBCCategory = (bc) => {
+    
+    const paramsObject = getSearchParams();
+    
     const breadCrumbs = document.createElement('div');
     breadCrumbs.classList.add('breadcrumbs', 'bc');
     
@@ -12,7 +17,11 @@ export const createBreadCrumbs = (bc) => {
         </div>
     `);
     const ul = breadCrumbs.querySelector('.bc__bread-crumbs');
-
+    const last = bc[bc.length - 1];
+    const name =  paramsObject.name;
+    last.ariaLabel = name;
+    last.name = name;
+    last.url += `?name=${name}`;
     for (const {url, name, ariaLabel} of bc) {
         ul.insertAdjacentHTML('beforeend',
             `

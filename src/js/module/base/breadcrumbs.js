@@ -12,7 +12,7 @@ export const createBreadCrumbs = (bc) => {
         </div>
     `);
     const ul = breadCrumbs.querySelector('.bc__bread-crumbs');
-    
+
     for (const {url, name, ariaLabel} of bc) {
         ul.insertAdjacentHTML('beforeend',
             `
