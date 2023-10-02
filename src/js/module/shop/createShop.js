@@ -7,7 +7,7 @@ import {getGoodsWithDiscount} from "./fetch.js";
 import {renderCategory} from "./category/renderCategory.js";
 
 
-export const createSection = (name, $) => {
+export const createSection = (name, $, categoryName) => {
     if (name === 'item') {
         $.main.insertAdjacentHTML('beforeend',
             `
@@ -194,18 +194,18 @@ export const createSection = (name, $) => {
     if (name === 'category') {
         $.main.insertAdjacentHTML('beforeend',
             `
-            <section class="wholesale" aria-label="Распродажа">
+            <section class="${name}" aria-label="Распродажа">
             <h2 class="visually-hidden">Распродажа</h2>
             <div class="container">
-                <h3 class="wholesale__title">Это выгодно!</h3>
-                <ul class="wholesale__cards">
+                <h3 class="category__title">Это выгодно!</h3>
+                <ul class="category__cards">
                 </ul>
             </div>
         </section>
             `);
         
-        // renderCards($).then(() => {
-        // });
+        renderCards($).then(() => {
+        });
     }
 };
 
