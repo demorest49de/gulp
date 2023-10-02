@@ -16,21 +16,8 @@ export const types = {
     header: 'header',
     main: 'main',
     blog: 'blog',
-    article: 'article'
+    article: 'article',
 };
-
-const categories = [
-    'смартфоны',
-    'ноутбуки',
-    'ювелирные изделия',
-    'одежда',
-    'бытовая техника',
-    'бытовая химия',
-    'книги и журналы',
-    'домашний текстиль',
-    'электроника',
-    'косметика',
-]
 
 const _class = {
     footer: 'footer',
@@ -42,6 +29,7 @@ const _class = {
     item: 'item',
     wholesale: 'wholesale',
     category: 'category',
+    card: 'card',
 }
 
 const shop = [
@@ -120,6 +108,26 @@ const categoryPage = [
     ]
 ;
 
+const card = [
+        {
+            type: types.header,
+            name: _class.header
+        },
+        {
+            type: types.main,
+            name: _class.main
+        },
+        {
+            type: types.section,
+            name: _class.card
+        },
+        {
+            type: types.footer,
+            name: _class.footer
+        },
+    ]
+;
+
 const breadCrumbs = {
     blogInfo: [
         {
@@ -172,5 +180,5 @@ export const global = {
     URL,
     goods,
     categoryPage,
-    categories,
+    card
 };

@@ -39,10 +39,20 @@ const fetchRequest = async ({
     }
 };
 
-// get all
+export const getItemById = async ($, id) => {
+    return await fetchRequest({
+        
+        url: $.URL + $.api + $.goods + `/${id}`,
+        method: $.get,
+        headers: {'Content-Type': 'application/json'},
+        callback: cbRenderCatalog,
+        vars: $,
+    });
+};
+
 export const getGoodsWithDiscount = async ($) => {
     return await fetchRequest({
-        // url: $.URL + $.api + $.goods,
+       
         url: $.URL + $.api + $.goods + `/discount`,
         method: $.get,
         headers: {'Content-Type': 'application/json'},
@@ -51,7 +61,6 @@ export const getGoodsWithDiscount = async ($) => {
     });
 };
 
-// get all
 export const getGoodsByCategory = async ($, categoryName) => {
     return await fetchRequest({
         url: $.URL + $.api + $.goods + $.category + `/${categoryName}`,
@@ -62,7 +71,6 @@ export const getGoodsByCategory = async ($, categoryName) => {
     });
 };
 
-// get all
 export const getCategory = async ($) => {
     return await fetchRequest({
         url: $.URL + $.api + $.category,
