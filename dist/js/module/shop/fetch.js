@@ -1,4 +1,4 @@
-import {cbRenderCatalog} from "./catalog/renderCatalog.js";
+import {cbRenderCatalog} from "./category/renderCategory.js";
 
 const fetchRequest = async ({
                                 url,

@@ -235,3 +235,16 @@ export const createFooter = (name, $) => {
         });
     });
 };
+
+
+export const createMain = (name, $) => {
+    
+    if (name === 'main') {
+        $.app.insertAdjacentHTML('beforeend', `
+            <main class="main">
+                <h1 class="visually-hidden">Сайт онлайн магазина ShopOnline</h1>
+            </main>
+        `);
+        $.main = $.app.querySelector('main');
+    }
+};

@@ -41,7 +41,7 @@ const _class = {
     article: 'article',
     item: 'item',
     wholesale: 'wholesale',
-    catalog: 'catalog',
+    category: 'category',
 }
 
 const shop = [
@@ -100,7 +100,7 @@ const article = [
     ]
 ;
 
-const catalog = [
+const categoryPage = [
         {
             type: types.header,
             name: _class.header
@@ -111,7 +111,7 @@ const catalog = [
         },
         {
             type: types.section,
-            name: _class.catalog
+            name: _class.category
         },
         {
             type: types.footer,
@@ -159,7 +159,8 @@ const burgerMenu = {
     clear: './svg/header/menu.svg#clear'
 }
 
-export const global = {shop,
+export const global = {
+    shop,
     blog,
     article,
     types,
@@ -170,5 +171,6 @@ export const global = {shop,
     category,
     URL,
     goods,
-    catalog,
+    categoryPage,
+    categories,
 };

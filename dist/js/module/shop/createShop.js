@@ -1,23 +1,10 @@
 import {renderBlog} from "../blog/renderBlog.js";
-import {createHeader, createFooter} from '../base/baseElems.js';
+import {createHeader, createFooter, createMain} from '../base/baseElems.js';
 import {handlers} from "./handlers.js";
 import {renderArticle} from '../article/renderArticle.js';
 
-import {renderCatalog} from "./catalog/renderCatalog.js";
 import {getGoodsWithDiscount} from "./fetch.js";
 
-const createMain = (name, $) => {
-    
-    if (name === 'main') {
-        $.app.insertAdjacentHTML('beforeend', `
-            <main class="main">
-                <h1 class="visually-hidden">Сайт онлайн магазина ShopOnline</h1>
-            </main>
-        `);
-        $.main = $.app.querySelector('main');
-        
-    }
-};
 
 const createSection = (name, $) => {
     if (name === 'item') {
@@ -199,25 +186,27 @@ const createSection = (name, $) => {
             </div>
         </section>
             `);
-        renderCards($, getGoodsWithDiscount);
+        renderCards($, getGoodsWithDiscount).then(() => {
+        });
         return;
     }
-    // if (name === 'wholesale') {
-    //     $.main.insertAdjacentHTML('beforeend',
-    //         `
-    //         <section class="wholesale" aria-label="Распродажа">
-    //         <h2 class="visually-hidden">Распродажа</h2>
-    //         <div class="container">
-    //             <h3 class="wholesale__title">Это выгодно!</h3>
-    //             <ul class="wholesale__cards">
-    //             </ul>
-    //         </div>
-    //     </section>
-    //         `);
-    //
-    //     renderCards($);
-    //     return;
-    // }
+    if (name === 'category') {
+        $.main.insertAdjacentHTML('beforeend',
+            `
+            <section class="wholesale" aria-label="Распродажа">
+            <h2 class="visually-hidden">Распродажа</h2>
+            <div class="container">
+                <h3 class="wholesale__title">Это выгодно!</h3>
+                <ul class="wholesale__cards">
+                </ul>
+            </div>
+        </section>
+            `);
+        
+        renderCards($).then(() => {
+        });
+        return;
+    }
 };
 
 const renderShop = ($) => {
@@ -259,9 +248,9 @@ export const renderElement = ($) => {
         renderArticle($);
     }
     
-    if ($.page === 'catalog') {
-        renderCatalog($);
-    }
+    // if ($.page === 'category') {
+    //     renderCategory($);
+    // }
     
     if ($.page === 'card') {
     }
