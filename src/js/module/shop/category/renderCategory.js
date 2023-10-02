@@ -1,4 +1,5 @@
 import {createFooter, createHeader, createMain} from "../../base/baseElems.js";
+import {createSection} from "../createShop.js";
 
 
 export const renderCategory = ($) => {
@@ -12,11 +13,11 @@ export const renderCategory = ($) => {
             createMain(name, $);
             return;
         }
-        //
-        // if (type === $.types.section) {
-        //     createSection(name, $);
-        //     return;
-        // }
+
+        if (type === $.types.section) {
+            createSection(name, $);
+            return;
+        }
 
         if (type === $.types.footer) {
             createFooter(name, $);

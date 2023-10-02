@@ -4,9 +4,10 @@ import {handlers} from "./handlers.js";
 import {renderArticle} from '../article/renderArticle.js';
 
 import {getGoodsWithDiscount} from "./fetch.js";
+import {renderCategory} from "./category/renderCategory.js";
 
 
-const createSection = (name, $) => {
+export const createSection = (name, $) => {
     if (name === 'item') {
         $.main.insertAdjacentHTML('beforeend',
             `
@@ -203,9 +204,8 @@ const createSection = (name, $) => {
         </section>
             `);
         
-        renderCards($).then(() => {
-        });
-        return;
+        // renderCards($).then(() => {
+        // });
     }
 };
 
@@ -248,9 +248,9 @@ export const renderElement = ($) => {
         renderArticle($);
     }
     
-    // if ($.page === 'category') {
-    //     renderCategory($);
-    // }
+    if ($.page === 'category') {
+        renderCategory($);
+    }
     
     if ($.page === 'card') {
     }
