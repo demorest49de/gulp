@@ -227,7 +227,7 @@ export const createFooter = (name, $) => {
             const li = document.createElement('li');
             li.className = "footer__elem";
             const a = document.createElement('a');
-            a.href = `catalog.html?name=${elem}`;
+            a.href = `category.html?name=${elem}`;
             a.textContent = elem;
             li.append(a);
             
