@@ -16,7 +16,6 @@
   }
 
   &__title {
-    font-family: Lato;
     font-size: 50px;
     font-style: normal;
     font-weight: 700;
@@ -58,20 +57,26 @@
     align-items: center;
     justify-content: start;
     column-gap: 24px;
+    margin-bottom: 7px;
   }
 
   &__new-price {
     color: $red-F00;
-    font-family: Lato;
     font-size: 36px;
     font-weight: 700;
   }
 
   &__old-price {
     color: $closedark-color;
-    font-family: Lato;
     font-size: 22px;
     font-weight: 400;
     text-decoration: line-through;
+  }
+
+  &__credit-from {
+    color: $blue-3670C7;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 130%;
   }
 }

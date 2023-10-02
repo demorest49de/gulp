@@ -37,6 +37,8 @@ export const createSectionCard = (name, $, paramsObject) => {
         const {firstPart: firstNew, lastPart: lastNew} = calculateDepth(newPrice);
         const {firstPart: firstOld, lastPart: lastOld} = calculateDepth(oldPrice);
         
+        const creditfrom = Math.ceil(item.price - (item.price / 1.2));
+        console.log(' : ',creditfrom);
         $.main.insertAdjacentHTML('beforeend',
             `
             <section class="details" aria-label="${item.title}">
@@ -60,7 +62,7 @@ export const createSectionCard = (name, $, paramsObject) => {
                                 <span class="details__old-price">${lastOld} ₽</span>
                             </div>
                         </div>
-                        
+                        <p class="details__credit-from">В кредит от ${creditfrom} ₽</p>
                     </div>
                 </div>
             </div>
