@@ -60,6 +60,7 @@ export const createSectionCard = (name, $, paramsObject) => {
                                 <span class="details__old-price">${lastOld} ₽</span>
                             </div>
                         </div>
+                        
                     </div>
                 </div>
             </div>
