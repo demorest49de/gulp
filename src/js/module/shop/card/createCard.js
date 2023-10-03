@@ -18,6 +18,9 @@ const calculateDepth = (priceValue) => {
     return {firstPart, lastPart};
 };
 
+
+const cardAfterStyle = document.createElement("style");
+
 export const createSectionCard = (name, $, paramsObject) => {
     
     const cardId = paramsObject.id;
@@ -38,7 +41,7 @@ export const createSectionCard = (name, $, paramsObject) => {
         const {firstPart: firstOld, lastPart: lastOld} = calculateDepth(oldPrice);
         
         const creditfrom = Math.ceil(item.price - (item.price / 1.2));
-        console.log(' : ',creditfrom);
+        console.log(' : ', creditfrom);
         $.main.insertAdjacentHTML('beforeend',
             `
             <section class="details" aria-label="${item.title}">
@@ -128,7 +131,6 @@ export const createSectionCard = (name, $, paramsObject) => {
         </section>
             `);
         
-        const cardAfterStyle = document.createElement("style");
         if (item.discount > 0) {
             cardAfterStyle.innerHTML +=
                 `.details__figure:after {
@@ -142,7 +144,6 @@ export const createSectionCard = (name, $, paramsObject) => {
         }
     });
 };
-
 
 export const createBCCard = ($, bc) => {
     
