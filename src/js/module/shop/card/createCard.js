@@ -90,9 +90,10 @@ export const createSectionCard = (name, $, paramsObject) => {
                             <p class="details__text-info">Продавец</p>
                             <p class="details__text-details">ShopOnline</p>
                         </div>
-                        <div class="details__warn-block">
+                       
                         <button class="details__price-reduction-btn">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                            <svg class="details__price-reduction-bell-svg" xmlns="http://www.w3.org/2000/svg"
+                            width="24" height="24" viewBox="0 0 24 24">
                                 <path d="M19 13.586V10C19 6.783 16.815 4.073
                                  13.855 3.258C13.562 2.52 12.846 2 12 2C11.154
                                  2 10.438 2.52 10.145 3.258C7.185 4.074 5 6.783
@@ -114,9 +115,8 @@ export const createSectionCard = (name, $, paramsObject) => {
                                        20H9.182C9.38566 20.5849 9.76648 21.0917
                                         10.2715 21.4502C10.7765 21.8086 11.3807 22.0008 12 22Z"/>
                             </svg>
-                        </button>
                             <span class="details__price-reduction-text">Узнать о снижении цены</span>
-                            </div>
+                        </button>
                     </div>
                 </div>
             </div>

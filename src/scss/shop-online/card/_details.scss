@@ -115,22 +115,21 @@
   }
 
   &__warn-block{
-    display: flex;
-    align-items: center;
-    gap: 13px;
   }
 
   &__price-reduction-btn {
     border-style: none;
     background-color: transparent;
-    width: 24px;
-    height: 24px;
 
+
+    display: flex;
+    align-items: center;
+    gap: 13px;
   }
 
   &__price-reduction-bell-svg {
-    width: 100%;
-    height: 100%;
+    width: 24px;
+    height: 24px;
     fill: $blue-3670C7;
   }
 
@@ -139,6 +138,7 @@
     color: $blue-3670C7;
     font-weight: 700;
     line-height: 130%;
+    padding-top: 2px;
   }
 
   &__info-block {
