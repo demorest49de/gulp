@@ -137,13 +137,18 @@ if (!dev) {
 
 export const js = () => gulp
     .src(path.src.js)
-    // .pipe(plumber())
-    // .pipe(webpackStream(webpackConf, webpack))
-    // .pipe(gulpif(!dev, gulp.dest(path.dist.js)))
-    // .pipe(gulpif(!dev, terser()))
-    // .pipe(rename({
-    //     suffix: '.min'
-    // }))
+    
+    //for debugging purposes comment this block of code
+    // just comment strings 144-150
+    
+    .pipe(plumber())
+    .pipe(webpackStream(webpackConf, webpack))
+    .pipe(gulpif(!dev, gulp.dest(path.dist.js)))
+    .pipe(gulpif(!dev, terser()))
+    .pipe(rename({
+        suffix: '.min'
+    }))
+    
     .pipe(gulp.dest(path.dist.js))
     .pipe(browserSync.stream());
 
