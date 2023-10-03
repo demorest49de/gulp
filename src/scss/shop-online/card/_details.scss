@@ -78,5 +78,75 @@
     font-size: 16px;
     font-weight: 700;
     line-height: 130%;
+    margin-bottom: 30px;
+  }
+
+  &__add-block {
+    display: flex;
+    align-items: center;
+    gap: 23px;
+    margin-bottom: 30px;
+  }
+
+  &__add-to-card {
+    border-style: none;
+    background-color: $blue-3670C7;
+    color: $white-color;
+    padding: 17px 42px;
+    border-radius: 10px;
+    max-width: 290px;
+
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 130%;
+  }
+
+  &__add-to-favorite {
+    border-style: none;
+    background-color: transparent;
+    width: 33px;
+    height: 33px;
+  }
+
+  &__add-to-favorite-icon {
+    width: 100%;
+    height: 100%;
+    fill: $blue-3670C7;
+  }
+
+  &__text-info {
+
+  }
+
+  &__warn-about-price-reduction {
+
+  }
+
+  &__info-block {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: space-between;
+    grid-template-areas:
+    "delry seller"
+    "deldate org";
+    grid-row-gap: 5px;
+    max-width: 290px;
+    margin-bottom: 33px;
+  }
+
+  &__text-info:nth-child(1) {
+    grid-area: delry;
+  }
+
+  &__text-details:nth-child(2) {
+    grid-area: deldate;
+  }
+
+  &__text-info:nth-child(3) {
+    grid-area: seller;
+  }
+
+  &__text-details:nth-child(4) {
+    grid-area: org;
   }
 }
