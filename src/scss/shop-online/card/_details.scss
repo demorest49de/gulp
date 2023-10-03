@@ -114,12 +114,31 @@
     fill: $blue-3670C7;
   }
 
-  &__text-info {
+  &__warn-block{
+    display: flex;
+    align-items: center;
+    gap: 13px;
+  }
+
+  &__price-reduction-btn {
+    border-style: none;
+    background-color: transparent;
+    width: 24px;
+    height: 24px;
 
   }
 
-  &__warn-about-price-reduction {
+  &__price-reduction-bell-svg {
+    width: 100%;
+    height: 100%;
+    fill: $blue-3670C7;
+  }
 
+  &__price-reduction-text {
+    font-size: 16px;
+    color: $blue-3670C7;
+    font-weight: 700;
+    line-height: 130%;
   }
 
   &__info-block {
