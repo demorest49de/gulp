@@ -59,36 +59,21 @@ export const createSectionBasket = (name, $) => {
                         <span class="basket__total-text">${1} ₽</span>
                     </div>
                     <div class="basket__price">
-                        <span class="basket__new-price">${1} </span>
-                        <span class="basket__new-price">${1} ₽</span>
+                        <span class="basket__item-details">Товары, ${2} шт.</span>
+                        <span class="basket__item-details">${100} ₽</span>
                     </div>
                     <div class="basket__price">
-                        <span class="basket__old-price">${1} </span>
-                        <span class="basket__old-price">${1} ₽</span>
+                        <span class="basket__item-details">Скидка </span>
+                        <span class="basket__item-details">${10} ₽</span>
+                    </div>
+                    <div class="basket__price">
+                        <span class="basket__item-details">Доставка</span>
+                        <span class="basket__item-details">Бесплатно/span>
                     </div>
                 </div>
-                <p class="basket__credit-from">В кредит от ${1} ₽</p>
-                <div class="basket__add-block">
-                    <button class="basket__add-to-card">Добавить в корзину</button>
-                    <button class="basket__add-to-favorite">
-                            <svg class="basket__add-to-favorite-icon" xmlns="http://www.w3.org/2000/svg"
-                             width="33" height="33" viewBox="0 0 33 33" >
-                                <path d="M22.6875 4.125C20.295 4.125 17.9987
-                                5.23875 16.5 6.99875C15.0012 5.23875 12.705 4.125
-                                10.3125 4.125C6.0775 4.125 2.75 7.4525 2.75 11.6875C2.75
-                                16.885 7.425 21.12 14.5062 27.555L16.5 29.3563L18.4937
-                                 27.5413C25.575 21.12 30.25 16.885 30.25
-                                 11.6875C30.25 7.4525 26.9225 4.125 22.6875
-                                  4.125ZM16.6375 25.5062L16.5 25.6437L16.3625
-                                  25.5062C9.8175 19.58 5.5 15.6613 5.5 11.6875C5.5
-                                  8.9375 7.5625 6.875 10.3125 6.875C12.43 6.875 14.4925
-                                  8.23625 15.2212 10.12H17.7925C18.5075 8.23625 20.57
-                                  6.875 22.6875 6.875C25.4375 6.875 27.5 8.9375 27.5
-                                   11.6875C27.5 15.6613 23.1825 19.58 16.6375 25.5062Z"/>
-                            </svg>
-
-                    </button>
-                </div>
+                <div class="basket__order-block"></div>
+                <button class="basket__order-btn">Добавить в корзину</button>
+                
                 <div class="basket__info-block">
                     <p class="basket__text-info">Доставка</p>
                     <p class="basket__text-details">1-3 января</p>
@@ -123,7 +108,7 @@ export const createSectionBasket = (name, $) => {
                     <span class="basket__price-reduction-text">Узнать о снижении цены</span>
                 </button>
             </div>
-        <div class="basket__delivery">
+        <div class="basket__delivery-options">
             <h4 class="basket__subtitle">Описание:</h4>
             <p class="basket__descr-text">${1}</p>
         </div>

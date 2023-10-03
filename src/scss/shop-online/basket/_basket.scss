@@ -8,10 +8,11 @@
     "list total"
     "delivery .";
     column-gap: 30px;
+    row-gap: 0px;
   }
 
   &__list,
-  &__delivery,
+  &__delivery-options,
   &__total {
     border-radius: 16px;
     box-shadow: 0px 0px 16px 1px rgba(0, 0, 0, 0.25);
@@ -49,7 +50,7 @@
   &__total {
     grid-area: total;
     width: 420px;
-    height: 538px;
+    height: 527px;
     padding: 30px 40px;
   }
 
@@ -72,29 +73,9 @@
     }
   }
 
-  &__new-price {
-    color: $red-F00;
-    font-size: 36px;
-    font-weight: 700;
-  }
-
-  &__old-price {
-    color: $closedark-color;
-    font-size: 22px;
-    font-weight: 400;
-    text-decoration: line-through;
-  }
-
-  &__credit-from {
-    color: $blue-3670C7;
-    font-size: 16px;
-    font-weight: 700;
-    line-height: 130%;
-    margin-bottom: 30px;
-  }
 
 
-  &__delivery {
+  &__delivery-options {
     grid-area: delivery;
   }
 }
