@@ -17,6 +17,7 @@ export const types = {
     blog: 'blog',
     article: 'article',
     category: 'category',
+    basket: 'basket',
 };
 
 const _class = {
@@ -30,6 +31,7 @@ const _class = {
     wholesale: 'wholesale',
     category: 'category',
     card: 'card',
+    cart: 'cart',
 };
 
 const shop = [
@@ -132,6 +134,30 @@ const card = [
     ]
 ;
 
+const cart = [
+        {
+            type: types.header,
+            name: _class.header
+        },
+        {
+            type: types.main,
+            name: _class.main
+        },
+        {
+            type: types.basket,
+            name: _class.cart
+        },
+        {
+            type: types.section,
+            name: _class.wholesale
+        },
+        {
+            type: types.footer,
+            name: _class.footer
+        },
+    ]
+;
+
 const bc = {
     url: '/',
     main: 'Главная',
@@ -141,7 +167,8 @@ const bc = {
     card: 'имя товара',
     categoryURL: '/category.html',
     cardURL: '/card.html',
-    
+    cart: 'Корзина',
+    cartURL: '/cart.html',
 };
 
 const breadCrumbs = {
@@ -203,6 +230,19 @@ const breadCrumbs = {
             url: bc.cardURL,
             name: bc.card,
             ariaLabel: bc.card,
+        },
+    },
+    
+    cartInfo: {
+        home: {
+            url: bc.url,
+            name: bc.main,
+            ariaLabel: bc.main,
+        },
+        cart: {
+            url: bc.cartURL,
+            name: bc.cart,
+            ariaLabel: bc.cart,
         },
     },
 };

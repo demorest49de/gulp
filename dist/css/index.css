@@ -2974,6 +2974,12 @@ template {
     padding: 25px 40px;
   }
 
+  .details__cart-info {
+    width: 280px;
+    max-width: unset;
+    height: 283px;
+  }
+
   .details__title {
     font-size: 18px;
   }
@@ -2986,6 +2992,63 @@ template {
   .details__figure {
     width: unset;
     max-width: 380px;
+  }
+
+  .details__figure:after {
+    width: 32px;
+    height: 32px;
+    font-size: 12px;
+  }
+
+  .details__new-price {
+    font-size: 20px;
+  }
+
+  .details__old-price {
+    font-size: 12px;
+  }
+
+  .details__credit-from {
+    font-size: 12px;
+  }
+
+  .details__add-to-card {
+    font-size: 12px;
+    padding: 8px 18px;
+  }
+
+  .details__add-to-favorite {
+    width: 24px;
+    height: 24px;
+  }
+
+  .details__price-reduction-btn {
+    gap: 5px;
+  }
+
+  .details__price-reduction-bell-svg {
+    width: 14px;
+    height: 14px;
+  }
+
+  .details__price-reduction-text {
+    font-size: 12px;
+  }
+
+  .details__text-info {
+    font-size: 12px;
+  }
+
+  .details__text-details {
+    font-size: 12px;
+  }
+
+  .details__descr-text {
+    font-size: 12px;
+  }
+
+  .details__subtitle {
+    font-size: 16px;
   }
 }
 

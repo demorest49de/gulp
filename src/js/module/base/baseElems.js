@@ -68,7 +68,7 @@ export const createHeader = (name, $) => {
                                 </a>
                             </li>
                             <li class="navigation__item navigation__item-cart">
-                                <a href="#" class="navigation__link" aria-label="Корзина"
+                                <a href="cart.html" class="navigation__link" aria-label="Корзина"
                                  >
                                     <svg
                                             class="navigation__link-img"
