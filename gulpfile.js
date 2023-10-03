@@ -139,7 +139,8 @@ export const js = () => gulp
     .src(path.src.js)
     
     //for debugging purposes comment this block of code
-    // just comment strings 144-150
+    // for clear js viewing on debug
+    // just comment strings 145-151
     
     .pipe(plumber())
     .pipe(webpackStream(webpackConf, webpack))
