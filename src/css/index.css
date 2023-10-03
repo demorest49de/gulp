@@ -1308,6 +1308,96 @@ main {
   line-height: 41.6px;
 }
 
+.cart {
+  color: #2d2d2d;
+}
+
+.cart__container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas: "list total" "delivery total";
+}
+
+.cart__list,
+.cart__delivery,
+.cart__total {
+  border-radius: 16px;
+  -webkit-box-shadow: 0px 0px 16px 1px rgba(0, 0, 0, 0.25);
+  box-shadow: 0px 0px 16px 1px rgba(0, 0, 0, 0.25);
+}
+
+.cart .cart__list {
+  grid-area: list;
+}
+
+.cart__title {
+  font-size: 50px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 130%;
+  margin-bottom: 6px;
+}
+
+.cart__delivery {
+  grid-area: delivery;
+}
+
+.cart__total {
+  width: 420px;
+  height: 367px;
+  border-radius: 16px;
+  -webkit-box-shadow: 0px 0px 16px 1px rgba(0, 0, 0, 0.25);
+  box-shadow: 0px 0px 16px 1px rgba(0, 0, 0, 0.25);
+  padding: 40px;
+}
+
+.cart__underline {
+  height: 1px;
+  width: 100%;
+  background-color: #efefef;
+  margin-bottom: 69px;
+}
+
+.cart__price-block {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -moz-box-align: center;
+  align-items: center;
+  -webkit-box-pack: start;
+  -webkit-justify-content: start;
+  -moz-box-pack: start;
+  justify-content: start;
+  -webkit-column-gap: 24px;
+  -moz-column-gap: 24px;
+  column-gap: 24px;
+  margin-bottom: 16px;
+}
+
+.cart__new-price {
+  color: #F00;
+  font-size: 36px;
+  font-weight: 700;
+}
+
+.cart__old-price {
+  color: #2d2d2d;
+  font-size: 22px;
+  font-weight: 400;
+  text-decoration: line-through;
+}
+
+.cart__credit-from {
+  color: #3670C7;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 130%;
+  margin-bottom: 30px;
+}
+
 .details {
   color: #2d2d2d;
 }
@@ -1547,102 +1637,6 @@ main {
   font-size: 32px;
   font-weight: 700;
   line-height: 130%;
-}
-
-.basket {
-  color: #2d2d2d;
-}
-
-.basket__list,
-.basket__delivery,
-.basket__total {
-  border-radius: 16px;
-  -webkit-box-shadow: 0px 0px 16px 1px rgba(0, 0, 0, 0.25);
-  box-shadow: 0px 0px 16px 1px rgba(0, 0, 0, 0.25);
-}
-
-.basket__list {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -moz-box;
-  display: flex;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -moz-box-pack: center;
-  justify-content: center;
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-  -moz-box-align: center;
-  align-items: center;
-  grid-area: list;
-}
-
-.basket__title {
-  font-size: 50px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: 130%;
-  margin-bottom: 6px;
-}
-
-.basket__delivery {
-  grid-area: delivery;
-}
-
-.basket__total {
-  width: 420px;
-  height: 367px;
-  border-radius: 16px;
-  -webkit-box-shadow: 0px 0px 16px 1px rgba(0, 0, 0, 0.25);
-  box-shadow: 0px 0px 16px 1px rgba(0, 0, 0, 0.25);
-  padding: 40px;
-}
-
-.basket__underline {
-  height: 1px;
-  width: 100%;
-  background-color: #efefef;
-  margin-bottom: 69px;
-}
-
-.basket__price-block {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -moz-box;
-  display: flex;
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-  -moz-box-align: center;
-  align-items: center;
-  -webkit-box-pack: start;
-  -webkit-justify-content: start;
-  -moz-box-pack: start;
-  justify-content: start;
-  -webkit-column-gap: 24px;
-  -moz-column-gap: 24px;
-  column-gap: 24px;
-  margin-bottom: 16px;
-}
-
-.basket__new-price {
-  color: #F00;
-  font-size: 36px;
-  font-weight: 700;
-}
-
-.basket__old-price {
-  color: #2d2d2d;
-  font-size: 22px;
-  font-weight: 400;
-  text-decoration: line-through;
-}
-
-.basket__credit-from {
-  color: #3670C7;
-  font-size: 16px;
-  font-weight: 700;
-  line-height: 130%;
-  margin-bottom: 30px;
 }
 
 .blog {
@@ -2636,6 +2630,32 @@ template {
 }
 
 @media (max-width: 1450px) {
+  .cart__title {
+    font-size: 40px;
+  }
+
+  .cart__total {
+    width: unset;
+    max-width: 315px;
+  }
+
+  .cart__underline {
+    font-size: 40px;
+    margin-bottom: 40px;
+  }
+
+  .cart__new-price {
+    font-size: 28px;
+  }
+
+  .cart__old-price {
+    font-size: 18px;
+  }
+
+  .cart__credit-from {
+    font-size: 14px;
+  }
+
   .details__cart-info {
     width: unset;
     max-width: 315px;
@@ -2682,32 +2702,6 @@ template {
 
   .details__subtitle {
     font-size: 24px;
-  }
-
-  .basket__title {
-    font-size: 40px;
-  }
-
-  .basket__total {
-    width: unset;
-    max-width: 315px;
-  }
-
-  .basket__underline {
-    font-size: 40px;
-    margin-bottom: 40px;
-  }
-
-  .basket__new-price {
-    font-size: 28px;
-  }
-
-  .basket__old-price {
-    font-size: 18px;
-  }
-
-  .basket__credit-from {
-    font-size: 14px;
   }
 }
 
@@ -3020,6 +3014,15 @@ template {
 }
 
 @media (max-width: 1000px) {
+  .cart__title {
+    font-size: 28px;
+  }
+
+  .cart__underline {
+    font-size: 28px;
+    margin-bottom: 30px;
+  }
+
   .details__title {
     font-size: 28px;
   }
@@ -3032,15 +3035,6 @@ template {
   .details__figure {
     width: 380px;
     height: 213px;
-  }
-
-  .basket__title {
-    font-size: 28px;
-  }
-
-  .basket__underline {
-    font-size: 28px;
-    margin-bottom: 30px;
   }
 }
 
@@ -3082,6 +3076,37 @@ template {
 }
 
 @media (max-width: 830px) {
+  .cart__title {
+    font-size: 18px;
+  }
+
+  .cart__total {
+    padding: 25px 40px;
+  }
+
+  .cart__total {
+    width: 280px;
+    max-width: unset;
+    height: 283px;
+  }
+
+  .cart__underline {
+    font-size: 18px;
+    margin-bottom: 20px;
+  }
+
+  .cart__new-price {
+    font-size: 20px;
+  }
+
+  .cart__old-price {
+    font-size: 12px;
+  }
+
+  .cart__credit-from {
+    font-size: 12px;
+  }
+
   .details__block {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -3180,37 +3205,6 @@ template {
 
   .details__subtitle {
     font-size: 16px;
-  }
-
-  .basket__title {
-    font-size: 18px;
-  }
-
-  .basket__total {
-    padding: 25px 40px;
-  }
-
-  .basket__total {
-    width: 280px;
-    max-width: unset;
-    height: 283px;
-  }
-
-  .basket__underline {
-    font-size: 18px;
-    margin-bottom: 20px;
-  }
-
-  .basket__new-price {
-    font-size: 20px;
-  }
-
-  .basket__old-price {
-    font-size: 12px;
-  }
-
-  .basket__credit-from {
-    font-size: 12px;
   }
 }
 

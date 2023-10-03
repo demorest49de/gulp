@@ -105,11 +105,11 @@ export const scss = () =>
         })))
         .pipe(gulpif(!dev, gcmq()))
         .pipe(gulpif(!dev, gulp.dest(path.dist.css)))
-        .pipe(cleanCSS({
-            2: {
-                specialComments: 0,
-            }
-        }))
+        // .pipe(cleanCSS({
+        //     2: {
+        //         specialComments: 0,
+        //     }
+        // }))
         .pipe(rename({
             suffix: '.min'
         }))

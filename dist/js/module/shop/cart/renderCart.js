@@ -1,11 +1,10 @@
-import {getSearchParams} from "../../base/tools.js";
 import {createFooter, createHeader, createMain} from "../../base/baseElems.js";
 import {createSection} from "../createShop.js";
-import {createBCCart} from "../basket/createCart.js";
+import {createBCCart, createSectionCart} from "../cart/createCart.js";
 
 
 export const renderCart = ($) => {
-    const paramsObject = getSearchParams();
+    // const paramsObject = getSearchParams();
     
     $.cart.forEach(({type, name}) => {
         if (type === $.types.header) {
@@ -21,10 +20,10 @@ export const renderCart = ($) => {
         }
         
         if (type === $.types.basket) {
-        //     createSectionCard(name, $, paramsObject);
+            createSectionCart(name, $);
             return;
         }
-    
+        
         if (type === $.types.section) {
             createSection(name, $);
             return;

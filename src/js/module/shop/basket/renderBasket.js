@@ -1,9 +1,9 @@
 import {createFooter, createHeader, createMain} from "../../base/baseElems.js";
 import {createSection} from "../createShop.js";
-import {createBCCart, createSectionCart} from "../cart/createCart.js";
+import {createBCCart, createSectionBasket} from "../basket/createBasket.js";
 
 
-export const renderCart = ($) => {
+export const renderBasket = ($) => {
     // const paramsObject = getSearchParams();
     
     $.cart.forEach(({type, name}) => {
@@ -20,7 +20,7 @@ export const renderCart = ($) => {
         }
         
         if (type === $.types.basket) {
-            createSectionCart(name, $);
+            createSectionBasket(name, $);
             return;
         }
         

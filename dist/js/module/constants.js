@@ -267,5 +267,6 @@ export const global = {
     URL,
     goods,
     categoryPage,
-    card
+    card,
+    cart,
 };

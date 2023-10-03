@@ -1,0 +1,118 @@
+.basket {
+  color: $closedark-color;
+
+  &__container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+    "list total"
+    "delivery .";
+  }
+
+  &__list,
+  &__delivery,
+  &__total {
+    border-radius: 16px;
+    box-shadow: 0px 0px 16px 1px rgba(0, 0, 0, 0.25);
+  }
+
+  &__list {
+    grid-area: list;
+    padding: 30px 40px;
+    height: 497px;
+  }
+
+  &__title {
+    font-size: 50px;
+    font-weight: 700;
+    line-height: 130%;
+    margin-bottom: 20px;
+    @media (max-width: 1450px) {
+      font-size: 40px;
+    }
+    @media (max-width: 1000px) {
+      font-size: 28px;
+    }
+    @media (max-width: 830px) {
+      font-size: 18px;
+    }
+  }
+
+  &__underline {
+    height: 1px;
+    width: 100%;
+    background-color: $grey-color;
+
+    margin-bottom: 69px;
+    @media (max-width: 1450px) {
+      font-size: 40px;
+      margin-bottom: 40px;
+    }
+    @media (max-width: 1000px) {
+      font-size: 28px;
+      margin-bottom: 30px;
+    }
+    @media (max-width: 830px) {
+      font-size: 18px;
+      margin-bottom: 20px;
+    }
+  }
+
+  &__delivery {
+    grid-area: delivery;
+  }
+
+  &__total {
+    grid-area: total;
+    width: 420px;
+    height: 538px;
+    padding: 30px 40px;
+  }
+
+  &__price-block {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    column-gap: 24px;
+    margin-bottom: 16px;
+  }
+
+  &__new-price {
+    color: $red-F00;
+    font-size: 36px;
+    font-weight: 700;
+    @media (max-width: 1450px) {
+      font-size: 28px;
+    }
+    @media (max-width: 830px) {
+      font-size: 20px;
+    }
+  }
+
+  &__old-price {
+    color: $closedark-color;
+    font-size: 22px;
+    font-weight: 400;
+    text-decoration: line-through;
+    @media (max-width: 1450px) {
+      font-size: 18px;
+    }
+    @media (max-width: 830px) {
+      font-size: 12px;
+    }
+  }
+
+  &__credit-from {
+    color: $blue-3670C7;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 130%;
+    margin-bottom: 30px;
+    @media (max-width: 1450px) {
+      font-size: 14px;
+    }
+    @media (max-width: 830px) {
+      font-size: 12px;
+    }
+  }
+}

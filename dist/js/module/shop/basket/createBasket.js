@@ -39,39 +39,39 @@ export const createBCCart = ($, bc) => {
     return breadCrumbs;
 };
 
-export const createSectionCart = (name, $) => {
+export const createSectionBasket = (name, $) => {
     
     $.main.insertAdjacentHTML('beforeend',
         `
-            <section class="cart" aria-label="Корзина">
+            <section class="basket" aria-label="Корзина">
             <h2 class="visually-hidden">Корзина</h2>
-            <div class="container cart__container">
+            <div class="container basket__container">
                 
-                <div class="сart__list">
-                    <h3 class="cart__title">Корзина</h3>
-                    <div class="сart__underline"></div>
+                <div class="basket__list">
+                    <h3 class="basket__title">Корзина</h3>
+                    <div class="basket__underline"></div>
                 </div>
                 
-                <div class="сart__total">
-                        <div class="сart__price-block">
-                            <div class="сart__price">
-                                <span class="сart__total-text">итого: </span>
-                                <span class="сart__total-price">${1} ₽</span>
+                <div class="basket__total">
+                        <div class="basket__price-block">
+                            <div class="basket__price">
+                                <span class="basket__total-text">итого: </span>
+                                <span class="basket__total-price">${1} ₽</span>
                             </div>
-                            <div class="сart__price">
-                                <span class="сart__new-price">${1} </span>
-                                <span class="сart__new-price">${1} ₽</span>
+                            <div class="basket__price">
+                                <span class="basket__new-price">${1} </span>
+                                <span class="basket__new-price">${1} ₽</span>
                             </div>
-                            <div class="сart__price">
-                                <span class="сart__old-price">${1} </span>
-                                <span class="сart__old-price">${1} ₽</span>
+                            <div class="basket__price">
+                                <span class="basket__old-price">${1} </span>
+                                <span class="basket__old-price">${1} ₽</span>
                             </div>
                         </div>
-                        <p class="сart__credit-from">В кредит от ${1} ₽</p>
-                        <div class="сart__add-block">
-                            <button class="сart__add-to-card">Добавить в корзину</button>
-                            <button class="сart__add-to-favorite">
-                                    <svg class="сart__add-to-favorite-icon" xmlns="http://www.w3.org/2000/svg"
+                        <p class="basket__credit-from">В кредит от ${1} ₽</p>
+                        <div class="basket__add-block">
+                            <button class="basket__add-to-card">Добавить в корзину</button>
+                            <button class="basket__add-to-favorite">
+                                    <svg class="basket__add-to-favorite-icon" xmlns="http://www.w3.org/2000/svg"
                                      width="33" height="33" viewBox="0 0 33 33" >
                                         <path d="M22.6875 4.125C20.295 4.125 17.9987
                                         5.23875 16.5 6.99875C15.0012 5.23875 12.705 4.125
@@ -89,15 +89,15 @@ export const createSectionCart = (name, $) => {
 
                             </button>
                         </div>
-                        <div class="сart__info-block">
-                            <p class="сart__text-info">Доставка</p>
-                            <p class="сart__text-details">1-3 января</p>
-                            <p class="сart__text-info">Продавец</p>
-                            <p class="сart__text-details">ShopOnline</p>
+                        <div class="basket__info-block">
+                            <p class="basket__text-info">Доставка</p>
+                            <p class="basket__text-details">1-3 января</p>
+                            <p class="basket__text-info">Продавец</p>
+                            <p class="basket__text-details">ShopOnline</p>
                         </div>
                        
-                        <button class="сart__price-reduction-btn">
-                            <svg class="сart__price-reduction-bell-svg" xmlns="http://www.w3.org/2000/svg"
+                        <button class="basket__price-reduction-btn">
+                            <svg class="basket__price-reduction-bell-svg" xmlns="http://www.w3.org/2000/svg"
                             width="24" height="24" viewBox="0 0 24 24">
                                 <path d="M19 13.586V10C19 6.783 16.815 4.073
                                  13.855 3.258C13.562 2.52 12.846 2 12 2C11.154
@@ -120,12 +120,12 @@ export const createSectionCart = (name, $) => {
                                        20H9.182C9.38566 20.5849 9.76648 21.0917
                                         10.2715 21.4502C10.7765 21.8086 11.3807 22.0008 12 22Z"/>
                             </svg>
-                            <span class="сart__price-reduction-text">Узнать о снижении цены</span>
+                            <span class="basket__price-reduction-text">Узнать о снижении цены</span>
                         </button>
                     </div>
-                <div class="сart__delivery">
-                    <h4 class="сart__subtitle">Описание:</h4>
-                    <p class="сart__descr-text">${1}</p>
+                <div class="basket__delivery">
+                    <h4 class="basket__subtitle">Описание:</h4>
+                    <p class="basket__descr-text">${1}</p>
                 </div>
             </div>
         </section>

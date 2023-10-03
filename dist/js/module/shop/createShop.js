@@ -6,7 +6,7 @@ import {renderArticle} from '../article/renderArticle.js';
 import {getGoodsWithDiscount} from "./fetch.js";
 import {renderCategory} from "./category/renderCategory.js";
 import {renderCard} from "./card/renderCard.js";
-import {renderCart} from "./basket/renderCart.js";
+import {renderBasket} from "./basket/renderBasket.js";
 
 
 export const createSection = (name, $, categoryName) => {
@@ -243,7 +243,7 @@ export const renderElement = ($) => {
     }
     
     if ($.page === 'cart') {
-        renderCart($);
+        renderBasket($);
     }
 };
 
