@@ -153,19 +153,32 @@
     margin-bottom: 33px;
   }
 
-  &__text-info:nth-child(1) {
-    grid-area: delry;
+  &__text-info{
+    color: $blue-8F8F8F;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 130%;
+
+    &:nth-child(1) {
+      grid-area: delry;
+    }
+
+    &:nth-child(3) {
+      grid-area: seller;
+    }
   }
 
-  &__text-details:nth-child(2) {
-    grid-area: deldate;
-  }
+  &__text-details{
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 130%;
 
-  &__text-info:nth-child(3) {
-    grid-area: seller;
-  }
+    &:nth-child(1) {
+      grid-area: deldate;
+    }
 
-  &__text-details:nth-child(4) {
-    grid-area: org;
+    &:nth-child(3) {
+      grid-area: org;
+    }
   }
 }
