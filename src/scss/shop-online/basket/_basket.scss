@@ -51,7 +51,7 @@
     grid-area: total;
     width: 420px;
     height: 527px;
-    padding: 30px 40px;
+    padding: 30px 31px;
     display: flex;
     flex-direction: column;
   }
@@ -141,9 +141,30 @@
     max-width: 266px;
     display: flex;
     align-self: center;
+    margin-bottom: 20px;
   }
 
   &__delivery-options {
     grid-area: delivery;
+  }
+
+  &__checkbox-checked-svg {
+    border-radius: 2px;
+  }
+
+  &__agreement {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  &__agree-text {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 130%;
+  }
+
+  &__agree-link {
+    color: $grey-525252;
   }
 }
