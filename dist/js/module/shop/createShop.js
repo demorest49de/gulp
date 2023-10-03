@@ -192,22 +192,6 @@ export const createSection = (name, $, categoryName) => {
         });
         return;
     }
-    if (name === 'category') {
-        $.main.insertAdjacentHTML('beforeend',
-            `
-            <section class="${name}" aria-label="Распродажа">
-            <h2 class="visually-hidden">Распродажа</h2>
-            <div class="container">
-                <h3 class="category__title">Это выгодно!</h3>
-                <ul class="category__cards">
-                </ul>
-            </div>
-        </section>
-            `);
-        
-        renderCards($).then(() => {
-        });
-    }
 };
 
 const renderShop = ($) => {

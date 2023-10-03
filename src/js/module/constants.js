@@ -8,7 +8,6 @@ const goods = '/goods';
 
 const category = '/category';
 
-//api/goods/category/Ноутбуки
 
 export const types = {
     footer: 'footer',
@@ -17,6 +16,7 @@ export const types = {
     main: 'main',
     blog: 'blog',
     article: 'article',
+    category: 'category',
 };
 
 const _class = {
@@ -120,6 +120,10 @@ const card = [
         {
             type: types.section,
             name: _class.card
+        },
+        {
+            type: types.category,
+            name: _class.category
         },
         {
             type: types.footer,

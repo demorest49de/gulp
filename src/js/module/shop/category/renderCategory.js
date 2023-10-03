@@ -20,7 +20,7 @@ export const renderCategory = ($) => {
         
         if (type === $.types.section) {
             const paramsObject = getSearchParams();
-            createSection(name, $, paramsObject);
+            createSectionCategory(name, $, paramsObject);
             return;
         }
         
@@ -101,7 +101,7 @@ const renderCardsByCategory = ($, items) => {
 };
 
 
-const createSection = (name, $, paramsObject) => {
+const createSectionCategory = (name, $, paramsObject) => {
     const categoryName = paramsObject.name;
     getGoodsByCategory($, categoryName).then((data) => {
         const items = data.data;
