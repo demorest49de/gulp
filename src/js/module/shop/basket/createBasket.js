@@ -93,6 +93,9 @@ export const createSectionBasket = (name, $) => {
                     <a href="" class="basket__info-link">Картой</a>
                     </span>
                 </div>
+                <button class="basket__order-btn" aria-label="Заказать">
+                    Заказать
+                </button>
             </div>
         <div class="basket__delivery-options">
             <h4 class="basket__subtitle">Описание:</h4>

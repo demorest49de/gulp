@@ -52,6 +52,8 @@
     width: 420px;
     height: 527px;
     padding: 30px 40px;
+    display: flex;
+    flex-direction: column;
   }
 
   &__price {
@@ -95,18 +97,22 @@
     line-height: 130%;
   }
 
-  &__time-address{
+  &__time-address {
     display: flex;
     flex-direction: column;
     gap: 5px;
     margin-bottom: 20px;
   }
 
-  &__info-block{
+  &__info-block {
     margin-bottom: 10px;
 
-    &:nth-last-child(2){
+    &:nth-last-child(2) {
       margin-bottom: 20px;
+    }
+
+    &:nth-last-child(1) {
+      margin-bottom: 30px;
     }
   }
 
@@ -116,11 +122,25 @@
     line-height: 130%;
   }
 
-  &__info-link{
+  &__info-link {
     color: $red-3670C7;
     font-size: 16px;
     font-weight: 700;
     line-height: 130%;
+  }
+
+  &__order-btn {
+    border-style: none;
+    padding: 14px 100px;
+    border-radius: 10px;
+    background: $blue-3670C7;
+    color: $white-color;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 130%;
+    max-width: 266px;
+    display: flex;
+    align-self: center;
   }
 
   &__delivery-options {

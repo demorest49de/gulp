@@ -2370,6 +2370,8 @@ main {
   width: 420px;
   height: 527px;
   padding: 30px 40px;
+  display: flex;
+  flex-direction: column;
 }
 .basket__price {
   display: flex;
@@ -2415,6 +2417,9 @@ main {
 .basket__info-block:nth-last-child(2) {
   margin-bottom: 20px;
 }
+.basket__info-block:nth-last-child(1) {
+  margin-bottom: 30px;
+}
 .basket__info-text-info {
   font-size: 16px;
   font-weight: 700;
@@ -2425,6 +2430,19 @@ main {
   font-size: 16px;
   font-weight: 700;
   line-height: 130%;
+}
+.basket__order-btn {
+  border-style: none;
+  padding: 14px 100px;
+  border-radius: 10px;
+  background: #3670C7;
+  color: #FFFFFF;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 130%;
+  max-width: 266px;
+  display: flex;
+  align-self: center;
 }
 .basket__delivery-options {
   grid-area: delivery;
