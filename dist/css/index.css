@@ -1341,6 +1341,12 @@ main {
   margin-bottom: 69px;
 }
 
+.details__underline {
+  height: 1px;
+  width: 100%;
+  background-color: #efefef;
+}
+
 .details__figure {
   width: 757px;
   height: 427px;
@@ -1396,7 +1402,7 @@ main {
   -webkit-column-gap: 24px;
   -moz-column-gap: 24px;
   column-gap: 24px;
-  margin-bottom: 7px;
+  margin-bottom: 16px;
 }
 
 .details__new-price {
@@ -2532,6 +2538,52 @@ template {
   }
 }
 
+@media (max-width: 1450px) {
+  .details__cart-info {
+    width: unset;
+    max-width: 315px;
+  }
+
+  .details__title {
+    font-size: 40px;
+    margin-bottom: 40px;
+  }
+
+  .details__figure {
+    width: 540px;
+    height: 303px;
+  }
+
+  .details__new-price {
+    font-size: 28px;
+  }
+
+  .details__old-price {
+    font-size: 18px;
+  }
+
+  .details__credit-from {
+    font-size: 14px;
+  }
+
+  .details__add-to-card {
+    font-size: 16px;
+    padding: 12px 26px;
+  }
+
+  .details__price-reduction-text {
+    font-size: 14px;
+  }
+
+  .details__descr-text {
+    font-size: 18px;
+  }
+
+  .details__subtitle {
+    font-size: 24px;
+  }
+}
+
 @media (max-width: 1440px) {
   .item__container {
     grid-template-columns: repeat(4, 1fr);
@@ -2840,6 +2892,18 @@ template {
   }
 }
 
+@media (max-width: 1000px) {
+  .details__title {
+    font-size: 28px;
+    margin-bottom: 30px;
+  }
+
+  .details__figure {
+    width: 380px;
+    height: 213px;
+  }
+}
+
 @media (max-width: 980px) {
   .blog__list {
     grid-template-columns: minmax(180px, 600px);
@@ -2874,6 +2938,36 @@ template {
   .blog {
     padding-top: 25px;
     padding-bottom: 25px;
+  }
+}
+
+@media (max-width: 830px) {
+  .details__block {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -moz-box-orient: vertical;
+    -moz-box-direction: normal;
+    flex-direction: column;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -moz-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -moz-box-align: center;
+    align-items: center;
+    margin-bottom: 30px;
+    row-gap: 20px;
+  }
+
+  .details__cart-info {
+    padding: 25px 40px;
+  }
+
+  .details__title {
+    font-size: 18px;
+    margin-bottom: 20px;
   }
 }
 

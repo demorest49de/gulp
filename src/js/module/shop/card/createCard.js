@@ -45,6 +45,7 @@ export const createSectionCard = (name, $, paramsObject) => {
             <h2 class="visually-hidden">${item.title}</h2>
             <div class="container">
                 <h3 class="details__title">${item.title}</h3>
+                <div class="details__underline"></div>
                 <div class="details__block">
                     <picture class="details__figure">
                     <img loading="lazy" class="details__image"
