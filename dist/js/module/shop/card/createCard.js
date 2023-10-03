@@ -119,6 +119,10 @@ export const createSectionCard = (name, $, paramsObject) => {
                         </button>
                     </div>
                 </div>
+                <div class="details__description">
+                    <h4 class="details__subtitle">Описание:</h4>
+                    <p class="details__descr-text">${item.description}</p>
+                </div>
             </div>
         </section>
             `);
