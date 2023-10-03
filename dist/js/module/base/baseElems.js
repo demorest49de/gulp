@@ -120,7 +120,7 @@ export const createHeader = (name, $) => {
 
 
 export const createFooter = (name, $) => {
-    
+    //<li class="footer__elem"><a href="#">Смартфоны</a></li>
     $.app.insertAdjacentHTML('beforeend',
         `
             <footer class="footer">

@@ -142,13 +142,13 @@ export const js = () => gulp
     // for clear js viewing on debug
     // just comment strings 145-151
     
-    .pipe(plumber())
-    .pipe(webpackStream(webpackConf, webpack))
-    .pipe(gulpif(!dev, gulp.dest(path.dist.js)))
-    .pipe(gulpif(!dev, terser()))
-    .pipe(rename({
-        suffix: '.min'
-    }))
+    // .pipe(plumber())
+    // .pipe(webpackStream(webpackConf, webpack))
+    // .pipe(gulpif(!dev, gulp.dest(path.dist.js)))
+    // .pipe(gulpif(!dev, terser()))
+    // .pipe(rename({
+    //     suffix: '.min'
+    // }))
     
     .pipe(gulp.dest(path.dist.js))
     .pipe(browserSync.stream());

@@ -9,6 +9,7 @@ import {burgerHandler} from "../js/module/shop/burger/burgerHandler.js";
         $.app = app;
         $.selector = selector;
         $.page = page;
+        console.log($);
     };
     
     const handlersInit = ($) => {
