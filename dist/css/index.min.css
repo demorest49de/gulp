@@ -2515,6 +2515,35 @@ main {
   font-weight: 400;
   line-height: 150%;
 }
+.basket__list-price-block *:not(:nth-last-child(1)) {
+  margin-bottom: 6px;
+}
+.basket__list-price-block-new span {
+  font-size: 26px;
+  font-weight: 700;
+}
+.basket__list-price-block-new, .basket__list-price-block-old {
+  display: flex;
+  justify-content: end;
+}
+.basket__credit-from {
+  color: var(--2, #3670C7);
+  text-align: right;
+  font-family: Lato;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 130%; /* 20.8px */
+}
+.basket__list-price-block-old span {
+  color: #8F8F8F;
+  font-size: 18px;
+  font-weight: 400;
+  text-decoration: line-through;
+}
+.basket__list-price-block div:nth-child(2) {
+  margin-bottom: 15px;
+}
 .basket__underline {
   height: 1px;
   width: 100%;
