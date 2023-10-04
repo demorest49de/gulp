@@ -88,7 +88,9 @@
 
   &__list-manage-block {
     display: flex;
-
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
   }
 
   &__trashcan {
@@ -96,7 +98,6 @@
   }
 
   &__choose-all {
-    margin-bottom: 20px;
     display: flex;
     align-items: center;
     gap: 14px;
