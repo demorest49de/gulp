@@ -83,6 +83,16 @@ export const createSectionBasket = (name, $) => {
                                  src="" alt="" width="" height="">
                         </picture>
                     </div>
+                    <div class="basket__list-text-block">
+                        <p class="basket__list-text-main">
+                            15.6" Игровой ноутбук ASUS G513IE-HN004T</p>
+                        <p class="basket__list-text-additional">
+                            Цвет: черный
+                        </p>
+                        <p class="basket__list-text-additional">
+                            Оперативная память: 16 ГБ
+                        </p>
+                    </div>
                 </li>
                 <li class="basket__list-item">
                     <div class="basket__list-item-block">
