@@ -115,6 +115,7 @@
   &__list-item {
     display: flex;
     align-items: start;
+    gap: 12px;
   }
 
   &__list-item
@@ -131,8 +132,10 @@
     gap: 23px;
   }
 
-  &__list-text-block {
-
+  &__list-all-info-block {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
   }
 
 
