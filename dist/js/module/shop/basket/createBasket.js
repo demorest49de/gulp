@@ -36,6 +36,7 @@ export const createBCCart = ($, bc) => {
                 </div>
             </li>
         `);
+    
     return breadCrumbs;
 };
 
@@ -152,7 +153,10 @@ export const createSectionBasket = (name, $) => {
     </div>
 </section>
             `);
-    
+    if(screen.width <= 666){
+        const value = $.main.querySelector('.basket__dely-block:nth-child(3) .basket__dely-value');
+        value.textContent = 'Бесплатная доставка';
+    }
     // getItemById($, cardId).then((data) => {
     //     console.log(' : ', data.data);
     //     const item = data.data;
