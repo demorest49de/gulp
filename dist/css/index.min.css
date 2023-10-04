@@ -2339,6 +2339,9 @@ main {
 @media (max-width: 1023px) {
   .basket__container {
     grid-template-columns: minmax(280px, 100%);
+    row-gap: 20px;
+    padding-left: 0;
+    padding-right: 0;
   }
 }
 .basket__list, .basket__delivery-options, .basket__total {
@@ -2349,7 +2352,7 @@ main {
 @media (max-width: 1023px) {
   .basket__list, .basket__delivery-options, .basket__total {
     border-radius: 0px;
-    box-shadow: none;
+    box-shadow: 0px 0px 16px 1px rgba(0, 0, 0, 0.25);
     padding: 30px 64px;
   }
 }
@@ -2371,6 +2374,11 @@ main {
 @media (max-width: 1024px) {
   .basket__title {
     font-size: 40px;
+  }
+}
+@media (max-width: 1023px) {
+  .basket__title {
+    font-size: 28px;
   }
 }
 .basket__title-block {
@@ -2403,6 +2411,12 @@ main {
   padding: 30px 31px;
   display: flex;
   flex-direction: column;
+}
+@media (max-width: 1023px) {
+  .basket__total {
+    width: 100%;
+    padding: 30px 30px;
+  }
 }
 .basket__price {
   display: flex;
@@ -2499,6 +2513,11 @@ main {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+@media (max-width: 1023px) {
+  .basket__dely-block:nth-child(1) .basket__title {
+    display: none;
+  }
 }
 .basket__dely-link {
   color: #3670C7;
