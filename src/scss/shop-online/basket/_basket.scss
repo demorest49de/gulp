@@ -113,13 +113,21 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+  }
+
+  &__price-block span {
     @media (max-width: 666px) {
-      padding: 15px 20px;
+      font-size: 16px;
     }
   }
 
-  &__price-block &__price {
+  &__price-block {
     margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    @media (max-width: 666px) {
+    }
   }
 
   &__item-block &__price {
@@ -143,6 +151,15 @@
     display: flex;
     flex-direction: column;
     gap: 10px;
+    @media (max-width: 1023px) {
+      gap: 15px;
+    }
+  }
+
+  &__item-block span {
+    @media (max-width: 666px) {
+      font-size: 10px;
+    }
   }
 
   &__time-address,
@@ -160,8 +177,21 @@
     margin-bottom: 20px;
   }
 
+  &__time-address p {
+    @media (max-width: 666px) {
+      font-size: 10px;
+    }
+  }
+
   &__info-block {
     margin-bottom: 10px;
+
+
+    &:nth-last-child(3) {
+      @media (max-width: 666px) {
+        margin-bottom: 40px;
+      }
+    }
 
     &:nth-last-child(2) {
       margin-bottom: 20px;
@@ -172,10 +202,22 @@
     }
   }
 
+  &__info-block span,
+  &__info-block a,
+  {
+    @media (max-width: 666px) {
+      font-size: 10px;
+    }
+  }
+
   &__info-text-info {
     font-size: 16px;
     font-weight: 700;
     line-height: 130%;
+    @media (max-width: 1023px) {
+      display: flex;
+      justify-content: space-between;
+    }
   }
 
   &__info-link {
@@ -203,22 +245,32 @@
       width: 100%;
       justify-content: center;
     }
+    @media (max-width: 666px) {
+      padding: 14px 0;
+      font-size: 12px;
+    }
   }
 
   &__checkbox-checked-svg {
-    justify-content: stretch;
+
   }
 
   &__agreement {
     display: flex;
     align-items: center;
     gap: 10px;
+    @media (max-width: 666px) {
+      padding: 14px 0;
+    }
   }
 
   &__agree-text {
     font-size: 16px;
     font-weight: 400;
     line-height: 130%;
+    @media (max-width: 666px) {
+      font-size: 10px;
+    }
   }
 
   &__agree-link {
@@ -258,7 +310,7 @@
 
 
   &__dely-block:nth-child(2) *,
-  &__dely-block:nth-child(3) *{
+  &__dely-block:nth-child(3) * {
     font-size: 10px;
   }
 
@@ -266,12 +318,12 @@
   &__dely-block:nth-child(2)
   &__dely-name,
   &__dely-block:nth-child(3)
-  &__dely-name{
+  &__dely-name {
     display: none;
   }
 
   &__dely-block:nth-child(3)
-  &__dely-value{
+  &__dely-value {
     @media (max-width: 666px) {
       font-size: 12px;
       color: $grey-8F8F8F;

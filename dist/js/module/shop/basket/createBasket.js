@@ -57,26 +57,26 @@ export const createSectionBasket = (name, $) => {
         </div>
         
         <div class="basket__total">
+                
                 <div class="basket__price-block">
+                    <span class="basket__total-text">итого: </span>
+                    <span class="basket__total-text">${1} ₽</span>
+                </div>
+                <div class="basket__item-block">
                     <div class="basket__price">
-                        <span class="basket__total-text">итого: </span>
-                        <span class="basket__total-text">${1} ₽</span>
+                        <span class="basket__item-details">Товары, ${2} шт.</span>
+                        <span class="basket__item-details">${100} ₽</span>
                     </div>
-                    <div class="basket__item-block">
-                        <div class="basket__price">
-                            <span class="basket__item-details">Товары, ${2} шт.</span>
-                            <span class="basket__item-details">${100} ₽</span>
-                        </div>
-                        <div class="basket__price">
-                            <span class="basket__item-details">Скидка </span>
-                            <span class="basket__item-details">${10} ₽</span>
-                        </div>
-                        <div class="basket__price">
-                            <span class="basket__item-details">Доставка</span>
-                            <span class="basket__item-details">Бесплатно</span>
-                        </div>
+                    <div class="basket__price">
+                        <span class="basket__item-details">Скидка </span>
+                        <span class="basket__item-details">${10} ₽</span>
+                    </div>
+                    <div class="basket__price">
+                        <span class="basket__item-details">Доставка</span>
+                        <span class="basket__item-details">Бесплатно</span>
                     </div>
                 </div>
+                
                 <div class="basket__info-block">
                     <span class="basket__info-text-info">Доставка:
                     <a href="" class="basket__info-link">Пункт выдачи</a>
