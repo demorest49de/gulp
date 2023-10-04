@@ -2356,6 +2356,11 @@ main {
     padding: 30px 64px;
   }
 }
+@media (max-width: 666px) {
+  .basket__list, .basket__delivery-options, .basket__total {
+    padding: 15px 20px;
+  }
+}
 .basket__list {
   grid-area: list;
   height: 497px;
@@ -2407,7 +2412,7 @@ main {
 .basket__total {
   grid-area: total;
   width: 420px;
-  height: 527px;
+  height: fit-content;
   padding: 30px 31px;
   display: flex;
   flex-direction: column;
@@ -2416,6 +2421,11 @@ main {
   .basket__total {
     width: 100%;
     padding: 30px 30px;
+  }
+}
+@media (max-width: 666px) {
+  .basket__total {
+    padding: 15px 20px;
   }
 }
 .basket__price {
