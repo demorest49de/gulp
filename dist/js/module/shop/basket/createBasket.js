@@ -48,7 +48,10 @@ export const createSectionBasket = (name, $) => {
     <div class="container basket__container">
         
         <div class="basket__list">
-            <h3 class="basket__title">Корзина</h3>
+            <div class="basket__title-block">
+                <h3 class="basket__title">Корзина</h3>
+                <p class="basket__cart-count">2</p>
+            </div>
             <div class="basket__underline"></div>
         </div>
         
@@ -115,8 +118,36 @@ export const createSectionBasket = (name, $) => {
                 </div>
             </div>
         <div class="basket__delivery-options">
-            <h4 class="basket__subtitle">Описание:</h4>
-            <p class="basket__descr-text">${1}</p>
+            <div class="basket__dely-block">
+                <h3 class="basket__title">Способ доставки</h3>
+                <a href="" class="basket__dely-link">Изменить</a>
+            </div>
+            <div class="basket__dely-block">
+                <span class="basket__dely-name">Пункт выдачи</span>
+                <span class="basket__dely-value">г. Москва (Московская область),
+                улица Павлика Морозова, д. 48, (Пункт выдачи), Ежедневно 10:00-21:00</span>
+            </div>
+            <div class="basket__dely-block">
+                <span class="basket__dely-name">Стоимость доставки</span>
+                <span class="basket__dely-value">Бесплатно</span>
+            </div>
+            <div class="basket__dely-block">
+                <span class="basket__dely-estim-date">10-13 февраля</span>
+                <div class="basket__dely-picture-block">
+                    <picture  class="basket__picture">
+                        <source srcset="" type="image/avif">
+                        <source srcset="" type="image/webp">
+                            <img class="basket__image-small"
+                             src="" alt="" width="" height="">
+                    </picture>
+                    <picture  class="basket__picture">
+                        <source srcset="" type="image/avif">
+                        <source srcset="" type="image/webp">
+                            <img class="basket__image-small"
+                             src="" alt="" width="" height="">
+                    </picture>
+                </div>
+            </div>
         </div>
     </div>
 </section>
