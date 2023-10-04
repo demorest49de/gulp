@@ -126,7 +126,15 @@ export const createSectionBasket = (name, $) => {
                         </div>
                         
                         <div class="basket__list-price-block">
-                        1
+                            <div class="basket__list-price-block-new">
+                                <span class="basket__item-new-price">109 </span>
+                                <span class="basket__item-new-price">090 ₽</span>
+                            </div>
+                            <div class="basket__list-price-block-old">
+                                <span class="basket__item-old-price">140 </span>
+                                <span class="basket__item-old-price">590 ₽</span>
+                            </div>
+                            <p class="basket__credit-from">В кредит от  ₽</p>
                         </div>
                     </div>
                 </li>
