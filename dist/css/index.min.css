@@ -2440,6 +2440,12 @@ main {
     right: -9px;
   }
 }
+.basket__list-manage-block {
+  display: flex;
+}
+.basket__trashcan {
+  height: 30px;
+}
 .basket__choose-all {
   margin-bottom: 20px;
   display: flex;

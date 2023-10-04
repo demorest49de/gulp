@@ -53,17 +53,32 @@ export const createSectionBasket = (name, $) => {
                 <h3 class="basket__title">Корзина</h3>
                 <p class="basket__cart-count">2</p>
             </div>
-            <div class="basket__choose-all">
-                <div class="basket__checkbox-block">
-                    <input type="checkbox" class="basket__checkbox" style="display: none">
-                    <svg xmlns="http://www.w3.org/2000/svg"
-                    width="24" class="basket__checkbox-checked-svg" height="24" viewBox="0 0 14 14" fill="none">
-                        <rect width="24" height="24" fill="#3670C7"/>
-                        <path d="M5.25006 9.45L2.80007 7L1.9834 7.81666L5.25006 11.0833L12.2501 4.08333L11.4334 3.26666L5.25006 9.45Z" fill="white"/>
+            <div class="basket__list-manage-block">
+                <div class="basket__choose-all">
+                    <div class="basket__checkbox-block">
+                        <input type="checkbox" class="basket__checkbox" style="display: none">
+                        <svg xmlns="http://www.w3.org/2000/svg"
+                        width="24" class="basket__checkbox-checked-svg" height="24" viewBox="0 0 14 14" fill="none">
+                            <rect width="24" height="24" fill="#3670C7"/>
+                            <path d="M5.25006 9.45L2.80007 7L1.9834 7.81666L5.25006 11.0833L12.2501 4.08333L11.4334 3.26666L5.25006 9.45Z" fill="white"/>
+                        </svg>
+                    </div>
+                    <p class="basket__choose-all-text">Выбрать все</p>
+                </div>
+                <div class="basket__trashcan">
+                    <svg class="basket__trashcan-svg" xmlns="http://www.w3.org/2000/svg"
+                    width="30" height="30" viewBox="0 0 30 30" fill="none">
+                        <rect width="30" height="30" fill="white"/>
+                        <path d="M19.0214 5.35355L19.1679
+                        5.5H19.375H23.25V7H6.75V5.5H10.625H10.8321L10.9786
+                         5.35355L12.0821 4.25H17.9179L19.0214
+                         5.35355ZM10 25.75C8.90114 25.75 8 24.8489
+                         8 23.75V9.25H22V23.75C22 24.8489 21.0989
+                         25.75 20 25.75H10Z" fill="#C9C9C9" stroke="#C9C9C9"/>
                     </svg>
                 </div>
-                <p class="basket__choose-all-text">Выбрать все</p>
             </div>
+                
             <div class="basket__underline"></div>
             <ul class="basket__items-list">
                 <li class="basket__list-item">
