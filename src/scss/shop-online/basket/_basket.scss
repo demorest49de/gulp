@@ -86,6 +86,27 @@
     }
   }
 
+  &__choose-all {
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+
+  &__choose-all-text {
+    color: $grey-525252;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 130%;
+    @media (max-width: 1023px) {
+      font-size: 14px;
+    }
+    @media (max-width: 666px) {
+      font-size: 10px;
+    }
+  }
+
+
   &__underline {
     height: 1px;
     width: 100%;
@@ -249,6 +270,10 @@
       padding: 14px 0;
       font-size: 12px;
     }
+  }
+
+  &__checkbox-block {
+    height: 24px;
   }
 
   &__checkbox-checked-svg {

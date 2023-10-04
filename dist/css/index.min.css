@@ -2440,6 +2440,28 @@ main {
     right: -9px;
   }
 }
+.basket__choose-all {
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.basket__choose-all-text {
+  color: #525252;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 130%;
+}
+@media (max-width: 1023px) {
+  .basket__choose-all-text {
+    font-size: 14px;
+  }
+}
+@media (max-width: 666px) {
+  .basket__choose-all-text {
+    font-size: 10px;
+  }
+}
 .basket__underline {
   height: 1px;
   width: 100%;
@@ -2588,6 +2610,9 @@ main {
     padding: 14px 0;
     font-size: 12px;
   }
+}
+.basket__checkbox-block {
+  height: 24px;
 }
 .basket__agreement {
   display: flex;
