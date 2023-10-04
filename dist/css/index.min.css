@@ -2350,10 +2350,10 @@ main {
 }
 .basket__container {
   display: grid;
-  grid-template-columns: minmax(940px, 1320px) 1fr;
+  grid-template-columns: minmax(940px, 1320px);
   grid-template-areas: "list total" "delivery .";
   column-gap: 30px;
-  row-gap: 0px;
+  row-gap: 30px;
 }
 @media (max-width: 1540px) {
   .basket__container {
@@ -2495,6 +2495,24 @@ main {
   display: flex;
   width: 100%;
   justify-content: space-between;
+}
+.basket__list-quantity-block {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.basket__plus-svg-text {
+  fill: #2d2d2d;
+  font-size: 17px;
+}
+.basket__minus-svg-text {
+  fill: #8F8F8F;
+  font-size: 17px;
+}
+.basket__quantity-value {
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 150%;
 }
 .basket__underline {
   height: 1px;

@@ -3,12 +3,12 @@
 
   &__container {
     display: grid;
-    grid-template-columns: minmax(940px, 1320px) 1fr;
+    grid-template-columns: minmax(940px, 1320px);
     grid-template-areas:
     "list total"
     "delivery .";
     column-gap: 30px;
-    row-gap: 0px;
+    row-gap: 30px;
     @media (max-width: 1540px) {
       grid-template-columns: minmax(940px, 100%);
       grid-template-areas:
@@ -148,6 +148,27 @@
     justify-content: space-between;
   }
 
+  &__list-quantity-block {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  &__plus-svg-text {
+    fill: $closedark-color;
+    font-size: 17px;
+  }
+
+  &__minus-svg-text {
+    fill: $grey-8F8F8F;
+    font-size: 17px;
+  }
+
+  &__quantity-value {
+    font-size: 22px;
+    font-weight: 400;
+    line-height: 150%;
+  }
 
   &__underline {
     height: 1px;

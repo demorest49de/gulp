@@ -110,8 +110,21 @@ export const createSectionBasket = (name, $) => {
                             </p>
                         </div>
                         <div class="basket__list-quantity-block">
-                        1
+                            <svg xmlns="http://www.w3.org/2000/svg"
+                            class="basket__item-svg"
+                                width="36" height="36" viewBox="0 0 36 36" fill="none">
+                                <circle cx="18" cy="18" r="17.5" fill="white" stroke="#E8E8E8"/>
+                                <text x="13" y="24.5" class="basket__minus-svg-text">−</text>
+                            </svg>
+                            <span class="basket__quantity-value">1</span>
+                            <svg xmlns="http://www.w3.org/2000/svg"
+                            class="basket__item-svg"
+                                width="36" height="36" viewBox="0 0 36 36" fill="none">
+                                <circle cx="18" cy="18" r="17.5" fill="white" stroke="#E8E8E8"/>
+                                <text x="13" y="24.5" class="basket__plus-svg-text">+</text>
+                            </svg>
                         </div>
+                        
                         <div class="basket__list-price-block">
                         1
                         </div>
