@@ -2490,8 +2490,15 @@ main {
   align-self: center;
   margin-bottom: 20px;
 }
+@media (max-width: 768px) {
+  .basket__order-btn {
+    max-width: unset;
+    width: 100%;
+    justify-content: center;
+  }
+}
 .basket__checkbox-checked-svg {
-  border-radius: 2px;
+  justify-content: stretch;
 }
 .basket__agreement {
   display: flex;
