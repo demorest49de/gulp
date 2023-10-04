@@ -106,12 +106,36 @@
     }
   }
 
+  &__items-list {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  &__list-item {
+    display: flex;
+    align-items: start;
+  }
+
+  &__list-item
+  &__picture {
+    width: 130px;
+    height: 130px;
+    border-radius: 10px;
+  }
+
+  &__list-item-block {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    gap: 23px;
+  }
 
   &__underline {
     height: 1px;
     width: 100%;
     background-color: $grey-E8E8E8;
-    margin-bottom: 43px;
+    margin-bottom: 20px;
   }
 
   &__total {

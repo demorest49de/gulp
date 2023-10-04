@@ -66,8 +66,41 @@ export const createSectionBasket = (name, $) => {
             </div>
             <div class="basket__underline"></div>
             <ul class="basket__items-list">
-                <li class="basket__item">
-                
+                <li class="basket__list-item">
+                    <div class="basket__list-item-block">
+                        <div class="basket__checkbox-block">
+                            <input type="checkbox" class="basket__checkbox" style="display: none">
+                            <svg xmlns="http://www.w3.org/2000/svg"
+                            width="24" class="basket__checkbox-checked-svg" height="24" viewBox="0 0 14 14" fill="none">
+                                <rect width="24" height="24" fill="#3670C7"/>
+                                <path d="M5.25006 9.45L2.80007 7L1.9834 7.81666L5.25006 11.0833L12.2501 4.08333L11.4334 3.26666L5.25006 9.45Z" fill="white"/>
+                            </svg>
+                        </div>
+                        <picture  class="basket__picture">
+                            <source srcset="" type="image/avif">
+                            <source srcset="" type="image/webp">
+                                <img class="basket__image-small"
+                                 src="" alt="" width="" height="">
+                        </picture>
+                    </div>
+                </li>
+                <li class="basket__list-item">
+                    <div class="basket__list-item-block">
+                        <div class="basket__checkbox-block">
+                            <input type="checkbox" class="basket__checkbox" style="display: none">
+                            <svg xmlns="http://www.w3.org/2000/svg"
+                            width="24" class="basket__checkbox-checked-svg" height="24" viewBox="0 0 14 14" fill="none">
+                                <rect width="24" height="24" fill="#3670C7"/>
+                                <path d="M5.25006 9.45L2.80007 7L1.9834 7.81666L5.25006 11.0833L12.2501 4.08333L11.4334 3.26666L5.25006 9.45Z" fill="white"/>
+                            </svg>
+                        </div>
+                        <picture  class="basket__picture">
+                            <source srcset="" type="image/avif">
+                            <source srcset="" type="image/webp">
+                                <img class="basket__image-small"
+                                 src="" alt="" width="" height="">
+                        </picture>
+                    </div>
                 </li>
             </ul>
         </div>

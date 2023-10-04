@@ -2462,11 +2462,31 @@ main {
     font-size: 10px;
   }
 }
+.basket__items-list {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+.basket__list-item {
+  display: flex;
+  align-items: start;
+}
+.basket__list-item .basket__picture {
+  width: 130px;
+  height: 130px;
+  border-radius: 10px;
+}
+.basket__list-item-block {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  gap: 23px;
+}
 .basket__underline {
   height: 1px;
   width: 100%;
   background-color: #E8E8E8;
-  margin-bottom: 43px;
+  margin-bottom: 20px;
 }
 .basket__total {
   grid-area: total;
