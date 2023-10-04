@@ -189,13 +189,10 @@
   }
 
   &__credit-from{
-    color: var(--2, #3670C7);
-    text-align: right;
-    font-family: Lato;
+    color: $blue-3670C7;
     font-size: 16px;
-    font-style: normal;
     font-weight: 400;
-    line-height: 130%; /* 20.8px */
+    line-height: 130%;
   }
 
   &__list-price-block-old
