@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg"
+     width="24" class="basket__checkbox-checked-svg" height="24" viewBox="0 0 14 14" fill="none">
+    <rect width="24" height="24" fill="#3670C7"/>
+    <path d="M5.25006 9.45L2.80007 7L1.9834 7.81666L5.25006 11.0833L12.2501 4.08333L11.4334 3.26666L5.25006 9.45Z" fill="white"/>
+</svg>

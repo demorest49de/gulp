@@ -2714,8 +2714,37 @@ main {
     font-size: 12px;
   }
 }
-.basket__checkbox-block {
+.basket__label {
+  position: relative;
+  color: #525252;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 130%;
+}
+.basket__checkbox-input {
+  position: absolute;
+  opacity: 0;
+}
+.basket__checkbox-icon {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.basket__checkbox-icon:before {
+  content: "";
+  display: inline-block;
+  width: 24px;
   height: 24px;
+  border: 1px solid #000000;
+  border-radius: 2px;
+}
+.basket__checkbox-input:focus + .basket__checkbox-icon:before {
+  outline: 1px solid #000000;
+  outline-offset: 2px;
+}
+.basket__checkbox-input:checked + .basket__checkbox-icon:before {
+  border: none;
+  background-image: url(../../../svg/basket/checkmark.svg);
 }
 .basket__agreement {
   display: flex;

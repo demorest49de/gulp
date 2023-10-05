@@ -54,17 +54,13 @@ export const createSectionBasket = (name, $) => {
                 <p class="basket__cart-count">2</p>
             </div>
             <div class="basket__list-manage-block">
-                <div class="basket__choose-all">
-                    <div class="basket__checkbox-block">
-                        <input type="checkbox" class="basket__checkbox" >
-                        <svg xmlns="http://www.w3.org/2000/svg"
-                        width="24" class="basket__checkbox-checked-svg" height="24" viewBox="0 0 14 14" fill="none">
-                            <rect width="24" height="24" fill="#3670C7"/>
-                            <path d="M5.25006 9.45L2.80007 7L1.9834 7.81666L5.25006 11.0833L12.2501 4.08333L11.4334 3.26666L5.25006 9.45Z" fill="white"/>
-                        </svg>
-                    </div>
-                    <p class="basket__choose-all-text">Выбрать все</p>
-                </div>
+                
+                <label class="basket__label">
+                    <input type="checkbox" class="basket__checkbox-input"
+                        >
+                    <span class="basket__checkbox-icon">Выбрать все</span>
+                </label>
+                
                 <button class="basket__trashcan-btn">
                     <svg class="basket__trashcan-svg" xmlns="http://www.w3.org/2000/svg"
                     width="30" height="30" viewBox="0 0 30 30" fill="none">
@@ -83,14 +79,12 @@ export const createSectionBasket = (name, $) => {
             <ul class="basket__items-list">
                 <li class="basket__list-item">
                     <div class="basket__list-item-block">
-                        <div class="basket__checkbox-block">
-                            <input type="checkbox" class="basket__checkbox" >
-                            <svg xmlns="http://www.w3.org/2000/svg"
-                            width="24" class="basket__checkbox-checked-svg" height="24" viewBox="0 0 14 14" fill="none">
-                                <rect width="24" height="24" fill="#3670C7"/>
-                                <path d="M5.25006 9.45L2.80007 7L1.9834 7.81666L5.25006 11.0833L12.2501 4.08333L11.4334 3.26666L5.25006 9.45Z" fill="white"/>
-                            </svg>
-                        </div>
+                        
+                        <label class="basket__label">
+                            <input type="checkbox" class="basket__checkbox-input"
+                                >
+                            <span class="basket__checkbox-icon"></span>
+                        </label>
                         <picture  class="basket__picture">
                             <source srcset="" type="image/avif">
                             <source srcset="" type="image/webp">
@@ -176,21 +170,16 @@ export const createSectionBasket = (name, $) => {
                     Заказать
                 </button>
                 <div class="basket__agreement">
-                    <div class="basket__checkbox-block">
-                        <input type="checkbox" class="basket__checkbox" >
-                        <svg xmlns="http://www.w3.org/2000/svg"
-                        width="24" class="basket__checkbox-checked-svg" height="24" viewBox="0 0 14 14" fill="none">
-                            <rect width="24" height="24" fill="#3670C7"/>
-                            <path d="M5.25006 9.45L2.80007 7L1.9834 7.81666L5.25006 11.0833L12.2501 4.08333L11.4334 3.26666L5.25006 9.45Z" fill="white"/>
-                        </svg>
-                    </div>
-                    <div>
+                    <label class="basket__label">
+                        <input type="checkbox" class="basket__checkbox-input"
+                            required>
+                        <span class="basket__checkbox-icon"></span>
+                    </label>
                         <span class="basket__agree-text">
                         Согласен с условиями <a class="basket__agree-link">
                         правил пользования торговой площадкой
                          и правилами возврата
                         </a></span>
-                    </div>
                 </div>
             </div>
         <div class="basket__delivery-options">
