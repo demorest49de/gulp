@@ -2574,7 +2574,7 @@ main {
 .basket__total {
   grid-area: total;
   width: 420px;
-  height: 538px;
+  height: fit-content;
   padding: 30px 31px;
   display: flex;
   flex-direction: column;
