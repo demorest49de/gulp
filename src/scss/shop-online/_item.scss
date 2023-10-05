@@ -10,7 +10,7 @@
   @media (max-width: 520px) {
     padding-bottom: 35px;
   }
-  color: $white-color;
+  color: $white-FFFFFF;
 
   &__container {
     display: grid;
@@ -125,7 +125,7 @@
     overflow: hidden;
 
     &:after {
-      background-color: $yellow-color;
+      background-color: $yellow-ffbd13;
       width: 88px;
       height: 88px;
       border-radius: 50%;
@@ -444,7 +444,7 @@
     font-weight: 400;
     line-height: 36px;
     padding: 24px 26px;
-    background-color: $lightblue-color;
+    background-color: $blue-38c0eb;
     border-radius: 20px;
     margin: auto 20px 20px 20px;
     max-width: 1440px;
@@ -513,8 +513,8 @@
   &__text-new-year {
     text-transform: uppercase;
     font-weight: 700;
-    color: $red-color;
-    background-color: $white-color;
+    color: $red-f91155;
+    background-color: $white-FFFFFF;
     border-radius: 20px;
     top: 300px;
     left: 30px;

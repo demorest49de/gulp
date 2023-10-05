@@ -1,5 +1,5 @@
 .details {
-  color: $closedark-color;
+  color: $black-2d2d2d;
 
   &__block {
     display: flex;
@@ -54,7 +54,7 @@
   &__underline{
     height: 1px;
     width: 100%;
-    background-color: $grey-color;
+    background-color: $grey-efefef;
 
     margin-bottom: 69px;
     @media (max-width: 1450px) {
@@ -138,7 +138,7 @@
   }
 
   &__old-price {
-    color: $closedark-color;
+    color: $black-2d2d2d;
     font-size: 22px;
     font-weight: 400;
     text-decoration: line-through;
@@ -174,7 +174,7 @@
   &__add-to-card {
     border-style: none;
     background-color: $blue-3670C7;
-    color: $white-color;
+    color: $white-FFFFFF;
     padding: 17px 42px;
     border-radius: 10px;
     max-width: 290px;

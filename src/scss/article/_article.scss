@@ -1,5 +1,5 @@
 .article {
-  color: $closedark-color;
+  color: $black-2d2d2d;
 
   &__title {
     font-weight: 700;
@@ -195,7 +195,7 @@
     display: flex;
     flex-direction: column;
     row-gap: 50px;
-    color: $white-color;
+    color: $white-FFFFFF;
 
     @media (max-width: 1015px) {
       flex-direction: row;

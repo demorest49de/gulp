@@ -66,7 +66,7 @@
   &__button-menu-svg {
     width: 24px;
     height: 24px;
-    fill: $white-color;
+    fill: $white-FFFFFF;
 
     @media (max-width: 520px) {
       width: 18px;
@@ -84,8 +84,8 @@
     font-weight: 400;
     line-height: 33px;
     width: 151px;
-    background-color: $blue-color;
-    color: $white-color;
+    background-color: $blue-3670c7;
+    color: $white-FFFFFF;
     border: none;
     border-radius: 10px;
     grid-area: menu;
@@ -165,8 +165,8 @@
     line-height: 20.8px;
     border: none;
     border-radius: 30px;
-    background-color: $grey-color;
-    color: $black-color;
+    background-color: $grey-efefef;
+    color: $black-000000;
     text-indent: 40px;
     @media (max-width: 768px) {
       font-size: 12px;
@@ -177,7 +177,7 @@
       line-height: 10.4px;
     }
     &::placeholder{
-      color: $black-color;
+      color: $black-000000;
     }
   }
 
@@ -189,7 +189,7 @@
     height: 100%;
     border: none;
     border-radius: 30px;
-    background-color: $blue-color;
+    background-color: $blue-3670c7;
     @media (max-width: 768px) {
       width: 82px;
     }
@@ -213,7 +213,7 @@
     display: flex;
     height: 100%;
     gap: 60px;
-    color: $closedark-color;
+    color: $black-2d2d2d;
     justify-content: center;
 
     @media (max-width: 768px) {
@@ -277,8 +277,8 @@
     font-size: 14px;
     font-weight: 700;
     line-height: 14px;
-    color: $blue-color;
-    background-color: $white-color;
+    color: $blue-3670c7;
+    background-color: $white-FFFFFF;
     @media (max-width: 768px) {
       right: 5px;
     }

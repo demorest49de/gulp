@@ -1,5 +1,5 @@
 .basket {
-  color: $closedark-color;
+  color: $black-2d2d2d;
 
   &__container {
     display: grid;
@@ -94,8 +94,9 @@
     margin-bottom: 20px;
   }
 
-  &__trashcan {
+  &__trashcan-btn {
     height: 30px;
+    border: none;
   }
 
   &__choose-all {
@@ -156,20 +157,37 @@
   }
 
   &__plus-svg-text {
-    fill: $closedark-color;
+    fill: $black-2d2d2d;
     font-size: 17px;
   }
+
+
+  &__minus-btn,
+  &__plus-btn {
+    width: 36px;
+    height: 36px;
+    border: 1px solid $grey-E8E8E8;
+    border-radius: 20px;
+    background-color: transparent;
+    font-size: 17px;
+  }
+
+  &__minus-btn {
+    color: $grey-E8E8E8;
+  }
+
 
   &__minus-svg-text {
     fill: $grey-8F8F8F;
     font-size: 17px;
   }
 
-  &__quantity-value {
+  &__quantity-ipnut {
     font-size: 22px;
     font-weight: 400;
     line-height: 150%;
   }
+
 
   &__list-price-block
   *:not(:nth-last-child(1)) {
@@ -188,7 +206,7 @@
     justify-content: end;
   }
 
-  &__credit-from{
+  &__credit-from {
     color: $blue-3670C7;
     font-size: 16px;
     font-weight: 400;
@@ -286,7 +304,7 @@
 
   &__time-address,
   &__item-details {
-    color: $lightgrey-color;
+    color: $grey-8f8f8f;
     font-size: 16px;
     font-weight: 400;
     line-height: 130%;
@@ -352,7 +370,7 @@
     padding: 14px 100px;
     border-radius: 10px;
     background: $blue-3670C7;
-    color: $white-color;
+    color: $white-FFFFFF;
     font-size: 16px;
     font-weight: 700;
     line-height: 130%;

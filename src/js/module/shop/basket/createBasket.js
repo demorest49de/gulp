@@ -65,7 +65,7 @@ export const createSectionBasket = (name, $) => {
                     </div>
                     <p class="basket__choose-all-text">Выбрать все</p>
                 </div>
-                <div class="basket__trashcan">
+                <button class="basket__trashcan-btn">
                     <svg class="basket__trashcan-svg" xmlns="http://www.w3.org/2000/svg"
                     width="30" height="30" viewBox="0 0 30 30" fill="none">
                         <rect width="30" height="30" fill="white"/>
@@ -76,7 +76,7 @@ export const createSectionBasket = (name, $) => {
                          8 23.75V9.25H22V23.75C22 24.8489 21.0989
                          25.75 20 25.75H10Z" fill="#C9C9C9" stroke="#C9C9C9"/>
                     </svg>
-                </div>
+                </button>
             </div>
                 
             <div class="basket__underline"></div>
@@ -110,19 +110,21 @@ export const createSectionBasket = (name, $) => {
                             </p>
                         </div>
                         <div class="basket__list-quantity-block">
-                            <svg xmlns="http://www.w3.org/2000/svg"
-                            class="basket__item-svg"
-                                width="36" height="36" viewBox="0 0 36 36" fill="none">
-                                <circle cx="18" cy="18" r="17.5" fill="white" stroke="#E8E8E8"/>
-                                <text x="13" y="24.5" class="basket__minus-svg-text">−</text>
-                            </svg>
-                            <span class="basket__quantity-value">1</span>
-                            <svg xmlns="http://www.w3.org/2000/svg"
-                            class="basket__item-svg"
-                                width="36" height="36" viewBox="0 0 36 36" fill="none">
-                                <circle cx="18" cy="18" r="17.5" fill="white" stroke="#E8E8E8"/>
-                                <text x="13" y="24.5" class="basket__plus-svg-text">+</text>
-                            </svg>
+<!--                            <svg xmlns="http://www.w3.org/2000/svg"-->
+<!--                            class="basket__item-svg"-->
+<!--                                width="36" height="36" viewBox="0 0 36 36" fill="none">-->
+<!--                                <circle cx="18" cy="18" r="17.5" fill="white" stroke="#E8E8E8"/>-->
+<!--                                <text x="13" y="24.5" class="basket__minus-svg-text">−</text>-->
+<!--                            </svg>-->
+                                <button class="basket__minus-btn">−</button>
+                            <input type="hidden" class="basket__quantity-input">1</input>
+                                <button class="basket__plus-btn">+</button>
+<!--                            <svg xmlns="http://www.w3.org/2000/svg"-->
+<!--                            class="basket__item-svg"-->
+<!--                                width="36" height="36" viewBox="0 0 36 36" fill="none">-->
+<!--                                <circle cx="18" cy="18" r="17.5" fill="white" stroke="#E8E8E8"/>-->
+<!--                                <text x="13" y="24.5" class="basket__plus-svg-text">+</text>-->
+<!--                            </svg>-->
                         </div>
                         
                         <div class="basket__list-price-block">
