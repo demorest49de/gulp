@@ -2739,7 +2739,7 @@ main {
   border-radius: 2px;
 }
 .basket__checkbox-input:focus + .basket__checkbox-icon:before {
-  outline: 1px solid #000000;
+  outline: 1px solid #ffbd13;
   outline-offset: 2px;
 }
 .basket__checkbox-input:checked + .basket__checkbox-icon:before {
