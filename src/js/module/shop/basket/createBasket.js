@@ -56,7 +56,7 @@ export const createSectionBasket = (name, $) => {
             <div class="basket__list-manage-block">
                 <div class="basket__choose-all">
                     <div class="basket__checkbox-block">
-                        <input type="checkbox" class="basket__checkbox" style="display: none">
+                        <input type="checkbox" class="basket__checkbox" >
                         <svg xmlns="http://www.w3.org/2000/svg"
                         width="24" class="basket__checkbox-checked-svg" height="24" viewBox="0 0 14 14" fill="none">
                             <rect width="24" height="24" fill="#3670C7"/>
@@ -84,7 +84,7 @@ export const createSectionBasket = (name, $) => {
                 <li class="basket__list-item">
                     <div class="basket__list-item-block">
                         <div class="basket__checkbox-block">
-                            <input type="checkbox" class="basket__checkbox" style="display: none">
+                            <input type="checkbox" class="basket__checkbox" >
                             <svg xmlns="http://www.w3.org/2000/svg"
                             width="24" class="basket__checkbox-checked-svg" height="24" viewBox="0 0 14 14" fill="none">
                                 <rect width="24" height="24" fill="#3670C7"/>
@@ -177,7 +177,7 @@ export const createSectionBasket = (name, $) => {
                 </button>
                 <div class="basket__agreement">
                     <div class="basket__checkbox-block">
-                        <input type="checkbox" class="basket__checkbox" style="display: none">
+                        <input type="checkbox" class="basket__checkbox" >
                         <svg xmlns="http://www.w3.org/2000/svg"
                         width="24" class="basket__checkbox-checked-svg" height="24" viewBox="0 0 14 14" fill="none">
                             <rect width="24" height="24" fill="#3670C7"/>

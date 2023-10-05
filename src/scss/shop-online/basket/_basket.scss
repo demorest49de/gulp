@@ -405,6 +405,12 @@
 
   &__checkbox-block {
     height: 24px;
+    position: relative;
+  }
+
+  &__checkbox {
+    position: absolute;
+    opacity: 0;
   }
 
   &__checkbox-checked-svg {
