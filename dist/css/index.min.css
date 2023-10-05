@@ -2351,8 +2351,8 @@ main {
 .basket__container {
   display: grid;
   grid-template-columns: minmax(940px, 1320px) 1fr;
-  grid-template-rows: 497px 296px;
-  grid-template-areas: "list total" "delivery .";
+  grid-template-rows: auto;
+  grid-template-areas: "list total" "delivery total";
   column-gap: 30px;
   row-gap: 30px;
 }
@@ -2390,7 +2390,7 @@ main {
 }
 .basket__list {
   grid-area: list;
-  height: 497px;
+  height: fit-content;
 }
 @media (max-width: 1540px) {
   .basket__list {
@@ -2447,8 +2447,9 @@ main {
   justify-content: space-between;
   margin-bottom: 20px;
 }
-.basket__trashcan {
+.basket__trashcan-btn {
   height: 30px;
+  border: none;
 }
 .basket__choose-all {
   display: flex;
@@ -2497,6 +2498,18 @@ main {
   width: 100%;
   justify-content: space-between;
 }
+.basket__list-text-main {
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 150%;
+  margin-bottom: 8px;
+}
+.basket__list-text-additional {
+  color: #8F8F8F;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 130%;
+}
 .basket__list-quantity-block {
   display: flex;
   align-items: center;
@@ -2506,11 +2519,22 @@ main {
   fill: #2d2d2d;
   font-size: 17px;
 }
+.basket__minus-btn, .basket__plus-btn {
+  width: 36px;
+  height: 36px;
+  border: 1px solid #E8E8E8;
+  border-radius: 20px;
+  background-color: transparent;
+  font-size: 17px;
+}
+.basket__minus-btn {
+  color: #E8E8E8;
+}
 .basket__minus-svg-text {
   fill: #8F8F8F;
   font-size: 17px;
 }
-.basket__quantity-value {
+.basket__quantity-ipnut {
   font-size: 22px;
   font-weight: 400;
   line-height: 150%;
@@ -2527,13 +2551,10 @@ main {
   justify-content: end;
 }
 .basket__credit-from {
-  color: var(--2, #3670C7);
-  text-align: right;
-  font-family: Lato;
+  color: #3670C7;
   font-size: 16px;
-  font-style: normal;
   font-weight: 400;
-  line-height: 130%; /* 20.8px */
+  line-height: 130%;
 }
 .basket__list-price-block-old span {
   color: #8F8F8F;
