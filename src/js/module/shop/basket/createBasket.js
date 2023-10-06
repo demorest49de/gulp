@@ -78,6 +78,7 @@ export const createSectionBasket = (name, $) => {
             <div class="basket__underline"></div>
             <ul class="basket__items-list">
                 <li class="basket__list-item">
+                    <div class="basket__list-all-info-block">
                     <div class="basket__list-item-block">
                         
                         <label class="basket__label">
@@ -93,7 +94,6 @@ export const createSectionBasket = (name, $) => {
                                  alt="" width="" height="">
                         </picture>
                     </div>
-                    <div class="basket__list-all-info-block">
                         <div class="basket__list-text-block">
                             <p class="basket__list-text-main">
                                 15.6" Игровой ноутбук ASUS G513IE-HN004T</p>
@@ -124,7 +124,8 @@ export const createSectionBasket = (name, $) => {
                     </div>
                 </li>
                 <li class="basket__list-item">
-                    <div class="basket__list-item-block">
+                    <div class="basket__list-all-info-block">
+                        <div class="basket__list-item-block">
                         
                         <label class="basket__label">
                             <input type="checkbox" class="basket__checkbox-input"
@@ -139,7 +140,6 @@ export const createSectionBasket = (name, $) => {
                                   alt="" width="" height="">
                         </picture>
                     </div>
-                    <div class="basket__list-all-info-block">
                         <div class="basket__list-text-block">
                             <p class="basket__list-text-main">
                                 15.6" Игровой ноутбук ASUS G513IE-HN004T</p>
@@ -155,7 +155,6 @@ export const createSectionBasket = (name, $) => {
                             <input type="hidden" class="basket__quantity-input">1</input>
                                 <button class="basket__plus-btn">+</button>
                         </div>
-                        
                         <div class="basket__list-price-block">
                             <div class="basket__list-price-block-new">
                                 <span class="basket__item-new-price">109&nbsp;</span>

@@ -2494,9 +2494,12 @@ main {
   }
 }
 .basket__list-all-info-block {
-  display: flex;
+  display: grid;
+  grid-template-columns: fit-content(100%) minmax(200px, 600px) minmax(102px, 300px) fit-content(100%);
   width: 100%;
   justify-content: space-between;
+  align-items: center;
+  gap: 15px;
 }
 .basket__list-text-main {
   font-size: 22px;
@@ -2539,6 +2542,7 @@ main {
 .basket__list-quantity-block {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 10px;
 }
 .basket__plus-svg-text {
