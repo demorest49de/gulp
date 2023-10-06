@@ -94,9 +94,31 @@
     margin-bottom: 20px;
   }
 
+
+  &__trascan-block{
+    display: flex;
+    justify-content: end;
+  }
+
+  &__trascan-block
+  &__trashcan-btn {
+    display: none;
+    @media (max-width: 880px) {
+      display: block;
+      border: none;
+      background-color: transparent;
+      grid-area: trash;
+    }
+  }
+
+
+  &__list-manage-block
   &__trashcan-btn {
     height: 30px;
     border: none;
+    @media (max-width: 880px) {
+      display: none;
+    }
   }
 
   &__choose-all {
@@ -128,6 +150,8 @@
     display: flex;
     align-items: start;
     gap: 12px;
+    @media (max-width: 880px) {
+    }
   }
 
   &__list-item
@@ -154,16 +178,17 @@
     @media (max-width: 880px) {
       grid-template-columns:
               max-content
-              fit-content(100%);
+              1fr;
       grid-template-rows: .5fr 1fr;
       justify-content: start;
       align-items: start;
       grid-template-areas:
       "pict price"
       "pict info"
-      "quaty .";
+      "quaty trash";
       row-gap: 0px;
       column-gap: 11px;
+      width: 100%;
     }
   }
 

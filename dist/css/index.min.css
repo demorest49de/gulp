@@ -2447,9 +2447,29 @@ main {
   justify-content: space-between;
   margin-bottom: 20px;
 }
-.basket__trashcan-btn {
+.basket__trascan-block {
+  display: flex;
+  justify-content: end;
+}
+.basket__trascan-block .basket__trashcan-btn {
+  display: none;
+}
+@media (max-width: 880px) {
+  .basket__trascan-block .basket__trashcan-btn {
+    display: block;
+    border: none;
+    background-color: transparent;
+    grid-area: trash;
+  }
+}
+.basket__list-manage-block .basket__trashcan-btn {
   height: 30px;
   border: none;
+}
+@media (max-width: 880px) {
+  .basket__list-manage-block .basket__trashcan-btn {
+    display: none;
+  }
 }
 .basket__choose-all {
   display: flex;
@@ -2502,13 +2522,14 @@ main {
 }
 @media (max-width: 880px) {
   .basket__list-all-info-block {
-    grid-template-columns: max-content fit-content(100%);
+    grid-template-columns: max-content 1fr;
     grid-template-rows: 0.5fr 1fr;
     justify-content: start;
     align-items: start;
-    grid-template-areas: "pict price" "pict info" "quaty .";
+    grid-template-areas: "pict price" "pict info" "quaty trash";
     row-gap: 0px;
     column-gap: 11px;
+    width: 100%;
   }
 }
 .basket__list-item-block {

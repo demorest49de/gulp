@@ -93,34 +93,47 @@ export const createSectionBasket = (name, $) => {
                                  src="https://muddy-substantial-gear.glitch.me/image/2294275063.jpg"
                                  alt="" width="" height="">
                         </picture>
+                </div>
+                    <div class="basket__list-text-block">
+                        <p class="basket__list-text-main">
+                            15.6" Игровой ноутбук ASUS G513IE-HN004T</p>
+                        <p class="basket__list-text-additional">
+                            Цвет: черный
+                        </p>
+                        <p class="basket__list-text-additional">
+                            Оперативная память: 16 ГБ
+                        </p>
                     </div>
-                        <div class="basket__list-text-block">
-                            <p class="basket__list-text-main">
-                                15.6" Игровой ноутбук ASUS G513IE-HN004T</p>
-                            <p class="basket__list-text-additional">
-                                Цвет: черный
-                            </p>
-                            <p class="basket__list-text-additional">
-                                Оперативная память: 16 ГБ
-                            </p>
+                    <div class="basket__list-quantity-block">
+                            <button class="basket__minus-btn">−</button>
+                        <input type="hidden" class="basket__quantity-input">1</input>
+                            <button class="basket__plus-btn">+</button>
+                    </div>
+                    <div class="basket__list-price-block">
+                        <div class="basket__list-price-block-new">
+                            <span class="basket__item-new-price">109&nbsp;</span>
+                            <span class="basket__item-new-price">090 ₽</span>
                         </div>
-                        <div class="basket__list-quantity-block">
-                                <button class="basket__minus-btn">−</button>
-                            <input type="hidden" class="basket__quantity-input">1</input>
-                                <button class="basket__plus-btn">+</button>
+                        <div class="basket__list-price-block-old">
+                            <span class="basket__item-old-price">140&nbsp;</span>
+                            <span class="basket__item-old-price">590 ₽</span>
                         </div>
-                        
-                        <div class="basket__list-price-block">
-                            <div class="basket__list-price-block-new">
-                                <span class="basket__item-new-price">109&nbsp;</span>
-                                <span class="basket__item-new-price">090 ₽</span>
-                            </div>
-                            <div class="basket__list-price-block-old">
-                                <span class="basket__item-old-price">140&nbsp;</span>
-                                <span class="basket__item-old-price">590 ₽</span>
-                            </div>
-                            <p class="basket__credit-from">В кредит от  ₽</p>
-                        </div>
+                        <p class="basket__credit-from">В кредит от  ₽</p>
+                    </div>
+                    <div class="basket__trascan-block">
+                        <button class="basket__trashcan-btn">
+                            <svg class="basket__trashcan-svg" xmlns="http://www.w3.org/2000/svg"
+                            width="30" height="30" viewBox="0 0 30 30" fill="none">
+                                <rect width="30" height="30" fill="white"/>
+                                <path d="M19.0214 5.35355L19.1679
+                                5.5H19.375H23.25V7H6.75V5.5H10.625H10.8321L10.9786
+                                 5.35355L12.0821 4.25H17.9179L19.0214
+                                 5.35355ZM10 25.75C8.90114 25.75 8 24.8489
+                                 8 23.75V9.25H22V23.75C22 24.8489 21.0989
+                                 25.75 20 25.75H10Z" fill="#C9C9C9" stroke="#C9C9C9"/>
+                            </svg>
+                        </button>
+                    </div>
                     </div>
                 </li>
                 <li class="basket__list-item">
@@ -152,7 +165,7 @@ export const createSectionBasket = (name, $) => {
                         </div>
                         <div class="basket__list-quantity-block">
                                 <button class="basket__minus-btn">−</button>
-                            <input type="hidden" class="basket__quantity-input">1</input>
+                                <input type="hidden" class="basket__quantity-input">1</input>
                                 <button class="basket__plus-btn">+</button>
                         </div>
                         <div class="basket__list-price-block">
@@ -165,6 +178,20 @@ export const createSectionBasket = (name, $) => {
                                 <span class="basket__item-old-price">590 ₽</span>
                             </div>
                             <p class="basket__credit-from">В кредит от  ₽</p>
+                        </div>
+                        <div class="basket__trascan-block">
+                            <button class="basket__trashcan-btn">
+                                <svg class="basket__trashcan-svg" xmlns="http://www.w3.org/2000/svg"
+                                width="30" height="30" viewBox="0 0 30 30" fill="none">
+                                    <rect width="30" height="30" fill="white"/>
+                                    <path d="M19.0214 5.35355L19.1679
+                                    5.5H19.375H23.25V7H6.75V5.5H10.625H10.8321L10.9786
+                                     5.35355L12.0821 4.25H17.9179L19.0214
+                                     5.35355ZM10 25.75C8.90114 25.75 8 24.8489
+                                     8 23.75V9.25H22V23.75C22 24.8489 21.0989
+                                     25.75 20 25.75H10Z" fill="#C9C9C9" stroke="#C9C9C9"/>
+                                </svg>
+                            </button>
                         </div>
                     </div>
                 </li>
