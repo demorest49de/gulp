@@ -2496,7 +2496,6 @@ main {
 .basket__list-all-info-block {
   display: grid;
   grid-template-columns: fit-content(100%) minmax(200px, 600px) minmax(102px, 300px) fit-content(100%);
-  width: 100%;
   justify-content: space-between;
   align-items: center;
   gap: 15px;
@@ -2504,11 +2503,11 @@ main {
 @media (max-width: 880px) {
   .basket__list-all-info-block {
     grid-template-columns: max-content fit-content(100%);
-    grid-template-rows: 1fr;
+    grid-template-rows: 0.5fr 1fr;
     justify-content: start;
     align-items: start;
     grid-template-areas: "pict price" "pict info" "quaty .";
-    row-gap: 0;
+    row-gap: 0px;
     column-gap: 11px;
   }
 }
@@ -2525,6 +2524,7 @@ main {
     width: fit-content;
     height: fit-content;
     grid-area: pict;
+    margin-bottom: 15px;
   }
 }
 @media (max-width: 880px) {
@@ -2542,6 +2542,7 @@ main {
   .basket__list-quantity-block {
     grid-area: quaty;
     gap: 3px;
+    justify-content: space-between;
   }
 }
 @media (max-width: 880px) {
@@ -2550,6 +2551,7 @@ main {
     display: flex;
     gap: 12px;
     align-items: center;
+    margin-bottom: 14px;
   }
 }
 .basket__list-text-main {
@@ -2582,6 +2584,8 @@ main {
 @media (max-width: 880px) {
   .basket__list-text-main {
     font-size: 18px;
+    margin-bottom: 0;
+    max-width: unset;
   }
 }
 .basket__list-text-additional {
@@ -2589,6 +2593,11 @@ main {
   font-size: 16px;
   font-weight: 400;
   line-height: 130%;
+}
+@media (max-width: 880px) {
+  .basket__list-text-additional {
+    font-size: 10px;
+  }
 }
 .basket__plus-svg-text {
   fill: #2d2d2d;
@@ -2601,6 +2610,13 @@ main {
   border-radius: 20px;
   background-color: transparent;
   font-size: 17px;
+}
+@media (max-width: 880px) {
+  .basket__minus-btn, .basket__plus-btn {
+    width: 28px;
+    height: 28px;
+    font-size: 12px;
+  }
 }
 .basket__minus-btn {
   color: #E8E8E8;
@@ -2646,11 +2662,21 @@ main {
   font-weight: 400;
   line-height: 130%;
 }
+@media (max-width: 880px) {
+  .basket__credit-from {
+    font-size: 12px;
+  }
+}
 .basket__list-price-block-old span {
   color: #8F8F8F;
   font-size: 18px;
   font-weight: 400;
   text-decoration: line-through;
+}
+@media (max-width: 880px) {
+  .basket__list-price-block-old span {
+    font-size: 12px;
+  }
 }
 .basket__list-price-block div:nth-child(2) {
   margin-bottom: 15px;
@@ -2837,6 +2863,7 @@ main {
   border: 1px solid #000000;
   border-radius: 2px;
   z-index: 1;
+  background-color: white;
 }
 .basket__checkbox-input:focus + .basket__checkbox-icon:before {
   outline: 1px solid #ffbd13;
