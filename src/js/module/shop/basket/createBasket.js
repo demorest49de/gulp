@@ -122,6 +122,51 @@ export const createSectionBasket = (name, $) => {
                         </div>
                     </div>
                 </li>
+                <li class="basket__list-item">
+                    <div class="basket__list-item-block">
+                        
+                        <label class="basket__label">
+                            <input type="checkbox" class="basket__checkbox-input"
+                                >
+                            <span class="basket__checkbox-icon"></span>
+                        </label>
+                        <picture  class="basket__picture">
+                            <source srcset="" type="image/avif">
+                            <source srcset="" type="image/webp">
+                                <img class="basket__image-small"
+                                 src="" alt="" width="" height="">
+                        </picture>
+                    </div>
+                    <div class="basket__list-all-info-block">
+                        <div class="basket__list-text-block">
+                            <p class="basket__list-text-main">
+                                15.6" Игровой ноутбук ASUS G513IE-HN004T</p>
+                            <p class="basket__list-text-additional">
+                                Цвет: черный
+                            </p>
+                            <p class="basket__list-text-additional">
+                                Оперативная память: 16 ГБ
+                            </p>
+                        </div>
+                        <div class="basket__list-quantity-block">
+                                <button class="basket__minus-btn">−</button>
+                            <input type="hidden" class="basket__quantity-input">1</input>
+                                <button class="basket__plus-btn">+</button>
+                        </div>
+                        
+                        <div class="basket__list-price-block">
+                            <div class="basket__list-price-block-new">
+                                <span class="basket__item-new-price">109&nbsp;</span>
+                                <span class="basket__item-new-price">090 ₽</span>
+                            </div>
+                            <div class="basket__list-price-block-old">
+                                <span class="basket__item-old-price">140&nbsp;</span>
+                                <span class="basket__item-old-price">590 ₽</span>
+                            </div>
+                            <p class="basket__credit-from">В кредит от  ₽</p>
+                        </div>
+                    </div>
+                </li>
             </ul>
         </div>
         
