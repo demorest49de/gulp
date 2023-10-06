@@ -137,13 +137,6 @@
     border-radius: 10px;
   }
 
-  &__list-item-block {
-    display: flex;
-    align-items: center;
-    flex-direction: row;
-    gap: 23px;
-  }
-
   &__list-all-info-block {
     display: flex;
     width: 100%;
@@ -443,6 +436,7 @@
       height: 24px;
       border: 1px solid $black-000000;
       border-radius: 2px;
+      z-index: 1;
     }
   }
 
@@ -585,9 +579,24 @@
     display: block;
     width: 80px;
     height: 80px;
+    @media (max-width: 880px) {
+      position: absolute;
+    }
     @media (max-width: 666px) {
       width: 60px;
       height: 60px;
+    }
+  }
+
+  &__list-item-block {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    gap: 23px;
+    @media (max-width: 880px) {
+      position: relative;
+      min-width: 177px;
+      align-items: start;
     }
   }
 
