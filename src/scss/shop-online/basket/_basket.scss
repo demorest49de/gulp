@@ -135,6 +135,10 @@
     width: 130px;
     height: 130px;
     border-radius: 10px;
+    @media (max-width: 880px) {
+      width: 91px;
+      height: 91px;
+    }
   }
 
   &__list-all-info-block {
@@ -162,6 +166,9 @@
     @media (max-width: 1150px) {
       max-width: 260px;
       -webkit-line-clamp: 2;
+    }
+    @media (max-width: 880px) {
+      font-size: 18px;
     }
   }
 
@@ -412,11 +419,17 @@
   }
 
   &__label {
-    position: relative;
     color: $grey-525252;
     font-size: 16px;
     font-weight: 700;
     line-height: 130%;
+  }
+
+  &__list-item-block
+  &__label {
+    @media (max-width: 880px) {
+      position: absolute;
+    }
   }
 
   &__checkbox-input {
@@ -440,13 +453,13 @@
     }
   }
 
-  &__checkbox-input:focus + &__checkbox-icon:before{
+  &__checkbox-input:focus + &__checkbox-icon:before {
     outline: 1px solid $yellow-ffbd13;
     outline-offset: 2px;
   }
 
 
-  &__checkbox-input:checked + &__checkbox-icon:before{
+  &__checkbox-input:checked + &__checkbox-icon:before {
     border: none;
     background-image: url(../../../svg/basket/checkmark.svg);
   }
@@ -579,10 +592,10 @@
     display: block;
     width: 80px;
     height: 80px;
+    border-radius: 10px;
+    border: 1px solid $grey-E8E8E8;
+    overflow: hidden;
     @media (max-width: 880px) {
-      position: absolute;
-    }
-    @media (max-width: 666px) {
       width: 60px;
       height: 60px;
     }
@@ -595,15 +608,16 @@
     gap: 23px;
     @media (max-width: 880px) {
       position: relative;
-      min-width: 177px;
       align-items: start;
+      width: fit-content;
+      height: fit-content;
     }
   }
 
   &__image-small {
     width: 100%;
     height: 100%;
-    object-fit: contain;
+    object-fit: fill;
   }
 
   &__dely-picture-block {

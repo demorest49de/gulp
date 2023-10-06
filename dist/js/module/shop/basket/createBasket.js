@@ -89,7 +89,8 @@ export const createSectionBasket = (name, $) => {
                             <source srcset="" type="image/avif">
                             <source srcset="" type="image/webp">
                                 <img class="basket__image-small"
-                                 src="" alt="" width="" height="">
+                                 src="https://muddy-substantial-gear.glitch.me/image/2294275063.jpg"
+                                 alt="" width="" height="">
                         </picture>
                     </div>
                     <div class="basket__list-all-info-block">
@@ -134,7 +135,8 @@ export const createSectionBasket = (name, $) => {
                             <source srcset="" type="image/avif">
                             <source srcset="" type="image/webp">
                                 <img class="basket__image-small"
-                                 src="" alt="" width="" height="">
+                                 src="https://muddy-substantial-gear.glitch.me/image/0217012835.jpg"
+                                  alt="" width="" height="">
                         </picture>
                     </div>
                     <div class="basket__list-all-info-block">
