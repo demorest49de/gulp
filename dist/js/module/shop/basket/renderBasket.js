@@ -35,12 +35,17 @@ export const renderBasket = ($) => {
     });
 };
 
-export const handleChooseAllCheckbox = () => {
+export const basketHandlers = () => {
     const label = document.querySelector('.basket__list-manage-block .basket__label');
+    const checkbox = label.querySelector('.basket__checkbox-input');
     const checkboxes = document.querySelectorAll('.basket__list-item-block .basket__checkbox-input');
     label.addEventListener('click', ({target}) => {
         checkboxes.forEach((box) => {
-            box.checked = true;
+            if(checkbox.checked){
+                box.checked = true;
+            }else{
+                box.checked = false;
+            }
         });
     });
 };
