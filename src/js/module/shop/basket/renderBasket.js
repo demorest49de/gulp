@@ -4,7 +4,6 @@ import {createBCCart, createSectionBasket} from "../basket/createBasket.js";
 
 
 export const renderBasket = ($) => {
-    // const paramsObject = getSearchParams();
     
     $.cart.forEach(({type, name}) => {
         if (type === $.types.header) {

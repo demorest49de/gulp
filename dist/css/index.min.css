@@ -2945,6 +2945,7 @@ main {
 .basket__checkbox-input:checked + .basket__checkbox-icon:before {
   border: none;
   background-image: url(../../../svg/basket/checkmark.svg);
+  background-size: 20px 20px;
 }
 .basket__agreement {
   display: flex;
