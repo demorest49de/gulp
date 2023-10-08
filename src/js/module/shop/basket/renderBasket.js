@@ -83,12 +83,14 @@ export const basketHandlers = () => {
     const checkBasketHeaderValue = () => {
         const valueHeader = document.querySelector('.navigation__cart-count');
         const valueBasket = document.querySelector('.basket__cart-count');
-        const basket = getStorage(basketUserId);
-        if(basket){
-            console.log(' : ',basket);
+        const basketArray = getStorage(basketUserId);
+        if(basketArray.length > 0){
+            
+            console.log(' : ',basketArray);
             if(valueBasket){
                 console.log(' : ',valueBasket);
             }
+            
         }else{
             if(valueBasket){
                 valueBasket.style.display = 'none';

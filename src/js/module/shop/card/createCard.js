@@ -36,12 +36,12 @@ export const createSectionCard = (name, $, paramsObject) => {
             oldPrice = (Math.ceil(item.price - ((item.price * item.discount) / 100))).toString();
             
         }
-        console.log(' : ', oldPrice);
+        
         const {firstPart: firstNew, lastPart: lastNew} = calculateDepth(newPrice);
         const {firstPart: firstOld, lastPart: lastOld} = calculateDepth(oldPrice);
         
         const creditfrom = Math.ceil(item.price - (item.price / 1.2));
-        console.log(' : ', creditfrom);
+        
         $.main.insertAdjacentHTML('beforeend',
             `
             <section class="details" aria-label="${item.title}">
@@ -203,7 +203,7 @@ export const createBCCard = ($, bc) => {
 
 
 export const createSectionRecommended = (name, $, paramsObject) => {
-    console.log(name, ' : ', paramsObject);
+    
     const itemId = paramsObject.id;
     getItemById($, itemId).then((data) => {
         const item = data.data;
@@ -231,6 +231,7 @@ export const createSectionRecommended = (name, $, paramsObject) => {
         });
     });
 };
+
 export const renderCardsByCategory = ($, source, itemId) => {
     
     const cards = document.querySelector('.category__cards');
