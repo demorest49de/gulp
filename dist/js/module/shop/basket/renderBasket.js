@@ -39,17 +39,20 @@ export const basketHandlers = () => {
     
     const handleChooseAll = () => {
         const label = document.querySelector('.basket__list-manage-block .basket__label');
-        const checkbox = label.querySelector('.basket__checkbox-input');
-        const checkboxes = document.querySelectorAll('.basket__list-item-block .basket__checkbox-input');
-        label.addEventListener('click', ({target}) => {
-            checkboxes.forEach((box) => {
-                if (checkbox.checked) {
-                    box.checked = true;
-                } else {
-                    box.checked = false;
-                }
+        if (label) {
+            const checkbox = label.querySelector('.basket__checkbox-input');
+            const checkboxes = document.querySelectorAll('.basket__list-item-block .basket__checkbox-input');
+            label.addEventListener('click', ({target}) => {
+                checkboxes.forEach((box) => {
+                    if (checkbox.checked) {
+                        box.checked = true;
+                    } else {
+                        box.checked = false;
+                    }
+                });
             });
-        });
+        }
+        ;
     };
     
     
@@ -70,7 +73,7 @@ export const basketHandlers = () => {
             btn.addEventListener('click', ({target}) => {
                 const btnBlock = btn.closest('.basket__list-quantity-block');
                 const text = btnBlock.querySelector('.basket__quantity-text');
-                if(+(text.textContent) > 1) text.textContent = +(text.textContent) - 1;
+                if (+(text.textContent) > 1) text.textContent = +(text.textContent) - 1;
             });
         });
     };
