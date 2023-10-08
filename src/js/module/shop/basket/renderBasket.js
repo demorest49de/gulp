@@ -1,6 +1,8 @@
 import {createFooter, createHeader, createMain} from "../../base/baseElems.js";
 import {createSection} from "../createShop.js";
 import {createBCCart, createSectionBasket} from "../basket/createBasket.js";
+import {basketUserId} from '../../constants.js';
+import {getStorage} from "../localStorage.js";
 
 
 export const renderBasket = ($) => {
@@ -78,7 +80,26 @@ export const basketHandlers = () => {
         });
     };
     
+    const checkBasketHeaderValue = () => {
+        const valueHeader = document.querySelector('.navigation__cart-count');
+        const valueBasket = document.querySelector('.basket__cart-count');
+        const basket = getStorage(basketUserId);
+        if(basket){
+            console.log(' : ',basket);
+            if(valueBasket){
+                console.log(' : ',valueBasket);
+            }
+        }else{
+            if(valueBasket){
+                valueBasket.style.display = 'none';
+            }
+            valueHeader.style.display = 'none';
+        }
+    };
+    
     handleChooseAll();
     handleEncreaseQuantity();
     handleDecreaseQuantity();
+    
+    checkBasketHeaderValue();
 };

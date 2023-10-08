@@ -254,6 +254,8 @@ const burgerMenu = {
     clear: './svg/header/menu.svg#clear'
 };
 
+export const basketUserId = 'userId';
+
 export const global = {
     shop,
     blog,
