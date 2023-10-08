@@ -1,5 +1,8 @@
 import {getGoodsByCategory, getItemById} from "../fetch.js";
 import {getSearchParams} from "../../base/tools.js";
+import {basketUserId} from '../../constants.js';
+import {getStorage} from "../localStorage.js";
+
 
 const calculateDepth = (priceValue) => {
     
@@ -25,7 +28,7 @@ export const createSectionCard = (name, $, paramsObject) => {
     
     const cardId = paramsObject.id;
     getItemById($, cardId).then((data) => {
-        console.log(' : ', data.data);
+        
         const item = data.data;
         
         const newPrice = item.price.toString();
@@ -131,6 +134,7 @@ export const createSectionCard = (name, $, paramsObject) => {
         </section>
             `);
         
+        
         if (item.discount > 0) {
             cardAfterStyle.innerHTML +=
                 `.details__figure:after {
@@ -142,6 +146,22 @@ export const createSectionCard = (name, $, paramsObject) => {
             }`;
             document.body.append(cardAfterStyle);
         }
+        
+        const addBtn = $.main.querySelector('.details__add-to-card');
+        const paramsObject = getSearchParams();
+        
+        addBtn.addEventListener('click', ({target}) => {
+            console.log(' : ', target);
+            const basket = getStorage(basketUserId);
+            console.log(' : ',basket);
+            const jsonArray = JSON.parse(basket);
+            console.log(' : ',jsonArray);
+            const cardId = paramsObject.id;
+            getItemById($, cardId).then((data) => {
+                console.log(' : ', data.data);
+                const item = data.data;
+            });
+        });
     });
 };
 

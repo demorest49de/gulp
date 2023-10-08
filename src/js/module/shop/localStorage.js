@@ -9,7 +9,7 @@ export const getStorage = (key) => {
         return storage;
     }
     else{
-        return [];
+        return JSON.stringify([]);
     }
 };
 
