@@ -34,3 +34,13 @@ export const renderBasket = ($) => {
         }
     });
 };
+
+export const handleChooseAllCheckbox = () => {
+    const label = document.querySelector('.basket__list-manage-block .basket__label');
+    const checkboxes = document.querySelectorAll('.basket__list-item-block .basket__checkbox-input');
+    label.addEventListener('click', ({target}) => {
+        checkboxes.forEach((box) => {
+            box.checked = true;
+        });
+    });
+};

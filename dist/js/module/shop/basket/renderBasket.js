@@ -4,7 +4,6 @@ import {createBCCart, createSectionBasket} from "../basket/createBasket.js";
 
 
 export const renderBasket = ($) => {
-    // const paramsObject = getSearchParams();
     
     $.cart.forEach(({type, name}) => {
         if (type === $.types.header) {
@@ -33,5 +32,15 @@ export const renderBasket = ($) => {
             createFooter(name, $);
             return;
         }
+    });
+};
+
+export const handleChooseAllCheckbox = () => {
+    const label = document.querySelector('.basket__list-manage-block .basket__label');
+    const checkboxes = document.querySelectorAll('.basket__list-item-block .basket__checkbox-input');
+    label.addEventListener('click', ({target}) => {
+        checkboxes.forEach((box) => {
+            box.checked = true;
+        });
     });
 };
