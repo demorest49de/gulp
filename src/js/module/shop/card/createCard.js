@@ -153,16 +153,17 @@ export const createSectionCard = (name, $, paramsObject) => {
         addBtn.addEventListener('click', ({target}) => {
             
             const basket = getStorage(basketUserId);
-            console.log(' : ',basket);
             const jsonArray = JSON.parse(basket);
-            
-            console.log(' : ',jsonArray);
-            const cardId = paramsObject.id;
-            
-            // getItemById($, cardId).then((data) => {
-            //     console.log(' : ', data.data);
-            //     const item = data.data;
-            // });
+           
+            getItemById($, cardId).then((data) => {
+                console.log(' : ', data.data);
+                const item = data.data;
+                if(item.id === cardId){
+                    console.log(' : ',jsonArray);
+                    const cardId = paramsObject.id;
+                    // jsonArray.push({id: cardId, })
+                }
+            });
         });
     });
 };
