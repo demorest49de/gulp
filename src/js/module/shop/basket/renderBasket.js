@@ -85,8 +85,7 @@ export const basketHandlers = () => {
         const valueBasket = document.querySelector('.basket__cart-count');
         const basketArray = getStorage(basketUserId);
         if(basketArray.length > 0){
-            
-            console.log(' : ',basketArray);
+
             if(valueBasket){
                 console.log(' : ',valueBasket);
             }

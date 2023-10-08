@@ -151,16 +151,18 @@ export const createSectionCard = (name, $, paramsObject) => {
         const paramsObject = getSearchParams();
         
         addBtn.addEventListener('click', ({target}) => {
-            console.log(' : ', target);
+            
             const basket = getStorage(basketUserId);
             console.log(' : ',basket);
             const jsonArray = JSON.parse(basket);
+            
             console.log(' : ',jsonArray);
             const cardId = paramsObject.id;
-            getItemById($, cardId).then((data) => {
-                console.log(' : ', data.data);
-                const item = data.data;
-            });
+            
+            // getItemById($, cardId).then((data) => {
+            //     console.log(' : ', data.data);
+            //     const item = data.data;
+            // });
         });
     });
 };
