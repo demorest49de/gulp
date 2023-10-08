@@ -83,7 +83,9 @@ export const basketHandlers = () => {
     const checkBasketHeaderValue = () => {
         const valueHeader = document.querySelector('.navigation__cart-count');
         const valueBasket = document.querySelector('.basket__cart-count');
-        const basketArray = getStorage(basketUserId);
+        
+        const jsonArray = getStorage(basketUserId);
+        const basketArray = JSON.parse(jsonArray);
         if(basketArray.length > 0){
 
             if(valueBasket){
@@ -101,6 +103,5 @@ export const basketHandlers = () => {
     handleChooseAll();
     handleEncreaseQuantity();
     handleDecreaseQuantity();
-    
     checkBasketHeaderValue();
 };
