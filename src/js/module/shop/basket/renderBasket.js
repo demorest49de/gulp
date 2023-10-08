@@ -36,16 +36,46 @@ export const renderBasket = ($) => {
 };
 
 export const basketHandlers = () => {
-    const label = document.querySelector('.basket__list-manage-block .basket__label');
-    const checkbox = label.querySelector('.basket__checkbox-input');
-    const checkboxes = document.querySelectorAll('.basket__list-item-block .basket__checkbox-input');
-    label.addEventListener('click', ({target}) => {
-        checkboxes.forEach((box) => {
-            if(checkbox.checked){
-                box.checked = true;
-            }else{
-                box.checked = false;
-            }
+    
+    const handleChooseAll = () => {
+        const label = document.querySelector('.basket__list-manage-block .basket__label');
+        const checkbox = label.querySelector('.basket__checkbox-input');
+        const checkboxes = document.querySelectorAll('.basket__list-item-block .basket__checkbox-input');
+        label.addEventListener('click', ({target}) => {
+            checkboxes.forEach((box) => {
+                if (checkbox.checked) {
+                    box.checked = true;
+                } else {
+                    box.checked = false;
+                }
+            });
         });
-    });
+    };
+    
+    
+    const handleEncreaseQuantity = () => {
+        const plusBtns = document.querySelectorAll('.basket__plus-btn');
+        plusBtns.forEach((btn) => {
+            btn.addEventListener('click', ({target}) => {
+                const btnBlock = btn.closest('.basket__list-quantity-block');
+                const text = btnBlock.querySelector('.basket__quantity-text');
+                text.textContent = +(text.textContent) + 1;
+            });
+        });
+    };
+    
+    const handleDecreaseQuantity = () => {
+        const plusBtns = document.querySelectorAll('.basket__minus-btn');
+        plusBtns.forEach((btn) => {
+            btn.addEventListener('click', ({target}) => {
+                const btnBlock = btn.closest('.basket__list-quantity-block');
+                const text = btnBlock.querySelector('.basket__quantity-text');
+                if(+(text.textContent) > 1) text.textContent = +(text.textContent) - 1;
+            });
+        });
+    };
+    
+    handleChooseAll();
+    handleEncreaseQuantity();
+    handleDecreaseQuantity();
 };
