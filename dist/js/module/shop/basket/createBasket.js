@@ -106,7 +106,8 @@ export const createSectionBasket = (name, $) => {
                     </div>
                     <div class="basket__list-quantity-block">
                             <button class="basket__minus-btn">−</button>
-                        <input type="hidden" class="basket__quantity-input">1</input>
+                        <input type="hidden" class="basket__quantity-input">
+                                <span class="basket__quantity-text">1</span></input>
                             <button class="basket__plus-btn">+</button>
                     </div>
                     <div class="basket__list-price-block">
@@ -165,7 +166,9 @@ export const createSectionBasket = (name, $) => {
                         </div>
                         <div class="basket__list-quantity-block">
                                 <button class="basket__minus-btn">−</button>
-                                <input type="hidden" class="basket__quantity-input">1</input>
+                                <input type="hidden" class="basket__quantity-input">
+                                <span class="basket__quantity-text">1</span>
+                                </input>
                                 <button class="basket__plus-btn">+</button>
                         </div>
                         <div class="basket__list-price-block">
@@ -294,6 +297,7 @@ export const createSectionBasket = (name, $) => {
         const value = $.main.querySelector('.basket__dely-block:nth-child(3) .basket__dely-value');
         value.textContent = 'Бесплатная доставка';
     }
+    
     // getItemById($, cardId).then((data) => {
     //     console.log(' : ', data.data);
     //     const item = data.data;

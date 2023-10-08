@@ -297,6 +297,7 @@ export const createSectionBasket = (name, $) => {
         const value = $.main.querySelector('.basket__dely-block:nth-child(3) .basket__dely-value');
         value.textContent = 'Бесплатная доставка';
     }
+    
     // getItemById($, cardId).then((data) => {
     //     console.log(' : ', data.data);
     //     const item = data.data;
