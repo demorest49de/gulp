@@ -5,7 +5,6 @@ import {createSectionRecommended} from "./createCard.js";
 import {basketUserId} from '../../constants.js';
 import {getStorage} from "../localStorage.js";
 import {getItemById} from "../fetch.js";
-import {addCwdToWatchOptions} from "browser-sync/dist/cli/transforms/addCwdToWatchOptions.js";
 
 
 export const renderCard = ($) => {
@@ -41,20 +40,20 @@ export const renderCard = ($) => {
 };
 
 
-export const cardHandlers = async ($) => {
-    const handleAddToCart = () => {
+export const cardHandlers =  ($) => {
+    const handleAddToCart = async () => {
         const addBtn = document.querySelector('.details__add-to-card');
         const paramsObject = getSearchParams();
         
         // const addBtnPromise = await new Promise()
         
-        console.log(' : ',addBtn);
+        
         if (addBtn) {
             addBtn.addEventListener('click', ({target}) => {
                 console.log(' : ',target);
                 const basket = getStorage(basketUserId);
                 const jsonArray = JSON.parse(basket);
-                
+    
                 
                 const cardId = paramsObject.id;
                 getItemById($, cardId).then((data) => {
