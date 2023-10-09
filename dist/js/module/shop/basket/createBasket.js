@@ -60,15 +60,16 @@ const renderBasketItems = ($) => {
                 console.log(' : ', item);
                 const positionTotal = elem.qty * item.price;
                 
-                const newPrice = positionTotal.toString();
-                let oldPrice = NaN;
+                const oldPrice = positionTotal.toString();
+                
+                let newPrice = NaN;
                 if (item.discount === 0) {
-                    oldPrice = (Math.ceil(item.price * 1.2)).toString();
+                    newPrice = (Math.ceil((positionTotal) / 1.2)).toString();
                 } else {
-                    oldPrice = (Math.ceil(item.price - ((item.price * item.discount) / 100))).toString();
+                    newPrice = (Math.ceil((positionTotal) - ((positionTotal * item.discount) / 100))).toString();
                 }
                 
-                const {firstPart: firstNew, lastPart: lastNew} = calculateDepth(item.price.toString());
+                const {firstPart: firstNew, lastPart: lastNew} = calculateDepth(newPrice);
                 const {firstPart: firstOld, lastPart: lastOld} = calculateDepth(oldPrice);
                 
                 const creditfrom = Math.ceil(item.price - (item.price / 1.2));
@@ -137,8 +138,8 @@ const renderBasketItems = ($) => {
                 `);
                 
                 handleChooseAll();
-                handleEncreaseQuantity(item.id);
-                handleDecreaseQuantity(item.id);
+                handleEncreaseQuantity(item);
+                handleDecreaseQuantity(item);
             });
         });
     }

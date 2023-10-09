@@ -56,7 +56,7 @@ export const setBasketQuantity = () => {
         if (valueHeader) {
             valueHeader.textContent = sum;
             valueHeader.style.display = 'block';
-            console.log(' : ', valueHeader.textContent);
+           
         }
     } else {
         if (valueBasket) {
@@ -68,34 +68,37 @@ export const setBasketQuantity = () => {
     }
 };
 
-const calculate = (value, id, target) => {
+const calculate = (value, item, target) => {
     
     const basketArray = getStorage(basketUserId);
-    const elem = basketArray.find((elem) => elem.id === id);
+    const elem = basketArray.find((elem) => elem.id === item.id);
     if (elem) {
         elem.qty += value;
     }
     setStorage(basketUserId, basketArray);
     setBasketQuantity();
     
-    // const positionTotal = elem.qty * item.price;
-    //
-    // const newPrice = positionTotal.toString();
-    // let oldPrice = NaN;
-    // if (item.discount === 0) {
-    //     oldPrice = (Math.ceil(item.price * 1.2)).toString();
-    // } else {
-    //     oldPrice = (Math.ceil(item.price - ((item.price * item.discount) / 100))).toString();
-    // }
-    //
-    // const {firstPart: firstNew, lastPart: lastNew} = calculateDepth(item.price.toString());
-    // const {firstPart: firstOld, lastPart: lastOld} = calculateDepth(oldPrice);
-    //
-    // const creditfrom = Math.ceil(item.price - (item.price / 1.2));
+    const priceBlock = target.closest('.basket__list-all-info-block');
+    const newPrice = priceBlock.querySelector('.basket__item-new-price');
+    console.log(' : ',newPrice);
+    const positionTotal = elem.qty * item.price;
+
+    let oldPrice = NaN;
+    
+    if (item.discount === 0) {
+        oldPrice = (Math.ceil(item.price * 1.2)).toString();
+    } else {
+        oldPrice = (Math.ceil(item.price - ((item.price * item.discount) / 100))).toString();
+    }
+
+    const {firstPart: firstNew, lastPart: lastNew} = calculateDepth(item.price.toString());
+    const {firstPart: firstOld, lastPart: lastOld} = calculateDepth(oldPrice);
+
+    const creditfrom = Math.ceil(item.price - (item.price / 1.2));
     
 };
 
-export const handleEncreaseQuantity = (id) => {
+export const handleEncreaseQuantity = (item) => {
     const plusBtns = document.querySelectorAll('.basket__plus-btn');
     plusBtns.forEach((btn) => {
         btn.addEventListener('click', ({target}) => {
@@ -103,20 +106,20 @@ export const handleEncreaseQuantity = (id) => {
             const text = btnBlock.querySelector('.basket__quantity-text');
             text.textContent = +(text.textContent) + 1;
             
-            calculate(1, id, target);
+            calculate(1, item, target);
         });
     });
 };
 
-export const handleDecreaseQuantity = (id) => {
+export const handleDecreaseQuantity = (item) => {
     const plusBtns = document.querySelectorAll('.basket__minus-btn');
     plusBtns.forEach((btn) => {
         btn.addEventListener('click', ({target}) => {
             const btnBlock = btn.closest('.basket__list-quantity-block');
             const text = btnBlock.querySelector('.basket__quantity-text');
-            if (+(text.textContent) > 1){
+            if (+(text.textContent) > 1) {
                 text.textContent = +(text.textContent) - 1;
-                calculate(-1, id, target);
+                calculate(-1, item, target);
             }
         });
     });

@@ -31,12 +31,13 @@ export const createSectionCard = (name, $, paramsObject) => {
         
         const item = data.data;
         
-        const newPrice = item.price.toString();
-        let oldPrice = NaN;
+        const oldPrice = item.price.toString();
+        
+        let newPrice = NaN;
         if (item.discount === 0) {
-            oldPrice = (Math.ceil(item.price * 1.2)).toString();
+            newPrice = (Math.ceil(item.price / 1.2)).toString();
         } else {
-            oldPrice = (Math.ceil(item.price - ((item.price * item.discount) / 100))).toString();
+            newPrice = (Math.ceil(item.price - ((item.price * item.discount) / 100))).toString();
         }
         
         const {firstPart: firstNew, lastPart: lastNew} = calculateDepth(newPrice);
