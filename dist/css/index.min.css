@@ -2425,14 +2425,14 @@ main {
 .basket__cart-count {
   position: absolute;
   top: 6px;
-  right: -18px;
+  right: -29px;
   font-size: 24px;
   font-weight: 700;
   line-height: 130%;
 }
 @media (max-width: 1024px) {
   .basket__cart-count {
-    top: 1px;
+    top: -9px;
   }
 }
 @media (max-width: 666px) {
