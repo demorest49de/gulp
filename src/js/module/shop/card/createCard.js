@@ -152,14 +152,13 @@ export const createSectionCard = (name, $, paramsObject) => {
         
         addBtn.addEventListener('click', ({target}) => {
             
-            const basket = getStorage(basketUserId);
-            const jsonArray = JSON.parse(basket);
+            const basketArray = getStorage(basketUserId);
            
             getItemById($, cardId).then((data) => {
                 console.log(' : ', data.data);
                 const item = data.data;
                 if(item.id === cardId){
-                    console.log(' : ',jsonArray);
+                    console.log(' : ',basketArray);
                     const cardId = paramsObject.id;
                     // jsonArray.push({id: cardId, })
                 }
