@@ -84,14 +84,12 @@ export const basketHandlers = () => {
         const valueHeader = document.querySelector('.navigation__cart-count');
         const valueBasket = document.querySelector('.basket__cart-count');
         
-        const jsonArray = getStorage(basketUserId);
-        const basketArray = JSON.parse(jsonArray);
+        const basketArray = getStorage(basketUserId);
         if(basketArray.length > 0){
-
             if(valueBasket){
                 console.log(' : ',valueBasket);
+                
             }
-            
         }else{
             if(valueBasket){
                 valueBasket.style.display = 'none';

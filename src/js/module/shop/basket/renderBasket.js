@@ -88,6 +88,7 @@ export const basketHandlers = () => {
         if(basketArray.length > 0){
             if(valueBasket){
                 console.log(' : ',valueBasket);
+                
             }
         }else{
             if(valueBasket){

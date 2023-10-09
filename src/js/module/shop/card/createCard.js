@@ -1,7 +1,7 @@
 import {getGoodsByCategory, getItemById} from "../fetch.js";
 import {getSearchParams} from "../../base/tools.js";
 import {basketUserId} from '../../constants.js';
-import {getStorage} from "../localStorage.js";
+import {getStorage, setStorage} from "../localStorage.js";
 
 
 const calculateDepth = (priceValue) => {
@@ -153,14 +153,27 @@ export const createSectionCard = (name, $, paramsObject) => {
         addBtn.addEventListener('click', ({target}) => {
             
             const basketArray = getStorage(basketUserId);
-           
+            
             getItemById($, cardId).then((data) => {
                 console.log(' : ', data.data);
                 const item = data.data;
-                if(item.id === cardId){
-                    console.log(' : ',basketArray);
+                if (item.id === cardId) {
+                    console.log(' : ', basketArray);
                     const cardId = paramsObject.id;
-                    // jsonArray.push({id: cardId, })
+                    let index = NaN;
+                    const elem = basketArray.find((elem, index) => {
+                        if(elem.id === item.id){
+                            index = index;
+                            return elem;
+                        }
+                    });
+                    
+                    if (elem) {
+                        basketArray[index].qty += 1;
+                    } else {
+                        basketArray.push({id: cardId, qty: 1});
+                    }
+                    setStorage(basketUserId, basketArray);
                 }
             });
         });
