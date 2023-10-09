@@ -52,27 +52,27 @@ const renderBasketItems = ($) => {
         basketArray.sort(function (a, b) {
             return a.id - b.id;
         });
-        console.log(' : ',basketArray);
+        console.log(' : ', basketArray);
         basketArray.forEach((elem) => {
             getItemById($, elem.id).then((data) => {
                 
                 const item = data.data;
                 console.log(' : ', item);
                 const positionTotal = elem.qty * item.price;
-    
-                    const newPrice = positionTotal.toString();
-                    let oldPrice = NaN;
-                    if (item.discount === 0) {
-                        oldPrice = (Math.ceil(item.price * 1.2)).toString();
-                    } else {
-                        oldPrice = (Math.ceil(item.price - ((item.price * item.discount) / 100))).toString();
-                    }
-                    
-                    const {firstPart: firstNew, lastPart: lastNew} = calculateDepth(item.price.toString());
-                    const {firstPart: firstOld, lastPart: lastOld} = calculateDepth(oldPrice);
-
-                    const creditfrom = Math.ceil(item.price - (item.price / 1.2));
-                    
+                
+                const newPrice = positionTotal.toString();
+                let oldPrice = NaN;
+                if (item.discount === 0) {
+                    oldPrice = (Math.ceil(item.price * 1.2)).toString();
+                } else {
+                    oldPrice = (Math.ceil(item.price - ((item.price * item.discount) / 100))).toString();
+                }
+                
+                const {firstPart: firstNew, lastPart: lastNew} = calculateDepth(item.price.toString());
+                const {firstPart: firstOld, lastPart: lastOld} = calculateDepth(oldPrice);
+                
+                const creditfrom = Math.ceil(item.price - (item.price / 1.2));
+                
                 
                 list.insertAdjacentHTML('beforeend',
                     `
@@ -135,7 +135,7 @@ const renderBasketItems = ($) => {
                     </div>
                 </li>
                 `);
-    
+                
                 handleChooseAll();
                 handleEncreaseQuantity(item.id);
                 handleDecreaseQuantity(item.id);
