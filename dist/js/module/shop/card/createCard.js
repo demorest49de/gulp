@@ -5,7 +5,7 @@ import {getStorage, setStorage} from "../localStorage.js";
 import {setBacketQuantity} from "../basket/renderBasket.js";
 
 
-const calculateDepth = (priceValue) => {
+export const calculateDepth = (priceValue) => {
     
     let firstPart = NaN;
     let lastPart = NaN;

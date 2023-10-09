@@ -1,6 +1,7 @@
 import {getItemById} from "../fetch.js";
 import {basketUserId} from '../../constants.js';
 import {getStorage} from "../localStorage.js";
+import {calculateDepth} from "../card/createCard.js";
 
 export const createBCCart = ($, bc) => {
     
@@ -47,11 +48,26 @@ const renderBasketItems = ($) => {
     const basketArray = getStorage(basketUserId);
     
     if (basketArray.length > 0) {
-        basketArray.forEach((item) => {
-            getItemById($, item.id).then((data) => {
+        basketArray.forEach((elem) => {
+            getItemById($, elem.id).then((data) => {
                 
                 const item = data.data;
                 console.log(' : ', item);
+                const positionTotal = elem.qty * item.price;
+    
+                    const newPrice = positionTotal.toString();
+                    let oldPrice = NaN;
+                    if (item.discount === 0) {
+                        oldPrice = (Math.ceil(item.price * 1.2)).toString();
+                    } else {
+                        oldPrice = (Math.ceil(item.price - ((item.price * item.discount) / 100))).toString();
+                    }
+                    
+                    const {firstPart: firstNew, lastPart: lastNew} = calculateDepth(newPrice);
+                    const {firstPart: firstOld, lastPart: lastOld} = calculateDepth(oldPrice);
+
+                    const creditfrom = Math.ceil(item.price - (item.price / 1.2));
+                    
                 
                 list.insertAdjacentHTML('beforeend',
                     `
@@ -76,29 +92,23 @@ const renderBasketItems = ($) => {
                     <div class="basket__list-text-block">
                         <p class="basket__list-text-main">
                             ${item.title}</p>
-<!--                        <p class="basket__list-text-additional">-->
-<!--                            Цвет: черный-->
-<!--                        </p>-->
-<!--                        <p class="basket__list-text-additional">-->
-<!--                            Оперативная память: 16 ГБ-->
-<!--                        </p>-->
                     </div>
                     <div class="basket__list-quantity-block">
                             <button class="basket__minus-btn">−</button>
                         <input type="hidden" class="basket__quantity-input">
-                                <span class="basket__quantity-text">1</span></input>
+                                <span class="basket__quantity-text">${elem.qty}</span></input>
                             <button class="basket__plus-btn">+</button>
                     </div>
                     <div class="basket__list-price-block">
                         <div class="basket__list-price-block-new">
-                            <span class="basket__item-new-price">109&nbsp;</span>
-                            <span class="basket__item-new-price">090 ₽</span>
+                            <span class="basket__item-new-price">${firstNew}&nbsp;</span>
+                            <span class="basket__item-new-price">${lastNew} ₽</span>
                         </div>
                         <div class="basket__list-price-block-old">
-                            <span class="basket__item-old-price">140&nbsp;</span>
-                            <span class="basket__item-old-price">590 ₽</span>
+                            <span class="basket__item-old-price">${firstOld}&nbsp;</span>
+                            <span class="basket__item-old-price">${lastOld} ₽</span>
                         </div>
-                        <p class="basket__credit-from">В кредит от  ₽</p>
+                        <p class="basket__credit-from">В кредит от ${creditfrom} ₽</p>
                     </div>
                     <div class="basket__trascan-block">
                         <button class="basket__trashcan-btn">
@@ -116,7 +126,6 @@ const renderBasketItems = ($) => {
                     </div>
                     </div>
                 </li>
-                
                 `);
             });
         });
@@ -325,20 +334,4 @@ export const createSectionBasket = (name, $) => {
     //     </div>
     // </li>
     
-    
-    //     const newPrice = item.price.toString();
-    //     let oldPrice = NaN;
-    //     if (item.discount === 0) {
-    //         oldPrice = (Math.ceil(item.price * 1.2)).toString();
-    //     } else {
-    //         oldPrice = (Math.ceil(item.price - ((item.price * item.discount) / 100))).toString();
-    //
-    //     }
-    //     console.log(' : ', oldPrice);
-    //     const {firstPart: firstNew, lastPart: lastNew} = calculateDepth(newPrice);
-    //     const {firstPart: firstOld, lastPart: lastOld} = calculateDepth(oldPrice);
-    //
-    //     const creditfrom = Math.ceil(item.price - (item.price / 1.2));
-    //     console.log(' : ', creditfrom);
-    // });
 };
