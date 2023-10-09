@@ -150,23 +150,22 @@ export const createSectionCard = (name, $, paramsObject) => {
             
             const basketArray = getStorage(basketUserId);
             
-            if (item.id === cardId) {
-                console.log(' : ', basketArray);
-                let index = NaN;
-                const elem = basketArray.find((elem, index) => {
-                    if (elem.id === item.id) {
-                        index = index;
-                        return elem;
-                    }
-                });
-                
-                if (elem) {
-                    basketArray[index].qty += 1;
-                } else {
-                    basketArray.push({id: cardId, qty: 1});
+            console.log(' : ', basketArray);
+            let index = NaN;
+            const elem = basketArray.find((elem, index) => {
+                if (elem.id === item.id) {
+                    index = index;
+                    return elem;
                 }
-                setStorage(basketUserId, basketArray);
+            });
+            
+            if (elem) {
+                console.log(' : ',elem);
+                elem.qty += 1;
+            } else {
+                basketArray.push({id: cardId, qty: 1});
             }
+            setStorage(basketUserId, basketArray);
         });
     });
 };

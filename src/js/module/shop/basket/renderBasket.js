@@ -80,26 +80,33 @@ export const basketHandlers = () => {
         });
     };
     
-    const checkBasketHeaderValue = () => {
+    export const setBacketQuantity = () => {
         const valueHeader = document.querySelector('.navigation__cart-count');
         const valueBasket = document.querySelector('.basket__cart-count');
         
         const basketArray = getStorage(basketUserId);
-        if(basketArray.length > 0){
-            if(valueBasket){
-                console.log(' : ',valueBasket);
-                
+        if (basketArray.length > 0) {
+            const sum = basketArray.reduce((previousValue, currentValue) => {
+                return previousValue + currentValue.qty;
+            }, 0);
+            if (valueBasket) {
+                valueBasket.textContent = sum;
             }
-        }else{
-            if(valueBasket){
+            if (valueHeader) {
+                valueHeader.textContent = sum;
+            }
+        } else {
+            if (valueBasket) {
                 valueBasket.style.display = 'none';
             }
-            valueHeader.style.display = 'none';
+            if (valueHeader) {
+                valueHeader.style.display = 'none';
+            }
         }
     };
     
     handleChooseAll();
     handleEncreaseQuantity();
     handleDecreaseQuantity();
-    checkBasketHeaderValue();
+    setBacketQuantity();
 };

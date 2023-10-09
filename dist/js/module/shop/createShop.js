@@ -270,8 +270,7 @@ export const renderCards = async ($, callback) => {
                 
             }`;
             document.body.append(cardAfterStyle);
-            // console.log(cardAfterStyle);
-            console.log(item, ' : ', index);
+            
             const li = document.createElement('li');
             li.className = 'card';
             
@@ -297,30 +296,4 @@ export const renderCards = async ($, callback) => {
             cards.append(li);
         });
     });
-    
-    // const response = await fetch('./public/db.json');
-    // if (response.ok) {
-    //     const json = await response.json();
-    //     json.forEach((card, index) => {
-    //         const count = index + 1;
-    //         cards.insertAdjacentHTML('beforeend',
-    //             `
-    //                 <li class="card">
-    //                     <a href="#" class="card__link "
-    //                     title="${card.name}">
-    //                         <picture class="card__figure ${card.discountClass}">
-    //                             <source srcset="img/wholesale/photo${count}.avif" type="image/avif">
-    //                             <source srcset="img/wholesale/photo${count}.webp" type="image/webp">
-    //                             <img loading="lazy" class="card__image" src="img/wholesale/photo${count}.png"
-    //                                   alt="${card.name}" width="420" height="295">
-    //                         </picture>
-    //                         <div class="card__price-block"><span class="card__new-price">${card.newPrice} ₽</span>
-    //                             <span class="card__old-price">${card.newPrice * 2} ₽</span>
-    //                         </div>
-    //                         <p class="card__item-text">${card.name}</p>
-    //                     </a>
-    //                 </li>
-    //                 `);
-    //     });
-    // }
 };

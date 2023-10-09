@@ -160,6 +160,7 @@ export const createSectionCard = (name, $, paramsObject) => {
             });
             
             if (elem) {
+                console.log(' : ',elem);
                 elem.qty += 1;
             } else {
                 basketArray.push({id: cardId, qty: 1});
