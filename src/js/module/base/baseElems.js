@@ -85,7 +85,7 @@ export const createHeader = (name, $) => {
                                     </svg>
                                     Корзина
                                 </a>
-                                <p class="navigation__cart-count">2</p>
+                                <p class="navigation__cart-count">0</p>
                             </li>
                             <li class="navigation__item">
                                 <a href="#" class="navigation__link" aria-label="Избранное"

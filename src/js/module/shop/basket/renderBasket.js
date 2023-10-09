@@ -50,9 +50,12 @@ export const setBasketQuantity = () => {
         }, 0);
         if (valueBasket) {
             valueBasket.textContent = sum;
+            valueBasket.style.display = 'block';
         }
         if (valueHeader) {
             valueHeader.textContent = sum;
+            valueHeader.style.display = 'block';
+            console.log(' : ',valueHeader.textContent);
         }
     } else {
         if (valueBasket) {

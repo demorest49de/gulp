@@ -155,7 +155,7 @@ export const createSectionBasket = (name, $) => {
         <div class="basket__list">
             <div class="basket__title-block">
                 <h3 class="basket__title">Корзина</h3>
-                <p class="basket__cart-count">2</p>
+                <p class="basket__cart-count">0</p>
             </div>
             <div class="basket__list-manage-block">
                 
