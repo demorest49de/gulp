@@ -58,6 +58,7 @@ const renderBasketItems = ($) => {
                 
                 const item = data.data;
                 console.log(' : ', item);
+                
                 const positionTotal = elem.qty * item.price;
                 
                 const oldPrice = positionTotal.toString();

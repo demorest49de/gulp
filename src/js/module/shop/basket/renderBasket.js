@@ -79,22 +79,24 @@ const calculate = (value, item, target) => {
     setBasketQuantity();
     
     const priceBlock = target.closest('.basket__list-all-info-block');
-    const newPrice = priceBlock.querySelector('.basket__item-new-price');
-    console.log(' : ',newPrice);
-    const positionTotal = elem.qty * item.price;
-
-    let oldPrice = NaN;
+    const newPriceBlock = priceBlock.querySelector('.basket__item-new-price');
     
+    const positionTotal = elem.qty * item.price;
+    
+    const oldPrice = positionTotal.toString();
+    
+    let newPrice = NaN;
     if (item.discount === 0) {
-        oldPrice = (Math.ceil(item.price * 1.2)).toString();
+        newPrice = (Math.ceil((positionTotal) / 1.2)).toString();
     } else {
-        oldPrice = (Math.ceil(item.price - ((item.price * item.discount) / 100))).toString();
+        newPrice = (Math.ceil((positionTotal) - ((positionTotal * item.discount) / 100))).toString();
     }
-
-    const {firstPart: firstNew, lastPart: lastNew} = calculateDepth(item.price.toString());
+    
+    const {firstPart: firstNew, lastPart: lastNew} = calculateDepth(newPrice);
     const {firstPart: firstOld, lastPart: lastOld} = calculateDepth(oldPrice);
 
     const creditfrom = Math.ceil(item.price - (item.price / 1.2));
+    newPriceBlock.innerHTML = `${firstNew}&nbsp`;
     
 };
 
