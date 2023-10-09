@@ -137,8 +137,8 @@ const renderBasketItems = ($) => {
                 `);
     
                 handleChooseAll();
-                handleEncreaseQuantity();
-                handleDecreaseQuantity();
+                handleEncreaseQuantity(item.id);
+                handleDecreaseQuantity(item.id);
             });
         });
     }

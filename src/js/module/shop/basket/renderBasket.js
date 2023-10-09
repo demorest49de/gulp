@@ -2,7 +2,7 @@ import {createFooter, createHeader, createMain} from "../../base/baseElems.js";
 import {createSection} from "../createShop.js";
 import {createBCCart, createSectionBasket} from "../basket/createBasket.js";
 import {basketUserId} from '../../constants.js';
-import {getStorage} from "../localStorage.js";
+import {getStorage, setStorage} from "../localStorage.js";
 
 
 export const renderBasket = ($) => {
@@ -38,7 +38,6 @@ export const renderBasket = ($) => {
 };
 
 
-
 export const setBasketQuantity = () => {
     const valueHeader = document.querySelector('.navigation__cart-count');
     const valueBasket = document.querySelector('.basket__cart-count');
@@ -65,18 +64,26 @@ export const setBasketQuantity = () => {
     }
 };
 
-export const handleEncreaseQuantity = () => {
+export const handleEncreaseQuantity = (id) => {
     const plusBtns = document.querySelectorAll('.basket__plus-btn');
     plusBtns.forEach((btn) => {
         btn.addEventListener('click', ({target}) => {
             const btnBlock = btn.closest('.basket__list-quantity-block');
             const text = btnBlock.querySelector('.basket__quantity-text');
             text.textContent = +(text.textContent) + 1;
+            
+            const basketArray = getStorage(basketUserId);
+            const elem = basketArray.find((elem) => elem.id === id);
+            if (elem) {
+                elem.qty += 1;
+            }
+            setStorage(basketUserId, basketArray);
+            setBasketQuantity();
         });
     });
 };
 
-export const handleDecreaseQuantity = () => {
+export const handleDecreaseQuantity = (id) => {
     const plusBtns = document.querySelectorAll('.basket__minus-btn');
     plusBtns.forEach((btn) => {
         btn.addEventListener('click', ({target}) => {
@@ -106,7 +113,7 @@ export const handleChooseAll = () => {
 };
 
 export const basketHandlers = () => {
-  
+    
     
     handleChooseAll();
     handleEncreaseQuantity();
