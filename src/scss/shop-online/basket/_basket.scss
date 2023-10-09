@@ -178,7 +178,7 @@
             fit-content(100%)
             minmax(200px, 600px)
             minmax(102px, 300px)
-            fit-content(100%);
+            152px;
     justify-content: space-between;
     align-items: center;
     gap: 15px;
@@ -381,6 +381,8 @@
     font-size: 16px;
     font-weight: 400;
     line-height: 130%;
+    display: flex;
+    justify-content: end;
     @media (max-width: 880px) {
       font-size: 12px;
     }

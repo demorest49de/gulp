@@ -64,7 +64,7 @@ const renderBasketItems = ($) => {
                         oldPrice = (Math.ceil(item.price - ((item.price * item.discount) / 100))).toString();
                     }
                     
-                    const {firstPart: firstNew, lastPart: lastNew} = calculateDepth(newPrice);
+                    const {firstPart: firstNew, lastPart: lastNew} = calculateDepth(item.price.toString());
                     const {firstPart: firstOld, lastPart: lastOld} = calculateDepth(oldPrice);
 
                     const creditfrom = Math.ceil(item.price - (item.price / 1.2));
