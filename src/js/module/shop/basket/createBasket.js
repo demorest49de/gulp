@@ -53,8 +53,10 @@ const renderBasketItems = ($) => {
             return a.id - b.id;
         });
         console.log(' : ', basketArray);
+        const resultArray = [];
         basketArray.forEach((elem) => {
-            getItemById($, elem.id).then((data) => {
+            getItemById($, elem.id)
+                .then((data) => {
                 
                 const item = data.data;
                 console.log(' : ', item);
