@@ -39,7 +39,7 @@ export const renderBasket = ($) => {
 
 
 
-export const setBacketQuantity = () => {
+export const setBasketQuantity = () => {
     const valueHeader = document.querySelector('.navigation__cart-count');
     const valueBasket = document.querySelector('.basket__cart-count');
     
@@ -110,5 +110,5 @@ export const basketHandlers = () => {
     handleChooseAll();
     handleEncreaseQuantity();
     handleDecreaseQuantity();
-    setBacketQuantity();
+    setBasketQuantity();
 };
