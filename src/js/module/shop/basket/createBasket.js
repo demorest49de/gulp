@@ -81,13 +81,16 @@ const renderBasketItems = ($) => {
                                 >
                             <span class="basket__checkbox-icon"></span>
                         </label>
-                        <picture  class="basket__picture">
-                            <source srcset="" type="image/avif">
-                            <source srcset="" type="image/webp">
-                                <img class="basket__image-small"
-                                 src="https://muddy-substantial-gear.glitch.me/${item.image}"
-                                 alt="" width="" height="">
-                        </picture>
+                        
+                        <a href="card.html?id=${item.id}" class="basket__item-link">
+                            <picture  class="basket__picture">
+                                <source srcset="" type="image/avif">
+                                <source srcset="" type="image/webp">
+                                    <img class="basket__image-small"
+                                     src="https://muddy-substantial-gear.glitch.me/${item.image}"
+                                     alt="" width="" height="">
+                            </picture>
+                        </a>
                 </div>
                     <div class="basket__list-text-block">
                         <p class="basket__list-text-main">
