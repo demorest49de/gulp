@@ -21,7 +21,6 @@ const calculateDepth = (priceValue) => {
     return {firstPart, lastPart};
 };
 
-
 const cardAfterStyle = document.createElement("style");
 
 export const createSectionCard = (name, $, paramsObject) => {
@@ -37,7 +36,6 @@ export const createSectionCard = (name, $, paramsObject) => {
             oldPrice = (Math.ceil(item.price * 1.2)).toString();
         } else {
             oldPrice = (Math.ceil(item.price - ((item.price * item.discount) / 100))).toString();
-            
         }
         
         const {firstPart: firstNew, lastPart: lastNew} = calculateDepth(newPrice);
@@ -134,7 +132,6 @@ export const createSectionCard = (name, $, paramsObject) => {
         </section>
             `);
         
-        
         if (item.discount > 0) {
             cardAfterStyle.innerHTML +=
                 `.details__figure:after {
@@ -147,35 +144,27 @@ export const createSectionCard = (name, $, paramsObject) => {
             document.body.append(cardAfterStyle);
         }
         
-        const addBtn = $.main.querySelector('.details__add-to-card');
-        const paramsObject = getSearchParams();
         
+        const addBtn = $.main.querySelector('.details__add-to-card');
         addBtn.addEventListener('click', ({target}) => {
             
             const basketArray = getStorage(basketUserId);
             
-            getItemById($, cardId).then((data) => {
-                console.log(' : ', data.data);
-                const item = data.data;
-                if (item.id === cardId) {
-                    console.log(' : ', basketArray);
-                    const cardId = paramsObject.id;
-                    let index = NaN;
-                    const elem = basketArray.find((elem, index) => {
-                        if(elem.id === item.id){
-                            index = index;
-                            return elem;
-                        }
-                    });
-                    
-                    if (elem) {
-                        basketArray[index].qty += 1;
-                    } else {
-                        basketArray.push({id: cardId, qty: 1});
-                    }
-                    setStorage(basketUserId, basketArray);
+            console.log(' : ', basketArray);
+            let index = NaN;
+            const elem = basketArray.find((elem, index) => {
+                if (elem.id === item.id) {
+                    index = index;
+                    return elem;
                 }
             });
+            
+            if (elem) {
+                elem.qty += 1;
+            } else {
+                basketArray.push({id: cardId, qty: 1});
+            }
+            setStorage(basketUserId, basketArray);
         });
     });
 };
