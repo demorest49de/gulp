@@ -2,6 +2,7 @@ import {getItemById} from "../fetch.js";
 import {basketUserId} from '../../constants.js';
 import {getStorage} from "../localStorage.js";
 import {calculateDepth} from "../card/createCard.js";
+import {handleChooseAll, handleDecreaseQuantity, handleEncreaseQuantity} from "./renderBasket.js";
 
 export const createBCCart = ($, bc) => {
     
@@ -130,6 +131,10 @@ const renderBasketItems = ($) => {
                     </div>
                 </li>
                 `);
+    
+                handleChooseAll();
+                handleEncreaseQuantity();
+                handleDecreaseQuantity();
             });
         });
     }

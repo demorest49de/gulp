@@ -2425,14 +2425,14 @@ main {
 .basket__cart-count {
   position: absolute;
   top: 6px;
-  right: -18px;
+  right: -29px;
   font-size: 24px;
   font-weight: 700;
   line-height: 130%;
 }
 @media (max-width: 1024px) {
   .basket__cart-count {
-    top: 1px;
+    top: -9px;
   }
 }
 @media (max-width: 666px) {
@@ -2554,6 +2554,17 @@ main {
     margin-bottom: 15px;
   }
 }
+.basket__list-text-block {
+  display: flex;
+  align-items: start;
+  height: 100%;
+}
+@media (max-width: 1320px) {
+  .basket__list-text-block {
+    display: block;
+    height: unset;
+  }
+}
 @media (max-width: 880px) {
   .basket__list-text-block {
     grid-area: info;
@@ -2663,6 +2674,9 @@ main {
   border-radius: 20px;
   background-color: transparent;
   font-size: 17px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 @media (max-width: 880px) {
   .basket__minus-btn, .basket__plus-btn {
