@@ -2674,6 +2674,9 @@ main {
   border-radius: 20px;
   background-color: transparent;
   font-size: 17px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 @media (max-width: 880px) {
   .basket__minus-btn, .basket__plus-btn {
