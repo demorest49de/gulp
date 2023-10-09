@@ -49,6 +49,10 @@ const renderBasketItems = ($) => {
     const basketArray = getStorage(basketUserId);
     
     if (basketArray.length > 0) {
+        basketArray.sort(function (a, b) {
+            return a.id - b.id;
+        });
+        console.log(' : ',basketArray);
         basketArray.forEach((elem) => {
             getItemById($, elem.id).then((data) => {
                 

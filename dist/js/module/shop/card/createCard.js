@@ -2,7 +2,7 @@ import {getGoodsByCategory, getItemById} from "../fetch.js";
 import {getSearchParams} from "../../base/tools.js";
 import {basketUserId} from '../../constants.js';
 import {getStorage, setStorage} from "../localStorage.js";
-import {setBacketQuantity} from "../basket/renderBasket.js";
+import {setBasketQuantity} from "../basket/renderBasket.js";
 
 
 export const calculateDepth = (priceValue) => {
@@ -167,7 +167,7 @@ export const createSectionCard = (name, $, paramsObject) => {
                 basketArray.push({id: cardId, qty: 1});
             }
             setStorage(basketUserId, basketArray);
-            setBacketQuantity();
+            setBasketQuantity();
         });
     });
 };

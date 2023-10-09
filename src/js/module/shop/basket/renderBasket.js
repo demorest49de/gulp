@@ -45,6 +45,7 @@ export const setBasketQuantity = () => {
     
     const basketArray = getStorage(basketUserId);
     if (basketArray.length > 0) {
+        
         const sum = basketArray.reduce((previousValue, currentValue) => {
             return previousValue + currentValue.qty;
         }, 0);
