@@ -49,12 +49,12 @@ const renderBasketItems = ($) => {
     const basketArray = getStorage(basketUserId);
     
     if (basketArray.length > 0) {
-        basketArray.sort(function (a, b) {
-            return a.id - b.id;
-        });
+        
         console.log(' : ', basketArray);
+        
         basketArray.forEach((elem) => {
-            getItemById($, elem.id).then((data) => {
+            getItemById($, elem.id)
+                .then((data) => {
                 
                 const item = data.data;
                 console.log(' : ', item);
@@ -79,7 +79,8 @@ const renderBasketItems = ($) => {
                 list.insertAdjacentHTML('beforeend',
                     `
                     
-                <li class="basket__list-item">
+                <li class="basket__list-item" data-id="${item.id}">
+                
                     <div class="basket__list-all-info-block">
                     <div class="basket__list-item-block">
                         
@@ -138,7 +139,7 @@ const renderBasketItems = ($) => {
                 </li>
                 `);
                 
-                handleChooseAll();
+                // handleChooseAll();
                 handleEncreaseQuantity(item);
                 handleDecreaseQuantity(item);
             });

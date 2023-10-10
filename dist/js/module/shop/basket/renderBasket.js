@@ -56,7 +56,7 @@ export const setBasketQuantity = () => {
         if (valueHeader) {
             valueHeader.textContent = sum;
             valueHeader.style.display = 'block';
-           
+            
         }
     } else {
         if (valueBasket) {
@@ -79,10 +79,16 @@ const calculate = (value, item, target) => {
     setBasketQuantity();
     
     const priceBlock = target.closest('.basket__list-all-info-block');
-    const newPriceBlock = priceBlock.querySelector('.basket__item-new-price');
+    const newPriceFirst = priceBlock.querySelector('.basket__item-new-price:nth-child(1)');
+    const newPriceSecond = priceBlock.querySelector('.basket__item-new-price:nth-child(2)');
     
+    const oldPriceFirst = priceBlock.querySelector('.basket__item-old-price:nth-child(1)');
+    const oldPriceSecond = priceBlock.querySelector('.basket__item-old-price:nth-child(2)');
+    
+    const creditFrom = priceBlock.querySelector('.basket__credit-from');
+    
+    console.log(' : ', item);
     const positionTotal = elem.qty * item.price;
-    
     const oldPrice = positionTotal.toString();
     
     let newPrice = NaN;
@@ -94,10 +100,16 @@ const calculate = (value, item, target) => {
     
     const {firstPart: firstNew, lastPart: lastNew} = calculateDepth(newPrice);
     const {firstPart: firstOld, lastPart: lastOld} = calculateDepth(oldPrice);
-
-    const creditfrom = Math.ceil(item.price - (item.price / 1.2));
-    newPriceBlock.innerHTML = `${firstNew}&nbsp`;
     
+    const creditfromValue = Math.ceil(positionTotal - (positionTotal / 1.2));
+    
+    newPriceFirst.innerHTML = `${firstNew}&nbsp`;
+    newPriceSecond.innerHTML = `${lastNew} ₽`;
+    
+    oldPriceFirst.innerHTML = `${firstOld}&nbsp`;
+    oldPriceSecond.innerHTML = `${lastOld} ₽`;
+    
+    creditFrom.innerHTML = `В кредит от ${creditfromValue} ₽`;
 };
 
 export const handleEncreaseQuantity = (item) => {
@@ -146,7 +158,6 @@ export const handleChooseAll = () => {
 };
 
 export const basketHandlers = () => {
-    
     
     handleChooseAll();
     handleEncreaseQuantity();
