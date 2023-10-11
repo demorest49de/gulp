@@ -1637,11 +1637,13 @@ main {
 .basket__trascan-block .basket__trashcan-svg {
   width: 24px;
   height: 24px;
+  z-index: -1;
 }
 
 .basket__list-manage-block .basket__trashcan-btn {
   height: 30px;
   border: none;
+  z-index: 2;
 }
 
 .basket__choose-all {

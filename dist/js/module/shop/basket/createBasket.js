@@ -133,7 +133,7 @@ const renderBasketItems = ($) => {
             const elemList = list.querySelector('li:nth-last-child(1)');
             handleEncreaseQuantity(item, elemList);
             handleDecreaseQuantity(item, elemList);
-            deleteItem(list, elemList);
+            deleteItem(list, elemList, item.id);
         });
     }
 };

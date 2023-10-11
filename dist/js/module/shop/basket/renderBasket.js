@@ -155,15 +155,20 @@ export const handleChooseAll = () => {
     ;
 };
 
-export const deleteItem = (list, elem) => {
+export const deleteItem = (list, elem, id) => {
     const removeBtn = document.querySelector('.basket__trashcan-svg');
     
     removeBtn.addEventListener('click', ({target}) => {
-        if(target.closest('.basket__trashcan-svg')){
+        if (target.closest('.basket__trashcan-svg')) {
             const liEls = list.querySelectorAll('li');
             liEls.forEach((el) => {
                 const checkbox = el.querySelector('.basket__checkbox-input');
-                if(checkbox.checked) el.remove();
+                if (checkbox.checked) {
+                    el.remove();
+                    const storage = getStorage(basketUserId);
+                    const result = storage.filter((data) => data.item.id !== id);
+                    console.log(' : ', result);
+                }
             });
         }
     });
