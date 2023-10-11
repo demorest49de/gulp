@@ -24,7 +24,6 @@ export const rafAnimationMenu = (duration, direction, height, callback) => {
                     callback(progress);
                     cancelAnimationFrame(requestId);
                     progressExternal = progress;
-                    console.log(' : ', progressExternal);
                     resolve(+progressExternal);
                 }
             }

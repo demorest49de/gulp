@@ -2,7 +2,7 @@ import {types} from "../constants.js";
 
 
 const setHeader = () => {
-    //60 40 35 16
+    
     const header = document.querySelector('.header');
     
     switch (true) {
@@ -36,7 +36,6 @@ const setHeader = () => {
 
 export const setCustomPaddings = ($) => {
     if ($.page === types.blog || $.page === types.article) {
-        console.log(' : ', $.page);
         setHeader($);
     }
 };
@@ -44,7 +43,7 @@ export const setCustomPaddings = ($) => {
 export const customPaddingHandler = ($) => {
     window.addEventListener('resize', () => {
         if ($.page === types.blog || $.page === types.article) {
-            console.log(' : ', $.page);
+            
             setHeader();
         }
     });

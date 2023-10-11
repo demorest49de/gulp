@@ -152,7 +152,6 @@ export const createSectionCard = (name, $, paramsObject) => {
             
             const basketArray = getStorage(basketUserId);
             
-            console.log(' : ', basketArray);
             let index = NaN;
             const elem = basketArray.find((elem, index) => {
                 if (elem.item.id === item.id) {
@@ -162,7 +161,7 @@ export const createSectionCard = (name, $, paramsObject) => {
             });
             
             if (elem) {
-                console.log(' : ',elem);
+                
                 elem.qty += 1;
             } else {
                 basketArray.push({item: item, qty: 1});
@@ -297,7 +296,7 @@ export const renderCardsByCategory = ($, source, itemId) => {
                     </div>
                     <p class="card-category__item-text">${item.title}</p>
                 `);
-        //
+        
         const cardPriceBlock = a.querySelector('.card-category__price-block');
         if (item.discount > 0) {
             cardPriceBlock.insertAdjacentHTML('beforeend',
@@ -305,7 +304,7 @@ export const renderCardsByCategory = ($, source, itemId) => {
             );
         }
         li.append(a);
-        // console.log(a);
+        
         cards.append(li);
     });
 };

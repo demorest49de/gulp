@@ -55,7 +55,6 @@ export const handleTimer = () => {
         const myCurrentTime = dateNow - timezoneoffset + myTimeZone;
 
         const timeRemaining = dateStop - myCurrentTime;
-        // const timeRemaining = dateStop - dateNow;
 
         const seconds = Math.floor(timeRemaining / 1000 % 60);
         const minutes = Math.floor(timeRemaining / 1000 / 60 % 60);

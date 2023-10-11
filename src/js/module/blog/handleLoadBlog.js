@@ -142,9 +142,7 @@ export const paginationClickHandler = ($) => {
         $.blogItems.pageElems.pageList.addEventListener('click', (ev) => {
             ev.preventDefault();
             const target = ev.target;
-            console.log(' : ',currentPage, endPage);
             const targetPage = target.getAttribute('data-pageNumber');
-            console.log(' : ',targetPage);
             if(+targetPage !== +currentPage){
                 currentPage = (target.getAttribute('data-pageNumber'));
                 setStorage(currentPageStr, currentPage);

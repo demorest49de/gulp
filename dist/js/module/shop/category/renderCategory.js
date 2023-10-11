@@ -42,10 +42,7 @@ export const cbRenderCatalog = (error, data, $) => {
 
 
 const handleErrorMessage = (error, data, $) => {
-    // $.app.append($.addItemError);
-    // setTimeout(() => {
-    //     $.addItemError.classList.add('is-visible');
-    // }, 300);
+    
     
     if (!data) data = error.message;
     console.warn(error, data);
@@ -53,7 +50,7 @@ const handleErrorMessage = (error, data, $) => {
 
 
 const renderCardsByCategory = ($, items) => {
-    console.log(' : ', items);
+    
     const cards = document.querySelector('.category__cards');
     const cardAfterStyle = document.createElement("style");
     
@@ -87,7 +84,7 @@ const renderCardsByCategory = ($, items) => {
                     </div>
                     <p class="card-category__item-text">${item.title}</p>
                 `);
-        //
+        
         const cardPriceBlock = a.querySelector('.card-category__price-block');
         if (item.discount > 0) {
             cardPriceBlock.insertAdjacentHTML('beforeend',
@@ -95,7 +92,7 @@ const renderCardsByCategory = ($, items) => {
             );
         }
         li.append(a);
-        // console.log(a);
+        
         cards.append(li);
     });
 };

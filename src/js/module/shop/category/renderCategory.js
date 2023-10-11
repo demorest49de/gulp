@@ -50,7 +50,7 @@ const handleErrorMessage = (error, data, $) => {
 
 
 const renderCardsByCategory = ($, items) => {
-    console.log(' : ', items);
+    
     const cards = document.querySelector('.category__cards');
     const cardAfterStyle = document.createElement("style");
     

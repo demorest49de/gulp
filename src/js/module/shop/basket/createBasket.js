@@ -49,8 +49,6 @@ const renderBasketItems = ($) => {
     
     if (basketArray.length > 0) {
         
-        console.log(' : ', basketArray);
-        
         basketArray.forEach((elem) => {
             
             const item = elem.item;

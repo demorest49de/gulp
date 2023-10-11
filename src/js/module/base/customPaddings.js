@@ -36,7 +36,6 @@ const setHeader = () => {
 
 export const setCustomPaddings = ($) => {
     if ($.page === types.blog || $.page === types.article) {
-        console.log(' : ', $.page);
         setHeader($);
     }
 };
@@ -44,7 +43,7 @@ export const setCustomPaddings = ($) => {
 export const customPaddingHandler = ($) => {
     window.addEventListener('resize', () => {
         if ($.page === types.blog || $.page === types.article) {
-            console.log(' : ', $.page);
+            
             setHeader();
         }
     });
