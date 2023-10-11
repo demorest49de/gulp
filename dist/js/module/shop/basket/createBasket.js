@@ -1,7 +1,6 @@
 import {basketUserId} from '../../constants.js';
 import {getStorage} from "../localStorage.js";
 import {calculateDepth} from "../card/createCard.js";
-import {deleteItem, deleteItemByCheckbox, handleDecreaseQuantity, handleEncreaseQuantity} from "./renderBasket.js";
 
 export const createBCCart = ($, bc) => {
     
@@ -131,8 +130,6 @@ const renderBasketItems = ($) => {
                 </li>
                 `);
             const elemList = list.querySelector('li:nth-last-child(1)');
-            handleEncreaseQuantity(item, elemList);
-            handleDecreaseQuantity(item, elemList);
         });
     }
 };

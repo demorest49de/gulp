@@ -69,10 +69,11 @@ export const setBasketQuantity = () => {
     }
 };
 
-const calculate = (value, item, target) => {
+const calculate = (value, id, target) => {
     
     const basketArray = getStorage(basketUserId);
-    const elem = basketArray.find((elem) => elem.item.id === item.id);
+    const elem = basketArray.find((elem) => elem.item.id === id);
+    const item = elem.item;
     if (elem) {
         elem.qty += value;
     }
@@ -112,29 +113,40 @@ const calculate = (value, item, target) => {
     creditFrom.innerHTML = `В кредит от ${creditfromValue} ₽`;
 };
 
-export const handleEncreaseQuantity = (item, elem) => {
-    const btn = elem.querySelector('.basket__plus-btn');
-    btn.addEventListener('click', ({target}) => {
-        const btnBlock = btn.closest('.basket__list-quantity-block');
-        const text = btnBlock.querySelector('.basket__quantity-text');
-        const value = 1;
-        text.textContent = +(text.textContent) + value;
-        
-        calculate(value, item, target);
-    });
+export const handleChangeQuantity = () => {
+    
+    const list = document.querySelector('.basket__items-list');
+    if (list) {
+        list.addEventListener('click', ({target}) => {
+            const plusBtn = '.basket__plus-btn';
+            const minusBtn = '.basket__minus-btn';
+            if (target.closest(plusBtn)) {
+                handleQtyBtns(target, plusBtn);
+            }
+            if (target.closest(minusBtn)) {
+                handleQtyBtns(target, minusBtn);
+            }
+        });
+    }
 };
 
-export const handleDecreaseQuantity = (item, elem) => {
-    const btn = elem.querySelector('.basket__minus-btn');
-    btn.addEventListener('click', ({target}) => {
-        const btnBlock = btn.closest('.basket__list-quantity-block');
-        const text = btnBlock.querySelector('.basket__quantity-text');
-        if (+(text.textContent) > 1) {
-            const value = -1;
-            text.textContent = +(text.textContent) + value;
-            calculate(value, item, target);
-        }
-    });
+const handleQtyBtns = (target, className) => {
+    const btnBlock = target.closest('.basket__list-quantity-block');
+    const text = btnBlock.querySelector('.basket__quantity-text');
+    let value = NaN;
+    if(className === '.basket__plus-btn') {
+        value = 1;
+    }
+    if(className === '.basket__minus-btn') {
+        value = -1;
+    }
+    if (+(text.textContent) > 1) {
+        text.textContent = +(text.textContent) + value;
+        const el = target.closest(('li'));
+        const id = el.getAttribute('data-id');
+        console.log(id);
+        calculate(value, id, target);
+    }
 };
 
 export const handleChooseAll = () => {
@@ -206,4 +218,5 @@ export const basketHandlers = () => {
     handleChooseAll();
     deleteItemByCheckbox();
     deleteItem();
+    handleChangeQuantity();
 };
