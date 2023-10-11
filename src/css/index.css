@@ -1597,7 +1597,7 @@ main {
 .basket__cart-count {
   position: absolute;
   top: 6px;
-  right: -18px;
+  right: -29px;
   font-size: 24px;
   font-weight: 700;
   line-height: 130%;
@@ -1632,6 +1632,11 @@ main {
 
 .basket__trascan-block .basket__trashcan-btn {
   display: none;
+}
+
+.basket__trascan-block .basket__trashcan-svg {
+  width: 24px;
+  height: 24px;
 }
 
 .basket__list-manage-block .basket__trashcan-btn {
@@ -1692,7 +1697,7 @@ main {
 
 .basket__list-all-info-block {
   display: grid;
-  grid-template-columns: fit-content(100%) minmax(200px, 600px) minmax(102px, 300px) fit-content(100%);
+  grid-template-columns: fit-content(100%) minmax(200px, 600px) minmax(102px, 300px) 152px;
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
   -moz-box-pack: justify;
@@ -1720,6 +1725,18 @@ main {
   -moz-box-direction: normal;
   flex-direction: row;
   gap: 23px;
+}
+
+.basket__list-text-block {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: flex;
+  -webkit-box-align: start;
+  -webkit-align-items: start;
+  -moz-box-align: start;
+  align-items: start;
+  height: 100%;
 }
 
 .basket__list-quantity-block {
@@ -1762,6 +1779,10 @@ main {
   font-size: 17px;
 }
 
+.basket__quantity-text {
+  font-size: 22px;
+}
+
 .basket__minus-btn,
 .basket__plus-btn {
   width: 36px;
@@ -1770,6 +1791,18 @@ main {
   border-radius: 20px;
   background-color: transparent;
   font-size: 17px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -moz-box-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -moz-box-pack: center;
+  justify-content: center;
 }
 
 .basket__minus-btn {
@@ -1813,6 +1846,14 @@ main {
   font-size: 16px;
   font-weight: 400;
   line-height: 130%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: flex;
+  -webkit-box-pack: end;
+  -webkit-justify-content: end;
+  -moz-box-pack: end;
+  justify-content: end;
 }
 
 .basket__list-price-block-old span {
@@ -2008,8 +2049,8 @@ main {
 .basket__checkbox-icon:before {
   content: "";
   display: inline-block;
-  width: 24px;
-  height: 24px;
+  width: 20px;
+  height: 20px;
   border: 1px solid #000000;
   border-radius: 2px;
   z-index: 1;
@@ -2024,6 +2065,8 @@ main {
 .basket__checkbox-input:checked + .basket__checkbox-icon:before {
   border: none;
   background-image: url(../../../svg/basket/checkmark.svg);
+  -webkit-background-size: 20px 20px;
+  background-size: 20px 20px;
 }
 
 .basket__agreement {
@@ -3253,6 +3296,13 @@ template {
   }
 }
 
+@media (max-width: 1320px) {
+  .basket__list-text-block {
+    display: block;
+    height: unset;
+  }
+}
+
 @media (max-width: 1200px) {
   .container {
     max-width: 1200px;
@@ -3422,7 +3472,7 @@ template {
   }
 
   .basket__cart-count {
-    top: 1px;
+    top: -9px;
   }
 
   .blog__container {
@@ -3649,6 +3699,8 @@ template {
     border: none;
     background-color: transparent;
     grid-area: trash;
+    width: 24px;
+    height: 24px;
   }
 
   .basket__list-manage-block .basket__trashcan-btn {
@@ -3715,12 +3767,14 @@ template {
     display: -webkit-flex;
     display: -moz-box;
     display: flex;
-    gap: 12px;
+    -webkit-column-gap: 12px;
+    -moz-column-gap: 12px;
+    column-gap: 12px;
     -webkit-box-align: center;
     -webkit-align-items: center;
     -moz-box-align: center;
     align-items: center;
-    margin-bottom: 14px;
+    margin-bottom: 19px;
   }
 
   .basket__list-text-main {
@@ -3731,6 +3785,14 @@ template {
 
   .basket__list-text-additional {
     font-size: 10px;
+  }
+
+  .basket__list-text-additional {
+    display: none;
+  }
+
+  .basket__quantity-text {
+    font-size: 18px;
   }
 
   .basket__minus-btn,
@@ -4758,6 +4820,34 @@ template {
 
   .burger {
     top: 135px;
+  }
+
+  .basket__list-price-block {
+    max-width: 131px;
+    -webkit-flex-wrap: wrap;
+    flex-wrap: wrap;
+    row-gap: 9px;
+  }
+
+  .basket__list-text-main {
+    font-size: 12px;
+    max-width: 169px;
+  }
+
+  .basket__list-price-block-new span {
+    font-size: 16px;
+  }
+
+  .basket__credit-from {
+    font-size: 10px;
+  }
+
+  .basket__list-price-block-old span {
+    font-size: 10px;
+  }
+
+  .basket__checkbox-icon {
+    font-size: 10px;
   }
 
   .blog {

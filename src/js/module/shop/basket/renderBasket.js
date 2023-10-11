@@ -155,6 +155,19 @@ export const handleChooseAll = () => {
     ;
 };
 
+export const deleteItem = (list, elem) => {
+    const removeBtn = document.querySelector('.basket__trashcan-svg');
+    console.log(' : ', removeBtn);
+    
+    removeBtn.addEventListener('click', ({target}) => {
+        console.log(' : ',target);
+        // list.forEach((el) => {
+        //     console.log(' : ', el);
+        // });
+        console.log(' : ',list);
+    });
+};
+
 export const basketHandlers = () => {
     setBasketQuantity();
     handleChooseAll();
