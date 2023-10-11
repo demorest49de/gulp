@@ -72,7 +72,7 @@ const renderBasketItems = ($) => {
             list.insertAdjacentHTML('beforeend',
                 `
                     
-                <li class="basket__list-item">
+                <li class="basket__list-item" data-id="${item.id}">
                     <div class="basket__list-all-info-block">
                     <div class="basket__list-item-block">
                         
@@ -133,7 +133,7 @@ const renderBasketItems = ($) => {
             const elemList = list.querySelector('li:nth-last-child(1)');
             handleEncreaseQuantity(item, elemList);
             handleDecreaseQuantity(item, elemList);
-            deleteItem(list, elemList, item.id);
+            deleteItem(list, elemList);
         });
     }
 };

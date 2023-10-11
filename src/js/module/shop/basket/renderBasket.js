@@ -155,19 +155,24 @@ export const handleChooseAll = () => {
     ;
 };
 
-export const deleteItem = (list, elem, id) => {
-    const removeBtn = document.querySelector('.basket__trashcan-svg');
+export const deleteItem = (list, elem) => {
+    const removeBtn = document.querySelector('.basket__list-manage-block .basket__trashcan-svg');
     
     removeBtn.addEventListener('click', ({target}) => {
         if (target.closest('.basket__trashcan-svg')) {
             const liEls = list.querySelectorAll('li');
             liEls.forEach((el) => {
                 const checkbox = el.querySelector('.basket__checkbox-input');
-                if (checkbox.checked) {
+                if (checkbox && checkbox.checked) {
                     el.remove();
+                    console.log(el);
+                    const id = el.getAttribute('data-id');
+                    console.log(' : ',id);
                     const storage = getStorage(basketUserId);
-                    const result = storage.filter((data) => data.item.id !== id);
-                    console.log(' : ', result);
+                    const result = storage.filter((data) => (data.item.id !== id));
+                    console.log(' : ',result);
+                    setStorage(basketUserId, result);
+                    setBasketQuantity();
                 }
             });
         }
