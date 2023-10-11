@@ -49,6 +49,7 @@ export const setBasketQuantity = () => {
         const sum = basketArray.reduce((previousValue, currentValue) => {
             return previousValue + currentValue.qty;
         }, 0);
+        
         if (valueBasket) {
             valueBasket.textContent = sum;
             valueBasket.style.display = 'block';
@@ -71,7 +72,7 @@ export const setBasketQuantity = () => {
 const calculate = (value, item, target) => {
     
     const basketArray = getStorage(basketUserId);
-    const elem = basketArray.find((elem) => elem.id === item.id);
+    const elem = basketArray.find((elem) => elem.item.id === item.id);
     if (elem) {
         elem.qty += value;
     }
@@ -87,7 +88,6 @@ const calculate = (value, item, target) => {
     
     const creditFrom = priceBlock.querySelector('.basket__credit-from');
     
-    console.log(' : ', item);
     const positionTotal = elem.qty * item.price;
     const oldPrice = positionTotal.toString();
     
@@ -112,30 +112,28 @@ const calculate = (value, item, target) => {
     creditFrom.innerHTML = `В кредит от ${creditfromValue} ₽`;
 };
 
-export const handleEncreaseQuantity = (item) => {
-    const plusBtns = document.querySelectorAll('.basket__plus-btn');
-    plusBtns.forEach((btn) => {
-        btn.addEventListener('click', ({target}) => {
-            const btnBlock = btn.closest('.basket__list-quantity-block');
-            const text = btnBlock.querySelector('.basket__quantity-text');
-            text.textContent = +(text.textContent) + 1;
-            
-            calculate(1, item, target);
-        });
+export const handleEncreaseQuantity = (item, elem) => {
+    const btn = elem.querySelector('.basket__plus-btn');
+    btn.addEventListener('click', ({target}) => {
+        const btnBlock = btn.closest('.basket__list-quantity-block');
+        const text = btnBlock.querySelector('.basket__quantity-text');
+        const value = 1;
+        text.textContent = +(text.textContent) + value;
+        
+        calculate(value, item, target);
     });
 };
 
-export const handleDecreaseQuantity = (item) => {
-    const plusBtns = document.querySelectorAll('.basket__minus-btn');
-    plusBtns.forEach((btn) => {
-        btn.addEventListener('click', ({target}) => {
-            const btnBlock = btn.closest('.basket__list-quantity-block');
-            const text = btnBlock.querySelector('.basket__quantity-text');
-            if (+(text.textContent) > 1) {
-                text.textContent = +(text.textContent) - 1;
-                calculate(-1, item, target);
-            }
-        });
+export const handleDecreaseQuantity = (item, elem) => {
+    const btn = elem.querySelector('.basket__minus-btn');
+    btn.addEventListener('click', ({target}) => {
+        const btnBlock = btn.closest('.basket__list-quantity-block');
+        const text = btnBlock.querySelector('.basket__quantity-text');
+        if (+(text.textContent) > 1) {
+            const value = -1;
+            text.textContent = +(text.textContent) + value;
+            calculate(value, item, target);
+        }
     });
 };
 
@@ -158,9 +156,8 @@ export const handleChooseAll = () => {
 };
 
 export const basketHandlers = () => {
-    
-    handleChooseAll();
-    handleEncreaseQuantity();
-    handleDecreaseQuantity();
     setBasketQuantity();
+    handleChooseAll();
+    // handleEncreaseQuantity();
+    // handleDecreaseQuantity();
 };

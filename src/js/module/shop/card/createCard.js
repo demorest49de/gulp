@@ -155,7 +155,7 @@ export const createSectionCard = (name, $, paramsObject) => {
             console.log(' : ', basketArray);
             let index = NaN;
             const elem = basketArray.find((elem, index) => {
-                if (elem.id === item.id) {
+                if (elem.item.id === item.id) {
                     index = index;
                     return elem;
                 }
@@ -165,7 +165,7 @@ export const createSectionCard = (name, $, paramsObject) => {
                 console.log(' : ',elem);
                 elem.qty += 1;
             } else {
-                basketArray.push({id: cardId, qty: 1});
+                basketArray.push({item: item, qty: 1});
             }
             setStorage(basketUserId, basketArray);
             setBasketQuantity();

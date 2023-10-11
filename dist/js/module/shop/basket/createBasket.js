@@ -53,34 +53,29 @@ const renderBasketItems = ($) => {
         console.log(' : ', basketArray);
         
         basketArray.forEach((elem) => {
-            getItemById($, elem.id)
-                .then((data) => {
-                
-                const item = data.data;
-                console.log(' : ', item);
-                
-                const positionTotal = elem.qty * item.price;
-                
-                const oldPrice = positionTotal.toString();
-                
-                let newPrice = NaN;
-                if (item.discount === 0) {
-                    newPrice = (Math.ceil((positionTotal) / 1.2)).toString();
-                } else {
-                    newPrice = (Math.ceil((positionTotal) - ((positionTotal * item.discount) / 100))).toString();
-                }
-                
-                const {firstPart: firstNew, lastPart: lastNew} = calculateDepth(newPrice);
-                const {firstPart: firstOld, lastPart: lastOld} = calculateDepth(oldPrice);
-                
-                const creditfrom = Math.ceil(item.price - (item.price / 1.2));
-                
-                
-                list.insertAdjacentHTML('beforeend',
-                    `
+            
+            const item = elem.item;
+            
+            const positionTotal = elem.qty * item.price;
+            
+            const oldPrice = positionTotal.toString();
+            
+            let newPrice = NaN;
+            if (item.discount === 0) {
+                newPrice = (Math.ceil((positionTotal) / 1.2)).toString();
+            } else {
+                newPrice = (Math.ceil((positionTotal) - ((positionTotal * item.discount) / 100))).toString();
+            }
+            
+            const {firstPart: firstNew, lastPart: lastNew} = calculateDepth(newPrice);
+            const {firstPart: firstOld, lastPart: lastOld} = calculateDepth(oldPrice);
+            
+            const creditfrom = Math.ceil(item.price - (item.price / 1.2));
+            
+            list.insertAdjacentHTML('beforeend',
+                `
                     
-                <li class="basket__list-item" data-id="${item.id}">
-                
+                <li class="basket__list-item">
                     <div class="basket__list-all-info-block">
                     <div class="basket__list-item-block">
                         
@@ -138,11 +133,9 @@ const renderBasketItems = ($) => {
                     </div>
                 </li>
                 `);
-                
-                // handleChooseAll();
-                handleEncreaseQuantity(item);
-                handleDecreaseQuantity(item);
-            });
+            const elemList = list.querySelector('li:nth-last-child(1)');
+            handleEncreaseQuantity(item, elemList);
+            handleDecreaseQuantity(item, elemList);
         });
     }
 };
