@@ -19,8 +19,7 @@ export const handleSearch = ($) => {
     const searchInput = document.querySelector('.nav__input');
     
     const requestSearchedItems = () => {
-        
-        // searchGoodsHandler($, searchInput.value)
+    
     };
     
     const handleRequestSearch = debounce(requestSearchedItems, 400);

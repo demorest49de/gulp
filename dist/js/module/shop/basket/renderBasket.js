@@ -158,6 +158,4 @@ export const handleChooseAll = () => {
 export const basketHandlers = () => {
     setBasketQuantity();
     handleChooseAll();
-    // handleEncreaseQuantity();
-    // handleDecreaseQuantity();
 };

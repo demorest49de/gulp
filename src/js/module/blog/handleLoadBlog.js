@@ -15,10 +15,9 @@ const setStorage = (key, value) => {
 
 const getPageFromStorage = () => {
     currentPage = localStorage.getItem(currentPageStr);
-    // console.log(' : ', Number.isInteger(currentPage), currentPage);
 
     currentPage = currentPage && Number.isInteger(+currentPage) ? currentPage : setStorage(currentPageStr, '1');
-    // console.log(' : ', currentPage);
+    
 };
 
 export const loadItemsHandler = ($) => {
@@ -48,7 +47,7 @@ export const loadItemsHandler = ($) => {
     const getRandomIntInclusive = (min, max) => {
         min = Math.ceil(min);
         max = Math.floor(max);
-        return Math.floor(Math.random() * (max - min + 1)) + min; //Максимум и минимум включаются
+        return Math.floor(Math.random() * (max - min + 1)) + min;
     };
 
     const renderArticles = (data) => {
@@ -60,7 +59,7 @@ export const loadItemsHandler = ($) => {
 
             const strDate = getFormattedDate();
             const strTime = getFormattedTime();
-            //
+            
             const article = document.createElement('article');
             article.classList.add('blog__ba', 'ba');
             article.innerHTML = `
@@ -177,7 +176,7 @@ export const paginationClickHandler = ($) => {
             const target = ev.target;
             const anchor = target.closest('.pagination__link-right');
 
-            // if (anchor && (+currentPage <= +endPage)) {
+            
             if (anchor && (+currentPage < 3)) {
                 currentPage = (+currentPage + 1);
                 setStorage(currentPageStr, currentPage);

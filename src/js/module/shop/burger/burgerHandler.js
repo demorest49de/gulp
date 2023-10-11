@@ -30,21 +30,9 @@ export const burgerHandler = ($) => {
     
     const closeMenu = async () => {
         menuSvg.setAttribute('href', $.burgerMenu.menu);
-        // document.body.style.overflow = 'visible';
+        
         animationIconHandler();
         updateBlockHeight();
-        
-        // решение через коллбэк которое меня не устроило
-        // const callbackwrapper = (callback) => {
-        //     const progress = rafAnimationMenu(300, -1, burgerMenu.scrollHeight, (progress) => {
-        //         burgerMenu.style.height = `${progress}px`;
-        //     });
-        //     console.log(' : ', progress);
-        // };
-        // callbackwrapper(() => {
-        //     burger.style.visibility = 'hidden';
-        // });
-        
         
         const rafPromise = rafAnimationMenu(300, -1, burgerMenu.scrollHeight, (progress) => {
             burgerMenu.style.height = `${progress}px`;

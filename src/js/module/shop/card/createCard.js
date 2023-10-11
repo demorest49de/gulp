@@ -297,7 +297,7 @@ export const renderCardsByCategory = ($, source, itemId) => {
                     </div>
                     <p class="card-category__item-text">${item.title}</p>
                 `);
-        //
+        
         const cardPriceBlock = a.querySelector('.card-category__price-block');
         if (item.discount > 0) {
             cardPriceBlock.insertAdjacentHTML('beforeend',
@@ -305,7 +305,7 @@ export const renderCardsByCategory = ($, source, itemId) => {
             );
         }
         li.append(a);
-        // console.log(a);
+        
         cards.append(li);
     });
 };

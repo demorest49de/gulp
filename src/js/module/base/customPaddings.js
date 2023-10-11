@@ -2,7 +2,7 @@ import {types} from "../constants.js";
 
 
 const setHeader = () => {
-    //60 40 35 16
+    
     const header = document.querySelector('.header');
     
     switch (true) {
