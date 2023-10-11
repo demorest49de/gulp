@@ -1,8 +1,7 @@
-import {getItemById} from "../fetch.js";
 import {basketUserId} from '../../constants.js';
 import {getStorage} from "../localStorage.js";
 import {calculateDepth} from "../card/createCard.js";
-import {handleChooseAll, handleDecreaseQuantity, handleEncreaseQuantity} from "./renderBasket.js";
+import {handleDecreaseQuantity, handleEncreaseQuantity} from "./renderBasket.js";
 
 export const createBCCart = ($, bc) => {
     
@@ -278,68 +277,5 @@ export const createSectionBasket = (name, $) => {
     }
     
     renderBasketItems($);
-    
-    
-    // <li className="basket__list-item">
-    //     <div className="basket__list-all-info-block">
-    //         <div className="basket__list-item-block">
-    //
-    //             <label className="basket__label">
-    //                 <input type="checkbox" className="basket__checkbox-input"
-    //                 >
-    //                     <span className="basket__checkbox-icon"></span>
-    //             </label>
-    //             <picture className="basket__picture">
-    //                 <source srcSet="" type="image/avif">
-    //                     <source srcSet="" type="image/webp">
-    //                         <img className="basket__image-small"
-    //                              src="https://muddy-substantial-gear.glitch.me/image/0217012835.jpg"
-    //                              alt="" width="" height="">
-    //             </picture>
-    //         </div>
-    //         <div className="basket__list-text-block">
-    //             <p className="basket__list-text-main">
-    //                 15.6" Игровой ноутбук ASUS G513IE-HN004T</p>
-    //             <p className="basket__list-text-additional">
-    //                 Цвет: черный
-    //             </p>
-    //             <p className="basket__list-text-additional">
-    //                 Оперативная память: 16 ГБ
-    //             </p>
-    //         </div>
-    //         <div className="basket__list-quantity-block">
-    //             <button className="basket__minus-btn">−</button>
-    //             <input type="hidden" className="basket__quantity-input">
-    //                 <span className="basket__quantity-text">1</span>
-    //             </input>
-    //             <button className="basket__plus-btn">+</button>
-    //         </div>
-    //         <div className="basket__list-price-block">
-    //             <div className="basket__list-price-block-new">
-    //                 <span className="basket__item-new-price">109&nbsp;</span>
-    //                 <span className="basket__item-new-price">090 ₽</span>
-    //             </div>
-    //             <div className="basket__list-price-block-old">
-    //                 <span className="basket__item-old-price">140&nbsp;</span>
-    //                 <span className="basket__item-old-price">590 ₽</span>
-    //             </div>
-    //             <p className="basket__credit-from">В кредит от ₽</p>
-    //         </div>
-    //         <div className="basket__trascan-block">
-    //             <button className="basket__trashcan-btn">
-    //                 <svg className="basket__trashcan-svg" xmlns="http://www.w3.org/2000/svg"
-    //                      width="30" height="30" viewBox="0 0 30 30" fill="none">
-    //                     <rect width="30" height="30" fill="white"/>
-    //                     <path d="M19.0214 5.35355L19.1679
-    //                                 5.5H19.375H23.25V7H6.75V5.5H10.625H10.8321L10.9786
-    //                                  5.35355L12.0821 4.25H17.9179L19.0214
-    //                                  5.35355ZM10 25.75C8.90114 25.75 8 24.8489
-    //                                  8 23.75V9.25H22V23.75C22 24.8489 21.0989
-    //                                  25.75 20 25.75H10Z" fill="#C9C9C9" stroke="#C9C9C9"/>
-    //                 </svg>
-    //             </button>
-    //         </div>
-    //     </div>
-    // </li>
     
 };
