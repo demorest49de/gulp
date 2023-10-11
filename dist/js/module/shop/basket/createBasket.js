@@ -88,7 +88,7 @@ const renderBasketItems = ($) => {
                                 <source srcset="" type="image/webp">
                                     <img class="basket__image-small"
                                      src="https://muddy-substantial-gear.glitch.me/${item.image}"
-                                     alt="" width="" height="">
+                                     alt="${item.title}">
                             </picture>
                         </a>
                 </div>
@@ -136,6 +136,31 @@ const renderBasketItems = ($) => {
         });
     }
 };
+
+const renderPictures = () =>{
+    
+    const pictList = document.querySelector('.basket__dely-picture-block');
+    const basketArray = getStorage(basketUserId);
+    
+    if (basketArray.length > 0) {
+        
+        basketArray.forEach((elem) => {
+            
+            const item = elem.item;
+    
+            pictList.insertAdjacentHTML('beforeend',
+                `
+                    <picture class="basket__picture">
+                            <source srcset="" type="image/avif">
+                            <source srcset="" type="image/webp">
+                                <img class="basket__image-small"
+                src="https://muddy-substantial-gear.glitch.me/${item.image}"
+                alt="${item.title}">
+                        </picture>
+                `);
+        });
+    }
+}
 
 export const createSectionBasket = (name, $) => {
     
@@ -252,18 +277,7 @@ export const createSectionBasket = (name, $) => {
             <div class="basket__dely-block">
                 <span class="basket__dely-estim-date">10-13 февраля</span>
                 <div class="basket__dely-picture-block">
-                    <picture  class="basket__picture">
-                        <source srcset="" type="image/avif">
-                        <source srcset="" type="image/webp">
-                            <img class="basket__image-small"
-                             src="" alt="" width="" height="">
-                    </picture>
-                    <picture  class="basket__picture">
-                        <source srcset="" type="image/avif">
-                        <source srcset="" type="image/webp">
-                            <img class="basket__image-small"
-                             src="" alt="" width="" height="">
-                    </picture>
+                
                 </div>
             </div>
         </div>
@@ -276,5 +290,5 @@ export const createSectionBasket = (name, $) => {
     }
     
     renderBasketItems($);
-    
+    renderPictures();
 };

@@ -187,13 +187,13 @@ export const deleteItem = () => {
         block.addEventListener('click', ({target}) => {
             if (target.closest('.basket__trashcan-svg')) {
                 const li = target.closest('li');
-                console.log(li);
+                
                 li.remove();
                 const id = li.getAttribute('data-id');
-                console.log(' : ', id);
+                
                 const storage = getStorage(basketUserId);
                 const result = storage.filter((data) => (data.item.id !== id));
-                console.log(' : ', result);
+                
                 setStorage(basketUserId, result);
                 setBasketQuantity();
             }
