@@ -117,12 +117,14 @@
   &__trashcan-svg {
     width: 24px;
     height: 24px;
+    z-index: -1;
   }
 
   &__list-manage-block
   &__trashcan-btn {
     height: 30px;
     border: none;
+    z-index: 2;
     @media (max-width: 880px) {
       display: none;
     }

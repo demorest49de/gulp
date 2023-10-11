@@ -158,7 +158,7 @@ export const createSectionBasket = (name, $) => {
                         >
                     <span class="basket__checkbox-icon">Выбрать все</span>
                 </label>
-                
+                <label>
                 <button class="basket__trashcan-btn">
                     <svg class="basket__trashcan-svg" xmlns="http://www.w3.org/2000/svg"
                     width="30" height="30" viewBox="0 0 30 30" fill="none">
@@ -171,6 +171,7 @@ export const createSectionBasket = (name, $) => {
                          25.75 20 25.75H10Z" fill="#C9C9C9" stroke="#C9C9C9"/>
                     </svg>
                 </button>
+                </label>
             </div>
                 
             <div class="basket__underline"></div>

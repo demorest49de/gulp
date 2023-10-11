@@ -157,14 +157,15 @@ export const handleChooseAll = () => {
 
 export const deleteItem = (list, elem) => {
     const removeBtn = document.querySelector('.basket__trashcan-svg');
-    console.log(' : ', removeBtn);
     
     removeBtn.addEventListener('click', ({target}) => {
-        console.log(' : ',target);
-        // list.forEach((el) => {
-        //     console.log(' : ', el);
-        // });
-        console.log(' : ',list);
+        if(target.closest('.basket__trashcan-svg')){
+            const liEls = list.querySelectorAll('li');
+            liEls.forEach((el) => {
+                const checkbox = el.querySelector('.basket__checkbox-input');
+                if(checkbox.checked) el.remove();
+            });
+        }
     });
 };
 
