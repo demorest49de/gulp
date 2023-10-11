@@ -83,7 +83,7 @@ const renderBasketItems = ($) => {
                         </label>
                         
                         <a href="card.html?id=${item.id}" class="basket__item-link">
-                            <picture  class="basket__picture">
+                            <picture  class="basket__picture" data-id="${item.id}">
                                 <source srcset="" type="image/avif">
                                 <source srcset="" type="image/webp">
                                     <img class="basket__image-small"
