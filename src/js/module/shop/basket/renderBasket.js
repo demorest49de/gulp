@@ -79,7 +79,7 @@ const calculate = (value, id, target) => {
     }
     setStorage(basketUserId, basketArray);
     setBasketQuantity();
-    
+    calculateTotal();
     const priceBlock = target.closest('.basket__list-all-info-block');
     const newPriceFirst = priceBlock.querySelector('.basket__item-new-price:nth-child(1)');
     const newPriceSecond = priceBlock.querySelector('.basket__item-new-price:nth-child(2)');
@@ -141,11 +141,12 @@ const calculateTotal = () => {
         if (basket.length > 0) {
             basket.forEach((data) => {
                 const item = data.item;
-                total += item.price;
+                total += (data.qty * item.price);
+                
                 if (item.discount > 0) {
-                    discoutSum += (Math.ceil((item.price) - ((item.price * item.discount) / 100)));
+                    discoutSum += (Math.ceil((total) - ((total * item.discount) / 100)));
                 } else {
-                    discoutSum += (Math.ceil((item.price) / 1.2)).toString();
+                    discoutSum += (Math.ceil((total) / 1.2)).toString();
                 }
             });
             console.log(total, ' : ', discoutSum);

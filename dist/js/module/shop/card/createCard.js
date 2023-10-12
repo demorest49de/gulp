@@ -163,18 +163,13 @@ export const createSectionCard = (name, $, paramsObject) => {
             
             if (elem) {
                 elem.qty += 1;
-                console.log(' : ',elem);
-                elem.total = elem.qty * elem.item.price;
             } else {
                 const itemObj = {
                     item: item,
                     qty: 1,
-                    calcTotal() {
-                        return this.qty * this.item.price;
-                    },
-                    total: 0,
+                    // total: 0,
                 };
-                itemObj.total = itemObj.calcTotal();
+                // itemObj.total = itemObj.qty * itemObj.item.price;
                 basketArray.push(itemObj);
             }
             setStorage(basketUserId, basketArray);
