@@ -167,6 +167,15 @@ export const handleChooseAll = () => {
     ;
 };
 
+const removePictures = (id) => {
+    const pictures = document.querySelectorAll('.basket__dely-picture-block .basket__picture');
+    pictures.forEach((item) => {
+        
+        const attr = item.getAttribute('data-id');
+        if (attr && attr === id) item.remove();
+    });
+};
+
 export const deleteItemByCheckbox = () => {
     const block = document.querySelector('.basket__list-manage-block .basket__trashcan-svg');
     const list = document.querySelector('.basket__items-list');
@@ -186,6 +195,8 @@ export const deleteItemByCheckbox = () => {
                         
                         setStorage(basketUserId, result);
                         setBasketQuantity();
+                        
+                        removePictures(id);
                     }
                 });
             }
@@ -199,9 +210,7 @@ export const deleteItem = () => {
     btns.forEach((btn) => {
         btn.addEventListener('click', ({target}) => {
             if (target.closest('.basket__trashcan-svg')) {
-                console.log(target);
                 const li = target.closest('li');
-                console.log(li);
                 li.remove();
                 const id = li.getAttribute('data-id');
                 
@@ -210,6 +219,8 @@ export const deleteItem = () => {
                 
                 setStorage(basketUserId, result);
                 setBasketQuantity();
+                
+                removePictures(id);
             }
         });
     });
