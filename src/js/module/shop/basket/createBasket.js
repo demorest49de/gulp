@@ -212,14 +212,14 @@ export const createSectionBasket = (name, $) => {
                 <div class="basket__item-block">
                     <div class="basket__price">
                         <span class="basket__item-details-text">Товары, 0 шт.</span>
-                        <div>
+                        <div class="basket__details-item-total">
                         <span class="basket__item-details-value"></span>
                         <span class="basket__item-details-value">0 ₽</span>
                         </div>
                     </div>
                     <div class="basket__price">
                         <span class="basket__item-details-text">Скидка </span>
-                        <div>
+                        <div class="basket__details-item-discount">
                         <span class="basket__item-details-value"></span>
                         <span class="basket__item-details-value">0 ₽</span>
                         </div>

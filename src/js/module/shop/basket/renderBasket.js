@@ -164,6 +164,19 @@ const calculateTotal = () => {
             
             first.textContent = firstDiscount;
             last.textContent = lastDiscount;
+            
+            const fTotal = document.querySelector('.basket__details-item-total ' +
+                '.basket__item-details-value:nth-child(1)');
+            const lTotal = document.querySelector('.basket__details-item-total ' +
+                '.basket__item-details-value:nth-child(2)');
+            const fDiff = document.querySelector('.basket__details-item-discount ' +
+                '.basket__item-details-value:nth-child(1)');
+            const lDiff = document.querySelector('.basket__details-item-discount ' +
+                '.basket__item-details-value:nth-child(2)');
+            fTotal.textContent = firstTotal;
+            lTotal.textContent = lastTotal;
+            fDiff.textContent = firstDiff;
+            lDiff.textContent = lastDiff;
         }
     }
 };
