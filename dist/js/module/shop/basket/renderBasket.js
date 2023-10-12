@@ -137,25 +137,31 @@ const calculateTotal = () => {
         const last = document.querySelector('.basket__total-value:nth-child(2)');
         
         let total = 0;
-        let discoutSum = 0;
+        let discoutedSum = 0;
         if (basket.length > 0) {
             basket.forEach((data) => {
                 const item = data.item;
                 const price = item.price;
+                
+                const localTotal = data.qty * item.price;
                 total += (data.qty * item.price);
                 
+                
                 if (item.discount > 0) {
-                    discoutSum += (Math.ceil((price) - ((price * item.discount) / 100)));
+                    discoutedSum += (Math.ceil((localTotal) - ((localTotal * item.discount) / 100)));
                 } else {
-                    discoutSum += (Math.ceil((price) / 1.2)).toString();
+                    discoutedSum += (Math.ceil((localTotal) / 1.2)).toString();
                 }
             });
-            const diff = total - discoutSum;
+            const diff = total - discoutedSum;
             
+            console.log(' : ', total);
+            console.log(' : ', discoutedSum);
+            console.log(' : ', diff);
             const {firstPart: firstTotal, lastPart: lastTotal} = calculateDepth(total.toString());
-            const {firstPart: firstDiscount, lastPart: lastDiscount} = calculateDepth(discoutSum.toString());
+            const {firstPart: firstDiscount, lastPart: lastDiscount} = calculateDepth(discoutedSum.toString());
             const {firstPart: firstDiff, lastPart: lastDiff} = calculateDepth(diff.toString());
-    
+            
             first.textContent = firstDiscount;
             last.textContent = lastDiscount;
         }

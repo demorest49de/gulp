@@ -205,18 +205,18 @@ export const createSectionBasket = (name, $) => {
                 <div class="basket__price-block">
                     <span class="basket__total-text">итого: </span>
                     <div class="basket__total-text">
-                    <span class="basket__total-value">${150}</span>
-                    <span class="basket__total-value">${100} ₽</span>
+                    <span class="basket__total-value"></span>
+                    <span class="basket__total-value">0 ₽</span>
                     </div>
                 </div>
                 <div class="basket__item-block">
                     <div class="basket__price">
                         <span class="basket__item-details">Товары, ${2} шт.</span>
-                        <span class="basket__item-details">${100} ₽</span>
+                        <span class="basket__item-details">0 ₽</span>
                     </div>
                     <div class="basket__price">
                         <span class="basket__item-details">Скидка </span>
-                        <span class="basket__item-details">${10} ₽</span>
+                        <span class="basket__item-details">0 ₽</span>
                     </div>
                     <div class="basket__price">
                         <span class="basket__item-details">Доставка</span>
