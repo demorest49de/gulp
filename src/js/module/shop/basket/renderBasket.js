@@ -134,10 +134,10 @@ const handleQtyBtns = (target, className) => {
     const btnBlock = target.closest('.basket__list-quantity-block');
     const text = btnBlock.querySelector('.basket__quantity-text');
     let value = NaN;
-    if(className === '.basket__plus-btn') {
+    if (className === '.basket__plus-btn') {
         value = 1;
     }
-    if(className === '.basket__minus-btn') {
+    if (className === '.basket__minus-btn') {
         value = -1;
     }
     if (+(text.textContent) > 1) {
@@ -194,12 +194,14 @@ export const deleteItemByCheckbox = () => {
 };
 
 export const deleteItem = () => {
-    const block = document.querySelector('.basket__list-all-info-block .basket__trashcan-svg');
-    if (block) {
-        block.addEventListener('click', ({target}) => {
+    const btns = document.querySelectorAll('.basket__list-all-info-block .basket__trashcan-btn');
+    
+    btns.forEach((btn) => {
+        btn.addEventListener('click', ({target}) => {
             if (target.closest('.basket__trashcan-svg')) {
+                console.log(target);
                 const li = target.closest('li');
-                
+                console.log(li);
                 li.remove();
                 const id = li.getAttribute('data-id');
                 
@@ -210,7 +212,7 @@ export const deleteItem = () => {
                 setBasketQuantity();
             }
         });
-    }
+    });
 };
 
 export const basketHandlers = () => {
