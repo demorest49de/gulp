@@ -283,7 +283,12 @@ export const renderCardsByCategory = ($, source, itemId) => {
         a.className = 'card-category__link';
         a.title = `${item.title}`;
         a.href = `card.html?id=${item.id}`;
-        const oldPrice = Math.ceil(item.price - ((item.price * item.discount) / 100));
+        let newPrice = NaN;
+        if (item.discount === 0) {
+            newPrice = (Math.ceil(item.price / 1.2)).toString();
+        } else {
+            newPrice = Math.ceil(item.price - ((item.price * item.discount) / 100));
+        }
         a.insertAdjacentHTML('beforeend',
             `
                     <picture class="card-category__figure">
@@ -291,20 +296,18 @@ export const renderCardsByCategory = ($, source, itemId) => {
                               alt="${item.title}" width="420" height="295">
                     </picture>
                     <div class="card-category__price-block">
-                    <span class="card-category__new-price">${item.price} ₽</span>
+                    <span class="card-category__new-price">${newPrice} ₽</span>
                     
                     </div>
                     <p class="card-category__item-text">${item.title}</p>
                 `);
         
         const cardPriceBlock = a.querySelector('.card-category__price-block');
-        if (item.discount > 0) {
-            cardPriceBlock.insertAdjacentHTML('beforeend',
-                `<span class="card-category__old-price">${oldPrice} ₽</span>`
-            );
-        }
-        li.append(a);
+        cardPriceBlock.insertAdjacentHTML('beforeend',
+            `<span class="card-category__old-price">${item.price} ₽</span>`
+        );
         
+        li.append(a);
         cards.append(li);
     });
 };
