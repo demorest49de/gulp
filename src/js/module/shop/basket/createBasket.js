@@ -256,7 +256,7 @@ export const createSectionBasket = (name, $) => {
                 <div class="basket__agreement">
                     <label class="basket__label">
                         <input type="checkbox" class="basket__checkbox-input"
-                            required>
+                           checked required>
                         <span class="basket__checkbox-icon"></span>
                     </label>
                         <span class="basket__agree-text">

@@ -211,12 +211,18 @@ export const createSectionBasket = (name, $) => {
                 </div>
                 <div class="basket__item-block">
                     <div class="basket__price">
-                        <span class="basket__item-details">Товары, ${2} шт.</span>
-                        <span class="basket__item-details">0 ₽</span>
+                        <span class="basket__item-details-text">Товары, 0 шт.</span>
+                        <div>
+                        <span class="basket__item-details-value"></span>
+                        <span class="basket__item-details-value">0 ₽</span>
+                        </div>
                     </div>
                     <div class="basket__price">
-                        <span class="basket__item-details">Скидка </span>
-                        <span class="basket__item-details">0 ₽</span>
+                        <span class="basket__item-details-text">Скидка </span>
+                        <div>
+                        <span class="basket__item-details-value"></span>
+                        <span class="basket__item-details-value">0 ₽</span>
+                        </div>
                     </div>
                     <div class="basket__price">
                         <span class="basket__item-details">Доставка</span>
@@ -250,7 +256,7 @@ export const createSectionBasket = (name, $) => {
                 <div class="basket__agreement">
                     <label class="basket__label">
                         <input type="checkbox" class="basket__checkbox-input"
-                            required>
+                           checked required>
                         <span class="basket__checkbox-icon"></span>
                     </label>
                         <span class="basket__agree-text">
