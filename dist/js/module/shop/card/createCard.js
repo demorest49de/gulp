@@ -19,7 +19,6 @@ export const calculateDepth = (priceValue) => {
         firstPart = priceValue;
         lastPart = '';
     }
-    
     return {firstPart, lastPart};
 };
 
@@ -167,9 +166,7 @@ export const createSectionCard = (name, $, paramsObject) => {
                 const itemObj = {
                     item: item,
                     qty: 1,
-                    // total: 0,
                 };
-                // itemObj.total = itemObj.qty * itemObj.item.price;
                 basketArray.push(itemObj);
             }
             setStorage(basketUserId, basketArray);

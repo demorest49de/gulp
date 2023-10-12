@@ -135,28 +135,29 @@ const calculateTotal = () => {
     const first = document.querySelector('.basket__total-value:nth-child(1)');
     if (first) {
         const last = document.querySelector('.basket__total-value:nth-child(2)');
-        console.log(first.textContent, ' : ', last.textContent);
+        
         let total = 0;
         let discoutSum = 0;
         if (basket.length > 0) {
             basket.forEach((data) => {
                 const item = data.item;
+                const price = item.price;
                 total += (data.qty * item.price);
                 
                 if (item.discount > 0) {
-                    discoutSum += (Math.ceil((total) - ((total * item.discount) / 100)));
+                    discoutSum += (Math.ceil((price) - ((price * item.discount) / 100)));
                 } else {
-                    discoutSum += (Math.ceil((total) / 1.2)).toString();
+                    discoutSum += (Math.ceil((price) / 1.2)).toString();
                 }
             });
-            console.log(total, ' : ', discoutSum);
             const diff = total - discoutSum;
             
-            const {firstPart: firstTotal, lastPart: lastTotal} = calculateDepth(total);
-            const {firstPart: firstDiscount, lastPart: lastDiscount} = calculateDepth(discoutSum);
-            const {firstPart: firstDiff, lastPart: lastDiff} = calculateDepth(diff);
-            
-            
+            const {firstPart: firstTotal, lastPart: lastTotal} = calculateDepth(total.toString());
+            const {firstPart: firstDiscount, lastPart: lastDiscount} = calculateDepth(discoutSum.toString());
+            const {firstPart: firstDiff, lastPart: lastDiff} = calculateDepth(diff.toString());
+    
+            first.textContent = firstDiscount;
+            last.textContent = lastDiscount;
         }
     }
 };
@@ -232,6 +233,7 @@ export const deleteItemByCheckbox = () => {
                         setBasketQuantity();
                         
                         removePictures(id);
+                        calculateTotal();
                     }
                 });
             }
@@ -256,6 +258,7 @@ export const deleteItem = () => {
                 setBasketQuantity();
                 
                 removePictures(id);
+                calculateTotal();
             }
         });
     });
