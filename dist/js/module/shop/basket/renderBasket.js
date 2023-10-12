@@ -164,15 +164,20 @@ const handleQtyBtns = (target, className) => {
     const btnBlock = target.closest('.basket__list-quantity-block');
     const text = btnBlock.querySelector('.basket__quantity-text');
     let value = 0;
+    
     if (className === '.basket__plus-btn') {
         value = 1;
+        text.textContent = +(text.textContent) + value;
     }
+    
     if (className === '.basket__minus-btn') {
         value = -1;
+        if(+(text.textContent) > 1){
+            text.textContent = +(text.textContent) + value;
+        }
     }
-    if (+(text.textContent) > 0) {
-        
-        text.textContent = +(text.textContent) + value;
+    
+    if (+(text.textContent) > 1) {
         const el = target.closest(('li'));
         const id = el.getAttribute('data-id');
         console.log(id);
