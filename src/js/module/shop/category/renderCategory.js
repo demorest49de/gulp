@@ -1,4 +1,4 @@
-import {createFooter, createHeader, createMain} from "../../base/baseElems.js";
+import {createFooter, createHeader, createMain, iterateOverCards} from "../../base/baseElems.js";
 import {getSearchParams} from "../../base/tools.js";
 import {getGoodsByCategory} from "../fetch.js";
 import {createBCCategory} from "./createCategory.js";
@@ -54,47 +54,7 @@ const renderCardsByCategory = ($, items) => {
     const cards = document.querySelector('.category__cards');
     const cardAfterStyle = document.createElement("style");
     
-    items.forEach((item, index) => {
-        if (item.discount > 0) {
-            cardAfterStyle.innerHTML +=
-                `.card-category:nth-child(${index + 1}) .card-category__figure:after {
-                content: '-${item.discount}%';
-
-            }`;
-            document.body.append(cardAfterStyle);
-        }
-        
-        const li = document.createElement('li');
-        li.className = 'card-category';
-        
-        const a = document.createElement('a');
-        a.className = 'card-category__link';
-        a.title = `${item.title}`;
-        a.href = `card.html?id=${item.id}`;
-        const newPrice = Math.ceil(item.price - ((item.price * item.discount) / 100));
-        a.insertAdjacentHTML('beforeend',
-            `
-                    <picture class="card-category__figure">
-                    <img loading="lazy" class="card-category__image" src="${$.URL}/${item.image}"
-                              alt="${item.title}" width="420" height="295">
-                    </picture>
-                    <div class="card-category__price-block">
-                    <span class="card-category__new-price">${newPrice} ₽</span>
-                    
-                    </div>
-                    <p class="card-category__item-text">${item.title}</p>
-                `);
-        
-        const cardPriceBlock = a.querySelector('.card-category__price-block');
-        if (item.discount > 0) {
-            cardPriceBlock.insertAdjacentHTML('beforeend',
-                `<span class="card-category__old-price">${item.price} ₽</span>`
-            );
-        }
-        li.append(a);
-        
-        cards.append(li);
-    });
+    iterateOverCards(cards, $, cardAfterStyle, items);
 };
 
 
@@ -120,3 +80,45 @@ const createSectionCategory = (name, $, paramsObject) => {
         }
     });
 };
+
+// items.forEach((item, index) => {
+//     if (item.discount > 0) {
+//         cardAfterStyle.innerHTML +=
+//             `.card-category:nth-child(${index + 1}) .card-category__figure:after {
+//                 content: '-${item.discount}%';
+//
+//             }`;
+//         document.body.append(cardAfterStyle);
+//     }
+//
+//     const li = document.createElement('li');
+//     li.className = 'card-category';
+//
+//     const a = document.createElement('a');
+//     a.className = 'card-category__link';
+//     a.title = `${item.title}`;
+//     a.href = `card.html?id=${item.id}`;
+//     const newPrice = Math.ceil(item.price - ((item.price * item.discount) / 100));
+//     a.insertAdjacentHTML('beforeend',
+//         `
+//                     <picture class="card-category__figure">
+//                     <img loading="lazy" class="card-category__image" src="${$.URL}/${item.image}"
+//                               alt="${item.title}" width="420" height="295">
+//                     </picture>
+//                     <div class="card-category__price-block">
+//                     <span class="card-category__new-price">${newPrice} ₽</span>
+//
+//                     </div>
+//                     <p class="card-category__item-text">${item.title}</p>
+//                 `);
+//
+//     const cardPriceBlock = a.querySelector('.card-category__price-block');
+//     if (item.discount > 0) {
+//         cardPriceBlock.insertAdjacentHTML('beforeend',
+//             `<span class="card-category__old-price">${item.price} ₽</span>`
+//         );
+//     }
+//     li.append(a);
+//
+//     cards.append(li);
+// });

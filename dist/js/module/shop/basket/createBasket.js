@@ -147,7 +147,7 @@ const renderPictures = () =>{
     
             pictList.insertAdjacentHTML('beforeend',
                 `
-                    <picture class="basket__picture">
+                    <picture class="basket__picture" data-id="${item.id}">
                             <source srcset="" type="image/avif">
                             <source srcset="" type="image/webp">
                                 <img class="basket__image-small"

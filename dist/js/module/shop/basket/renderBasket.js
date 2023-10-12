@@ -134,10 +134,10 @@ const handleQtyBtns = (target, className) => {
     const btnBlock = target.closest('.basket__list-quantity-block');
     const text = btnBlock.querySelector('.basket__quantity-text');
     let value = NaN;
-    if(className === '.basket__plus-btn') {
+    if (className === '.basket__plus-btn') {
         value = 1;
     }
-    if(className === '.basket__minus-btn') {
+    if (className === '.basket__minus-btn') {
         value = -1;
     }
     if (+(text.textContent) > 1) {
@@ -167,6 +167,15 @@ export const handleChooseAll = () => {
     ;
 };
 
+const removePictures = (id) => {
+    const pictures = document.querySelectorAll('.basket__dely-picture-block .basket__picture');
+    pictures.forEach((item) => {
+        
+        const attr = item.getAttribute('data-id');
+        if (attr && attr === id) item.remove();
+    });
+};
+
 export const deleteItemByCheckbox = () => {
     const block = document.querySelector('.basket__list-manage-block .basket__trashcan-svg');
     const list = document.querySelector('.basket__items-list');
@@ -186,6 +195,8 @@ export const deleteItemByCheckbox = () => {
                         
                         setStorage(basketUserId, result);
                         setBasketQuantity();
+                        
+                        removePictures(id);
                     }
                 });
             }
@@ -194,12 +205,12 @@ export const deleteItemByCheckbox = () => {
 };
 
 export const deleteItem = () => {
-    const block = document.querySelector('.basket__list-all-info-block .basket__trashcan-svg');
-    if (block) {
-        block.addEventListener('click', ({target}) => {
+    const btns = document.querySelectorAll('.basket__list-all-info-block .basket__trashcan-btn');
+    
+    btns.forEach((btn) => {
+        btn.addEventListener('click', ({target}) => {
             if (target.closest('.basket__trashcan-svg')) {
                 const li = target.closest('li');
-                
                 li.remove();
                 const id = li.getAttribute('data-id');
                 
@@ -208,9 +219,11 @@ export const deleteItem = () => {
                 
                 setStorage(basketUserId, result);
                 setBasketQuantity();
+                
+                removePictures(id);
             }
         });
-    }
+    });
 };
 
 export const basketHandlers = () => {
