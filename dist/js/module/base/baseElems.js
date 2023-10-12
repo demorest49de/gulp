@@ -248,3 +248,51 @@ export const createMain = (name, $) => {
         $.main = $.app.querySelector('main');
     }
 };
+
+export const iterateOverCards = (cards, $, cardAfterStyle, items) => {
+    
+    items.forEach((item, index) => {
+        if (item.discount > 0) {
+            cardAfterStyle.innerHTML +=
+                `.card-category:nth-child(${index + 1}) .card-category__figure:after {
+                content: '-${item.discount}%';
+
+            }`;
+            document.body.append(cardAfterStyle);
+        }
+        
+        const li = document.createElement('li');
+        li.className = 'card-category';
+        
+        const a = document.createElement('a');
+        a.className = 'card-category__link';
+        a.title = `${item.title}`;
+        a.href = `card.html?id=${item.id}`;
+        let newPrice = NaN;
+        if (item.discount === 0) {
+            newPrice = (Math.ceil(item.price / 1.2)).toString();
+        } else {
+            newPrice = Math.ceil(item.price - ((item.price * item.discount) / 100));
+        }
+        a.insertAdjacentHTML('beforeend',
+            `
+                    <picture class="card-category__figure">
+                    <img loading="lazy" class="card-category__image" src="${$.URL}/${item.image}"
+                              alt="${item.title}" width="420" height="295">
+                    </picture>
+                    <div class="card-category__price-block">
+                    <span class="card-category__new-price">${newPrice} ₽</span>
+                    
+                    </div>
+                    <p class="card-category__item-text">${item.title}</p>
+                `);
+        
+        const cardPriceBlock = a.querySelector('.card-category__price-block');
+        cardPriceBlock.insertAdjacentHTML('beforeend',
+            `<span class="card-category__old-price">${item.price} ₽</span>`
+        );
+        
+        li.append(a);
+        cards.append(li);
+    });
+};

@@ -1,5 +1,5 @@
 import {renderBlog} from "../blog/renderBlog.js";
-import {createHeader, createFooter, createMain} from '../base/baseElems.js';
+import {createHeader, createFooter, createMain, iterateOverCards} from '../base/baseElems.js';
 import {handlers} from "./handlers.js";
 import {renderArticle} from '../article/renderArticle.js';
 
@@ -261,39 +261,6 @@ export const renderCards = async ($, callback) => {
         }
         const items = source.data.slice(0, 6);
         
-        
-        items.forEach((item, index) => {
-            
-            cardAfterStyle.innerHTML +=
-                `.card:nth-child(${index + 1}) .card__figure:after {
-                content: '-${item.discount}%';
-                
-            }`;
-            document.body.append(cardAfterStyle);
-            
-            const li = document.createElement('li');
-            li.className = 'card';
-            
-            const a = document.createElement('a');
-            a.className = 'card__link';
-            a.title = `${item.title}`;
-            a.href = `card.html?id=${item.id}`;
-            const newPrice = Math.ceil(item.price - ((item.price * item.discount) / 100));
-            a.insertAdjacentHTML('beforeend',
-                `
-                    <picture class="card__figure">
-                    <img loading="lazy" class="card__image" src="${$.URL}/${item.image}"
-                              alt="${item.title}" width="420" height="295">
-                    </picture>
-                    <div class="card__price-block"><span class="card__new-price">${newPrice} ₽</span>
-                        <span class="card__old-price">${item.price} ₽</span>
-                    </div>
-                    <p class="card__item-text">${item.title}</p>
-                `);
-            
-            li.append(a);
-            
-            cards.append(li);
-        });
+        iterateOverCards(cards, $, cardAfterStyle, items);
     });
 };
