@@ -494,7 +494,9 @@
   }
 
   &__time-address,
-  &__item-details {
+  &__item-details-text,
+  &__item-details-value
+  {
     color: $grey-8f8f8f;
     font-size: 16px;
     font-weight: 400;
