@@ -1937,10 +1937,12 @@ main {
 .basket__total-text {
   font-size: 26px;
   font-weight: 700;
+  text-transform: capitalize;
 }
 
-.basket__total-text:nth-child(1) {
-  text-transform: capitalize;
+.basket__total-value {
+  font-size: 26px;
+  font-weight: 700;
 }
 
 .basket__item-block {

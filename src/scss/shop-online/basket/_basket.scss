@@ -470,10 +470,12 @@
   &__total-text {
     font-size: 26px;
     font-weight: 700;
+    text-transform: capitalize;
+  }
 
-    &:nth-child(1) {
-      text-transform: capitalize;
-    }
+  &__total-value {
+    font-size: 26px;
+    font-weight: 700;
   }
 
   &__item-block {
