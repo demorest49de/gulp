@@ -162,10 +162,20 @@ export const createSectionCard = (name, $, paramsObject) => {
             });
             
             if (elem) {
-                
                 elem.qty += 1;
+                console.log(' : ',elem);
+                elem.total = elem.qty * elem.item.price;
             } else {
-                basketArray.push({item: item, qty: 1});
+                const itemObj = {
+                    item: item,
+                    qty: 1,
+                    calcTotal() {
+                        return this.qty * this.item.price;
+                    },
+                    total: 0,
+                };
+                itemObj.total = itemObj.calcTotal();
+                basketArray.push(itemObj);
             }
             setStorage(basketUserId, basketArray);
             setBasketQuantity();
