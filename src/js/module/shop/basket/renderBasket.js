@@ -148,7 +148,6 @@ const calculateTotal = () => {
         const lDiff = document.querySelector('.basket__details-item-discount ' +
             '.basket__item-details-value:nth-child(2)');
         
-        
         let total = 0;
         let discoutedSum = 0;
         
@@ -158,7 +157,7 @@ const calculateTotal = () => {
             const checkbox = li.querySelector('.basket__checkbox-input');
             const id = li.getAttribute('data-id');
             
-            if (checkbox.checked) {
+            // if (checkbox.checked) {
                 const array = basket.filter(i => i.item.id === id);
                 array.forEach((data) => {
                     if (data) {
@@ -192,7 +191,7 @@ const calculateTotal = () => {
                         lDiff.textContent = lastDiff;
                     }
                 });
-            }
+            // }
         });
         
         // if (basket.length > 0) {
