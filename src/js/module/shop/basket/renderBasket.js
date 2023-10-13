@@ -204,40 +204,6 @@ const calculateTotal = () => {
                 }
             }
         });
-        
-        // if (basket.length > 0) {
-        //     basket.forEach((data) => {
-        //         const item = data.item;
-        //
-        //         const localTotal = data.qty * item.price;
-        //         total += (data.qty * item.price);
-        //
-        //
-        //         if (item.discount > 0) {
-        //             discoutedSum += (Math.ceil((localTotal) - ((localTotal * item.discount) / 100)));
-        //         } else {
-        //             discoutedSum += (Math.ceil((localTotal) / 1.2)).toString();
-        //         }
-        //     });
-        //     const diff = total - discoutedSum;
-        //
-        //     // console.log(' : ', total);
-        //     // console.log(' : ', discoutedSum);
-        //     // console.log(' : ', diff);
-        //
-        //     const {firstPart: firstTotal, lastPart: lastTotal} = calculateDepth(total.toString());
-        //     const {firstPart: firstDiscount, lastPart: lastDiscount} = calculateDepth(discoutedSum.toString());
-        //     const {firstPart: firstDiff, lastPart: lastDiff} = calculateDepth(diff.toString());
-        //
-        //     first.textContent = firstDiscount;
-        //     last.textContent = lastDiscount;
-        //
-        
-        //     fTotal.textContent = firstTotal;
-        //     lTotal.textContent = lastTotal;
-        //     fDiff.textContent = firstDiff;
-        //     lDiff.textContent = lastDiff;
-        // }
     }
 };
 
@@ -330,6 +296,8 @@ export const deleteItemByCheckbox = () => {
                         calculateTotal();
                     }
                 });
+                const checkbox = document.querySelector('.basket__list-manage-block .basket__checkbox-input');
+                checkbox.checked = false;
             }
         });
     }
