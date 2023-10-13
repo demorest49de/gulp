@@ -25,7 +25,7 @@ export const createHeader = (name, $) => {
                     aria-label="поиск товара">
                         <input type="search"
                                class="form-search__input"
-                               name="form-search__input"
+                               name="search"
                                placeholder="Я ищу..."
                                >
                         <button class="form-search__button" type="submit" aria-label="Поиск"
