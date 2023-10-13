@@ -105,7 +105,7 @@ export const scss = () =>
         })))
         .pipe(gulpif(!dev, gcmq()))
         .pipe(gulpif(!dev, gulp.dest(path.dist.css)))
-        //TODO for debugging purposes comment this block of code
+        //TODO for debugging purposes comment cleanCSS
         // for clear css viewing on debug
         .pipe(cleanCSS({
             2: {
@@ -140,9 +140,8 @@ if (!dev) {
 export const js = () => gulp
     .src(path.src.js)
     
-    //TODO for debugging purposes comment this block of code
+    //TODO for debugging purposes comment from plumber to rename
     // for clear js viewing on debug
-    // just comment strings 145-151
     
     .pipe(plumber())
     .pipe(webpackStream(webpackConf, webpack))
