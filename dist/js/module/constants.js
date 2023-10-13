@@ -165,10 +165,12 @@ const bc = {
     article: 'имя статьи',
     category: 'имя каталога',
     card: 'имя товара',
+    search: 'поиск',
     categoryURL: '/category.html',
     cardURL: '/card.html',
     cart: 'Корзина',
     cartURL: '/cart.html',
+    searchURL: '/search.html',
 };
 
 const breadCrumbs = {
@@ -212,6 +214,19 @@ const breadCrumbs = {
             url: bc.categoryURL,
             name: bc.category,
             ariaLabel: bc.category,
+        }
+    ],
+    
+    searchInfo: [
+        {
+            url: bc.url,
+            name: bc.main,
+            ariaLabel: bc.main,
+        },
+        {
+            url: bc.searchURL,
+            name: bc.search,
+            ariaLabel: bc.search,
         }
     ],
     

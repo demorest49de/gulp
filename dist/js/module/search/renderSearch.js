@@ -1,10 +1,10 @@
-import {createFooter, createHeader, createMain, iterateOverCards} from "../../base/baseElems.js";
-import {getSearchParams} from "../../base/tools.js";
-import {getGoodsByCategory} from "../fetch.js";
-import {createBCCategory} from "./createCategory.js";
+import {createFooter, createHeader, createMain, iterateOverCards} from "../base/baseElems.js";
+import {getSearchParams} from "../base/tools.js";
+import {getGoodsByCategory} from "../shop/fetch.js";
+import {createSearchBCCategory} from "./createSearch.js";
 
 
-export const renderCategory = ($) => {
+export const renderSearch = ($) => {
     $.categoryPage.forEach(({type, name}) => {
         if (type === $.types.header) {
             createHeader(name, $);
@@ -13,14 +13,14 @@ export const renderCategory = ($) => {
         
         if (type === $.types.main) {
             createMain(name, $);
-            const breadCrumbs = createBCCategory($.breadCrumbs.categoryInfo);
+            const breadCrumbs = createSearchBCCategory($.breadCrumbs.searchInfo);
             $.main.append(breadCrumbs);
             return;
         }
         
         if (type === $.types.section) {
             const paramsObject = getSearchParams();
-            createSectionCategory(name, $, paramsObject);
+            createSectionSearch(name, $, paramsObject);
             return;
         }
         
@@ -58,7 +58,7 @@ const renderCardsByCategory = ($, items) => {
 };
 
 
-const createSectionCategory = (name, $, paramsObject) => {
+const createSectionSearch = (name, $, paramsObject) => {
     const categoryName = paramsObject.name;
     getGoodsByCategory($, categoryName).then((data) => {
         const items = data.data;

@@ -7,6 +7,7 @@ import {getGoodsWithDiscount} from "./fetch.js";
 import {renderCategory} from "./category/renderCategory.js";
 import {renderCard} from "./card/renderCard.js";
 import {renderBasket} from "./basket/renderBasket.js";
+import {renderSearch} from "../search/renderSearch.js";
 
 
 export const createSection = (name, $, categoryName) => {
@@ -220,7 +221,7 @@ const renderShop = ($) => {
 };
 
 export const renderElement = ($) => {
-    
+    // todo here we define what page we are goin to
     if ($.page === 'shop') {
         renderShop($);
         handlers($);
@@ -244,6 +245,10 @@ export const renderElement = ($) => {
     
     if ($.page === 'cart') {
         renderBasket($);
+    }
+    
+    if ($.page === 'search') {
+        renderSearch($);
     }
 };
 
