@@ -130,6 +130,7 @@ export const handleChangeQuantity = () => {
     }
 };
 
+// TODO calculateTotal
 const calculateTotal = () => {
     const basket = getStorage(basketUserId);
     const first = document.querySelector('.basket__total-value:nth-child(1)');
@@ -138,10 +139,17 @@ const calculateTotal = () => {
         
         let total = 0;
         let discoutedSum = 0;
+        
+         const list = document.querySelector('.basket__items-list');
+         list.forEach((item)=>{
+             if(item.checked){
+                 console.log(' : ',item);
+             }
+         })
+        
         if (basket.length > 0) {
             basket.forEach((data) => {
                 const item = data.item;
-                const price = item.price;
                 
                 const localTotal = data.qty * item.price;
                 total += (data.qty * item.price);
@@ -158,6 +166,7 @@ const calculateTotal = () => {
             console.log(' : ', total);
             console.log(' : ', discoutedSum);
             console.log(' : ', diff);
+            
             const {firstPart: firstTotal, lastPart: lastTotal} = calculateDepth(total.toString());
             const {firstPart: firstDiscount, lastPart: lastDiscount} = calculateDepth(discoutedSum.toString());
             const {firstPart: firstDiff, lastPart: lastDiff} = calculateDepth(diff.toString());
@@ -218,9 +227,10 @@ export const handleChooseAll = () => {
                 }
             });
         });
-    }
-    ;
+    };
 };
+
+
 
 const removePictures = (id) => {
     const pictures = document.querySelectorAll('.basket__dely-picture-block .basket__picture');
@@ -289,5 +299,5 @@ export const basketHandlers = () => {
     deleteItemByCheckbox();
     deleteItem();
     handleChangeQuantity();
-    calculateTotal();
+    // calculateTotal();
 };
