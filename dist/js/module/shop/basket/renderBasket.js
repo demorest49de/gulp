@@ -152,6 +152,16 @@ const calculateTotal = () => {
         let discoutedSum = 0;
         
         const list = document.querySelectorAll('.basket__list-item');
+    
+    
+        fTotal.textContent = '0';
+        lTotal.textContent = ` ₽`;
+    
+        fDiscount.textContent = '0';
+        lDiscount.textContent = ` ₽`;
+    
+        fDiff.textContent = '0';
+        lDiff.textContent = ` ₽`;
         
         list.forEach((li) => {
             const checkbox = li.querySelector('.basket__checkbox-input');
@@ -159,41 +169,39 @@ const calculateTotal = () => {
             
             if (checkbox.checked) {
                 const data = basket.find(i => i.item.id === id);
-                    if (data) {
-                        const item = data.item;
-                        
-                        const localTotal = data.qty * item.price;
-                        total += (data.qty * item.price);
-                        
-                        if (item.discount > 0) {
-                            discoutedSum += (Math.ceil((localTotal) - ((localTotal * item.discount) / 100)));
-                        } else {
-                            discoutedSum += (Math.ceil((localTotal) / 1.2)).toString();
-                        }
-                        const diff = total - discoutedSum;
-                        
-                        console.log(' : ', total);
-                        console.log(' : ', discoutedSum);
-                        console.log(' : ', diff);
-                        
-                        const {firstPart: firstTotal, lastPart: lastTotal} = calculateDepth(total.toString());
-                        const {
-                            firstPart: firstDiscount,
-                            lastPart: lastDiscount
-                        } = calculateDepth(discoutedSum.toString());
-                        const {firstPart: firstDiff, lastPart: lastDiff} = calculateDepth(diff.toString());
-                        
-                        fTotal.textContent = firstTotal;
-                        lTotal.textContent = lastTotal + ` ₽`;
-                        
-                        fDiscount.textContent = firstDiscount;
-                        lDiscount.textContent = lastDiscount + ` ₽`;
-                        
-                        fDiff.textContent = firstDiff;
-                        lDiff.textContent = lastDiff + ` ₽`;
+                if (data) {
+                    const item = data.item;
+                    
+                    const localTotal = data.qty * item.price;
+                    total += (data.qty * item.price);
+                    
+                    if (item.discount > 0) {
+                        discoutedSum += (Math.ceil((localTotal) - ((localTotal * item.discount) / 100)));
+                    } else {
+                        discoutedSum += (Math.ceil((localTotal) / 1.2)).toString();
                     }
-            } else {
-            
+                    const diff = total - discoutedSum;
+                    
+                    console.log(' : ', total);
+                    console.log(' : ', discoutedSum);
+                    console.log(' : ', diff);
+                    
+                    const {firstPart: firstTotal, lastPart: lastTotal} = calculateDepth(total.toString());
+                    const {
+                        firstPart: firstDiscount,
+                        lastPart: lastDiscount
+                    } = calculateDepth(discoutedSum.toString());
+                    const {firstPart: firstDiff, lastPart: lastDiff} = calculateDepth(diff.toString());
+                    
+                    fTotal.textContent = firstTotal;
+                    lTotal.textContent = lastTotal + ` ₽`;
+                    
+                    fDiscount.textContent = firstDiscount;
+                    lDiscount.textContent = lastDiscount + ` ₽`;
+                    
+                    fDiff.textContent = firstDiff;
+                    lDiff.textContent = lastDiff + ` ₽`;
+                }
             }
         });
         
