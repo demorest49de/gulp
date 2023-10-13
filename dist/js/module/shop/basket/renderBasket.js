@@ -69,6 +69,7 @@ export const setBasketQuantity = () => {
     }
 };
 
+// TODO plusminusCalculate
 const calculate = (value, id, target) => {
     
     const basketArray = getStorage(basketUserId);
@@ -130,54 +131,103 @@ export const handleChangeQuantity = () => {
     }
 };
 
+// TODO calculateTotal
 const calculateTotal = () => {
     const basket = getStorage(basketUserId);
-    const first = document.querySelector('.basket__total-value:nth-child(1)');
-    if (first) {
-        const last = document.querySelector('.basket__total-value:nth-child(2)');
+    const fDiscount = document.querySelector('.basket__total-value:nth-child(1)');
+    // если элемент не существует на странице  то будет ошибка
+    if (fDiscount) {
+        
+        const lDiscount = document.querySelector('.basket__total-value:nth-child(2)');
+        const fTotal = document.querySelector('.basket__details-item-total ' +
+            '.basket__item-details-value:nth-child(1)');
+        const lTotal = document.querySelector('.basket__details-item-total ' +
+            '.basket__item-details-value:nth-child(2)');
+        const fDiff = document.querySelector('.basket__details-item-discount ' +
+            '.basket__item-details-value:nth-child(1)');
+        const lDiff = document.querySelector('.basket__details-item-discount ' +
+            '.basket__item-details-value:nth-child(2)');
+        
         
         let total = 0;
         let discoutedSum = 0;
-        if (basket.length > 0) {
-            basket.forEach((data) => {
-                const item = data.item;
-                const price = item.price;
-                
-                const localTotal = data.qty * item.price;
-                total += (data.qty * item.price);
-                
-                
-                if (item.discount > 0) {
-                    discoutedSum += (Math.ceil((localTotal) - ((localTotal * item.discount) / 100)));
-                } else {
-                    discoutedSum += (Math.ceil((localTotal) / 1.2)).toString();
-                }
-            });
-            const diff = total - discoutedSum;
+        
+        const list = document.querySelectorAll('.basket__list-item');
+        
+        list.forEach((li) => {
+            const checkbox = li.querySelector('.basket__checkbox-input');
+            const id = li.getAttribute('data-id');
             
-            console.log(' : ', total);
-            console.log(' : ', discoutedSum);
-            console.log(' : ', diff);
-            const {firstPart: firstTotal, lastPart: lastTotal} = calculateDepth(total.toString());
-            const {firstPart: firstDiscount, lastPart: lastDiscount} = calculateDepth(discoutedSum.toString());
-            const {firstPart: firstDiff, lastPart: lastDiff} = calculateDepth(diff.toString());
-            
-            first.textContent = firstDiscount;
-            last.textContent = lastDiscount;
-            
-            const fTotal = document.querySelector('.basket__details-item-total ' +
-                '.basket__item-details-value:nth-child(1)');
-            const lTotal = document.querySelector('.basket__details-item-total ' +
-                '.basket__item-details-value:nth-child(2)');
-            const fDiff = document.querySelector('.basket__details-item-discount ' +
-                '.basket__item-details-value:nth-child(1)');
-            const lDiff = document.querySelector('.basket__details-item-discount ' +
-                '.basket__item-details-value:nth-child(2)');
-            fTotal.textContent = firstTotal;
-            lTotal.textContent = lastTotal;
-            fDiff.textContent = firstDiff;
-            lDiff.textContent = lastDiff;
-        }
+            if (checkbox.checked) {
+                const array = basket.filter(i => i.item.id === id);
+                array.forEach((data) => {
+                    if (data) {
+                        const item = data.item;
+                        
+                        const localTotal = data.qty * item.price;
+                        total += (data.qty * item.price);
+                        
+                        if (item.discount > 0) {
+                            discoutedSum += (Math.ceil((localTotal) - ((localTotal * item.discount) / 100)));
+                        } else {
+                            discoutedSum += (Math.ceil((localTotal) / 1.2)).toString();
+                        }
+                        const diff = total - discoutedSum;
+                        
+                        console.log(' : ', total);
+                        console.log(' : ', discoutedSum);
+                        console.log(' : ', diff);
+
+                        const {firstPart: firstTotal, lastPart: lastTotal} = calculateDepth(total.toString());
+                        const {firstPart: firstDiscount, lastPart: lastDiscount} = calculateDepth(discoutedSum.toString());
+                        const {firstPart: firstDiff, lastPart: lastDiff} = calculateDepth(diff.toString());
+
+                        fTotal.textContent = firstTotal;
+                        lTotal.textContent = lastTotal;
+                        
+                        fDiscount.textContent = firstDiscount;
+                        lDiscount.textContent = lastDiscount;
+
+                        fDiff.textContent = firstDiff;
+                        lDiff.textContent = lastDiff;
+                    }
+                });
+            }
+        });
+        
+        // if (basket.length > 0) {
+        //     basket.forEach((data) => {
+        //         const item = data.item;
+        //
+        //         const localTotal = data.qty * item.price;
+        //         total += (data.qty * item.price);
+        //
+        //
+        //         if (item.discount > 0) {
+        //             discoutedSum += (Math.ceil((localTotal) - ((localTotal * item.discount) / 100)));
+        //         } else {
+        //             discoutedSum += (Math.ceil((localTotal) / 1.2)).toString();
+        //         }
+        //     });
+        //     const diff = total - discoutedSum;
+        //
+        //     // console.log(' : ', total);
+        //     // console.log(' : ', discoutedSum);
+        //     // console.log(' : ', diff);
+        //
+        //     const {firstPart: firstTotal, lastPart: lastTotal} = calculateDepth(total.toString());
+        //     const {firstPart: firstDiscount, lastPart: lastDiscount} = calculateDepth(discoutedSum.toString());
+        //     const {firstPart: firstDiff, lastPart: lastDiff} = calculateDepth(diff.toString());
+        //
+        //     first.textContent = firstDiscount;
+        //     last.textContent = lastDiscount;
+        //
+       
+        //     fTotal.textContent = firstTotal;
+        //     lTotal.textContent = lastTotal;
+        //     fDiff.textContent = firstDiff;
+        //     lDiff.textContent = lastDiff;
+        // }
     }
 };
 
@@ -204,6 +254,7 @@ const handleQtyBtns = (target, className) => {
     }
 };
 
+//todo chooseAll
 export const handleChooseAll = () => {
     const label = document.querySelector('.basket__list-manage-block .basket__label');
     if (label) {
@@ -217,9 +268,23 @@ export const handleChooseAll = () => {
                     box.checked = false;
                 }
             });
+            calculateTotal();
         });
     }
     ;
+};
+
+// TODO handleSingleChoose
+const handleChooseSingle = () => {
+    // в листе всегда нужно брать его ли элементы  а не сам лист!!!!
+    const list = document.querySelectorAll('.basket__list-item');
+    list.forEach((li) => {
+        const checkbox = li.querySelector('.basket__checkbox-input');
+        
+        checkbox.addEventListener('click', ({target}) => {
+            calculateTotal();
+        });
+    });
 };
 
 const removePictures = (id) => {
@@ -289,5 +354,6 @@ export const basketHandlers = () => {
     deleteItemByCheckbox();
     deleteItem();
     handleChangeQuantity();
-    calculateTotal();
+    // calculateTotal();
+    handleChooseSingle();
 };
