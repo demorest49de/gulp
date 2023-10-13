@@ -157,9 +157,8 @@ const calculateTotal = () => {
             const checkbox = li.querySelector('.basket__checkbox-input');
             const id = li.getAttribute('data-id');
             
-            // if (checkbox.checked) {
-                const array = basket.filter(i => i.item.id === id);
-                array.forEach((data) => {
+            if (checkbox.checked) {
+                const data = basket.find(i => i.item.id === id);
                     if (data) {
                         const item = data.item;
                         
@@ -176,22 +175,26 @@ const calculateTotal = () => {
                         console.log(' : ', total);
                         console.log(' : ', discoutedSum);
                         console.log(' : ', diff);
-
+                        
                         const {firstPart: firstTotal, lastPart: lastTotal} = calculateDepth(total.toString());
-                        const {firstPart: firstDiscount, lastPart: lastDiscount} = calculateDepth(discoutedSum.toString());
+                        const {
+                            firstPart: firstDiscount,
+                            lastPart: lastDiscount
+                        } = calculateDepth(discoutedSum.toString());
                         const {firstPart: firstDiff, lastPart: lastDiff} = calculateDepth(diff.toString());
-
+                        
                         fTotal.textContent = firstTotal;
-                        lTotal.textContent = lastTotal;
+                        lTotal.textContent = lastTotal + ` ₽`;
                         
                         fDiscount.textContent = firstDiscount;
-                        lDiscount.textContent = lastDiscount;
-
+                        lDiscount.textContent = lastDiscount + ` ₽`;
+                        
                         fDiff.textContent = firstDiff;
-                        lDiff.textContent = lastDiff;
+                        lDiff.textContent = lastDiff + ` ₽`;
                     }
-                });
-            // }
+            } else {
+            
+            }
         });
         
         // if (basket.length > 0) {
@@ -221,7 +224,7 @@ const calculateTotal = () => {
         //     first.textContent = firstDiscount;
         //     last.textContent = lastDiscount;
         //
-       
+        
         //     fTotal.textContent = firstTotal;
         //     lTotal.textContent = lastTotal;
         //     fDiff.textContent = firstDiff;
