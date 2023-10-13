@@ -1,5 +1,6 @@
 import {createBurger} from "../shop/burger/createBurger.js";
 import {getCategory} from "../shop/fetch.js";
+import {handleSingleCardAligment} from "./customFeatures.js";
 
 export const createHeader = (name, $) => {
     
@@ -295,4 +296,5 @@ export const iterateOverCards = (cards, $, cardAfterStyle, items) => {
         li.append(a);
         cards.append(li);
     });
+    handleSingleCardAligment();
 };

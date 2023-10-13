@@ -62,7 +62,7 @@ const createSectionSearch = (name, $, paramsObject) => {
     const itemName = paramsObject.search;
     getGoods($).then((data) => {
         const returnedData = data.data;
-        const items = returnedData.filter(elem => elem.title.includes(itemName));
+        const items = returnedData.filter(elem => elem.title.toLowerCase().includes(itemName));
         console.log(items);
         const resultMessage = items && items.length > 0 ? 'Вот что мы нашли...' :
             'По вашему запросу ничего не нашлось...';
@@ -78,8 +78,22 @@ const createSectionSearch = (name, $, paramsObject) => {
             </div>
         </section>
             `);
-
+            const section = $.main.querySelector('section');
+            section.style.color = '#2d2d2d';
             renderCardsByCategory($, items);
+        }else{
+            $.main.insertAdjacentHTML('beforeend',
+                `
+            <section class="${name}" aria-label="Поиск">
+            <h2 class="visually-hidden">${resultMessage}</h2>
+            <div class="container">
+                <h3 class="category__title">${resultMessage}</h3>
+                
+            </div>
+        </section>
+            `);
+            const section = $.main.querySelector('section');
+            section.style.color = '#2d2d2d';
         }
     });
 };
