@@ -1114,9 +1114,9 @@ main {
   -webkit-align-items: center;
   -moz-box-align: center;
   align-items: center;
-  -webkit-column-gap: 28px;
-  -moz-column-gap: 28px;
-  column-gap: 28px;
+  -webkit-column-gap: 11px;
+  -moz-column-gap: 11px;
+  column-gap: 11px;
   margin-bottom: 15px;
 }
 
@@ -1960,7 +1960,8 @@ main {
 }
 
 .basket__time-address,
-.basket__item-details {
+.basket__item-details-text,
+.basket__item-details-value {
   color: #8f8f8f;
   font-size: 16px;
   font-weight: 400;
