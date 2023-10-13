@@ -30,6 +30,7 @@ const _class = {
     item: 'item',
     wholesale: 'wholesale',
     category: 'category',
+    search: 'search',
     card: 'card',
     cart: 'cart',
 };
@@ -102,6 +103,26 @@ const categoryPage = [
         {
             type: types.section,
             name: _class.category
+        },
+        {
+            type: types.footer,
+            name: _class.footer
+        },
+    ]
+;
+
+const searchPage = [
+        {
+            type: types.header,
+            name: _class.header
+        },
+        {
+            type: types.main,
+            name: _class.main
+        },
+        {
+            type: types.section,
+            name: _class.search
         },
         {
             type: types.footer,
@@ -284,6 +305,7 @@ export const global = {
     URL,
     goods,
     categoryPage,
+    searchPage,
     card,
     cart,
 };
