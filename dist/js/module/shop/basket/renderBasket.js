@@ -182,9 +182,9 @@ const calculateTotal = () => {
                     }
                     const diff = total - discoutedSum;
                     
-                    console.log(' : ', total);
-                    console.log(' : ', discoutedSum);
-                    console.log(' : ', diff);
+                    // console.log(' : ', total);
+                    // console.log(' : ', discoutedSum);
+                    // console.log(' : ', diff);
                     
                     const {firstPart: firstTotal, lastPart: lastTotal} = calculateDepth(total.toString());
                     const {
