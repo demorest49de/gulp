@@ -1,7 +1,7 @@
 import {getSearchParams} from "../base/tools.js";
 
 
-export const createSearchBCCategory = (bc) => {
+export const createBCSearch = (bc) => {
     
     const paramsObject = getSearchParams();
     
@@ -18,10 +18,10 @@ export const createSearchBCCategory = (bc) => {
     `);
     const ul = breadCrumbs.querySelector('.bc__bread-crumbs');
     const last = bc[bc.length - 1];
-    const name =  paramsObject.name;
-    last.ariaLabel = name;
-    last.name = name;
-    last.url += `?name=${name}`;
+    const name =  paramsObject.search;
+    // last.ariaLabel = name;
+    // last.name = name;
+    last.url += `?search=${name}`;
     for (const {url, name, ariaLabel} of bc) {
         ul.insertAdjacentHTML('beforeend',
             `

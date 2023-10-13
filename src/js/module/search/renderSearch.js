@@ -1,7 +1,7 @@
 import {createFooter, createHeader, createMain, iterateOverCards} from "../base/baseElems.js";
 import {getSearchParams} from "../base/tools.js";
 import {getGoodsByCategory} from "../shop/fetch.js";
-import {createSearchBCCategory} from "./createSearch.js";
+import {createBCSearch} from "./createSearch.js";
 
 
 export const renderSearch = ($) => {
@@ -13,7 +13,7 @@ export const renderSearch = ($) => {
         
         if (type === $.types.main) {
             createMain(name, $);
-            const breadCrumbs = createSearchBCCategory($.breadCrumbs.searchInfo);
+            const breadCrumbs = createBCSearch($.breadCrumbs.searchInfo);
             $.main.append(breadCrumbs);
             return;
         }
