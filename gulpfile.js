@@ -105,11 +105,13 @@ export const scss = () =>
         })))
         .pipe(gulpif(!dev, gcmq()))
         .pipe(gulpif(!dev, gulp.dest(path.dist.css)))
-        // .pipe(cleanCSS({
-        //     2: {
-        //         specialComments: 0,
-        //     }
-        // }))
+        //TODO for debugging purposes comment this block of code
+        // for clear css viewing on debug
+        .pipe(cleanCSS({
+            2: {
+                specialComments: 0,
+            }
+        }))
         .pipe(rename({
             suffix: '.min'
         }))
@@ -138,17 +140,17 @@ if (!dev) {
 export const js = () => gulp
     .src(path.src.js)
     
-    //for debugging purposes comment this block of code
+    //TODO for debugging purposes comment this block of code
     // for clear js viewing on debug
     // just comment strings 145-151
     
-    // .pipe(plumber())
-    // .pipe(webpackStream(webpackConf, webpack))
-    // .pipe(gulpif(!dev, gulp.dest(path.dist.js)))
-    // .pipe(gulpif(!dev, terser()))
-    // .pipe(rename({
-    //     suffix: '.min'
-    // }))
+    .pipe(plumber())
+    .pipe(webpackStream(webpackConf, webpack))
+    .pipe(gulpif(!dev, gulp.dest(path.dist.js)))
+    .pipe(gulpif(!dev, terser()))
+    .pipe(rename({
+        suffix: '.min'
+    }))
     
     .pipe(gulp.dest(path.dist.js))
     .pipe(browserSync.stream());
