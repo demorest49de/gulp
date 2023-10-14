@@ -1,7 +1,6 @@
 import {createFooter, createHeader, createMain, iterateOverCards} from "../base/baseElems.js";
 import {getSearchParams} from "../base/tools.js";
 import {getGoods} from "../shop/fetch.js";
-import {createBCSearch} from "./createSearch.js";
 import {createBreadCrumbs} from "../base/breadcrumbs.js";
 
 
