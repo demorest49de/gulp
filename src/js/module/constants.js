@@ -263,9 +263,9 @@ const breadCrumbs = {
     
     cardInfo: {
         home: {
-            url: bc.url,
-            name: bc.main,
-            ariaLabel: bc.main,
+            link:
+                `<a class="bc__link" href="${bc.url}" aria-label="${bc.main}">${bc.main}</a>`,
+            svg: bcSvg,
         },
         category: {
             url: bc.categoryURL,
@@ -278,19 +278,18 @@ const breadCrumbs = {
             ariaLabel: bc.card,
         },
     },
-    
-    cartInfo: {
-        home: {
-            url: bc.url,
-            name: bc.main,
-            ariaLabel: bc.main,
+    cartInfo: [
+        {
+            link:
+                `<a class="bc__link" href="${bc.url}" aria-label="${bc.main}">${bc.main}</a>`,
+            svg: bcSvg,
         },
-        cart: {
-            url: bc.cartURL,
-            name: bc.cart,
-            ariaLabel: bc.cart,
+        {
+            link:
+                `<a class="bc__link" href="${bc.cartURL}" aria-label="${bc.cart}">${bc.cart}</a>`,
+            svg: '',
         },
-    },
+    ]
 };
 
 

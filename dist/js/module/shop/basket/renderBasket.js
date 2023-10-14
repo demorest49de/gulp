@@ -1,9 +1,10 @@
 import {createFooter, createHeader, createMain} from "../../base/baseElems.js";
 import {createSection} from "../createShop.js";
-import {createBCCart, createSectionBasket} from "../basket/createBasket.js";
+import {createSectionBasket} from "../basket/createBasket.js";
 import {basketUserId} from '../../constants.js';
 import {getStorage, setStorage} from "../localStorage.js";
 import {calculateDepth} from "../card/createCard.js";
+import {createBreadCrumbs} from "../../base/breadcrumbs.js";
 
 
 export const renderBasket = ($) => {
@@ -15,7 +16,7 @@ export const renderBasket = ($) => {
         }
         
         if (type === $.types.main) {
-            const bc = createBCCart($, $.breadCrumbs.cartInfo);
+            const bc = createBreadCrumbs($.breadCrumbs.cartInfo);
             createMain(name, $);
             $.main.append(bc);
             return;
