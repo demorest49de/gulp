@@ -24,7 +24,7 @@ export const createBCCart = ($, bc) => {
     ul.insertAdjacentHTML('beforeend',
         `
             <li class="bc__item">
-            <a class="bc__link" href="./${home.url}" aria-label="${home.ariaLabel}">${home.name}</a>
+            <a class="bc__link" href="${home.url}" aria-label="${home.ariaLabel}">${home.name}</a>
                 <div class="bc__arrow-block">
                     <svg class="bc__nav-arrow">
                         <use href="./svg/article/nav-arrow.svg#nav-arrow"></use>
@@ -32,7 +32,7 @@ export const createBCCart = ($, bc) => {
                 </div>
             </li>
             <li class="bc__item">
-            <a class="bc__link" href="./${cart.url}"
+            <a class="bc__link" href="${cart.url}"
             aria-label="${cart.ariaLabel}">${cart.name}</a>
                 <div class="bc__arrow-block">
                 </div>

@@ -204,7 +204,7 @@ export const createBCCard = ($, bc) => {
         ul.insertAdjacentHTML('beforeend',
             `
             <li class="bc__item">
-            <a class="bc__link" href="./${home.url}" aria-label="${home.ariaLabel}">${home.name}</a>
+            <a class="bc__link" href="${home.url}" aria-label="${home.ariaLabel}">${home.name}</a>
                 <div class="bc__arrow-block">
                     <svg class="bc__nav-arrow">
                         <use href="./svg/article/nav-arrow.svg#nav-arrow"></use>
@@ -212,7 +212,7 @@ export const createBCCard = ($, bc) => {
                 </div>
             </li>
             <li class="bc__item">
-            <a class="bc__link" href="./${category.url}?name=${item.category}"
+            <a class="bc__link" href="${category.url}?name=${item.category}"
             aria-label="${item.category}">${item.category}</a>
                 <div class="bc__arrow-block">
                     <svg class="bc__nav-arrow">
@@ -221,7 +221,7 @@ export const createBCCard = ($, bc) => {
                 </div>
             </li>
             <li class="bc__item">
-            <a class="bc__link" href="./${card.url}?id=${item.id}"
+            <a class="bc__link" href="${card.url}?id=${item.id}"
             aria-label="${item.title}">${item.title}</a>
                 <div class="bc__arrow-block">
                 </div>

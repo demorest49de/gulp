@@ -27,7 +27,7 @@ export const createBCSearch = (bc) => {
         ul.insertAdjacentHTML('beforeend',
             `
             <li class="bc__item">
-            <a class="bc__link" href="./${home.url}" aria-label="${home.ariaLabel}">${home.name}</a>
+            <a class="bc__link" href="${home.url}" aria-label="${home.ariaLabel}">${home.name}</a>
                 <div class="bc__arrow-block">
                     <svg class="bc__nav-arrow">
                         <use href="./svg/article/nav-arrow.svg#nav-arrow"></use>
@@ -35,7 +35,7 @@ export const createBCSearch = (bc) => {
                 </div>
             </li>
             <li class="bc__item">
-            <a class="bc__link" href="./${search.url}" aria-label="${search.ariaLabel}">${search.name}</a>
+            <a class="bc__link" href="${search.url}" aria-label="${search.ariaLabel}">${search.name}</a>
             </li>
         `);
     
