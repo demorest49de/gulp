@@ -630,7 +630,7 @@
 
   &__checkbox-input:checked + &__checkbox-icon:before {
     border: none;
-    background-image: url(/svg/basket/checkmark.svg);
+    background-image: url("/svg/basket/checkmark.svg");
     background-size: 20px 20px;
   }
 
