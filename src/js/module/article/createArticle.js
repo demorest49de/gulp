@@ -97,7 +97,6 @@ export const articleHandler = ($) => {
     const main = createArticleContent(breadCrumbs);
     app.append(main);
     const bcLink = breadCrumbs.querySelector('.bc__item:nth-child(3) .bc__link');
-    console.log(' : ',bcLink);
     const title = main.querySelector('.article__title');
     const text = main.querySelector('.article__text');
     const author = main.querySelector('.article__author');

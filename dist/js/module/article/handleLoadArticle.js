@@ -39,6 +39,7 @@ export const loadItemsHandler = ($) => {
     };
     
     const searchObject = getSearchParams();
+    $.bcLink.href += `?id=${searchObject.id}`;
     const promiseId = loadArticle(searchObject, updateArticle);
     
     promiseId.then(id => {
