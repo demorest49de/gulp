@@ -208,30 +208,29 @@ const breadCrumbs = {
     blogInfo: [
         {
             link:
-                `<a className="bc__link" href="${bc.url}" aria-label="${bc.main}">${bc.main}</a>`,
+                `<a class="bc__link" href="${bc.url}" aria-label="${bc.main}">${bc.main}</a>`,
             svg: bcSvg,
         },
         {
             link:
-                `<a className="bc__link" href="${bc.blogURL}" aria-label="${bc.blog}">${bc.blog}</a>`,
+                `<a class="bc__link" href="${bc.blogURL}" aria-label="${bc.blog}">${bc.blog}</a>`,
             svg: '',
         },
     ],
     articleInfo: [
         {
             link:
-                `<a className="bc__link" href="${bc.url}" aria-label="${bc.main}">${bc.main}</a>`,
+                `<a class="bc__link" href="${bc.url}" aria-label="${bc.main}">${bc.main}</a>`,
             svg: bcSvg,
         },
         {
             link:
-                `<a className="bc__link" href="${bc.blogURL}" aria-label="${bc.blog}">${bc.blog}</a>`,
+                `<a class="bc__link" href="${bc.blogURL}" aria-label="${bc.blog}">${bc.blog}</a>`,
             svg: bcSvg,
         },
         {
             link:
-                `<a className="bc__link" href="${bc.articleURL}"
-                    aria-label="${bc.article}">${bc.article}</a>`,
+                `<a class="bc__link" href="${bc.articleURL}" aria-label="${bc.article}">${bc.article}</a>`,
             svg: '',
         },
     ],

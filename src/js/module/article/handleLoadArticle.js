@@ -18,7 +18,7 @@ export const loadItemsHandler = ($) => {
     const updateArticle = (data) => {
         const apiData = data.data;
         const textTitle = apiData.title;
-        $.breadCrumbsTitle.textContent = textTitle;
+        $.bcLink.textContent = textTitle;
         $.title.textContent = textTitle;
         document.title = textTitle;
         $.text.textContent = apiData.body;
