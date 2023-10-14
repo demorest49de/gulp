@@ -130,10 +130,10 @@ const setArrows = ($) => {
 const setArrowLink = ($) => {
     endPage = localStorage.getItem('endPage');
     if (+currentPage > 1) {
-        $.blogItems.pageElems.leftLink.href = `blog.html?page=${+currentPage - 1}`;
+        $.blogItems.pageElems.leftLink.href = `./blog.html?page=${+currentPage - 1}`;
     }
     if (+currentPage < +endPage) {
-        $.blogItems.pageElems.rightLink.href = `blog.html?page=${+currentPage + 1}`;
+        $.blogItems.pageElems.rightLink.href = `./blog.html?page=${+currentPage + 1}`;
     }
 };
 

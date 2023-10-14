@@ -9,9 +9,12 @@ const createPageLink = (pagination) => {
     pages.insertAdjacentHTML(`beforeend`,
         `
             <ul class="pagination__list">
-                 <li class="pagination__item pagination__item-active"><a class="pagination__link" data-pageNumber="1" href="blog.html">1</a></li>
-                 <li class="pagination__item"><a class="pagination__link" data-pageNumber="2" href="blog.html?page=2">2</a></li>
-                 <li class="pagination__item"><a class="pagination__link" data-pageNumber="3" href="blog.html?page=3">3</a></li>
+                 <li class="pagination__item pagination__item-active">
+                  <a class="pagination__link" data-pageNumber="1" href="./blog.html">1</a></li>
+                 <li class="pagination__item">
+                 <a class="pagination__link" data-pageNumber="2" href="./blog.html?page=2">2</a></li>
+                 <li class="pagination__item">
+                 <a class="pagination__link" data-pageNumber="3" href="./blog.html?page=3">3</a></li>
              </ul>
         `);
     pagination.append(pages);
@@ -35,7 +38,7 @@ const addPagination = (pagination) => {
     pageElems.leftLink = leftLink;
     pagination.insertAdjacentHTML('beforeend',
         `
-        <a class="pagination__link-right" href="blog.html?page=2">
+        <a class="pagination__link-right" href="./blog.html?page=2">
             <svg class="pagination__right-arrow" xmlns="http://www.w3.org/2000/svg"><use href="./svg/blog/arrows.svg#right"></use></svg>
         </a>
         `

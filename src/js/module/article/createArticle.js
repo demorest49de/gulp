@@ -22,22 +22,22 @@ const createArticleContent = (breadCrumbs) => {
                     <aside class="article__adv adv">
                         <ul class="adv__list">
                             <li class="adv__item">
-                                <a class="adv__link" href="#"
+                                <a class="adv__link" href="./"
                                 title="Горящие туры в Стамбул от 20 000 руб.">
                                 <div class="adv__text-block">
                                     <p class="adv__text-big">Горящие туры в Стамбул от 20 000 руб.</p>
                                     <p class="adv__text-small">Окунись в настоящую восточную сказку</p>
                                     </div>
                                     <picture class="adv__picture">
-                                    <source srcset="img/article/banner/turkey.avif" type="image/avif">
-                                    <source srcset="img/article/banner/turkey.webp" type="image/webp">
+                                    <source srcset="./img/article/banner/turkey.avif" type="image/avif">
+                                    <source srcset="./img/article/banner/turkey.webp" type="image/webp">
                                         <img class="adv__image"
-                                         src="img/article/banner/turkey.jpg" alt="Турция" width="532" height="328">
+                                         src="./img/article/banner/turkey.jpg" alt="Турция" width="532" height="328">
                                     </picture>
                                 </a>
                             </li>
                             <li class="adv__item">
-                                <a class="adv__link" href="#"
+                                <a class="adv__link" href="./"
                                 title="Новый RENAULT DUSTER">
                                 <div class="adv__text-block">
                                     <p class="adv__text-big">Новый RENAULT DUSTER</p>
@@ -45,17 +45,17 @@ const createArticleContent = (breadCrumbs) => {
                                 </div>
                                     <picture class="adv__picture">
                                     
-                                    <source srcset="img/article/banner/reno.avif" type="image/avif">
-                                    <source srcset="img/article/banner/reno.webp" type="image/webp">
+                                    <source srcset="./img/article/banner/reno.avif" type="image/avif">
+                                    <source srcset="./img/article/banner/reno.webp" type="image/webp">
                                         <img class="adv__image"
-                                         src="img/article/banner/reno.jpg" alt="Рено" width="532" height="328">
+                                         src="./img/article/banner/reno.jpg" alt="Рено" width="532" height="328">
                                     </picture>
                                 </a>
                             </li>
                         </ul>
                     </aside>
                     <div class="article__subblock">
-                        <a class="article__backlink" href="blog.html">
+                        <a class="article__backlink" href="./blog.html">
                             <svg class="article__left-arrow" xmlns="http://www.w3.org/2000/svg">
                                 <use href="./svg/blog/arrows.svg#left"></use>
                             </svg>

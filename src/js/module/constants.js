@@ -180,18 +180,20 @@ const cart = [
 ;
 
 const bc = {
-    url: '/',
+    url: './',
     main: 'Главная',
     blog: 'Блог',
     article: 'имя статьи',
     category: 'имя каталога',
     card: 'имя товара',
     search: 'Поиск',
-    categoryURL: '/category.html',
-    cardURL: '/card.html',
+    categoryURL: './category.html',
+    cardURL: './card.html',
     cart: 'Корзина',
-    cartURL: '/cart.html',
-    searchURL: '/search.html',
+    cartURL: './cart.html',
+    searchURL: './search.html',
+    blogURL: './blog.html',
+    articleURL: './article.html',
 };
 
 const breadCrumbs = {
@@ -203,7 +205,7 @@ const breadCrumbs = {
             ariaLabel: bc.main,
         },
         {
-            url: '/blog.html',
+            url: bc.blogURL,
             name: bc.blog,
             ariaLabel: bc.blog,
         },
@@ -215,12 +217,12 @@ const breadCrumbs = {
             ariaLabel: bc.main,
         },
         {
-            url: '/blog.html',
+            url: bc.blogURL,
             name: bc.blog,
             ariaLabel: bc.blog,
         },
         {
-            url: '/article.html',
+            url: bc.articleURL,
             name: bc.article,
             ariaLabel: bc.article,
         },

@@ -8,7 +8,7 @@ export const createHeader = (name, $) => {
         $.app.insertAdjacentHTML('beforeend', `
             <header class="header">
                 <div class="container header__container">
-                    <a href="/" class="header__logo-block">
+                    <a href="./" class="header__logo-block">
                         <img
                                 class="header__logo"
                                 src="svg/header/logo.svg"
@@ -50,7 +50,7 @@ export const createHeader = (name, $) => {
                     <nav class="header__navigation navigation">
                         <ul class="navigation__list">
                             <li class="navigation__item">
-                                <a href="#" class="navigation__link" aria-label="Профиль"
+                                <a href="./" class="navigation__link" aria-label="Профиль"
                                  >
                                     <svg
                                             class="navigation__link-img"
@@ -69,7 +69,7 @@ export const createHeader = (name, $) => {
                                 </a>
                             </li>
                             <li class="navigation__item navigation__item-cart">
-                                <a href="cart.html" class="navigation__link" aria-label="Корзина"
+                                <a href="./cart.html" class="navigation__link" aria-label="Корзина"
                                  >
                                     <svg
                                             class="navigation__link-img"
@@ -89,7 +89,7 @@ export const createHeader = (name, $) => {
                                 <p class="navigation__cart-count">0</p>
                             </li>
                             <li class="navigation__item">
-                                <a href="#" class="navigation__link" aria-label="Избранное"
+                                <a href="./" class="navigation__link" aria-label="Избранное"
                                  >
                                     <svg
                                             class="navigation__link-img"
@@ -146,10 +146,10 @@ export const createFooter = (name, $) => {
                     <h2 class="footer__subtitle">Покупателям</h2>
                     <nav class="footer__nav">
                         <ul class="footer__list">
-                            <li class="footer__elem"><a href="#">Оплата заказа</a></li>
-                            <li class="footer__elem"><a href="#">Условия доставки</a></li>
-                            <li class="footer__elem"><a href="#">Условия возврата товара</a></li>
-                            <li class="footer__elem"><a href="/blog.html">Блог</a></li>
+                            <li class="footer__elem"><a href="./">Оплата заказа</a></li>
+                            <li class="footer__elem"><a href="./">Условия доставки</a></li>
+                            <li class="footer__elem"><a href="./">Условия возврата товара</a></li>
+                            <li class="footer__elem"><a href="./blog.html">Блог</a></li>
                         </ul>
                     </nav>
                 </div>

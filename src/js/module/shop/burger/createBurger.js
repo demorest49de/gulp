@@ -19,10 +19,10 @@ export const createBurger = ($, callback) => {
                             <h2 class="burger__subtitle">Покупателям</h2>
                             <nav class="burger__nav">
                                 <ul class="burger__list burger__list">
-                                    <li class="burger__elem"><a href="#">Оплата заказа</a></li>
-                                    <li class="burger__elem"><a href="#">Условия доставки</a></li>
-                                    <li class="burger__elem"><a href="#">Условия возврата товара</a></li>
-                                    <li class="burger__elem"><a href="/blog.html">Блог</a></li>
+                                    <li class="burger__elem"><a href="./">Оплата заказа</a></li>
+                                    <li class="burger__elem"><a href="./">Условия доставки</a></li>
+                                    <li class="burger__elem"><a href="./">Условия возврата товара</a></li>
+                                    <li class="burger__elem"><a href="./blog.html">Блог</a></li>
                                 </ul>
                             </nav>
                         </div>
@@ -30,7 +30,7 @@ export const createBurger = ($, callback) => {
                             <h2 class="burger__subtitle">Связаться с нами</h2>
                             <nav class="burger__nav">
                                 <ul class="burger__list">
-                                    <li class="burger__elem"><a href="#">Контакты</a></li>
+                                    <li class="burger__elem"><a href="./">Контакты</a></li>
                                 </ul>
                             </nav>
                         </div>
