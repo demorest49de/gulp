@@ -9,7 +9,7 @@ const handleSearch = () => {
         const data = Object.fromEntries(formData);
         const searchInput = data.search;
     
-        window.location.replace(`/search.html?search=${searchInput}`);
+        window.location.replace(`./search.html?search=${searchInput}`);
     });
 };
 

@@ -24,7 +24,7 @@ export const createBCCart = ($, bc) => {
     ul.insertAdjacentHTML('beforeend',
         `
             <li class="bc__item">
-            <a class="bc__link" href="${home.url}" aria-label="${home.ariaLabel}">${home.name}</a>
+            <a class="bc__link" href="./${home.url}" aria-label="${home.ariaLabel}">${home.name}</a>
                 <div class="bc__arrow-block">
                     <svg class="bc__nav-arrow">
                         <use href="./svg/article/nav-arrow.svg#nav-arrow"></use>
@@ -32,7 +32,7 @@ export const createBCCart = ($, bc) => {
                 </div>
             </li>
             <li class="bc__item">
-            <a class="bc__link" href="${cart.url}"
+            <a class="bc__link" href="./${cart.url}"
             aria-label="${cart.ariaLabel}">${cart.name}</a>
                 <div class="bc__arrow-block">
                 </div>
@@ -81,7 +81,7 @@ const renderBasketItems = ($) => {
                             <span class="basket__checkbox-icon"></span>
                         </label>
                         
-                        <a href="card.html?id=${item.id}" class="basket__item-link">
+                        <a href="./card.html?id=${item.id}" class="basket__item-link">
                             <picture  class="basket__picture" data-id="${item.id}">
                                 <source srcset="" type="image/avif">
                                 <source srcset="" type="image/webp">
@@ -232,7 +232,7 @@ export const createSectionBasket = (name, $) => {
                 
                 <div class="basket__info-block">
                     <span class="basket__info-text-info">Доставка:
-                    <a href="" class="basket__info-link">Пункт выдачи</a>
+                    <a href="./" class="basket__info-link">Пункт выдачи</a>
                     </span>
                 </div>
                 <div class="basket__time-address">
@@ -242,12 +242,12 @@ export const createSectionBasket = (name, $) => {
                 </div>
                 <div class="basket__info-block">
                     <span class="basket__info-text-info">Дата:
-                    <a href="" class="basket__info-link">10-13 февраля</a>
+                    <a href="./" class="basket__info-link">10-13 февраля</a>
                     </span>
                 </div>
                 <div class="basket__info-block">
                     <span class="basket__info-text-info">Оплата:
-                    <a href="" class="basket__info-link">Картой</a>
+                    <a href="./" class="basket__info-link">Картой</a>
                     </span>
                 </div>
                 <button class="basket__order-btn" aria-label="Заказать">
@@ -269,7 +269,7 @@ export const createSectionBasket = (name, $) => {
         <div class="basket__delivery-options">
             <div class="basket__dely-block">
                 <h3 class="basket__title">Способ доставки</h3>
-                <a href="" class="basket__dely-link">Изменить</a>
+                <a href="./" class="basket__dely-link">Изменить</a>
             </div>
             <div class="basket__dely-block">
                 <span class="basket__dely-name">Пункт выдачи</span>

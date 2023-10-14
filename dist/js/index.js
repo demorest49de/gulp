@@ -619,7 +619,7 @@ const createBreadCrumbs = bc => {
   } of bc) {
     ul.insertAdjacentHTML('beforeend', `
             <li class="bc__item">
-            <a class="bc__link" href="${url}" aria-label="${ariaLabel}">${name}</a>
+            <a class="bc__link" href="./${url}" aria-label="${ariaLabel}">${name}</a>
                 <div class="bc__arrow-block">
                     <svg class="bc__nav-arrow">
                         <use href="./svg/article/nav-arrow.svg#nav-arrow"></use>
@@ -720,7 +720,7 @@ const handleSearch = () => {
     const formData = new FormData(target);
     const data = Object.fromEntries(formData);
     const searchInput = data.search;
-    window.location.replace(`/search.html?search=${searchInput}`);
+    window.location.replace(`./search.html?search=${searchInput}`);
   });
 };
 const searchHandlers = () => {
@@ -898,7 +898,7 @@ const loadItemsHandler = $ => {
       const article = document.createElement('article');
       article.classList.add('blog__ba', 'ba');
       article.innerHTML = `
-                <a class="ba__link" href="article.html?id=${item.id}">
+                <a class="ba__link" href="./article.html?id=${item.id}">
                     <picture class="ba__image">
                         <source srcset="./img/blog/${index}.avif" type="image/avif">
                         <source srcset="./img/blog/${index}.webp" type="image/webp">
@@ -1313,7 +1313,7 @@ const createBCSearch = bc => {
   const search = bc[1];
   ul.insertAdjacentHTML('beforeend', `
             <li class="bc__item">
-            <a class="bc__link" href="${home.url}" aria-label="${home.ariaLabel}">${home.name}</a>
+            <a class="bc__link" href="./${home.url}" aria-label="${home.ariaLabel}">${home.name}</a>
                 <div class="bc__arrow-block">
                     <svg class="bc__nav-arrow">
                         <use href="./svg/article/nav-arrow.svg#nav-arrow"></use>
@@ -1321,12 +1321,7 @@ const createBCSearch = bc => {
                 </div>
             </li>
             <li class="bc__item">
-            <a class="bc__link" href="${search.url}" aria-label="${search.ariaLabel}">${search.name}</a>
-                <div class="bc__arrow-block">
-                    <svg class="bc__nav-arrow">
-                        <use href="./svg/article/nav-arrow.svg#nav-arrow"></use>
-                    </svg>
-                </div>
+            <a class="bc__link" href="./${search.url}" aria-label="${search.ariaLabel}">${search.name}</a>
             </li>
         `);
   return breadCrumbs;
@@ -1461,7 +1456,7 @@ const createBCCart = ($, bc) => {
   const cart = bc.cart;
   ul.insertAdjacentHTML('beforeend', `
             <li class="bc__item">
-            <a class="bc__link" href="${home.url}" aria-label="${home.ariaLabel}">${home.name}</a>
+            <a class="bc__link" href="./${home.url}" aria-label="${home.ariaLabel}">${home.name}</a>
                 <div class="bc__arrow-block">
                     <svg class="bc__nav-arrow">
                         <use href="./svg/article/nav-arrow.svg#nav-arrow"></use>
@@ -1469,7 +1464,7 @@ const createBCCart = ($, bc) => {
                 </div>
             </li>
             <li class="bc__item">
-            <a class="bc__link" href="${cart.url}"
+            <a class="bc__link" href="./${cart.url}"
             aria-label="${cart.ariaLabel}">${cart.name}</a>
                 <div class="bc__arrow-block">
                 </div>
@@ -1512,7 +1507,7 @@ const renderBasketItems = $ => {
                             <span class="basket__checkbox-icon"></span>
                         </label>
                         
-                        <a href="card.html?id=${item.id}" class="basket__item-link">
+                        <a href="./card.html?id=${item.id}" class="basket__item-link">
                             <picture  class="basket__picture" data-id="${item.id}">
                                 <source srcset="" type="image/avif">
                                 <source srcset="" type="image/webp">
@@ -1653,7 +1648,7 @@ const createSectionBasket = (name, $) => {
                 
                 <div class="basket__info-block">
                     <span class="basket__info-text-info">Доставка:
-                    <a href="" class="basket__info-link">Пункт выдачи</a>
+                    <a href="./" class="basket__info-link">Пункт выдачи</a>
                     </span>
                 </div>
                 <div class="basket__time-address">
@@ -1663,12 +1658,12 @@ const createSectionBasket = (name, $) => {
                 </div>
                 <div class="basket__info-block">
                     <span class="basket__info-text-info">Дата:
-                    <a href="" class="basket__info-link">10-13 февраля</a>
+                    <a href="./" class="basket__info-link">10-13 февраля</a>
                     </span>
                 </div>
                 <div class="basket__info-block">
                     <span class="basket__info-text-info">Оплата:
-                    <a href="" class="basket__info-link">Картой</a>
+                    <a href="./" class="basket__info-link">Картой</a>
                     </span>
                 </div>
                 <button class="basket__order-btn" aria-label="Заказать">
@@ -1690,7 +1685,7 @@ const createSectionBasket = (name, $) => {
         <div class="basket__delivery-options">
             <div class="basket__dely-block">
                 <h3 class="basket__title">Способ доставки</h3>
-                <a href="" class="basket__dely-link">Изменить</a>
+                <a href="./" class="basket__dely-link">Изменить</a>
             </div>
             <div class="basket__dely-block">
                 <span class="basket__dely-name">Пункт выдачи</span>
@@ -2384,7 +2379,7 @@ const createBCCard = ($, bc) => {
     const item = data.data;
     ul.insertAdjacentHTML('beforeend', `
             <li class="bc__item">
-            <a class="bc__link" href="${home.url}" aria-label="${home.ariaLabel}">${home.name}</a>
+            <a class="bc__link" href="./${home.url}" aria-label="${home.ariaLabel}">${home.name}</a>
                 <div class="bc__arrow-block">
                     <svg class="bc__nav-arrow">
                         <use href="./svg/article/nav-arrow.svg#nav-arrow"></use>
@@ -2392,7 +2387,7 @@ const createBCCard = ($, bc) => {
                 </div>
             </li>
             <li class="bc__item">
-            <a class="bc__link" href="${category.url}?name=${item.category}"
+            <a class="bc__link" href="./${category.url}?name=${item.category}"
             aria-label="${item.category}">${item.category}</a>
                 <div class="bc__arrow-block">
                     <svg class="bc__nav-arrow">
@@ -2401,7 +2396,7 @@ const createBCCard = ($, bc) => {
                 </div>
             </li>
             <li class="bc__item">
-            <a class="bc__link" href="${card.url}?id=${item.id}"
+            <a class="bc__link" href="./${card.url}?id=${item.id}"
             aria-label="${item.title}">${item.title}</a>
                 <div class="bc__arrow-block">
                 </div>
@@ -2525,7 +2520,7 @@ const createBCCategory = bc => {
   } of bc) {
     ul.insertAdjacentHTML('beforeend', `
             <li class="bc__item">
-            <a class="bc__link" href="${url}" aria-label="${ariaLabel}">${name}</a>
+            <a class="bc__link" href="./${url}" aria-label="${ariaLabel}">${name}</a>
                 <div class="bc__arrow-block">
                     <svg class="bc__nav-arrow">
                         <use href="./svg/article/nav-arrow.svg#nav-arrow"></use>
@@ -3217,9 +3212,6 @@ const handleTimer = () => {
 /******/ 	__webpack_require__(359);
 /******/ 	__webpack_require__(458);
 /******/ 	__webpack_require__(641);
-/******/ 	__webpack_require__(429);
-/******/ 	__webpack_require__(597);
-/******/ 	__webpack_require__(348);
 /******/ 	__webpack_require__(396);
 /******/ 	__webpack_require__(447);
 /******/ 	__webpack_require__(659);
@@ -3227,6 +3219,9 @@ const handleTimer = () => {
 /******/ 	__webpack_require__(993);
 /******/ 	__webpack_require__(422);
 /******/ 	__webpack_require__(433);
+/******/ 	__webpack_require__(429);
+/******/ 	__webpack_require__(597);
+/******/ 	__webpack_require__(348);
 /******/ 	__webpack_require__(260);
 /******/ 	__webpack_require__(969);
 /******/ 	__webpack_require__(390);

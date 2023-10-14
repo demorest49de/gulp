@@ -63,7 +63,7 @@ export const loadItemsHandler = ($) => {
             const article = document.createElement('article');
             article.classList.add('blog__ba', 'ba');
             article.innerHTML = `
-                <a class="ba__link" href="article.html?id=${item.id}">
+                <a class="ba__link" href="./article.html?id=${item.id}">
                     <picture class="ba__image">
                         <source srcset="./img/blog/${index}.avif" type="image/avif">
                         <source srcset="./img/blog/${index}.webp" type="image/webp">
