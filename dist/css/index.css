@@ -2081,7 +2081,7 @@ main {
 
 .basket__checkbox-input:checked + .basket__checkbox-icon:before {
   border: none;
-  background-image: url("/svg/basket/checkmark.svg");
+  background-image: url(/svg/basket/checkmark.svg);
   -webkit-background-size: 20px 20px;
   background-size: 20px 20px;
 }
