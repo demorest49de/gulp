@@ -71,6 +71,12 @@
     }
   }
 
+  &__image {
+    object-fit: contain;
+    width: 100%;
+    height: 100%;
+  }
+
   &__figure {
     width: 757px;
     height: 427px;
@@ -109,12 +115,6 @@
         font-size: 12px;
       }
     }
-  }
-
-  &__image {
-    object-fit: fill;
-    width: 100%;
-    height: 100%;
   }
 
   &__price-block {

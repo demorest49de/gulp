@@ -178,7 +178,7 @@ const calculateTotal = () => {
                     if (item.discount > 0) {
                         discoutedSum += (Math.ceil((localTotal) - ((localTotal * item.discount) / 100)));
                     } else {
-                        discoutedSum += (Math.ceil((localTotal) / 1.2)).toString();
+                        discoutedSum += (Math.ceil((localTotal) / 1.2));
                     }
                     const diff = total - discoutedSum;
                     

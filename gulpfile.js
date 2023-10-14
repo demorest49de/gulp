@@ -107,11 +107,11 @@ export const scss = () =>
         .pipe(gulpif(!dev, gulp.dest(path.dist.css)))
         //TODO for debugging purposes comment cleanCSS
         // for clear css viewing on debug
-        .pipe(cleanCSS({
-            2: {
-                specialComments: 0,
-            }
-        }))
+        // .pipe(cleanCSS({
+        //     2: {
+        //         specialComments: 0,
+        //     }
+        // }))
         .pipe(rename({
             suffix: '.min'
         }))
@@ -143,13 +143,13 @@ export const js = () => gulp
     //TODO for debugging purposes comment from plumber to rename
     // for clear js viewing on debug
     
-    .pipe(plumber())
-    .pipe(webpackStream(webpackConf, webpack))
-    .pipe(gulpif(!dev, gulp.dest(path.dist.js)))
-    .pipe(gulpif(!dev, terser()))
-    .pipe(rename({
-        suffix: '.min'
-    }))
+    // .pipe(plumber())
+    // .pipe(webpackStream(webpackConf, webpack))
+    // .pipe(gulpif(!dev, gulp.dest(path.dist.js)))
+    // .pipe(gulpif(!dev, terser()))
+    // .pipe(rename({
+    //     suffix: '.min'
+    // }))
     
     .pipe(gulp.dest(path.dist.js))
     .pipe(browserSync.stream());
