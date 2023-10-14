@@ -1,7 +1,7 @@
 import {createFooter, createHeader, createMain, iterateOverCards} from "../../base/baseElems.js";
 import {getSearchParams} from "../../base/tools.js";
 import {getGoodsByCategory} from "../fetch.js";
-import {createBCCategory} from "./createCategory.js";
+import {createBreadCrumbs} from "../../base/breadcrumbs.js";
 
 
 export const renderCategory = ($) => {
@@ -13,7 +13,13 @@ export const renderCategory = ($) => {
         
         if (type === $.types.main) {
             createMain(name, $);
-            const breadCrumbs = createBCCategory($.breadCrumbs.categoryInfo);
+            const breadCrumbs = createBreadCrumbs($.breadCrumbs.categoryInfo);
+            const link = breadCrumbs.querySelector('.bc__item:nth-last-child(1) .bc__link');
+            const paramsObject = getSearchParams();
+            
+            link.href += `?name=${paramsObject.name}`;
+            link.textContent = paramsObject.name;
+            link.ariaLabel = paramsObject.name;
             $.main.append(breadCrumbs);
             return;
         }

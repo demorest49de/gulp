@@ -237,27 +237,27 @@ const breadCrumbs = {
     
     categoryInfo: [
         {
-            url: bc.url,
-            name: bc.main,
-            ariaLabel: bc.main,
+            link:
+                `<a class="bc__link" href="${bc.url}" aria-label="${bc.main}">${bc.main}</a>`,
+            svg: bcSvg,
         },
         {
-            url: bc.categoryURL,
-            name: bc.category,
-            ariaLabel: bc.category,
+            link:
+                `<a class="bc__link" href="${bc.categoryURL}" aria-label="${bc.category}">${bc.category}</a>`,
+            svg: '',
         }
     ],
     
     searchInfo: [
         {
-            url: bc.url,
-            name: bc.main,
-            ariaLabel: bc.main,
+            link:
+                `<a class="bc__link" href="${bc.url}" aria-label="${bc.main}">${bc.main}</a>`,
+            svg: bcSvg,
         },
         {
-            url: bc.searchURL,
-            name: bc.search,
-            ariaLabel: bc.search,
+            link:
+                `<a class="bc__link" href="${bc.searchURL}" aria-label="${bc.search}">${bc.search}</a>`,
+            svg: '',
         }
     ],
     

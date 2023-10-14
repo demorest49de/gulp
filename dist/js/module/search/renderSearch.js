@@ -2,6 +2,7 @@ import {createFooter, createHeader, createMain, iterateOverCards} from "../base/
 import {getSearchParams} from "../base/tools.js";
 import {getGoods} from "../shop/fetch.js";
 import {createBCSearch} from "./createSearch.js";
+import {createBreadCrumbs} from "../base/breadcrumbs.js";
 
 
 export const renderSearch = ($) => {
@@ -13,7 +14,11 @@ export const renderSearch = ($) => {
         
         if (type === $.types.main) {
             createMain(name, $);
-            const breadCrumbs = createBCSearch($.breadCrumbs.searchInfo);
+            const breadCrumbs = createBreadCrumbs($.breadCrumbs.searchInfo);
+            const link = breadCrumbs.querySelector('.bc__item:nth-last-child(1) .bc__link');
+            const paramsObject = getSearchParams();
+            console.log(' : ',paramsObject);
+            link.href += `?search=${paramsObject.search}`;
             $.main.append(breadCrumbs);
             return;
         }
