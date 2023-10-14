@@ -17,7 +17,12 @@ export const loadItemsHandler = ($) => {
     
     const updateArticle = (data) => {
         const apiData = data.data;
-        const textTitle = apiData.title;
+        let textTitle = apiData.title;
+        if(textTitle[textTitle.length -1] === '.'){
+           const arrText = [...textTitle];
+           arrText.splice(-1, 1);
+            textTitle = arrText.join('');
+        }
         $.bcLink.textContent = textTitle;
         $.title.textContent = textTitle;
         document.title = textTitle;
