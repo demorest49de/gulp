@@ -223,8 +223,6 @@ export const createBCCard = ($, bc) => {
             <li class="bc__item">
             <a class="bc__link" href="${card.url}?id=${item.id}"
             aria-label="${item.title}">${item.title}</a>
-                <div class="bc__arrow-block">
-                </div>
             </li>
         `);
     });

@@ -263,9 +263,9 @@ const breadCrumbs = {
     
     cardInfo: {
         home: {
-            link:
-                `<a class="bc__link" href="${bc.url}" aria-label="${bc.main}">${bc.main}</a>`,
-            svg: bcSvg,
+            url: bc.url,
+            name: bc.main,
+            ariaLabel: bc.main,
         },
         category: {
             url: bc.categoryURL,
